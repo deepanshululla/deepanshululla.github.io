@@ -1,7 +1,78 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Coming Soon</title>
+<link href="tools/style.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="tools/font-awesome/css/font-awesome.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="tools/jquery.min.js"></script> 
+<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href="https://file.myfontastic.com/n6vo44Re5QaWo8oCKShBs7/icons.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
+
+
+</head>
 <body>
-<h1>Site Under Construction</h1>
-<p>Please come back later.</p>
+<div class="transy"></div>
+<div class="wrapper">
+	<div class="centered">
+		<div class="header">
+			<h1 id="logo"> Coming Soon.. </h1>
+		</div>
+		<div class="header">
+			<p class="line1">You have reached the site of Deepanshu Lulla</p>
+		</div>
+		<div class="header">
+    		
+    		<p id="demo" style="font-size:30px"></p>
+  		</div>
+		<div class="content">
+				<p>Appreciate your patience!!!</p>
+		</div>
+		
+		
+		
+
+		
+		
+		
+		
+		
+	</div>
+</div>
+
+	
+	
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Aug 30, 2017 15:37:25").getTime();
+
+// Update the count down every 1 second
+var countdownfunction = setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+    
+    // Find the distance between now an the count down date
+    var distance = countDownDate - now;
+    
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Output the result in an element with id="demo"
+    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+    
+    // If the count down is over, write some text 
+    if (distance < 0) {
+        clearInterval(countdownfunction);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+    }
+}, 1000);
+</script>
+
 </body>
 </html>
