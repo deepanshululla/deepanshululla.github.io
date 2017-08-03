@@ -1,0 +1,75 @@
+.navcustom {
+    background: #2c3e50;
+    color: black;
+}
+#profile-image{
+    /*float:left;*/
+    width: 20%;
+    
+    float: : left;
+    align-self: left;
+    margin-right: 5%;
+
+    /*padding: 10%;*/
+}
+.align-text-right{
+    text-align: right;
+}
+.centered {
+    text-align: center;
+}
+.navcustom .navbar-nav>li>a {
+    color: white;
+}
+.navcustom .navbar-brand{
+    color: white;
+}
+
+
+.jumbocustom {
+    background: #ecf0f1;
+    /*color: white;*/
+    margin-top: 1%;
+    padding-top: 4%;
+    
+}
+body {
+    padding-top: 5%;
+}
+
+
+/*.flex {
+    display: flex;
+    flex-wrap: wrap;
+}*/
+.quoted{
+    /*border: 2px dashed grey;*/
+    margin: 0 auto;
+    /*font-size: 2.0em;*/
+
+}
+footer{
+    heigth: 10%;
+    /*margin-top:20%;
+    margin-bottom: 10%;*/
+    background-color: #2c3e50;
+    color:white;
+}
+.project-images{
+    margin: 0 auto;
+    /*float: left;*/
+}
+.projects-list{
+    border: 2px dashed blue;
+}
+.project-name-tag{
+    white-space:pre-wrap;
+    text-decoration: underline;
+
+}
+.project-desc-tag{
+    white-space:pre-wrap;
+}
+#project-title-descriptor{
+    text-decoration: underline;
+}
