@@ -83,6 +83,8 @@ footer{
     background:#f7f7c8;
     font-size: 1.5em;
     transition: all 1.0s;
+    -moz-transition: all 1.0s;
+    -webkit-transition: all 1.0s;
     /*display: inline-block;*/
     /*margin: 0 auto;*/
     /*border: 2px dashed black;*/
