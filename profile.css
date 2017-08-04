@@ -36,24 +36,26 @@
 body {
     padding-top: 5%;
 }
-
+.container-text{
+    /*padding:%;*/
+    /*margin-bottom: 10%;*/
+    padding-bottom: 15%;
+}
 
 /*.flex {
     display: flex;
     flex-wrap: wrap;
 }*/
-.quoted{
-    /*border: 2px dashed grey;*/
-    margin: 0 auto;
-    /*font-size: 2.0em;*/
 
-}
 footer{
     heigth: 10%;
     /*margin-top:20%;
     margin-bottom: 10%;*/
     background-color: #2c3e50;
     color:white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 .project-images{
     margin: 0 auto;
@@ -72,4 +74,7 @@ footer{
 }
 #project-title-descriptor{
     text-decoration: underline;
+}
+.projects{
+    background:#f7f7c8;
 }

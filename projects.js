@@ -93,7 +93,7 @@ var projectsObject={
 
              {"projectName":"Multi threaded Web Crawler using python",
             "projectDescription":"End Result: Web Crawler is used to extract information from different websites by crawling through all its web pages.\n"+
-                                "•  Successfully developed a client process in python to crawl over 20k pages and find 5 secret flags located at various locations"+
+                                "•  Successfully developed a client process in python to crawl over 20k pages and find 5 secret flags located at various locations.\n"+
                                 "•   Used sockets to send program generated application layer headers.\n"+
                                 "•   Handled various aspects of HTTP like session handling, cookie management and HTTP response code handling",
             "github-link":"https://www.github.com/deepanshululla"},
@@ -113,7 +113,9 @@ for(var i=0;i<projectImages.length;i++){
             // projectPara.textContent=proj
         } else {
             projectPara.style.display = 'none';
+            window.scrollTo(0, 1000);
             displayProjectPara(imgType);
+            
             
         }
 
@@ -153,6 +155,7 @@ function displayProjectPara(imgType){
                 nameTag.classList.add("project-name-tag");
                 descriptionTag.textContent=projectsList[i]["projectDescription"];
             }
+            
             clickMessageOn=false;
         }
         else{
