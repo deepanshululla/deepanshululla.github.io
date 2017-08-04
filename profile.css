@@ -38,8 +38,8 @@ body {
 }
 .container-text{
     /*padding:%;*/
-    /*margin-bottom: 10%;*/
-    padding-bottom: 15%;
+    margin-bottom: 15%;
+    padding-bottom: 5%;
 }
 
 /*.flex {

@@ -113,7 +113,7 @@ for(var i=0;i<projectImages.length;i++){
             // projectPara.textContent=proj
         } else {
             projectPara.style.display = 'none';
-            window.scrollTo(0, 1000);
+            window.scrollTo(0, 15000);
             displayProjectPara(imgType);
             
             
