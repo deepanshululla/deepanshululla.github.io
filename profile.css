@@ -42,10 +42,10 @@ body {
     padding-bottom: 5%;
 }
 
-/*.flex {
+.flex {
     display: flex;
     flex-wrap: wrap;
-}*/
+}
 
 footer{
     heigth: 10%;
@@ -77,4 +77,8 @@ footer{
 }
 .projects{
     background:#f7f7c8;
+}
+.thumbnail {
+  border: 0;
+  background: transparent;
 }
