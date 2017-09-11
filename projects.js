@@ -1,7 +1,7 @@
 var projectImages=document.querySelectorAll(".project-images");
 var projectPara=document.querySelector(".projects")
 var projectTitleDescriptor=document.querySelector("#project-title-descriptor");
-var clickMessageOn=true;
+
 
 var pr1Name=document.querySelector("#pr1Name");
 var pr2Name=document.querySelector("#pr2Name");
@@ -132,18 +132,20 @@ var projectsObject={
 
 function scrollDownAnimate(){
    $('html, body').animate({
-    scrollTop: '+=400'
+    scrollTop: '+=500'
  }, 2000);
 }
 
 function scrollUpAnimate(){
    $('html, body').animate({
-    scrollTop: '-=800'
+    scrollTop: '-=700'
  }, 2000);
 }
 
 $("#scroll-up-msg").on("click",function(){
     scrollUpAnimate();
+    //emptyContents();
+    //projectPara.style.display = 'none';
 });
 
 for(var i=0;i<projectImages.length;i++){
@@ -170,7 +172,6 @@ for(var i=0;i<projectImages.length;i++){
 
 function emptyContents() {
     projectTitleDescriptor.textContent="Click on images to see details..";
-    clickMessageOn=true;
     pr1Name.textContent="";
     pr2Name.textContent="";
     pr3Name.textContent="";
@@ -186,10 +187,14 @@ function emptyContents() {
     pr3Description.textContent="";
     pr4Description.textContent="";
     pr5Description.textContent="";
-    scroll_up_msg.textContent="";
+    
     scrollUpAnimate();
+    scroll_up_msg.textContent="";
+    
+
 
 }
+
 
 function displayText(projectsList){
     projectTitleDescriptor.textContent="Scroll down to see the list";
@@ -214,31 +219,21 @@ function displayText(projectsList){
 
 
 function displayProjectPara(imgType){
-   
     if (imgType==="devops-image"){
             var projectsList=projectsObject["devops"];
             displayText(projectsList);
-            clickMessageOn=false;
     }
     else if (imgType==="security-image"){
             var projectsList=projectsObject["security"];
-            displayText(projectsList);
-            clickMessageOn=false;
+            displayText(projectsList);       
     }
-        
-    
     else if (imgType==="network-image"){
             var projectsList=projectsObject["networks"];
             displayText(projectsList);
-            clickMessageOn=false;
     }
     else if (imgType==="webdev-image"){
-       
             var projectsList=projectsObject["webdev"];   
-            displayText(projectsList);
-            clickMessageOn=false;
+            displayText(projectsList);   
     }
-       
-
- 
+        
 }
