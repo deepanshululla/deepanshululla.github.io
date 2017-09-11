@@ -2,6 +2,9 @@
    background: #2c3e50;
    color: black;
 }
+body{
+    scroll-behavior: smooth;
+}
 .project-link{
   color: #2c3e50;
   padding: 2%;

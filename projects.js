@@ -15,7 +15,7 @@ var pr3Description=document.querySelector("#pr3Description");
 var pr4Description=document.querySelector("#pr4Description");
 var pr5Description=document.querySelector("#pr5Description");
 
-
+var scroll_up_msg=document.querySelector("#scroll-up-msg");
 
 
 
@@ -130,6 +130,21 @@ var projectsObject={
 
 }
 
+function scrollDownAnimate(){
+   $('html, body').animate({
+    scrollTop: '+=400'
+ }, 2000);
+}
+
+function scrollUpAnimate(){
+   $('html, body').animate({
+    scrollTop: '-=800'
+ }, 2000);
+}
+
+$("#scroll-up-msg").on("click",function(){
+    scrollUpAnimate();
+});
 
 for(var i=0;i<projectImages.length;i++){
     projectImages[i].addEventListener("click", function(){
@@ -137,13 +152,15 @@ for(var i=0;i<projectImages.length;i++){
         
         if (projectPara.style.display === 'none') {
             projectPara.style.display = 'block';
-            scrollBy(0, window.innerHeight);
+            //scrollBy(0, window.innerHeight);
+            scrollDownAnimate();
             // emptyContents();
             // projectPara.textContent=proj
         } else {
             projectPara.style.display = 'none';
-            scrollBy(0, window.innerHeight);
+            //scrollBy(0, window.innerHeight);
             displayProjectPara(imgType);
+            scrollDownAnimate();
             
             
         }
@@ -159,16 +176,18 @@ function emptyContents() {
     pr3Name.textContent="";
     pr4Name.textContent="";
     pr5Name.textContent="";
-    pr1Link.text="";
-    pr2Link.text="";
-    pr3Link.text="";
-    pr4Link.text="";
-    pr5Link.text="";
+    pr1Link.textContent="";
+    pr2Link.textContent="";
+    pr3Link.textContent="";
+    pr4Link.textContent="";
+    pr5Link.textContent="";
     pr1Description.textContent="";
     pr2Description.textContent="";
     pr3Description.textContent="";
     pr4Description.textContent="";
     pr5Description.textContent="";
+    scroll_up_msg.textContent="";
+    scrollUpAnimate();
 
 }
 
@@ -186,10 +205,11 @@ function displayText(projectsList){
                 nameTag.textContent=projectsList[i]["projectName"];
                 nameTag.classList.add("project-name-tag");
                 linkTag.setAttribute("href", projectsList[i]["github-link"]);
-                linkTag.text="Visit Project";
+                linkTag.textContent="Visit Project";
                 linkTag.classList.add("project-link");
                 descriptionTag.textContent=projectsList[i]["projectDescription"];
     }
+    scroll_up_msg.textContent="Click this to scroll back up";
 }
 
 
