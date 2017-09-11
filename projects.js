@@ -137,6 +137,7 @@ for(var i=0;i<projectImages.length;i++){
         
         if (projectPara.style.display === 'none') {
             projectPara.style.display = 'block';
+            window.scrollBy(0, window.innerHeight);
             // emptyContents();
             // projectPara.textContent=proj
         } else {
