@@ -98,6 +98,34 @@ var projectsObject={
                                 "• Handled various aspects of HTTP like session handling, cookie management and HTTP response code handling",
             "github-link":"https://www.github.com/deepanshululla"},
 
+    ],
+    "webdev":[
+        {
+            "projectName":"REST API for E-Commerce Store on Docker containers",
+            "projectDescription": "• Created a REST API with python flask and SQLALCHEMY as ORM using MySQL as the backend.\n"+
+                                "• Used docker compose for orchestrating python and MariaDB containers.\n"+
+                                "• Increased security by using JWT tokens for user authentication and authorization for specific requests.\n"+
+                                "• Used Postman for testing and documenting the functionality of the REST API.",
+            "github-link":"https://www.github.com/deepanshululla"
+        },
+        {   
+            "projectName":"Blog Application using Python Flask, Docker-Compose,AWS, HTML,CSS, Javascript.",
+            "projectDescription": "•    Created Blog Application using Python with authentication & authorization (Author login/logout)"+ 
+                                    "functionality as well as different page views for authors and readers using MYSQL as the database and Flask SQL Alchemy as ORM tool.\n"+ 
+                                "• Used docker for creating MySQL and application backend containers and docker-compose for orchestration. Created an isolated network for the Docker containers. The app was tested and deployed on AWS. Used NGINX for configuring HTTPS(SSL).\n"+ 
+                                "• Applied Jinja2 templating to support interaction between front and back end and to make front end more modular.Implemented front end using HTML, CSS, Bootstrap, Javascript.",
+            "github-link":"https://www.github.com/deepanshululla"
+
+        },
+        {   
+            "projectName":"Front End Web Applications.",
+            "projectDescription": "• Created patatap SPA Application using Javascript along with howler.js and paper.js\n"+ 
+                                    "• Created a todo-list SPA application\n"+ 
+                                "• Created a RGB color guessing game based on different RGB values",
+            "github-link":"https://github.com/deepanshululla/front-end-web-dev"
+
+        }
+
     ]
 
 }
@@ -113,7 +141,7 @@ for(var i=0;i<projectImages.length;i++){
             // projectPara.textContent=proj
         } else {
             projectPara.style.display = 'none';
-            window.scrollTo(0, 1500);
+            window.scrollBy(0, window.innerHeight);
             displayProjectPara(imgType);
             
             
@@ -158,7 +186,7 @@ function displayProjectPara(imgType){
             }
             
             clickMessageOn=false;
-        }
+    }
         
 
     
@@ -178,7 +206,7 @@ function displayProjectPara(imgType){
                 descriptionTag.textContent=projectsList[i]["projectDescription"];
             }
             clickMessageOn=false;
-        }
+    }
         
     
     else if (imgType==="network-image"){
@@ -197,7 +225,24 @@ function displayProjectPara(imgType){
                 descriptionTag.textContent=projectsList[i]["projectDescription"];
             }
             clickMessageOn=false;
-        }
+    }
+    else if (imgType==="webdev-image"){
+       
+            var projectsList=projectsObject["webdev"];
+            var num=Math.min(projectsList.length,5);
+            projectTitleDescriptor.textContent="Scroll down to see the list";
+            for(var i=0;i<num;i++){
+                prNameTag="#pr"+(i+1)+"Name";
+                prDescriptionTag="#pr"+(i+1)+"Description";
+                var nameTag=document.querySelector(prNameTag);
+                var descriptionTag=document.querySelector(prDescriptionTag);
+                // console.log(projectsList[i]["projectName"]);
+                nameTag.textContent=projectsList[i]["projectName"];
+                nameTag.classList.add("project-name-tag");
+                descriptionTag.textContent=projectsList[i]["projectDescription"];
+            }
+            clickMessageOn=false;
+    }
        
 
  
