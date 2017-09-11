@@ -42,7 +42,7 @@ var projectsObject={
             "projectDescription":"• Created ansible playbooks based on roles and templates to install and configure web servers(Nginx)"+ 
             " and load balancers(HA proxy)\n"+ 
             "• Successfully added feature to deploy rolling updates based on GitHub code while ensuring website's uptime be 100%.",
-            "github-link":"https://www.github.com/deepanshululla"
+            "github-link":"https://github.com/deepanshululla/Deploying-Rolling-updates-through-Ansible-Nginx-HAPROXY"
             },
 
     ],
@@ -53,7 +53,7 @@ var projectsObject={
             "• Implemented Reflected Cross-site Scripting(XSS) attacks in Javascript to steal cookies"+
             " using C programming and hijack session using a Java program. \n"+
             "• Created a script in AJAX for a self-propagating worm to implement Stored XSS attack.",
-            "github-link":"https://www.github.com/deepanshululla"},
+            "github-link":"https://github.com/deepanshululla/Network-security"},
 
              {
                 "projectName":"Implementing Secure File Transfer Protocols in C with OPENSSL",
@@ -61,7 +61,7 @@ var projectsObject={
                 " authenticated key agreement using Diffie-Hellman.\n • Computed keys for HMAC(with SHA1 hash) and a shared secret" +
                 " key and IV for AES 256 bit CBC encryption using the exchanged secret.\n • Performed file transfer over TCP sockets"+
                 " by three methods Encrypt and MAC (SSH style), Encrypt then MAC(IPSec-style) and MAC then Encrypt(TLS style).",
-            "github-link":"https://www.github.com/deepanshululla"},
+            "github-link":"https://github.com/deepanshululla/Network-security"},
 
              {"projectName":"Attacking TCP/IP Protocols using python scapy",
             "projectDescription":"End Result: The End Result was to learn how to do Denial of Service(DOS) and Man"+
@@ -72,14 +72,14 @@ var projectsObject={
             " Connection-Reset, and Source-Quench Attacks(Didn't work,DOS), and TCP Session Hijacking(MITM,DOS) \n"+
             "•  Analyzed packets in wire shark to determine why certain attacks were not successful in this OS.Also Scrutinized"+
             " initial sequence number generator and source port selection algorithm",
-            "github-link":"https://www.github.com/deepanshululla"},
+            "github-link":"https://github.com/deepanshululla/Network-security"},
     ],
     "networks":[
             {"projectName":"Content Delivery Network (CDN)",
             "projectDescription":"• Implemented a DNS server that uses the redirection technique to send clients to the best replica servers depending on the fastest response time.\n"+
             "• Implemented HTTP server that hosts on the Amazon EC2 sites (replica servers) to return the content requested by the client either from its cache or by fetching it from the origin server.\n"+ 
             "• Implemented cache replacement strategy to remove the content which is less requested by the clients and replace it with most requested.",
-            "github-link":"https://www.github.com/deepanshululla"},
+            "github-link":"https://github.com/deepanshululla/Network-Programming-and-Scripting"},
 
              {"projectName":"Network Programability as a Cloud Service(Research project)",
                 "projectDescription":"End Result: Successful Open Source Implementation of HAAS based scenario using Network Virtualization"+
@@ -89,14 +89,14 @@ var projectsObject={
                                     "• Improved the existing HaaS scenario by using a network virtualization layer (OpenVirtex) between"+
                                     " controllers and OpenVSwitches to provide scale up and down across multiple hardware domains to tenants (IaaS providers).\n"+
                                     "• Created a mechanism based on Client-Server Model to synchronize NOSQL(Mongodb) database of different Hardware Domains.",
-            "github-link":"https://www.github.com/deepanshululla"},
+            "github-link":"https://github.com/deepanshululla/Network-Programmability-as-a-Service"},
 
              {"projectName":"Multi threaded Web Crawler using python",
             "projectDescription":"End Result: Web Crawler is used to extract information from different websites by crawling through all its web pages.\n"+
                                 "• Successfully developed a client process in python to crawl over 20k pages and find 5 secret flags located at various locations.\n"+
                                 "• Used sockets to send program generated application layer headers.\n"+
                                 "• Handled various aspects of HTTP like session handling, cookie management and HTTP response code handling",
-            "github-link":"https://www.github.com/deepanshululla"},
+            "github-link":"https://github.com/deepanshululla/Network-Programming-and-Scripting"},
 
     ],
     "webdev":[
@@ -106,7 +106,7 @@ var projectsObject={
                                 "• Used docker compose for orchestrating python and MariaDB containers.\n"+
                                 "• Increased security by using JWT tokens for user authentication and authorization for specific requests.\n"+
                                 "• Used Postman for testing and documenting the functionality of the REST API.",
-            "github-link":"https://www.github.com/deepanshululla"
+            "github-link":"https://github.com/deepanshululla/stores_rest_api_flask"
         },
         {   
             "projectName":"Blog Application using Python Flask, Docker-Compose,AWS, HTML,CSS, Javascript.",
@@ -114,7 +114,7 @@ var projectsObject={
                                     "functionality as well as different page views for authors and readers using MYSQL as the database and Flask SQL Alchemy as ORM tool.\n"+ 
                                 "• Used docker for creating MySQL and application backend containers and docker-compose for orchestration. Created an isolated network for the Docker containers. The app was tested and deployed on AWS. Used NGINX for configuring HTTPS(SSL).\n"+ 
                                 "• Applied Jinja2 templating to support interaction between front and back end and to make front end more modular.Implemented front end using HTML, CSS, Bootstrap, Javascript.",
-            "github-link":"https://www.github.com/deepanshululla"
+            "github-link":"https://github.com/deepanshululla/flask_blog"
 
         },
         {   
@@ -137,12 +137,12 @@ for(var i=0;i<projectImages.length;i++){
         
         if (projectPara.style.display === 'none') {
             projectPara.style.display = 'block';
-            window.scrollBy(0, window.innerHeight);
+            scrollBy(0, window.innerHeight);
             // emptyContents();
             // projectPara.textContent=proj
         } else {
             projectPara.style.display = 'none';
-            window.scrollBy(0, window.innerHeight);
+            scrollBy(0, window.innerHeight);
             displayProjectPara(imgType);
             
             
@@ -159,7 +159,11 @@ function emptyContents() {
     pr3Name.textContent="";
     pr4Name.textContent="";
     pr5Name.textContent="";
-
+    pr1Link.text="";
+    pr2Link.text="";
+    pr3Link.text="";
+    pr4Link.text="";
+    pr5Link.text="";
     pr1Description.textContent="";
     pr2Description.textContent="";
     pr3Description.textContent="";
@@ -168,80 +172,50 @@ function emptyContents() {
 
 }
 
+function displayText(projectsList){
+    projectTitleDescriptor.textContent="Scroll down to see the list";
+    var num=Math.min(projectsList.length,5);
+    for(var i=0;i<num;i++){
+                prNameTag="#pr"+(i+1)+"Name";
+                prLinkTag="#pr"+(i+1)+"Link";
+                prDescriptionTag="#pr"+(i+1)+"Description";
+                var nameTag=document.querySelector(prNameTag);
+                var linkTag=document.querySelector(prLinkTag);
+                var descriptionTag=document.querySelector(prDescriptionTag);
+
+                nameTag.textContent=projectsList[i]["projectName"];
+                nameTag.classList.add("project-name-tag");
+                linkTag.setAttribute("href", projectsList[i]["github-link"]);
+                linkTag.text="Visit Project";
+                linkTag.classList.add("project-link");
+                descriptionTag.textContent=projectsList[i]["projectDescription"];
+    }
+}
+
+
 function displayProjectPara(imgType){
    
     if (imgType==="devops-image"){
-        
             var projectsList=projectsObject["devops"];
-            var num=Math.min(projectsList.length,5);
-            projectTitleDescriptor.textContent="Scroll down to see the list";
-            for(var i=0;i<num;i++){
-                prNameTag="#pr"+(i+1)+"Name";
-                prDescriptionTag="#pr"+(i+1)+"Description";
-                var nameTag=document.querySelector(prNameTag);
-                var descriptionTag=document.querySelector(prDescriptionTag);
-                // console.log(projectsList[i]["projectName"]);
-                nameTag.textContent=projectsList[i]["projectName"];
-                nameTag.classList.add("project-name-tag");
-                descriptionTag.textContent=projectsList[i]["projectDescription"];
-            }
-            
+            displayText(projectsList);
             clickMessageOn=false;
     }
-        
-
-    
     else if (imgType==="security-image"){
-        
             var projectsList=projectsObject["security"];
-            var num=Math.min(projectsList.length,5);
-            projectTitleDescriptor.textContent="Scroll down to see the list";
-            for(var i=0;i<num;i++){
-                prNameTag="#pr"+(i+1)+"Name";
-                prDescriptionTag="#pr"+(i+1)+"Description";
-                var nameTag=document.querySelector(prNameTag);
-                var descriptionTag=document.querySelector(prDescriptionTag);
-                // console.log(projectsList[i]["projectName"]);
-                nameTag.textContent=projectsList[i]["projectName"];
-                nameTag.classList.add("project-name-tag");
-                descriptionTag.textContent=projectsList[i]["projectDescription"];
-            }
+            displayText(projectsList);
             clickMessageOn=false;
     }
         
     
     else if (imgType==="network-image"){
-       
             var projectsList=projectsObject["networks"];
-            var num=Math.min(projectsList.length,5);
-            projectTitleDescriptor.textContent="Scroll down to see the list";
-            for(var i=0;i<num;i++){
-                prNameTag="#pr"+(i+1)+"Name";
-                prDescriptionTag="#pr"+(i+1)+"Description";
-                var nameTag=document.querySelector(prNameTag);
-                var descriptionTag=document.querySelector(prDescriptionTag);
-                // console.log(projectsList[i]["projectName"]);
-                nameTag.textContent=projectsList[i]["projectName"];
-                nameTag.classList.add("project-name-tag");
-                descriptionTag.textContent=projectsList[i]["projectDescription"];
-            }
+            displayText(projectsList);
             clickMessageOn=false;
     }
     else if (imgType==="webdev-image"){
        
-            var projectsList=projectsObject["webdev"];
-            var num=Math.min(projectsList.length,5);
-            projectTitleDescriptor.textContent="Scroll down to see the list";
-            for(var i=0;i<num;i++){
-                prNameTag="#pr"+(i+1)+"Name";
-                prDescriptionTag="#pr"+(i+1)+"Description";
-                var nameTag=document.querySelector(prNameTag);
-                var descriptionTag=document.querySelector(prDescriptionTag);
-                // console.log(projectsList[i]["projectName"]);
-                nameTag.textContent=projectsList[i]["projectName"];
-                nameTag.classList.add("project-name-tag");
-                descriptionTag.textContent=projectsList[i]["projectDescription"];
-            }
+            var projectsList=projectsObject["webdev"];   
+            displayText(projectsList);
             clickMessageOn=false;
     }
        

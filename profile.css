@@ -1,9 +1,10 @@
 .navcustom {
    background: #2c3e50;
    color: black;
-
-
-
+}
+.project-link{
+  color: #2c3e50;
+  padding: 2%;
 }
 #profile-image{
     /*float:left;*/
