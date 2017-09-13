@@ -118,11 +118,12 @@ var projectsObject={
 
         },
         {   
-            "projectName":"Front End Web Applications.",
-            "projectDescription": "• Created patatap SPA Application using Javascript along with howler.js and paper.js\n"+ 
-                                    "• Created a todo-list SPA application\n"+ 
-                                "• Created a RGB color guessing game based on different RGB values",
-            "github-link":"https://github.com/deepanshululla/front-end-web-dev"
+            "projectName":"Movie Search Application",
+            "projectDescription": "• Created an Movie search Application backendusing Nodejs and express that searches for movies using OMDB REST API and displays them on a page.\n"+ 
+                                    "• Constructed front end using HTML, CSS, Bootstrap.\n"+ 
+                                "• Added movie page views to see the information about each movie such as cast, IMDB rating etc.\n"+
+								"• Application live on https://imdb-clone-nodejs.herokuapp.com",
+            "github-link":"https://github.com/deepanshululla/movie_search_nodejs"
 
         }
 
