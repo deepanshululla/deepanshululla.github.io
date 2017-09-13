@@ -101,7 +101,7 @@ var projectsObject={
     ],
     "webdev":[
         {
-            "projectName":"REST API for E-Commerce Store on Docker containers",
+            "projectName":"REST API for E-Commerce Store using Python Flask, MySQL on Docker containers",
             "projectDescription": "• Created a REST API with python flask and SQLALCHEMY as ORM using MySQL as the backend.\n"+
                                 "• Used docker compose for orchestrating python and MariaDB containers.\n"+
                                 "• Increased security by using JWT tokens for user authentication and authorization for specific requests.\n"+
@@ -109,7 +109,7 @@ var projectsObject={
             "github-link":"https://github.com/deepanshululla/stores_rest_api_flask"
         },
         {   
-            "projectName":"Blog Application using Python Flask, Docker-Compose,AWS, HTML,CSS, Javascript.",
+            "projectName":"Blog Application using Python Flask, MySQL, Docker-Compose,AWS, HTML, CSS, Javascript.",
             "projectDescription": "•    Created Blog Application using Python with authentication & authorization (Author login/logout)"+ 
                                     "functionality as well as different page views for authors and readers using MYSQL as the database and Flask SQL Alchemy as ORM tool.\n"+ 
                                 "• Used docker for creating MySQL and application backend containers and docker-compose for orchestration. Created an isolated network for the Docker containers. The app was tested and deployed on AWS. Used NGINX for configuring HTTPS(SSL).\n"+ 
@@ -118,8 +118,8 @@ var projectsObject={
 
         },
         {   
-            "projectName":"Movie Search Application",
-            "projectDescription": "• Created an Movie search Application backendusing Nodejs and express that searches for movies using OMDB REST API and displays them on a page.\n"+ 
+            "projectName":"Movie Search Application using Nodejs, Express, HTML, CSS, Bootstrap",
+            "projectDescription": "• Created an Movie search Application backend using Nodejs and express that searches for movies using OMDB REST API and displays them on a page.\n"+ 
                                     "• Constructed front end using HTML, CSS, Bootstrap.\n"+ 
                                 "• Added movie page views to see the information about each movie such as cast, IMDB rating etc.\n"+
 								"• Application live on https://imdb-clone-nodejs.herokuapp.com",
@@ -187,13 +187,9 @@ function emptyContents() {
     pr2Description.textContent="";
     pr3Description.textContent="";
     pr4Description.textContent="";
-    pr5Description.textContent="";
-    
+    pr5Description.textContent="";    
     scrollUpAnimate();
     scroll_up_msg.textContent="";
-    
-
-
 }
 
 
