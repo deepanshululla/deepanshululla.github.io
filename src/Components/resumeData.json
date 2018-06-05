@@ -14,7 +14,7 @@
         "state": "CA",
         "zip": "95054"
       },
-      "website": "http://www.deepanshululla.com",
+      "website": "http://deepanshululla.com",
       "resumedownload": "https://www.dropbox.com/s/yrnbqa4hfts2q0y/Deepanshu%20Lulla%20software%20engineer.pdf?dl=0",
       "social": [
         {
@@ -69,35 +69,43 @@
         },
         {
           "name": "Nodejs",
-          "level": "60%"
+          "level": "50%"
         },
         {
           "name": "React",
-          "level": "50%"
+          "level": "40%"
         },
         {
           "name": "Linux",
-          "level": "50%"
+          "level": "60%"
         },
         {
           "name": "Full stack Web development",
-          "level": "80%"
+          "level": "60%"
         },
         {
           "name": "Relational Databases(MySql,Postgres)",
-          "level": "70%"
-        },
-        {
-          "name": "Non Relational Databases(Redis,Mongodb)",
-          "level": "65%"
-        },
-        {
-          "name": "Computer networking and security",
           "level": "50%"
         },
         {
-          "name": "Amazon Web services",
+          "name": "Non Relational Databases(Redis,Mongodb)",
+          "level": "50%"
+        },
+        {
+          "name": "Computer networking and security",
           "level": "70%"
+        },
+        {
+          "name": "Cloud Services(Amazon Web services)",
+          "level": "50%"
+        },
+        {
+          "name": "Containerization(Docker,Kubernetes)",
+          "level": "50%"
+        },
+        {
+          "name": "Storage and Virtualisation(SAN,NAS)",
+          "level": "50%"
         }
       ]
     },

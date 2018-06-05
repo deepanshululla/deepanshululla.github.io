@@ -11,8 +11,8 @@ export const Footer =()=> (
 
                     <ul className="social-links">
 
-                        <li><a href="https://www.linkedin.com/in/deepanshululla"><i className="fa fa-linkedin"></i></a></li>
-                        <li><a href="https://www.github.com/deepanshululla"><i className="fa fa-github"></i></a></li>
+                        <li><a target="_blank" href="https://www.linkedin.com/in/deepanshululla"><i className="fa fa-linkedin"></i></a></li>
+                        <li><a target="_blank" href="https://www.github.com/deepanshululla"><i className="fa fa-github"></i></a></li>
 
                     </ul>
 
