@@ -49,13 +49,13 @@
           "company": "Akamai Technologies Inc.",
           "title": "Software Developer",
           "years": "Oct 2017 - Present",
-          "description": "Working as a full stack developer at Akamai in Santa Clara,CA"
+          "description": "Worked on developing backend for Akamai’s security product for detecting real users from bots like proof of work, TLS hashes etc.Created a test framework for test automation as well as setup Jenkins server for Continuous Integration and Deployment. "
         },
         {
           "company": "Dell EMC",
           "title": "Software Engineer Intern",
           "years": "May 2016 - December 2016",
-          "description": "Worked on Vmware Storage vitualization"
+          "description": "Setup infrastructure for Active directory using VMWare ESXI. Created an internal tool for manging Jira tickets assigned to each employee.Developed a Web application using Java Spring Boot, React JS, D3.js for visualizing memory consumption, disk space allocated to the servers."
         }
       ],
       "skills": [
@@ -104,7 +104,7 @@
           "level": "50%"
         },
         {
-          "name": "Storage and Virtualisation(SAN,NAS)",
+          "name": "Storage and Virtualization(SAN,NAS)",
           "level": "50%"
         }
       ]
