@@ -76,6 +76,10 @@
           "level": "40%"
         },
         {
+          "name": "AngularJS",
+          "level": "50%"
+        },
+        {
           "name": "Linux",
           "level": "60%"
         },
@@ -116,17 +120,17 @@
           "title": "Yelp Clone (Large social media application) using nodejs, mongodb,bootstrap",
           "description": "Created a large restful social media application with user registration,login and logout using passport js where users can have complete CRUD abilities of campgrounds posts and comments created by them.Implemented dynamic pricing for campgrounds and proper authentication and authorization by appropriate middleware. Added functionality to search through campgrounds and for resetting password.Used mongodb for backend database as well as bootstrap for styling. Added support for viewing campgrounds location using google maps.",
           "category": "Web Development",
-          "tags": "Social media, Web Development, NodeJS,Mongodb",
+          "tags": "Social media, Web Development, NodeJS, Mongodb",
           "image": "yelp.png",
           "url": "https://evening-basin-24316.herokuapp.com",
           "modal": "modal-01"
         },
         {
           "id": 2,
-          "title": "Airline E-Commerce website using Java Spring boot,Spring data JPA,Spring Security, MYSQL and thymeleaf",
-          "description": "Created a website clone for an Ecommerce airline web application using Spring boot, Spring data JPA(ORM) and MySQL. Added features to search and book flights.Created an REST API to serve an an integration layer for flight checkin microservice. Created the same microservice for passengers to check in.Encoded passwords to prevent them from being stored in plain text and defined roles for different types of users to perform authentication and authrorization.Added logging features and defined custom log rotation policies to log information to an external log file.",
+          "title": "Airline E-Commerce website using Java Spring boot, MYSQL, AngularJS and thymeleaf",
+          "description": "Created a website clone for an Ecommerce airline web application using Spring boot, Spring data JPA(ORM) and MySQL. Added features to search and book flights.Created an REST API to serve an an integration layer for flight checkin microservice. Created the same microservice for passengers to check in.Encoded passwords to prevent them from being stored in plain text and defined roles for different types of users to perform authentication and authrorization.Added logging features and defined custom log rotation policies to log information to an external log file.Used AngularJs for form validations and two way binding",
           "category": "Web Development",
-          "tags": "Web Development, Java, Spring-boot, Mysql",
+          "tags": "Web Development, Java, Spring-boot, Mysql, AngularJs",
           "image": "flight.jpg",
           "url": "https://github.com/deepanshululla/flight-reservation",
           "modal": "modal-02"
