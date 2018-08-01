@@ -61,23 +61,39 @@
       "skills": [
         {
           "name": "Java",
-          "level": "60%"
+          "level": "70%"
         },
         {
           "name": "Python",
-          "level": "70%"
+          "level": "80%"
+        },
+        {
+          "name": "Javascript",
+          "level": "60%"
+        },
+        {
+          "name": "Go",
+          "level": "50%"
+        },
+        {
+          "name": "React",
+          "level": "60%"
         },
         {
           "name": "Nodejs",
           "level": "50%"
         },
         {
-          "name": "React",
+          "name": "Flask",
+          "level": "60%"
+        },
+        {
+          "name": "Django",
           "level": "40%"
         },
         {
-          "name": "AngularJS",
-          "level": "50%"
+          "name": "Spring Boot",
+          "level": "40%"
         },
         {
           "name": "Linux",
@@ -85,15 +101,15 @@
         },
         {
           "name": "Full stack Web development",
-          "level": "60%"
+          "level": "70%"
         },
         {
           "name": "Relational Databases(MySql,Postgres)",
-          "level": "50%"
+          "level": "60%"
         },
         {
-          "name": "Non Relational Databases(Redis,Mongodb)",
-          "level": "50%"
+          "name": "Non Relational Databases(Redis,Mongodb,Cassandra)",
+          "level": "60%"
         },
         {
           "name": "Computer networking and security",
@@ -101,14 +117,10 @@
         },
         {
           "name": "Cloud Services(Amazon Web services)",
-          "level": "50%"
+          "level": "60%"
         },
         {
           "name": "Containerization(Docker,Kubernetes)",
-          "level": "50%"
-        },
-        {
-          "name": "Storage and Virtualization(SAN,NAS)",
           "level": "50%"
         }
       ]
