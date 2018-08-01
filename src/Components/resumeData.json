@@ -49,13 +49,13 @@
           "company": "Akamai Technologies Inc.",
           "title": "Software Developer",
           "years": "Oct 2017 - Present",
-          "description": "Worked on developing backend for Akamai’s security product for detecting real users from bots like proof of work, TLS hashes etc.Created a test framework for test automation as well as setup Jenkins server for Continuous Integration and Deployment. "
+          "description": "Designed and developed an open stop monitoring solution using Python Flask, Cassandra, Influxdb, React and Redux  to display the aggregate analysis of time series data. \n Customized Open source monitoring tools like Telegraf, Grafana using Golang to meet the product’s monitoring requirements decreasing troubleshooting time during incidents by more than 50%. \n CCM(Customer Cluster Mapper): Created REST API using Python Flask, Celery, Redis as well as a dashboard using REACT to map different customers to their respective clusters on AWS Opsworks."
         },
         {
           "company": "Dell EMC",
           "title": "Software Engineer Intern",
           "years": "May 2016 - December 2016",
-          "description": "Setup infrastructure for Active directory using VMWare ESXI. Created an internal tool for manging Jira tickets assigned to each employee.Developed a Web application using Java Spring Boot, React JS, D3.js for visualizing memory consumption, disk space allocated to the servers."
+          "description": "Setup infrastructure for Active directory using VMWare ESXI. Created an internal tool for manging Jira tickets assigned to each employee.Developed a Web application using Java Spring Boot, MYSQL,jquery for visualizing memory consumption, disk space allocated to the servers."
         }
       ],
       "skills": [
