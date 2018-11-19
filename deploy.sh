@@ -4,6 +4,6 @@ npm run deploy;
 cp -aR ./build/* ./;
 git add .;
 git commit -am "build";
-git push origin master;
+git push -f origin master;
 
 
