@@ -9,10 +9,10 @@
       "email": "deepanshu.lulla@gmail.com",
       "phone": "857-452-0190",
       "address": {
-        "street": "Oak grove Dr.",
-        "city": "Santa Clara",
-        "state": "CA",
-        "zip": "95054"
+        "street": "Newport parkway",
+        "city": "Jersey City",
+        "state": "New Jersey",
+        "zip": "07310"
       },
       "website": "http://deepanshululla.com",
       "resumedownload": "https://www.dropbox.com/s/yrnbqa4hfts2q0y/Deepanshu%20Lulla%20software%20engineer.pdf?dl=0",
@@ -46,9 +46,15 @@
       ],
       "work": [
         {
-          "company": "Akamai Technologies Inc.",
+          "company": "Oracle Technologies Inc.",
           "title": "Software Developer",
-          "years": "Oct 2017 - Present",
+          "years": "Dec 2018 - Present",
+          "description": "Part of Backend API team working within Oracle Data Cloud"
+        },
+        {
+          "company": "Akamai Technologies Inc.",
+          "title": "Software Engineer",
+          "years": "Oct 2017 - Nov 2018",
           "description": "Designed and developed an open stop monitoring solution using Python Flask, Cassandra, Influxdb, React and Redux  to display the aggregate analysis of time series data. \n Customized Open source monitoring tools like Telegraf, Grafana using Golang to meet the product’s monitoring requirements decreasing troubleshooting time during incidents by more than 50%. \n CCM(Customer Cluster Mapper): Created REST API using Python Flask, Celery, Redis as well as a dashboard using REACT to map different customers to their respective clusters on AWS Opsworks."
         },
         {
