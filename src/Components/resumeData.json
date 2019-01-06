@@ -78,6 +78,18 @@
           "level": "30%"
         },
         {
+          "name": "Computer networking and security",
+          "level": "70%"
+        },
+        {
+          "name": "Cloud Services(Amazon Web services)",
+          "level": "60%"
+        },
+        {
+          "name": "Containerization(Docker,Kubernetes)",
+          "level": "60%"
+        },
+        {
           "name": "Python",
           "level": "80%"
         },
@@ -103,18 +115,6 @@
         },
         {
           "name": "Non Relational Databases(Redis,Mongodb,Cassandra)",
-          "level": "60%"
-        },
-        {
-          "name": "Computer networking and security",
-          "level": "70%"
-        },
-        {
-          "name": "Cloud Services(Amazon Web services)",
-          "level": "60%"
-        },
-        {
-          "name": "Containerization(Docker,Kubernetes)",
           "level": "60%"
         },
         {
