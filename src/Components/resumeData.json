@@ -9,10 +9,10 @@
       "email": "deepanshu.lulla@gmail.com",
       "phone": "857-452-0190",
       "address": {
-        "street": "Newport parkway",
-        "city": "Jersey City",
-        "state": "New Jersey",
-        "zip": "07310"
+        "street": "",
+        "city": "New York City",
+        "state": "NY",
+        "zip": "10016"
       },
       "website": "http://deepanshululla.com",
       "resumedownload": "https://www.dropbox.com/s/yrnbqa4hfts2q0y/Deepanshu%20Lulla%20software%20engineer.pdf?dl=0",
@@ -55,19 +55,27 @@
           "company": "Akamai Technologies Inc.",
           "title": "Software Engineer",
           "years": "Oct 2017 - Nov 2018",
-          "description": "Designed and developed an open stop monitoring solution using Python Flask, Cassandra, Influxdb, React and Redux  to display the aggregate analysis of time series data. \n Customized Open source monitoring tools like Telegraf, Grafana using Golang to meet the product’s monitoring requirements decreasing troubleshooting time during incidents by more than 50%. \n CCM(Customer Cluster Mapper): Created REST API using Python Flask, Celery, Redis as well as a dashboard using REACT to map different customers to their respective clusters on AWS Opsworks."
+          "description": "Designed and developed a monitoring platform using Python Flask, Influxdb, React to display the aggregate analysis of time series data. \n Customized Open source monitoring tools like Telegraf, Grafana using Golang to meet the product’s monitoring requirements decreasing troubleshooting time during incidents by more than 50%. \n CCM(Customer Cluster Mapper): Created REST API using Python Flask, Celery, Redis as well as a dashboard using REACT to map different customers to their respective clusters on AWS Opsworks."
         },
         {
           "company": "Dell EMC",
           "title": "Software Engineer Intern",
           "years": "May 2016 - December 2016",
-          "description": "Setup infrastructure for Active directory using VMWare ESXI. Created an internal tool for manging Jira tickets assigned to each employee.Developed a Web application using Java Spring Boot, MYSQL,jquery for visualizing memory consumption, disk space allocated to the servers."
+          "description": "Setup infrastructure for Active directory using VMWare ESXI. Created an internal tool for managing Jira tickets assigned to each employee.Developed a Web application using Java Spring Boot, MYSQL,jquery for visualizing memory consumption, disk space allocated to the servers."
         }
       ],
       "skills": [
         {
-          "name": "Java",
+          "name": "Back end development",
           "level": "70%"
+        },
+        {
+          "name": "Front end development",
+          "level": "50%"
+        },
+        {
+          "name": "Machine learning",
+          "level": "30%"
         },
         {
           "name": "Python",
@@ -78,40 +86,20 @@
           "level": "60%"
         },
         {
-          "name": "Go",
-          "level": "50%"
-        },
-        {
           "name": "React",
           "level": "60%"
-        },
-        {
-          "name": "Nodejs",
-          "level": "50%"
         },
         {
           "name": "Flask",
           "level": "60%"
         },
         {
-          "name": "Django",
-          "level": "40%"
-        },
-        {
-          "name": "Spring Boot",
-          "level": "40%"
-        },
-        {
           "name": "Linux",
           "level": "60%"
         },
         {
-          "name": "Full stack Web development",
-          "level": "70%"
-        },
-        {
           "name": "Relational Databases(MySql,Postgres)",
-          "level": "60%"
+          "level": "70%"
         },
         {
           "name": "Non Relational Databases(Redis,Mongodb,Cassandra)",
@@ -127,7 +115,23 @@
         },
         {
           "name": "Containerization(Docker,Kubernetes)",
+          "level": "60%"
+        },
+        {
+          "name": "Java",
+          "level": "70%"
+        },
+        {
+          "name": "Go",
           "level": "50%"
+        },
+        {
+          "name": "Nodejs",
+          "level": "50%"
+        },
+        {
+          "name": "Spring Boot",
+          "level": "40%"
         }
       ]
     },
@@ -166,7 +170,7 @@
         {
           "id": 4,
           "title": "REST API for E-Commerce Store on Docker containers",
-          "description": "Created a REST API with python flask and SQLALCHEMY as ORM using MySQL as the backend.Used docker compose for orchestrating python and MariaDB containers.Increased security by using JWT tokens for user authentication and authorization for specific requests.Used Postman for testing and documenting the functionality of the REST API.",
+          "description": "Created a REST API with python flask and SQLALCHEMY as ORM using MySQL as the backend.Used docker compose for orchestrating python and MariaDB containers.Increased security by using JWT tokens for user authentication and authorization for specific requests.Used Postman for system testing and documenting the functionality of the REST API.Created unit,integration and system tests as well as makefile for test automation",
           "category": "Web Development",
           "tags": "REST API, Web Development, Backend Programming, Python, Flask, Mysql",
           "image": "restapi.jpg",
@@ -185,7 +189,7 @@
         },
         {
           "id": 6,
-          "title": "Jenkins CI/CD Automation for Nodejs,Java web applications with Docker on AWS",
+          "title": "Jenkins CI/CD Automation with Docker on AWS",
           "description": "Deployed Jenkins cluster installation on Docker containers with Docker running inside containers on AWS and created Job-DSLs for creating freestyle projects for testing Nodejs. Java Spring & Scala applications.Developed Jenkins scripted pipelines using Groovy to create an automated CI/CD pipeline by integrating plugins such as Github, Gradle, npm, Email integrations, Slack, Bitbucket, Jfrog artifactory, Blue ocean, Docker hub, Sonarcube etc.",
           "category": "CI/CD",
           "tags": "Jenkins, CI/CD, Docker",
