@@ -49,7 +49,7 @@
           "company": "Oracle Technologies Inc.",
           "title": "Software Developer",
           "years": "Dec 2018 - Present",
-          "description": "Part of Backend API team working within Oracle Data Cloud"
+          "description": "Tech Stack: Python3, Celery, RabbitMQ, Postgres, Elasticsearch, Kubernetes, Prometheus, Grafana, helm, jenkins <br/> - Implemented pipeline retry logic to automatically retry hanging or failed jobs hence decreasing downtime by 300%. <br/ - Developed API views for viewing the current status of ETL jobs and exposing them over rest API. <br/>- Wrote custom Prometheus exporter to expose application pipeline metrics to monitor exceptions,latency of API and overall runtime of jobs. <br/>"
         },
         {
           "company": "Akamai Technologies Inc.",

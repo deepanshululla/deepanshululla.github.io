@@ -1,7 +1,6 @@
 #!/bin/bash
 
-sudo npm install
-sudo npm run deploy;
+npm run deploy;
 cp -aR ./build/* ./;
 git add .;
 git commit -am "build";
