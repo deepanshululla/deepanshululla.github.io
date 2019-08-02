@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Resume extends Component {
     newlinecreater(proj_desc) {
-        return proj_desc.split('\n').map(i => {
+        return proj_desc.split('<br>').map(i => {
             return <p>{i}</p>
         });
     }
@@ -27,7 +27,7 @@ class Resume extends Component {
                         <p className="info">{job.title}<span>&bull;</span> <em className="date">{job.years}</em></p>
 
                         <p>
-                            {job.description}
+                            {this.newlinecreater(job.description)}
                         </p>
                     </div>
                 </div>
