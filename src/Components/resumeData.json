@@ -46,8 +46,8 @@
       ],
       "work": [
         {
-          "company": "Oracle Technologies Inc.",
-          "title": "Software Developer",
+          "company": "Oracle Corp.",
+          "title": "Senior Software Developer",
           "years": "Dec 2018 - Present",
           "description": [
             "Tech Stack: Python3, Celery, RabbitMQ, Postgres, Elasticsearch, Kubernetes, Prometheus, Grafana, helm, jenkins.",
