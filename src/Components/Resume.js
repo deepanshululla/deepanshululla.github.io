@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 
 class Resume extends Component {
-    newlinecreater(proj_desc) {
-        return proj_desc.split('<br/>').map(i => {
-            return <p>{i}</p>
-        });
-    }
     render() {
         if(this.props.data){
             var education = this.props.data.education.map(function(edu){
@@ -27,7 +22,7 @@ class Resume extends Component {
                         <p className="info">{job.title}<span>&bull;</span> <em className="date">{job.years}</em></p>
 
                         <p>
-                            {this.newlinecreater(job.description)}
+                            {job.description.split('<br/>').map(i => {return <p>{i}</p>})}
                         </p>
                     </div>
                 </div>
