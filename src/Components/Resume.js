@@ -22,7 +22,7 @@ class Resume extends Component {
                         <p className="info">{job.title}<span>&bull;</span> <em className="date">{job.years}</em></p>
 
                         <p>
-                            {job.description.split('<br/>').map(i => {return <p>{i}</p>})}
+                            {job.description.map(i => {return <p>{i}</p>})}
                         </p>
                     </div>
                 </div>
