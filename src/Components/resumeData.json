@@ -49,13 +49,13 @@
           "company": "Oracle Technologies Inc.",
           "title": "Software Developer",
           "years": "Dec 2018 - Present",
-          "description": "Tech Stack: Python3, Celery, RabbitMQ, Postgres, Elasticsearch, Kubernetes, Prometheus, Grafana, helm, jenkins. \n - Implemented pipeline retry logic to automatically retry hanging or failed jobs hence decreasing downtime by 300%.  - Developed API views for viewing the current status of ETL jobs and exposing them over rest API. - Wrote custom Prometheus exporter to expose application pipeline metrics to monitor exceptions,latency of API and overall runtime of jobs."
+          "description": "Tech Stack: Python3, Celery, RabbitMQ, Postgres, Elasticsearch, Kubernetes, Prometheus, Grafana, helm, jenkins. <br/> - Implemented pipeline retry logic to automatically retry hanging or failed jobs hence decreasing downtime by 300%. <br/> - Developed API views for viewing the current status of ETL jobs and exposing them over rest API. - Wrote custom Prometheus exporter to expose application pipeline metrics to monitor exceptions,latency of API and overall runtime of jobs."
         },
         {
           "company": "Akamai Technologies Inc.",
           "title": "Software Engineer",
           "years": "Oct 2017 - Nov 2018",
-          "description": "Designed and developed a monitoring platform using Python Flask, Influxdb, React to display the aggregate analysis of time series data. \n Customized Open source monitoring tools like Telegraf, Grafana using Golang to meet the product’s monitoring requirements decreasing troubleshooting time during incidents by more than 50%. \n CCM(Customer Cluster Mapper): Created REST API using Python Flask, Celery, Redis as well as a dashboard using REACT to map different customers to their respective clusters on AWS Opsworks."
+          "description": "Designed and developed a monitoring platform using Python Flask, Influxdb, React to display the aggregate analysis of time series data. <br/> Customized Open source monitoring tools like Telegraf, Grafana using Golang to meet the product’s monitoring requirements decreasing troubleshooting time during incidents by more than 50%. \n CCM(Customer Cluster Mapper): Created REST API using Python Flask, Celery, Redis as well as a dashboard using REACT to map different customers to their respective clusters on AWS Opsworks."
         },
         {
           "company": "Dell EMC",

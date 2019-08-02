@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Resume extends Component {
     newlinecreater(proj_desc) {
-        return proj_desc.split('<br>').map(i => {
+        return proj_desc.split('<br/>').map(i => {
             return <p>{i}</p>
         });
     }
