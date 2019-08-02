@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 
 class Resume extends Component {
+    newlinecreater(proj_desc) {
+        return proj_desc.split('\n').map(i => {
+            return <p>{i}</p>
+        });
+    }
     render() {
         if(this.props.data){
             var education = this.props.data.education.map(function(edu){

@@ -22,7 +22,6 @@ export class Portfolio extends Component{
                 </div>)
             });
         }
-        console.log(portfolio);
         return (
             <section id="portfolio">
                 <div className="row">
