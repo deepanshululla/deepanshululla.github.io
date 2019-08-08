@@ -3,7 +3,6 @@ import React, {Component } from 'react';
 export class Portfolio extends Component{
     render() {
         if(this.props.data){
-            console.log(this.props.data);
             var portfolio = this.props.data.projects.map((project,index)=>{
                 let imageUrl = 'images/portfolio/'+project.image;
                 return (
@@ -11,7 +10,7 @@ export class Portfolio extends Component{
                     <div className="item-wrap" key={index}>
                         <a href={project.modal} title="" key={index}>
                             <img alt="" src={imageUrl} key={index}/>
-                            <div className="overlay" key={index}>
+                            <div className="overlay">
                                 <div className="portfolio-item-meta" key={index}>
                                     <h5 key={index}>{project.title}</h5>
                                     <p key={index}>{project.category}</p>
