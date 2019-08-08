@@ -4,12 +4,22 @@ import Modal from 'react-modal';
 
 const customStyles = {
     content : {
-      top                   : '50%',
-      left                  : '50%',
-      right                 : 'auto',
-      bottom                : 'auto',
-      marginRight           : '-50%',
-      transform             : 'translate(-50%, -50%)'
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+     
+         opacity: 0;
+         -moz-opacity: 0;
+         filter:alpha(opacity=0);
+     
+        -webkit-transition: opacity 0.3s ease-in-out;
+        -moz-transition: opacity 0.3s ease-in-out;
+        -o-transition: opacity 0.3s ease-in-out;
+        \transition: opacity 0.3s ease-in-out;
+     
+        background: url(../images/overlay-bg.png) repeat;
     }
   };
 
@@ -47,19 +57,24 @@ class ProjectOverlay extends Component {
                     isOpen={this.state.modalIsOpen}
                     onAfterOpen={this.props.afterOpenModal}
                     onRequestClose={this.props.closeModal}
+                    style={customStyles}
                     >
-                    <div className="overlay">
-                        <div className="portfolio-item-meta">
-                                <h5>{this.project.title}</h5>
-                                <p>{this.project.category}</p>
-                        </div>
-                    </div>
+                    <h5>{this.project.title}</h5>
                 </Modal>
             </div>
         )
     }
 
 }
+
+
+/* <div className="overlay">
+                        <div className="portfolio-item-meta">
+                                <h5>{this.project.title}</h5>
+                                <p>{this.project.category}</p>
+                        </div>
+                    </div> */
+
 
 export class Portfolio extends Component{
     
