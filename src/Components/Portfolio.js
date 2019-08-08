@@ -33,7 +33,7 @@ export class Portfolio extends Component{
     
     afterOpenModal() {
     // references are now sync'd and can be accessed.
-    this.subtitle.style.color = '#f00';
+        // this.subtitle.style.color = '#f00';
     }
 
     closeModal() {
@@ -55,9 +55,11 @@ export class Portfolio extends Component{
                                     onRequestClose={this.props.closeModal}
                                     style={customStyles}
                                     >
-                                    <div>
-                                            <h5>{project.title}</h5>
-                                            <p>{project.category}</p>
+                                    <div className="overlay">
+                                        <div className="portfolio-item-meta">
+                                                <h5>{project.title}</h5>
+                                                <p>{project.category}</p>
+                                        </div>
                                     </div>
                                 </Modal>
                             <div className="link-icon"><i className="icon-plus"></i></div>
