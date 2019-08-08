@@ -45,7 +45,7 @@ export class Portfolio extends Component{
     }
 }
 
-export class Portfolio2 extends Component{
+export class Portfolio3 extends Component{
     render() {
         if(this.props.data){
             var portfolio = this.props.data.projects.map((project,index)=>{
