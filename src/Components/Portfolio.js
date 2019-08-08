@@ -25,7 +25,7 @@ class ProjectOverlay extends Component {
         this.openModal = this.openModal.bind(this);
         this.afterOpenModal = this.afterOpenModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
-        this.project = this.props.projectItem;
+        
     }
     openModal() {
         this.setState({modalIsOpen: true});
@@ -41,6 +41,7 @@ class ProjectOverlay extends Component {
     }
 
     render(){
+        this.project = this.props.projectItem;
         return (
             <div>
                 <Modal
