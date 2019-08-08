@@ -1,6 +1,51 @@
 import React, {Component } from 'react';
 
+class ProjectOverlay extends Component {
+    render(){
+        var project = this.props.data.projectItem;
+        return (<div className="portfolio-item-meta" key={index}>
+                <h5 key={index}>{project.title}</h5>
+                <p key={index}>{project.category}</p>
+                </div>)
+    }
+}
+
+
 export class Portfolio extends Component{
+    render() {
+        if(this.props.data){
+            var portfolio = this.props.data.projects.map((project,index)=>{
+                let imageUrl = 'images/portfolio/'+project.image;
+                return (
+                <div className="columns portfolio-item" key={index}>
+                    <div className="item-wrap" key={index}>
+                        <a href={project.modal} title="" key={index}>
+                            <img alt="" src={imageUrl} key={index}/>
+                            <div className="overlay">
+                               <ProjectOverlay projectItem={project}/>
+                            </div>
+                        </a>
+                    </div>
+                    <div className="link-icon"><i className="icon-plus"></i></div>
+                </div>)
+            });
+        }
+        return (
+            <section id="portfolio">
+                <div className="row">
+                    <div className="twelve columns collapsed">
+                        <h1>Check Out Some of My Projects.</h1>
+                        <div id="portfolio-wrapper" className="bgrid-quarters s-bgrid-thirds cf">
+                            {portfolio}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        );
+    }
+}
+
+export class Portfolio2 extends Component{
     render() {
         if(this.props.data){
             var portfolio = this.props.data.projects.map((project,index)=>{
