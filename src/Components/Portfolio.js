@@ -3,9 +3,11 @@ import React, {Component } from 'react';
 export class Portfolio extends Component{
     render() {
         if(this.props.data){
+            console.log(this.props.data);
             var portfolio = this.props.data.projects.map((project,index)=>{
                 let imageUrl = 'images/portfolio/'+project.image;
-                return (<div className="columns portfolio-item" key={index}>
+                return (
+                <div className="columns portfolio-item" key={index}>
                     <div className="item-wrap" key={index}>
                         <a href={project.modal} title="" key={index}>
                             <img alt="" src={imageUrl} key={index}/>
@@ -15,9 +17,7 @@ export class Portfolio extends Component{
                                     <p key={index}>{project.category}</p>
                                 </div>
                             </div>
-
                         </a>
-
                     </div>
                 </div>)
             });
