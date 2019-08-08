@@ -24,9 +24,10 @@ export class Portfolio extends Component{
                             <div className="overlay">
                                <ProjectOverlay projectItem={project}/>
                             </div>
+                            <div className="link-icon"><i className="icon-plus"></i></div>
                         </a>
                     </div>
-                    <div className="link-icon"><i className="icon-plus"></i></div>
+                    
                 </div>)
             });
         }
