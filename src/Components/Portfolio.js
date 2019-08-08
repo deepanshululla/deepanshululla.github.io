@@ -20,7 +20,7 @@ export class Portfolio extends Component{
                 return (
                 <div className="columns portfolio-item" key={index}>
                     <div className="item-wrap" key={index}>
-                        <a href={project.modal} title="" key={index}>
+                        <a href={"#"+project.modal} title="" key={index}>
                             <img alt="" src={imageUrl} key={index}/>
                             <div className="overlay">
                                <ProjectOverlay projectItem={project}/>
@@ -55,7 +55,7 @@ export class Portfolio3 extends Component{
                 return (
                 <div className="columns portfolio-item" key={index}>
                     <div className="item-wrap" key={index}>
-                        <a href={"#"+project.modal} title="" key={index}>
+                        <a href={project.modal} title="" key={index}>
                             <img alt="" src={imageUrl} key={index}/>
                             <div className="overlay">
                                 <div className="portfolio-item-meta" key={index}>
