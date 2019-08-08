@@ -3,11 +3,13 @@ import React, {Component } from 'react';
 class ProjectOverlay extends Component {
     render(){
         var project = this.props.projectItem;
-        console.log(this.props);
-        return (<div className="portfolio-item-meta">
-                <h5>{project.title}</h5>
-                <p>{project.category}</p>
-                </div>)
+        return (
+            <div className="overlay">
+                <div>
+                        <h5>{project.title}</h5>
+                        <p>{project.category}</p>
+                </div>
+            </div>)
     }
 }
 
@@ -22,9 +24,7 @@ export class Portfolio extends Component{
                     <div className="item-wrap" key={index}>
                         <a href={"#"+project.modal} title="" key={index}>
                             <img alt="" src={imageUrl} key={index}/>
-                            <div className="overlay">
-                               <ProjectOverlay projectItem={project}/>
-                            </div>
+                            <ProjectOverlay projectItem={project}/>
                             <div className="link-icon"><i className="icon-plus"></i></div>
                         </a>
                     </div>
