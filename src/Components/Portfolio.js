@@ -4,18 +4,12 @@ import Modal from 'react-modal';
 
 const customStyles = {
     content : {
-        left: 0,
-        top: 0,
-        width: '100%',
-        height: '100%',
-     
-     
-        // -webkit-transition: opacity 0.3s ease-in-out,
-        // -moz-transition: opacity 0.3s ease-in-out,
-        // -o-transition: opacity 0.3s ease-in-out,
-        // \transition: opacity 0.3s ease-in-out,
-     
-        // background: url(../images/overlay-bg.png) repeat
+      top                   : '50%',
+      left                  : '50%',
+      right                 : 'auto',
+      bottom                : 'auto',
+      marginRight           : '-50%',
+      transform             : 'translate(-50%, -50%)'
     }
   };
 
