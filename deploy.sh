@@ -1,6 +1,7 @@
 #!/bin/bash
 
 rm -rf node_modules
+rm packaga-lock.json
 npm install
 npm run deploy;
 cp -aR ./build/* ./;
