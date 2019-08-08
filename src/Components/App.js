@@ -4,7 +4,7 @@ import axios from 'axios'
 import Header from './Header';
 import About from './About';
 import Resume from './Resume';
-import {Portfolio2,Portfolio3} from './Portfolio';
+import {Portfolio2,Portfolio} from './Portfolio';
 import Testimonials from './Testimonials';
 import Contact from './Contact';
 import {Footer} from './Footer';
