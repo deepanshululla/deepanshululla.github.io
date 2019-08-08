@@ -1,20 +1,63 @@
 import React, {Component } from 'react';
+import Modal from 'react-modal';
 
-class ProjectOverlay extends Component {
-    render(){
-        var project = this.props.projectItem;
-        return (
-            <div className="overlay">
-                <div>
-                        <h5>{project.title}</h5>
-                        <p>{project.category}</p>
-                </div>
-            </div>)
+
+const customStyles = {
+    content : {
+      top                   : '50%',
+      left                  : '50%',
+      right                 : 'auto',
+      bottom                : 'auto',
+      marginRight           : '-50%',
+      transform             : 'translate(-50%, -50%)'
     }
-}
+  };
+
+// class ProjectOverlay extends Component {
+//     render(){
+//         var project = this.props.projectItem;
+//         return (
+//             <Modal
+//             isOpen={this.props.modalIsOpen}
+//             onAfterOpen={this.props.afterOpenModal}
+//             onRequestClose={this.props.closeModal}
+//             style={customStyles}
+//             >
+//             <div>
+//                     <h5>{project.title}</h5>
+//                     <p>{project.category}</p>
+//             </div>
+//             </Modal>
+//            )
+//     }
+// }
 
 
 export class Portfolio extends Component{
+    constructor() {
+        super();
+    
+        this.state = {
+          modalIsOpen: false
+        };
+    
+        this.openModal = this.openModal.bind(this);
+        this.afterOpenModal = this.afterOpenModal.bind(this);
+        this.closeModal = this.closeModal.bind(this);
+    }
+    openModal() {
+        this.setState({modalIsOpen: true});
+    }
+    
+    afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    this.subtitle.style.color = '#f00';
+    }
+
+    closeModal() {
+    this.setState({modalIsOpen: false});
+    }
+    
     render() {
         if(this.props.data){
             var portfolio = this.props.data.projects.map((project,index)=>{
@@ -22,9 +65,19 @@ export class Portfolio extends Component{
                 return (
                 <div className="columns portfolio-item" key={index}>
                     <div className="item-wrap" key={index}>
-                        <a href={"#"+project.modal} title="" key={index}>
+                        <a href={"#"+project.modal} title="" key={index} onClick={this.openModal}>
                             <img alt="" src={imageUrl} key={index}/>
-                            <ProjectOverlay projectItem={project}/>
+                                <Modal
+                                    isOpen={this.state.modalIsOpen}
+                                    onAfterOpen={this.props.afterOpenModal}
+                                    onRequestClose={this.props.closeModal}
+                                    style={customStyles}
+                                    >
+                                    <div>
+                                            <h5>{project.title}</h5>
+                                            <p>{project.category}</p>
+                                    </div>
+                                </Modal>
                             <div className="link-icon"><i className="icon-plus"></i></div>
                         </a>
                     </div>
