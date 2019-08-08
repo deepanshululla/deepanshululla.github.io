@@ -4,22 +4,18 @@ import Modal from 'react-modal';
 
 const customStyles = {
     content : {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
+        left: 0,
+        top: 0,
+        width: '100%',
+        height: '100%',
      
-         opacity: 0;
-         -moz-opacity: 0;
-         filter:alpha(opacity=0);
      
-        -webkit-transition: opacity 0.3s ease-in-out;
-        -moz-transition: opacity 0.3s ease-in-out;
-        -o-transition: opacity 0.3s ease-in-out;
-        \transition: opacity 0.3s ease-in-out;
+        // -webkit-transition: opacity 0.3s ease-in-out,
+        // -moz-transition: opacity 0.3s ease-in-out,
+        // -o-transition: opacity 0.3s ease-in-out,
+        // \transition: opacity 0.3s ease-in-out,
      
-        background: url(../images/overlay-bg.png) repeat;
+        // background: url(../images/overlay-bg.png) repeat
     }
   };
 
