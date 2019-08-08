@@ -3,9 +3,9 @@ import React, {Component } from 'react';
 class ProjectOverlay extends Component {
     render(){
         var project = this.props.data.projectItem;
-        return (<div className="portfolio-item-meta" key={index}>
-                <h5 key={index}>{project.title}</h5>
-                <p key={index}>{project.category}</p>
+        return (<div className="portfolio-item-meta">
+                <h5>{project.title}</h5>
+                <p>{project.category}</p>
                 </div>)
     }
 }
