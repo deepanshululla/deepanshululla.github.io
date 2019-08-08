@@ -14,8 +14,7 @@ const customStyles = {
   };
 
 
-
-export class Portfolio extends Component{
+class ProjectOverlay extends Component {
     constructor() {
         super();
     
@@ -26,6 +25,7 @@ export class Portfolio extends Component{
         this.openModal = this.openModal.bind(this);
         this.afterOpenModal = this.afterOpenModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
+        this.project = this.props.projectItem;
     }
     openModal() {
         this.setState({modalIsOpen: true});
@@ -39,6 +39,30 @@ export class Portfolio extends Component{
     closeModal() {
     this.setState({modalIsOpen: false});
     }
+
+    render(){
+        return (
+            <div>
+                <Modal
+                    isOpen={this.state.modalIsOpen}
+                    onAfterOpen={this.props.afterOpenModal}
+                    onRequestClose={this.props.closeModal}
+                    >
+                    <div className="overlay">
+                        <div className="portfolio-item-meta">
+                                <h5>{this.project.title}</h5>
+                                <p>{this.project.category}</p>
+                        </div>
+                    </div>
+                </Modal>
+            </div>
+        )
+    }
+
+}
+
+export class Portfolio extends Component{
+    
     
     render() {
         if(this.props.data){
@@ -49,24 +73,8 @@ export class Portfolio extends Component{
                     <div className="item-wrap" key={index}>
                         <a href={"#"+project.modal} title="" key={index} onClick={this.openModal}>
                             <img alt="" src={imageUrl} key={index}/>
-                            <div>
-                                <Modal
-                                    isOpen={this.state.modalIsOpen}
-                                    onAfterOpen={this.props.afterOpenModal}
-                                    onRequestClose={this.props.closeModal}
-                                    style={customStyles}
-                                    >
-                                    <div className="overlay">
-                                        <div className="portfolio-item-meta">
-                                                <h5>{project.title}</h5>
-                                                <p>{project.category}</p>
-                                        </div>
-                                    </div>
-                                </Modal>
-                            </div>
-                            
+                            <ProjectOverlay projectItem={project}/>
                             <div className="link-icon"><i className="icon-plus"></i></div>
-                        
                         </a>
                     </div>
                     
