@@ -2,7 +2,7 @@ import React, {Component } from 'react';
 
 class ProjectOverlay extends Component {
     render(){
-        var project = this.props.data.projectItem;
+        var project = this.props.projectItem;
         console.log(this.props);
         return (<div className="portfolio-item-meta">
                 <h5>{project.title}</h5>
