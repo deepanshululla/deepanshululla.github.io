@@ -49,6 +49,7 @@ export class Portfolio extends Component{
                     <div className="item-wrap" key={index}>
                         <a href={"#"+project.modal} title="" key={index} onClick={this.openModal}>
                             <img alt="" src={imageUrl} key={index}/>
+                            <div>
                                 <Modal
                                     isOpen={this.state.modalIsOpen}
                                     onAfterOpen={this.props.afterOpenModal}
@@ -62,7 +63,10 @@ export class Portfolio extends Component{
                                         </div>
                                     </div>
                                 </Modal>
+                            </div>
+                            
                             <div className="link-icon"><i className="icon-plus"></i></div>
+                        
                         </a>
                     </div>
                     
