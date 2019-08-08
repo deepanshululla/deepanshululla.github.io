@@ -13,24 +13,6 @@ const customStyles = {
     }
   };
 
-// class ProjectOverlay extends Component {
-//     render(){
-//         var project = this.props.projectItem;
-//         return (
-//             <Modal
-//             isOpen={this.props.modalIsOpen}
-//             onAfterOpen={this.props.afterOpenModal}
-//             onRequestClose={this.props.closeModal}
-//             style={customStyles}
-//             >
-//             <div>
-//                     <h5>{project.title}</h5>
-//                     <p>{project.category}</p>
-//             </div>
-//             </Modal>
-//            )
-//     }
-// }
 
 
 export class Portfolio extends Component{
