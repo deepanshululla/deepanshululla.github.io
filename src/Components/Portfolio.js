@@ -44,6 +44,7 @@ class ProjectOverlay extends Component {
         this.project = this.props.projectItem;
         return (
             <div>
+                <p>This is awesome</p>
                 <Modal
                     isOpen={this.state.modalIsOpen}
                     onAfterOpen={this.props.afterOpenModal}
@@ -79,7 +80,9 @@ export class Portfolio extends Component{
                     <div className="item-wrap" key={index}>
                         <a href={"#"+project.modal} title="" key={index} onClick={this.openModal}>
                             <img alt="" src={imageUrl} key={index}/>
-                            <ProjectOverlay projectItem={project}/>
+                            <div>
+                                <ProjectOverlay projectItem={project}/>
+                            </div>
                             <div className="link-icon"><i className="icon-plus"></i></div>
                         </a>
                     </div>
