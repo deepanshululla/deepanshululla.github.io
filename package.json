@@ -5,7 +5,7 @@
   "homepage": "https://deepanshululla.github.io/",
   "dependencies": {
     "axios": "0.18.1",
-    "bootstrap": "3.3.7",
+    "bootstrap": "3.4.1",
     "jquery": "1.9.1",
     "prop-types": "15.6.1",
     "react": "16.8.6",
