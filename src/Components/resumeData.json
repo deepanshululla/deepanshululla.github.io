@@ -46,9 +46,15 @@
       ],
       "work": [
         {
+          "company": "Bloomberg LP",
+          "title": "Senior Software Engineer",
+          "years": "Oct 2020 - Present",
+          "description": [] 
+        },
+        {
           "company": "Oracle Corp.",
           "title": "Senior Software Developer",
-          "years": "Dec 2018 - Present",
+          "years": "Dec 2018 - Aug 2020",
           "description": [
             "Tech Stack: Python3, Celery, RabbitMQ, Postgres, Elasticsearch, Kubernetes, Prometheus, Grafana, helm, jenkins.",
             "- Implemented pipeline retry logic to automatically retry hanging or failed jobs hence decreasing downtime by 300%.",
