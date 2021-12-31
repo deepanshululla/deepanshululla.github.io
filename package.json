@@ -2,7 +2,7 @@
   "name": "react-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://deepanshululla.com",
+  "homepage": "deepanshululla.github.io",
   "dependencies": {
     "axios": "^0.21.4",
     "bootstrap": "^3.4.1",
