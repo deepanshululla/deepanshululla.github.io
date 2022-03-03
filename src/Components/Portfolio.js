@@ -70,7 +70,6 @@ class ProjectOverlay extends Component {
 
 export class Portfolio extends Component{
     
-    
     render() {
         if(this.props.data){
             var portfolio = this.props.data.projects.map((project,index)=>{
