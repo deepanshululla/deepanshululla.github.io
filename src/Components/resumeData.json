@@ -50,7 +50,7 @@
           "title": "Senior Software Engineer",
           "years": "Oct 2020 - Present",
           "description": ["Tech Stack: C++,Python, RabbitMQ, Comdb2, Splunk, Kafka, Jenkins, Google tests",
-            "- Led time sensitive critical project with a team of 3 members and multiple stakeholders to deliver projects on time with minimal bug",
+            "- Led time sensitive critical project with a team of 3 members and multiple stakeholders to deliver projects on time and with high quality",
             "- Used test-driven development along with integration and unit testing to build software with no bugs.",
             "- Integrated CI/CD pipeline to automate the end to end testing and deployment of software.",
             "- Created tools using python for faster triaging of customer and alarm tickets like late trades analyzer, fix message parse"
