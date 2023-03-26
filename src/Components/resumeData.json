@@ -46,9 +46,15 @@
       ],
       "work": [
         {
+          "company": "Mailchimp (Intuit)",
+          "title": "Senior Software Engineer/Tech lead",
+          "years": "July 2022 - Present",
+          "description": ["Spearheaded and led the development of a novel product called Custom Reports"] 
+        },
+        {
           "company": "Bloomberg LP",
           "title": "Senior Software Engineer",
-          "years": "Oct 2020 - Present",
+          "years": "Oct 2020 - June 2022",
           "description": ["Tech Stack: C++,Python, RabbitMQ, Comdb2, Splunk, Kafka, Jenkins, Google tests",
             "- Led time sensitive critical project with a team of 3 members and multiple stakeholders to deliver projects on time and with high quality",
             "- Used test-driven development along with integration and unit testing to build software with no bugs.",
@@ -90,44 +96,36 @@
       ],
       "skills": [
         {
-          "name": "Back end development",
+          "name": "Back end development and Distributed systems",
           "level": "70%"
         },
         {
           "name": "Front end development",
-          "level": "50%"
-        },
-        {
-          "name": "Machine learning",
           "level": "30%"
         },
         {
-          "name": "Computer networking and security",
-          "level": "70%"
+          "name": "Machine learning",
+          "level": "50%"
         },
         {
-          "name": "Cloud Services(Amazon Web services)",
+          "name": "Cloud Services(Amazon Web services, GCP)",
           "level": "60%"
         },
         {
-          "name": "Containerization(Docker,Kubernetes)",
+          "name": "Cloud native(Docker,Kubernetes)",
           "level": "60%"
         },
         {
           "name": "Python",
-          "level": "80%"
+          "level": "90%"
         },
         {
-          "name": "Javascript",
-          "level": "60%"
+          "name": "C++",
+          "level": "70%"
         },
         {
-          "name": "React",
-          "level": "60%"
-        },
-        {
-          "name": "Flask",
-          "level": "60%"
+          "name": "PHP",
+          "level": "40%"
         },
         {
           "name": "Linux",
@@ -139,7 +137,7 @@
         },
         {
           "name": "Non Relational Databases(Redis,Mongodb,Cassandra)",
-          "level": "60%"
+          "level": "30%"
         },
         {
           "name": "Java",
@@ -154,8 +152,8 @@
           "level": "50%"
         },
         {
-          "name": "Spring Boot",
-          "level": "40%"
+          "name": "React",
+          "level": "60%"
         }
       ]
     },
