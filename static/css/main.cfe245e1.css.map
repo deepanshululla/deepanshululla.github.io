@@ -1,1 +1,0 @@
-{"version":3,"sources":["stylesheets/app.css"],"names":[],"mappings":"AAAA,uBACI,aAAe,CAGnB,SAEI,aAAe","file":"static/css/main.cfe245e1.css","sourcesContent":["header .banner-text h3 {\n    color: #f1ecd3;\n    \n}\n#about p {\n    \n    color: #cac6c6;\n}\n\n\n// WEBPACK FOOTER //\n// ./src/stylesheets/app.css"],"sourceRoot":""}
