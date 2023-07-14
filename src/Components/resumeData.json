@@ -2,10 +2,10 @@
   "resumeData": {
     "main": {
       "name": "Deepanshu Lulla",
-      "occupation": "Back End Developer",
-      "description": "My interests lie in creating and designing scalable,secure and fault resilient web systems",
+      "occupation": "Back End and Machine Learning Engineer",
+      "description": "My interests lie in creating and designing scalable,secure and fault resilient distributed systems",
       "image": "profilepic.jpg",
-      "bio": "Deepanshu Lulla is a seasoned software engineer with a strong background in distributed systems and machine learning. His extensive experience in these domains has equipped him with the knowledge and skills necessary to tackle complex challenges in developing and maintaining large-scale systems.\n With a deep understanding of distributed systems, Deepanshu has successfully designed and implemented robust architectures that can handle high volumes of data, ensuring efficient processing and seamless scalability. He is well-versed in distributed computing frameworks and technologies, enabling him to optimize performance and achieve fault-tolerant solutions.\nIn addition to his expertise in distributed systems, Deepanshu possesses a keen interest in machine learning. He has a solid foundation in various machine learning algorithms and techniques, allowing him to leverage data-driven insights to enhance system performance and deliver intelligent solutions. His understanding of machine learning principles enables him to apply predictive and analytical models to real-world problems, providing valuable insights for decision-making processes.\nBy combining his proficiency in distributed systems and machine learning, Deepanshu excels in developing highly scalable systems that leverage advanced algorithms and intelligent decision-making capabilities. His dedication to integrating scalability and security from the outset ensures that the systems he develops are not only high-performing but also uphold stringent security standards.",
+      "bio": "Deepanshu Lulla is a highly skilled software engineer with a strong background in distributed systems and machine learning. With expertise in designing and maintaining large-scale systems, he excels in developing robust architectures that seamlessly handle high volumes of data and ensure efficient scalability. Deepanshu's proficiency in machine learning enables him to leverage advanced algorithms and data-driven insights to enhance system performance and deliver intelligent solutions. By integrating scalability and security from the outset, he consistently develops high-performing systems that uphold stringent security standards.",
       "email": "deepanshu.lulla@gmail.com",
       "phone": "857-452-0190",
       "address": {
@@ -116,7 +116,7 @@
         },
         {
           "name": "Front end development",
-          "level": "30%"
+          "level": "20%"
         },
         {
           "name": "Python",
@@ -124,7 +124,7 @@
         },
         {
           "name": "C++",
-          "level": "70%"
+          "level": "60%"
         },
         {
           "name": "PHP",
@@ -132,7 +132,7 @@
         },
         {
           "name": "Go",
-          "level": "50%"
+          "level": "20%"
         },
         {
           "name": "Nodejs",
@@ -140,11 +140,11 @@
         },
         {
           "name": "Java",
-          "level": "30%"
+          "level": "40%"
         },
         {
           "name": "React",
-          "level": "30%"
+          "level": "20%"
         },
         {
           "name": "Linux",
