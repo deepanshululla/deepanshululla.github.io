@@ -104,15 +104,15 @@
         },
         {
           "name": "Machine learning",
-          "level": "50%"
+          "level": "60%"
         },
         {
           "name": "Cloud Services(Amazon Web services, GCP)",
-          "level": "60%"
+          "level": "50%"
         },
         {
           "name": "Cloud native(Docker,Kubernetes)",
-          "level": "60%"
+          "level": "50%"
         },
         {
           "name": "Front end development",
