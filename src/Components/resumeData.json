@@ -49,10 +49,15 @@
           "company": "Mailchimp (Intuit)",
           "title": "Senior Software Engineer/Tech lead",
           "years": "July 2022 - Present",
-          "description": ["Tech Stack: PHP, React, GCP cloud tasks queue, GCP Pubsub",
-            "- Architected and led the development of a novel product called Custom Reports",
-            "- The product was highly appreciated by customers with over 20% engagement rate"
-          ] 
+          "description": ["Tech Stack:Java, Spring Boot, Spring data, Graphql, PHP, Protobuffs, Twirp, MySql, Elasticsearch, GCP, AWS, Anomaly Detection, Peer Benchmark analysis, Best Send Daytime predictions.",
+                "- Architected, Built, and Led a high-performing team of five engineers to deliver external. customer facing complex product called Custom Reports on time, working along with multiple partners and stakeholders, while ensuring a safe and successful release within 4 months. The product generated above 5 million USD in revenue for the organization.",         
+                "- Consolidated data from Different data sources and transformed it into different business metrics while allowing it to be grouped and filtered by different conditions.",
+                "- Collaborated on the development of a Customer Data Platform to help create a single source of customers using change data capture, kafka and debezium.",
+                "- Data Engineered clean and complete collection for email analytics data derived from journeys in marketing campaigns to ensure Change Data capture pipelines downstream work well.",
+                "- Improved the aggregation for clicks and opens a data pipeline that processes 10 billion events and 30 million jobs a day, improving job performance from 600 seconds to 2.4 seconds (99.6% reduction).",
+                "- Drove and led the AI/ML (and Generative AI) efforts across the team by educating different stakeholders about the technology and possibilities of enhancements within our products as well as creating APIs for other engineers to build products upon.",
+                "- Prompt engineered AI solutions for analytics products and A/B tested different prompts to iteratively improve it to make the product better."
+              ] 
         },
         {
           "company": "Bloomberg LP",
