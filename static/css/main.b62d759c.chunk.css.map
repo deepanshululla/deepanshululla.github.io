@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/stylesheets/app.css"],"names":[],"mappings":"AAAA,uBACI,aAEJ,CACA,SAEI,aACJ","file":"main.b62d759c.chunk.css","sourcesContent":["header .banner-text h3 {\n    color: #f9f6f1;\n    \n}\n#about p {\n    \n    color: #cac6c6;\n}"]}
