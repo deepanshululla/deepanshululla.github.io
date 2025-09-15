@@ -46,6 +46,19 @@
       ],
       "work": [
         {
+          "company": "Bill.com",
+          "title": "Staff Software Engineer",
+          "years": "June 2024 - Present",
+          "description": ["Tech Stack:Python, OpenSearch, Kafka, Schema registry, SQS, Postgres, MySQL, Redis, AWS, Terraform, Pytorch, OpenAI, Gemini, Bedrock, Fastapi, SageMaker, Splunk, Datadog, Google Vision OCR, Document AI, Litellm",
+                "- Led the development of LLM gateway as a service (LLM as a service) for the whole organization to accelerate AI adoption.",         
+                "- Led the development of Vector database as a platform service to accelerate use of semantic search and RAG.",
+                "- Deployed with high reliability and observability, sensitive Machine learning models on AWS sagemaker related to document extraction and credit card approvals leveraging tree-based models XGBoost to generative finetuned DistilGPT2 models, generating over 300 Million annually in TPV.",
+                "- Led development and collaborated cross-functionally to unify the ML model deployment across the organization, reducing the model deployment time by over 90%, while generating $ 5.2 M revenue annually for the company and speeding up migration from H20.",
+                "- Worked on the Document Intelligence Pipeline to automatically categorize documents to ensure the correct document processing agents are triggered as well as influencing cross-functional stakeholders to implement feedback loops.",
+                "- Worked on guardrails wth Infosec to ensure safe and compliant AI usage. Worked with architects in defining AI governance across the company."
+              ] 
+        },
+        {
           "company": "Mailchimp (Intuit)",
           "title": "Senior Software Engineer/Tech lead",
           "years": "July 2022 - Present",
