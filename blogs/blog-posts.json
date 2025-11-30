@@ -117,6 +117,181 @@
     "date": "2022-06-24",
     "excerpt": "A personal guide to Emacs (Spacemacs) keybindings, covering various commands and shortcuts for efficient text editing and file management.",
     "filename": "emacs-spacemacs-keybindings.md"
+  },
+  {
+    "id": "llm-zero-shot-conversational-recommenders",
+    "title": "Notes on paper: Large Language Models as Zero-Shot Conversational Recommenders",
+    "date": "2024-07-15",
+    "excerpt": "A summary of research on using large language models as zero-shot conversational recommenders, exploring how LLMs can provide recommendations through natural language conversations without explicit training.",
+    "filename": "llm-zero-shot-conversational-recommenders.md"
+  },
+  {
+    "id": "books-2023",
+    "title": "13 Books I read in 2023",
+    "date": "2024-07-14",
+    "excerpt": "A curated list of 13 books read in 2023, covering topics in technology, software engineering, machine learning, and personal development.",
+    "filename": "books-2023.md"
+  },
+  {
+    "id": "coursera-neural-networks-week1",
+    "title": "Coursera Week 1: Intro to Neural Networks Notes",
+    "date": "2023-10-14",
+    "excerpt": "Notes from the first week of a Coursera course on neural networks, covering the basics of neural network structure, forward propagation, and activation functions.",
+    "filename": "coursera-neural-networks-week1.md"
+  },
+  {
+    "id": "books-2022",
+    "title": "12 Books I read in 2022",
+    "date": "2023-06-18",
+    "excerpt": "A list of 12 books read in 2022, including technical books on software engineering, machine learning, and system design.",
+    "filename": "books-2022.md"
+  },
+  {
+    "id": "toxic-workplace",
+    "title": "Recognizing Toxic workplaces(Opinion)",
+    "date": "2023-06-10",
+    "excerpt": "Personal insights and observations on recognizing toxic work environments, including red flags and strategies for maintaining professional well-being.",
+    "filename": "toxic-workplace.md"
+  },
+  {
+    "id": "books-2021",
+    "title": "13 Books I read in 2021",
+    "date": "2023-04-30",
+    "excerpt": "A collection of 13 books read in 2021, covering software engineering, data science, machine learning, and professional development topics.",
+    "filename": "books-2021.md"
+  },
+  {
+    "id": "adhd-management",
+    "title": "ADHD Management The hard way as a software Engineer",
+    "date": "2022-12-27",
+    "excerpt": "Personal experiences and strategies for managing ADHD as a software engineer, including productivity techniques, focus management, and work organization methods.",
+    "filename": "adhd-management.md"
+  },
+  {
+    "id": "chrome-extensions",
+    "title": "My favorite Chrome browser extensions for productivity",
+    "date": "2022-06-18",
+    "excerpt": "A curated list of Chrome browser extensions that enhance productivity for software engineers and developers, including tools for coding, research, and workflow optimization.",
+    "filename": "chrome-extensions.md"
+  },
+  {
+    "id": "identifying-priorities",
+    "title": "Identifying priorities in software engineering organizations",
+    "date": "2022-04-30",
+    "excerpt": "Strategies and frameworks for identifying and managing priorities in software engineering organizations, including techniques for balancing technical debt, features, and business needs.",
+    "filename": "identifying-priorities.md"
+  },
+  {
+    "id": "2d-arrays-cpp",
+    "title": "Implementing 2d Arrays in CPP",
+    "date": "2021-12-24",
+    "excerpt": "A guide to implementing and working with 2D arrays in C++, covering memory layout, dynamic allocation, and best practices for multi-dimensional arrays.",
+    "filename": "2d-arrays-cpp.md"
+  },
+  {
+    "id": "thread-safe-queue-cpp",
+    "title": "Thread-safe queue implementation in C++",
+    "date": "2021-09-06",
+    "excerpt": "An implementation guide for thread-safe queues in C++, covering synchronization primitives, mutexes, condition variables, and concurrent programming patterns.",
+    "filename": "thread-safe-queue-cpp.md"
+  },
+  {
+    "id": "custom-string-cpp",
+    "title": "Custom String implementation in C++",
+    "date": "2021-08-11",
+    "excerpt": "A custom implementation of a string class in C++, demonstrating memory management, copy semantics, move semantics, and operator overloading.",
+    "filename": "custom-string-cpp.md"
+  },
+  {
+    "id": "array-size-computation-cpp",
+    "title": "Compile-time vs run time size computation for array in C++",
+    "date": "2021-08-08",
+    "excerpt": "An exploration of compile-time versus runtime size computation for arrays in C++, covering template metaprogramming, constexpr, and array size determination techniques.",
+    "filename": "array-size-computation-cpp.md"
+  },
+  {
+    "id": "books-2020",
+    "title": "10 Books I read in 2020",
+    "date": "2023-01-15",
+    "excerpt": "A list of 10 books read in 2020, including technical books on programming, system design, and software engineering practices.",
+    "filename": "books-2020.md"
+  },
+  {
+    "id": "measuring-ml-performance",
+    "title": "Measuring Performance of Machine learning models",
+    "date": "2019-11-24",
+    "excerpt": "A comprehensive guide to measuring and evaluating machine learning model performance, covering various metrics, validation techniques, and best practices.",
+    "filename": "measuring-ml-performance.md"
+  },
+  {
+    "id": "median-absolute-deviation",
+    "title": "Median absolute deviation (MAD) of Errors",
+    "date": "2019-11-10",
+    "excerpt": "An explanation of Median Absolute Deviation (MAD) as a robust measure of error in machine learning models, including its advantages over mean-based metrics.",
+    "filename": "median-absolute-deviation.md"
+  },
+  {
+    "id": "liskov-substitution-principle",
+    "title": "Clean Code Concepts: Be Solid: Liskov Substitution Principle",
+    "date": "2019-10-27",
+    "excerpt": "An exploration of the Liskov Substitution Principle (LSP), one of the SOLID principles, with examples demonstrating how derived classes should be substitutable for their base classes.",
+    "filename": "liskov-substitution-principle.md"
+  },
+  {
+    "id": "r-squared",
+    "title": "R-Squared/Coefficient of determination",
+    "date": "2019-10-20",
+    "excerpt": "An explanation of R-squared (coefficient of determination), a statistical measure used to evaluate the goodness of fit in regression models.",
+    "filename": "r-squared.md"
+  },
+  {
+    "id": "distribution-error-functions",
+    "title": "Distribution of error functions",
+    "date": "2019-09-22",
+    "excerpt": "A discussion of different error functions and their distributions in machine learning, covering when to use each type and their properties.",
+    "filename": "distribution-error-functions.md"
+  },
+  {
+    "id": "logarithmic-loss",
+    "title": "Logarithmic loss (or cross-entropy)",
+    "date": "2019-08-25",
+    "excerpt": "An explanation of logarithmic loss (cross-entropy) as a loss function for classification problems, including its mathematical foundation and use cases.",
+    "filename": "logarithmic-loss.md"
+  },
+  {
+    "id": "roc-curve",
+    "title": "Receiver operating characteristic (ROC ) curve",
+    "date": "2019-08-11",
+    "excerpt": "A guide to understanding ROC curves, including how to interpret them, calculate AUC, and use them for model evaluation in binary classification.",
+    "filename": "roc-curve.md"
+  },
+  {
+    "id": "confusion-matrix",
+    "title": "Confusion Matrix",
+    "date": "2019-07-27",
+    "excerpt": "An explanation of confusion matrices for evaluating classification models, covering true positives, false positives, true negatives, and false negatives.",
+    "filename": "confusion-matrix.md"
+  },
+  {
+    "id": "maths-101-part-8",
+    "title": "Maths 101: Part 8: Hypothesis testing",
+    "date": "2019-06-29",
+    "excerpt": "An introduction to hypothesis testing in statistics, covering null and alternative hypotheses, p-values, significance levels, and statistical inference.",
+    "filename": "maths-101-part-8.md"
+  },
+  {
+    "id": "python-version",
+    "title": "Write python like a pro: Part 1: Know your python version",
+    "date": "2019-06-15",
+    "excerpt": "A guide to understanding Python versions, checking your current version, and writing code that is compatible with different Python versions.",
+    "filename": "python-version.md"
+  },
+  {
+    "id": "java-trivia",
+    "title": "java trivia",
+    "date": "2024-07-13",
+    "excerpt": "Interesting trivia and lesser-known facts about Java programming language, covering language features, history, and quirks.",
+    "filename": "java-trivia.md"
   }
 ]
 

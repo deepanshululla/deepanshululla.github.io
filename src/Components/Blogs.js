@@ -7,9 +7,11 @@ class Blogs extends Component {
         this.state = {
             blogPosts: [],
             currentPage: 1,
-            postsPerPage: 6
+            postsPerPage: 6,
+            selectedCategory: 'All'
         };
         this.handlePageChange = this.handlePageChange.bind(this);
+        this.handleCategoryChange = this.handleCategoryChange.bind(this);
     }
 
     componentDidMount() {
@@ -43,14 +45,46 @@ class Blogs extends Component {
         }
     }
 
+    handleCategoryChange(category) {
+        this.setState({ 
+            selectedCategory: category,
+            currentPage: 1 // Reset to first page when category changes
+        });
+    }
+
+    getAllCategories() {
+        const { blogPosts } = this.state;
+        const categories = new Set();
+        blogPosts.forEach(post => {
+            if (post.categories && Array.isArray(post.categories)) {
+                post.categories.forEach(cat => categories.add(cat));
+            }
+        });
+        return Array.from(categories).sort();
+    }
+
+    getFilteredPosts() {
+        const { blogPosts, selectedCategory } = this.state;
+        if (selectedCategory === 'All') {
+            return blogPosts;
+        }
+        return blogPosts.filter(post => 
+            post.categories && post.categories.includes(selectedCategory)
+        );
+    }
+
     render() {
-        const { blogPosts, currentPage, postsPerPage } = this.state;
+        const { currentPage, postsPerPage, selectedCategory } = this.state;
+        
+        // Get filtered posts
+        const filteredPosts = this.getFilteredPosts();
+        const allCategories = this.getAllCategories();
 
         // Calculate pagination
         const indexOfLastPost = currentPage * postsPerPage;
         const indexOfFirstPost = indexOfLastPost - postsPerPage;
-        const currentPosts = blogPosts.slice(indexOfFirstPost, indexOfLastPost);
-        const totalPages = Math.ceil(blogPosts.length / postsPerPage);
+        const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
+        const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
 
         // Generate page numbers
         const pageNumbers = [];
@@ -62,9 +96,31 @@ class Blogs extends Component {
             <section id="blogs" className="section">
                 <div className="container">
                     <h2 className="section-title"><span>Blog</span></h2>
+                    
+                    {/* Category Filter */}
+                    {allCategories.length > 0 && (
+                        <div className="blog-categories">
+                            <button
+                                className={`category-filter ${selectedCategory === 'All' ? 'active' : ''}`}
+                                onClick={() => this.handleCategoryChange('All')}
+                            >
+                                All
+                            </button>
+                            {allCategories.map(category => (
+                                <button
+                                    key={category}
+                                    className={`category-filter ${selectedCategory === category ? 'active' : ''}`}
+                                    onClick={() => this.handleCategoryChange(category)}
+                                >
+                                    {category}
+                                </button>
+                            ))}
+                        </div>
+                    )}
+                    
                     <div className="blog-list">
-                        {blogPosts.length === 0 ? (
-                            <p>No blog posts yet. Check back soon!</p>
+                        {filteredPosts.length === 0 ? (
+                            <p>No blog posts found in this category. Check back soon!</p>
                         ) : (
                             <>
                                 {currentPosts.map((post) => (
@@ -73,6 +129,15 @@ class Blogs extends Component {
                                             <h3>{post.title}</h3>
                                             <div className="blog-meta">
                                                 <span className="blog-date">{post.date}</span>
+                                                {post.categories && post.categories.length > 0 && (
+                                                    <div className="blog-categories-list">
+                                                        {post.categories.map((category, index) => (
+                                                            <span key={index} className="blog-category-tag">
+                                                                {category}
+                                                            </span>
+                                                        ))}
+                                                    </div>
+                                                )}
                                             </div>
                                             <p className="blog-excerpt">{post.excerpt}</p>
                                             <span className="read-more">Read more →</span>
