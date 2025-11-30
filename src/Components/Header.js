@@ -22,7 +22,7 @@ class Header extends Component {
                         <li><a className="smoothscroll" href="#education">Education</a></li>
                         <li><a className="smoothscroll" href="#work">Work</a></li>
                         <li><a className="smoothscroll" href="#skills">Skills</a></li>
-                        {/* <li><a className="smoothscroll" href="#portfolio">Projects</a></li> */}
+                        <li><a className="smoothscroll" href="#portfolio">Projects</a></li>
                         <li><a className="smoothscroll" href="#testimonials">Testimonials</a></li>
                         <li><a className="smoothscroll" href="#contact">Contact</a></li>
                         <li><a href="https://codingbrewery.com/" target="_blank" rel="noopener noreferrer">Blog</a></li>

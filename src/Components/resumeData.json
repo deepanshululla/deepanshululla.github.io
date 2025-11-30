@@ -120,60 +120,69 @@
       ],
       "skills": [
         {
-          "name": "AI Infrastructure & LLM Platforms",
-          "level": "90%"
+          "group": "AI Infrastructure & LLM Platforms",
+          "subSkills": [
+            {"name": "LLM Gateway Development", "level": "90%"},
+            {"name": "Vector Databases (Pinecone, OpenSearch)", "level": "85%"},
+            {"name": "RAG Systems & Semantic Search", "level": "80%"},
+            {"name": "Prompt Engineering & Optimization", "level": "85%"}
+          ]
         },
         {
-          "name": "Backend & Distributed Systems Architecture",
-          "level": "95%"
+          "group": "Backend & Distributed Systems",
+          "subSkills": [
+            {"name": "Distributed Systems Architecture", "level": "95%"},
+            {"name": "Microservices Design", "level": "90%"},
+            {"name": "System Design & Scalability", "level": "95%"},
+            {"name": "API Design (REST, GraphQL, gRPC)", "level": "90%"}
+          ]
         },
         {
-          "name": "MLOps & Model Deployment",
-          "level": "85%"
+          "group": "MLOps & Model Deployment",
+          "subSkills": [
+            {"name": "AWS SageMaker", "level": "85%"},
+            {"name": "Model Versioning & Registry", "level": "80%"},
+            {"name": "A/B Testing & Canary Deployments", "level": "85%"},
+            {"name": "Model Monitoring & Drift Detection", "level": "85%"}
+          ]
         },
         {
-          "name": "Cloud Infrastructure (AWS, GCP)",
-          "level": "90%"
+          "group": "Cloud Infrastructure",
+          "subSkills": [
+            {"name": "AWS (EC2, S3, Lambda, ECS)", "level": "90%"},
+            {"name": "Google Cloud Platform (GCP)", "level": "85%"},
+            {"name": "Kubernetes & Container Orchestration", "level": "85%"},
+            {"name": "Docker & Containerization", "level": "90%"},
+            {"name": "Terraform & Infrastructure as Code", "level": "80%"}
+          ]
         },
         {
-          "name": "Kubernetes & Container Orchestration",
-          "level": "85%"
+          "group": "Programming Languages",
+          "subSkills": [
+            {"name": "Python", "level": "95%"},
+            {"name": "Java & Spring Boot", "level": "80%"},
+            {"name": "Go", "level": "70%"},
+            {"name": "C++", "level": "60%"}
+          ]
         },
         {
-          "name": "Python",
-          "level": "95%"
+          "group": "Data & Messaging Systems",
+          "subSkills": [
+            {"name": "Kafka", "level": "90%"},
+            {"name": "RabbitMQ & SQS", "level": "85%"},
+            {"name": "PostgreSQL & MySQL", "level": "85%"},
+            {"name": "Redis", "level": "90%"},
+            {"name": "Elasticsearch", "level": "80%"}
+          ]
         },
         {
-          "name": "Java & Spring Boot",
-          "level": "80%"
-        },
-        {
-          "name": "Vector Databases & Semantic Search",
-          "level": "85%"
-        },
-        {
-          "name": "Message Queues (Kafka, RabbitMQ, SQS)",
-          "level": "90%"
-        },
-        {
-          "name": "Databases (Postgres, MySQL, Redis, Elasticsearch)",
-          "level": "85%"
-        },
-        {
-          "name": "Observability (Prometheus, Grafana, Datadog)",
-          "level": "85%"
-        },
-        {
-          "name": "CI/CD & Infrastructure as Code",
-          "level": "80%"
-        },
-        {
-          "name": "API Design (REST, GraphQL, gRPC)",
-          "level": "90%"
-        },
-        {
-          "name": "System Design & Scalability",
-          "level": "95%"
+          "group": "Observability & DevOps",
+          "subSkills": [
+            {"name": "Prometheus & Grafana", "level": "85%"},
+            {"name": "Datadog & Splunk", "level": "85%"},
+            {"name": "CI/CD Pipelines (Jenkins, GitHub Actions)", "level": "80%"},
+            {"name": "Monitoring & Alerting", "level": "85%"}
+          ]
         }
       ]
     },
@@ -181,82 +190,82 @@
       "projects": [
         {
           "id": 1,
-          "title": "Yelp Clone (Large social media application) using nodejs, mongodb,bootstrap",
-          "description": "Created a large restful social media application with user registration,login and logout using passport js where users can have complete CRUD abilities of campgrounds posts and comments created by them.Implemented dynamic pricing for campgrounds and proper authentication and authorization by appropriate middleware. Added functionality to search through campgrounds and for resetting password.Used mongodb for backend database as well as bootstrap for styling. Added support for viewing campgrounds location using google maps.",
-          "category": "Web Development",
-          "tags": "Social media, Web Development, NodeJS, Mongodb",
+          "title": "Enterprise LLM Gateway Platform",
+          "description": "Architected and built a production-grade LLM Gateway as a Platform Service enabling organization-wide AI adoption. Implemented unified API interfaces supporting multiple providers (OpenAI, Anthropic, Google, AWS Bedrock) with intelligent routing, rate limiting, cost tracking, and usage analytics. Built on Python FastAPI with Redis caching, PostgreSQL for metadata storage, and Kubernetes for orchestration. Features include request queuing, automatic failover, token management, and comprehensive observability with Prometheus and Datadog integration.",
+          "category": "AI Infrastructure",
+          "tags": "LLM, AI Platform, Python, FastAPI, Kubernetes, Redis, PostgreSQL, AWS",
           "image": "yelp.png",
-          "url": "https://evening-basin-24316.herokuapp.com",
+          "url": "#",
           "modal": "modal-01"
         },
         {
           "id": 2,
-          "title": "Airline E-Commerce website using Java Spring boot, MYSQL, AngularJS and thymeleaf",
-          "description": "Created a website clone for an Ecommerce airline web application using Spring boot, Spring data JPA(ORM) and MySQL. Added features to search and book flights.Created an REST API to serve an an integration layer for flight checkin microservice. Created the same microservice for passengers to check in.Encoded passwords to prevent them from being stored in plain text and defined roles for different types of users to perform authentication and authrorization.Added logging features and defined custom log rotation policies to log information to an external log file.Used AngularJs for form validations and two way binding",
-          "category": "Web Development",
-          "tags": "Web Development, Java, Spring-boot, Mysql, AngularJs",
+          "title": "Vector Database Platform Service",
+          "description": "Designed and implemented a scalable Vector Database Platform Service for semantic search and RAG applications. Built distributed embedding storage supporting millions of vectors with sub-millisecond query latency. Implemented horizontal scaling with sharding, replication, and load balancing. Features include similarity search, hybrid search (vector + keyword), automatic indexing, and multi-tenant isolation. Deployed on Kubernetes with OpenSearch/Pinecone integration, supporting real-time updates and batch ingestion pipelines.",
+          "category": "AI Infrastructure",
+          "tags": "Vector Database, Semantic Search, RAG, OpenSearch, Kubernetes, Distributed Systems",
           "image": "flight.jpg",
-          "url": "https://github.com/deepanshululla/flight-reservation",
+          "url": "#",
           "modal": "modal-02"
         },
         {
           "id": 3,
-          "title": "Implementing Secure File Transfer Protocols in C with OPENSSL",
-          "description": "Created self-signed RSA public/private keypair and used them to perform authenticated key agreement using Diffie-Hellman.Computed keys for HMAC(with SHA1 hash) and a shared secret key and IV for AES 256 bit CBC encryption using the exchanged secret.Performed file transfer over TCP sockets by three methods Encrypt and MAC (SSH style), Encrypt then MAC(IPSec-style) and MAC then Encrypt(TLS style).",
-          "category": "Network Security",
-          "tags": "Network programming, Security",
+          "title": "ML Model Deployment Infrastructure on AWS SageMaker",
+          "description": "Built production ML model deployment infrastructure on AWS SageMaker with 99.9% uptime SLA. Deployed sensitive models for document extraction and credit card approvals, processing $300M+ annually in transaction volume. Implemented automated model versioning, A/B testing framework, canary deployments, and automatic rollback mechanisms. Features include real-time and batch inference endpoints, model monitoring with drift detection, cost optimization through spot instances, and comprehensive logging/alerting.",
+          "category": "MLOps",
+          "tags": "MLOps, AWS SageMaker, Model Deployment, Python, PyTorch, XGBoost, Monitoring",
           "image": "openssl.jpg",
-          "url": "https://github.com/deepanshululla/Network-security/tree/master/Secure%20File%20Transfer%20protocol%20in%20C",
+          "url": "#",
           "modal": "modal-03"
         },
         {
           "id": 4,
-          "title": "REST API for E-Commerce Store on Docker containers",
-          "description": "Created a REST API with python flask and SQLALCHEMY as ORM using MySQL as the backend.Used docker compose for orchestrating python and MariaDB containers.Increased security by using JWT tokens for user authentication and authorization for specific requests.Used Postman for system testing and documenting the functionality of the REST API.Created unit,integration and system tests as well as makefile for test automation",
-          "category": "Web Development",
-          "tags": "REST API, Web Development, Backend Programming, Python, Flask, Mysql",
+          "title": "Unified ML Model Deployment Pipeline",
+          "description": "Led cross-functional initiative to unify ML model deployment infrastructure across organization, reducing deployment time by 90% and generating $5.2M annual revenue. Built CI/CD pipeline for ML models with automated testing, validation, and deployment. Migrated from legacy H2O platform to modern containerized deployment. Implemented model registry, feature store integration, and automated retraining pipelines. Technologies include Kubernetes, Docker, Terraform, Python, and various ML frameworks.",
+          "category": "MLOps",
+          "tags": "MLOps, CI/CD, Kubernetes, Docker, Terraform, Python, Model Registry",
           "image": "restapi.jpg",
-          "url": "https://github.com/deepanshululla/stores_rest_api_flask",
+          "url": "#",
           "modal": "modal-04"
         },
         {
           "id": 5,
-          "title": "Network Programability as a Cloud Service(Research project)",
-          "description": "End Result: Successful Open Source Implementation of HAAS based scenario using Network Virtualisation and Software Defined Networking with multi tenant multi hardware provider scenario in collaboration with Cisco and Massachusetts Open Cloud (MOC) (Agile SDLC)Created Network Topologies and spawn instances in OpenStack to simulate the network environment.Improved the existing HaaS scenario by using a network virtualization layer (OpenVirtex) between controllers and OpenVSwitches to provide scale up and down across multiple hardware domains to tenants (IaaS providers).Created a mechanism based on Client-Server Model to synchronize NOSQL(Mongodb) database of different Hardware Domains.",
-          "category": "Network Programming",
-          "tags": "Opensource,Openvirtex,Software Defined Networks, Network virtualization",
+          "title": "Document Intelligence Pipeline with AI",
+          "description": "Architected Document Intelligence Pipeline with automated categorization, routing, and processing agents. Implemented multi-stage pipeline using Google Vision OCR, Document AI, and custom ML models for document classification and extraction. Built feedback loops for continuous model improvement with human-in-the-loop validation. Features include document queue management with Kafka, parallel processing, retry mechanisms, and comprehensive observability. Processes millions of documents monthly with high accuracy.",
+          "category": "AI Infrastructure",
+          "tags": "Document AI, OCR, ML Pipeline, Kafka, Python, Google Vision, Distributed Processing",
           "image": "ovx.png",
-          "url": "https://github.com/BU-NU-CLOUD-SP16/Network-Programmability-as-a-Service",
+          "url": "#",
           "modal": "modal-05"
         },
         {
           "id": 6,
-          "title": "Jenkins CI/CD Automation with Docker on AWS",
-          "description": "Deployed Jenkins cluster installation on Docker containers with Docker running inside containers on AWS and created Job-DSLs for creating freestyle projects for testing Nodejs. Java Spring & Scala applications.Developed Jenkins scripted pipelines using Groovy to create an automated CI/CD pipeline by integrating plugins such as Github, Gradle, npm, Email integrations, Slack, Bitbucket, Jfrog artifactory, Blue ocean, Docker hub, Sonarcube etc.",
-          "category": "CI/CD",
-          "tags": "Jenkins, CI/CD, Docker",
+          "title": "High-Throughput Data Pipeline Optimization",
+          "description": "Optimized data aggregation pipeline processing 10B+ events and 30M+ jobs daily, reducing job latency from 600s to 2.4s (99.6% improvement). Implemented distributed processing with Apache Spark, intelligent caching strategies with Redis, and optimized database queries. Built real-time streaming pipeline with Kafka and Flink for click/open analytics. Features include automatic scaling, fault tolerance, and comprehensive monitoring with Grafana dashboards.",
+          "category": "Backend Infrastructure",
+          "tags": "Data Pipeline, Apache Spark, Kafka, Redis, Performance Optimization, Distributed Systems",
           "image": "jenkins.png",
-          "url": "https://github.com/deepanshululla/jenkinsAutomation",
+          "url": "#",
           "modal": "modal-06"
         },
         {
           "id": 7,
-          "title": "Blog Application using Python Flask, Docker-Compose,AWS, HTML,CSS, Javascript. (web development)",
-          "description": "Created Blog Application using Python with authentication & authorization (Author login/logout) functionality as well as different page views for authors and readers using MYSQL as the database and Flask SQL Alchemy as ORM tool.\n Used docker for creating MySQL and application backend containers and docker-compose for orchestration.\n Created an isolated network for the Docker containers. The app was tested and deployed on AWS. Used NGINX for configuring HTTPS(SSL).Applied Jinja2 templating to support interaction between front and back end and to make front end more modular.Implemented front end using HTML, CSS, Bootstrap, Javascript.",
-          "category": "Web Development",
-          "tags": "Web Development, Python, Flask, MYSql",
+          "title": "Customer Data Platform with Change Data Capture",
+          "description": "Architected Customer Data Platform backend infrastructure using Change Data Capture (CDC) with Kafka and Debezium. Created unified customer identity resolution system handling millions of records with real-time synchronization across multiple data sources. Implemented event-driven architecture with schema registry, data validation, and conflict resolution. Features include customer profile merging, deduplication, and real-time updates with sub-second latency.",
+          "category": "Backend Infrastructure",
+          "tags": "CDC, Kafka, Debezium, Data Engineering, Event-Driven Architecture, PostgreSQL",
           "image": "blog.jpg",
-          "url": "https://github.com/deepanshululla/flask_blog_mysql",
+          "url": "#",
           "modal": "modal-07"
         },
         {
           "id": 8,
-          "title": "IMDB Clone Application using Nodejs, Express",
-          "description": "Created a Movie search Application backend using Nodejs and express that searches for movies using OMDB REST API and displays them on a page.Constructed a front end using HTML, CSS, Bootstrap.Added movie page to see the information about each movie such as cast, IMDB rating etc.",
-          "category": "Web Development",
-          "tags": "Web Development, Javascript",
+          "title": "Distributed ETL Pipeline with Auto-Healing",
+          "description": "Built resilient distributed ETL pipeline infrastructure with automatic retry mechanisms, circuit breakers, and auto-healing capabilities. Implemented monitoring and alerting using Prometheus, Elasticsearch, and Grafana. Created custom Prometheus exporters for application metrics. Features include automatic failure recovery, pipeline health checks, and proactive alerting with PagerDuty integration. Reduced manual intervention by 80% and system downtime by 75%.",
+          "category": "Backend Infrastructure",
+          "tags": "ETL, Distributed Systems, Kubernetes, Prometheus, Observability, Python, Celery",
           "image": "imdb.jpg",
-          "url": "https://imdb-clone-nodejs.herokuapp.com",
+          "url": "#",
           "modal": "modal-08"
         }
       ]
