@@ -1,0 +1,339 @@
+/* 
+ * Modern Dark Tech Theme - Completely Independent CSS
+ * 
+ * This theme is fully self-contained and scoped to body.dark-tech-theme
+ * All CSS variables and styles are scoped to prevent conflicts with other themes
+ * When switching themes, this theme's styles will not affect other themes
+ */
+
+/* Scoped CSS variables for dark-tech-theme only */
+body.dark-tech-theme {
+    /* Dark Tech Colors */
+    --bg-primary: #0a0e27;
+    --bg-secondary: #1a1f3a;
+    --bg-tertiary: #252b45;
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --accent-primary: #00d9ff;
+    --accent-secondary: #7c3aed;
+    --accent-tertiary: #06b6d4;
+    --accent-glow: rgba(0, 217, 255, 0.3);
+    --border-color: rgba(0, 217, 255, 0.2);
+
+    /* Typography */
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 8rem;
+
+    /* Layout */
+    --container-width: 1200px;
+    --header-height: 80px;
+    
+    /* Dark Tech Design Tokens */
+    --border-radius: 12px;
+    --border-radius-sm: 8px;
+    --border-radius-lg: 16px;
+    --shadow-sm: 0 2px 8px rgba(0, 217, 255, 0.1);
+    --shadow-md: 0 4px 16px rgba(0, 217, 255, 0.2);
+    --shadow-lg: 0 8px 32px rgba(0, 217, 255, 0.3);
+
+    /* Body styles */
+    background: linear-gradient(180deg, #0a0e27 0%, #1a1f3a 100%) !important;
+    background-attachment: fixed !important;
+    color: var(--text-primary) !important;
+    font-family: var(--font-body) !important;
+}
+
+/* Header & Navigation - Dark Tech */
+body.dark-tech-theme .header {
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #252b45 100%);
+}
+
+body.dark-tech-theme .nav-container {
+    background: rgba(10, 14, 39, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+body.dark-tech-theme .nav-list li a {
+    color: #cbd5e1 !important;
+}
+
+body.dark-tech-theme .nav-list li a:hover,
+body.dark-tech-theme .nav-list li.current a {
+    background: linear-gradient(135deg, #00d9ff 0%, #7c3aed 100%) !important;
+    color: #0a0e27 !important;
+    box-shadow: 0 0 20px var(--accent-glow) !important;
+}
+
+/* Hero Section - Dark Tech */
+body.dark-tech-theme .responsive-headline {
+    background: linear-gradient(135deg, #00d9ff 0%, #7c3aed 50%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(0, 217, 255, 0.5);
+}
+
+body.dark-tech-theme .hero-subtitle {
+    color: var(--text-secondary);
+}
+
+body.dark-tech-theme .hero-subtitle span {
+    color: var(--accent-primary);
+}
+
+body.dark-tech-theme .hero-divider {
+    background: linear-gradient(90deg, transparent, #00d9ff, #7c3aed, transparent);
+}
+
+body.dark-tech-theme .social-links li a {
+    background: rgba(0, 217, 255, 0.1);
+    border: 2px solid var(--border-color);
+    color: var(--accent-primary);
+}
+
+body.dark-tech-theme .social-links li a:hover {
+    background: linear-gradient(135deg, #00d9ff, #7c3aed);
+    color: #0a0e27;
+    box-shadow: 0 0 20px var(--accent-glow);
+    border-color: transparent;
+}
+
+/* Sections - Dark Tech */
+body.dark-tech-theme .section {
+    background: var(--bg-primary);
+}
+
+body.dark-tech-theme .resume-section {
+    background: var(--bg-primary);
+}
+
+body.dark-tech-theme .about-section {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+}
+
+body.dark-tech-theme .resume-item {
+    background: var(--bg-secondary);
+    border-left: 4px solid var(--accent-primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-tech-theme .resume-item:hover {
+    box-shadow: 0 8px 24px rgba(0, 217, 255, 0.2);
+    border-left-color: var(--accent-secondary);
+}
+
+body.dark-tech-theme .resume-header h3 {
+    color: var(--accent-primary);
+}
+
+body.dark-tech-theme .resume-header .date {
+    background: rgba(0, 217, 255, 0.15);
+    color: var(--text-secondary);
+}
+
+body.dark-tech-theme .resume-item .info {
+    color: var(--accent-secondary);
+}
+
+body.dark-tech-theme .resume-item .description {
+    color: var(--text-secondary);
+}
+
+/* Skills - Dark Tech */
+body.dark-tech-theme .skill-group {
+    background: var(--bg-secondary);
+    border-left: 4px solid var(--accent-primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-tech-theme .skill-group-name {
+    color: var(--accent-primary);
+}
+
+body.dark-tech-theme .skill-group-bar-wrapper {
+    background: rgba(0, 217, 255, 0.15);
+}
+
+body.dark-tech-theme .skill-group-bar {
+    background: linear-gradient(90deg, #00d9ff 0%, #7c3aed 100%);
+    box-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+}
+
+body.dark-tech-theme .skill-name {
+    color: var(--text-primary);
+}
+
+body.dark-tech-theme .skill-bar-wrapper {
+    background: rgba(0, 217, 255, 0.15);
+}
+
+body.dark-tech-theme .skill-bar {
+    background: linear-gradient(90deg, #00d9ff 0%, #7c3aed 100%);
+    box-shadow: 0 0 8px rgba(0, 217, 255, 0.4);
+}
+
+body.dark-tech-theme .sub-skill-name {
+    color: var(--text-secondary);
+}
+
+body.dark-tech-theme .skills-intro {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+/* Section Titles - Dark Tech */
+body.dark-tech-theme .section-title {
+    color: var(--text-primary);
+}
+
+body.dark-tech-theme .section-title::after {
+    background: linear-gradient(90deg, #00d9ff, #7c3aed);
+}
+
+/* Buttons - Dark Tech */
+body.dark-tech-theme .btn {
+    background: linear-gradient(135deg, #00d9ff 0%, #7c3aed 100%);
+    color: #0a0e27;
+    box-shadow: 0 4px 15px rgba(0, 217, 255, 0.3);
+}
+
+body.dark-tech-theme .btn:hover {
+    background: linear-gradient(135deg, #06b6d4, #8b5cf6);
+    box-shadow: 0 6px 20px rgba(0, 217, 255, 0.5);
+    color: #0a0e27;
+}
+
+/* Testimonials - Dark Tech */
+body.dark-tech-theme .testimonials-section {
+    background: var(--bg-primary);
+}
+
+body.dark-tech-theme .testimonial-item {
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-tech-theme .testimonial-item:hover {
+    box-shadow: 0 8px 30px rgba(0, 217, 255, 0.2);
+    border-color: var(--accent-primary);
+}
+
+body.dark-tech-theme .testimonial-quote p {
+    color: var(--text-primary);
+}
+
+body.dark-tech-theme .testimonial-quote cite {
+    color: var(--accent-primary);
+}
+
+/* Contact - Dark Tech */
+body.dark-tech-theme .contact-section {
+    background: var(--bg-primary);
+}
+
+body.dark-tech-theme .contact-wrapper {
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-tech-theme .contact-icon {
+    background: linear-gradient(135deg, #00d9ff 0%, #7c3aed 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.dark-tech-theme .contact-title {
+    color: var(--text-secondary);
+}
+
+body.dark-tech-theme .contact-title::after {
+    background: linear-gradient(90deg, #00d9ff, #7c3aed);
+}
+
+body.dark-tech-theme .contact-lead {
+    color: var(--text-secondary);
+}
+
+body.dark-tech-theme .contact-email-text {
+    color: var(--text-secondary);
+}
+
+body.dark-tech-theme .contact-email-text a {
+    color: var(--accent-primary);
+}
+
+/* Footer - Dark Tech */
+body.dark-tech-theme .footer {
+    background: var(--bg-primary);
+    border-top: 2px solid var(--border-color);
+}
+
+body.dark-tech-theme .copyright {
+    color: var(--text-secondary);
+}
+
+/* Profile Pic - Dark Tech */
+body.dark-tech-theme .profile-pic {
+    border: 4px solid var(--accent-primary);
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+}
+
+/* Portfolio/Projects - Dark Tech */
+body.dark-tech-theme #portfolio {
+    background: var(--bg-secondary);
+}
+
+body.dark-tech-theme .portfolio-item {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-tech-theme .portfolio-item:hover {
+    box-shadow: 0 8px 24px rgba(0, 217, 255, 0.3);
+    border-color: var(--accent-primary);
+}
+
+body.dark-tech-theme .overlay {
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.9), rgba(124, 58, 237, 0.9));
+}
+
+body.dark-tech-theme .link-icon {
+    background: linear-gradient(135deg, #00d9ff, #7c3aed);
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+}
+
+/* Scroll Down - Dark Tech */
+body.dark-tech-theme .scrolldown a {
+    color: var(--accent-primary);
+}
+
+body.dark-tech-theme .scrolldown a:hover {
+    color: var(--accent-secondary);
+}
+
+/* Responsive adjustments for dark theme */
+@media (max-width: 768px) {
+    body.dark-tech-theme .skill-group-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    body.dark-tech-theme .skill-group-bar-wrapper {
+        width: 100%;
+    }
+}
+

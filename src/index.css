@@ -674,6 +674,16 @@ ul#nav li a:hover,
   border-bottom: 2px solid rgba(255, 155, 181, 0.2);
 }
 
+.skill-group-header.clickable {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 4px 0;
+}
+
+.skill-group-header.clickable:hover {
+  opacity: 0.8;
+}
+
 .skill-group-name {
   font-size: 1.3rem;
   font-weight: 700;
@@ -709,6 +719,24 @@ ul#nav li a:hover,
   display: flex;
   flex-direction: column;
   gap: var(--spacing-sm);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.sub-skills-list.collapsed {
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.sub-skills-list.expanded {
+  max-height: 2000px;
+  opacity: 1;
+  margin-top: var(--spacing-sm);
+  padding-top: var(--spacing-sm);
+  padding-bottom: var(--spacing-xs);
 }
 
 .sub-skill-item {

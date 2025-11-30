@@ -23,14 +23,41 @@ export class App extends Component {
     }
 
     getResumeData(){
+       this.setState({resumeData: resumeData}, () => {
+           // Apply theme after state is set
+           this.applyTheme();
+       });
+    }
 
-       this.setState({resumeData: resumeData});
-
-
+    applyTheme() {
+        if (this.state.resumeData && this.state.resumeData.theme) {
+            const theme = this.state.resumeData.theme;
+            
+            // List of all available theme class names (matching CSS file names without .css)
+            const allThemes = ['dark-tech-theme', 'minimalist-professional', 'neubrutalism'];
+            
+            // Remove all theme classes
+            allThemes.forEach(themeClass => {
+                document.body.classList.remove(themeClass);
+            });
+            
+            // Apply the selected theme (theme name should match CSS file name without .css)
+            // neopolitan is the default/base theme, so no class needed
+            if (theme !== 'neopolitan' && allThemes.includes(theme)) {
+                document.body.classList.add(theme);
+            }
+        }
     }
 
     componentDidMount() {
         this.getResumeData();
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        // Apply theme when resumeData changes
+        if (prevState.resumeData?.theme !== this.state.resumeData?.theme) {
+            this.applyTheme();
+        }
     }
 
     render() {

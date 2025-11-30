@@ -1,0 +1,795 @@
+/* 
+ * Neubrutalism Theme - Bold, Raw, High-Contrast Design
+ * 
+ * This theme is fully self-contained and scoped to body.neubrutalism
+ * All CSS variables and styles are scoped to prevent conflicts with other themes
+ * When switching themes, this theme's styles will not affect other themes
+ */
+
+/* Scoped CSS variables for neubrutalism only */
+body.neubrutalism {
+    /* Neubrutalism Colors - Toned Down */
+    --bg-primary: #fff9e6;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #f8f8f8;
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --accent-primary: #e63946;
+    --accent-secondary: #2a2a2a;
+    --accent-tertiary: #06a77d;
+    --border-color: #2a2a2a;
+    --border-width: 2px;
+    --shadow-color: rgba(42, 42, 42, 0.3);
+
+    /* Typography */
+    --font-heading: 'Arial Black', 'Arial Bold', sans-serif;
+    --font-body: 'Arial', sans-serif;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 8rem;
+
+    /* Layout */
+    --container-width: 1200px;
+    --header-height: 80px;
+    
+    /* Neubrutalism Design Tokens */
+    --border-radius: 4px;
+    --border-radius-sm: 2px;
+    --border-radius-lg: 6px;
+    --shadow-sm: 4px 4px 0px var(--shadow-color);
+    --shadow-md: 6px 6px 0px var(--shadow-color);
+    --shadow-lg: 8px 8px 0px var(--shadow-color);
+
+    /* Body styles */
+    background: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+    font-family: var(--font-body) !important;
+    font-size: 18px !important;
+    line-height: 1.6 !important;
+    font-weight: 500 !important;
+}
+
+/* Header & Navigation - Neubrutalism */
+body.neubrutalism .header {
+    background: var(--bg-primary);
+    border-bottom: var(--border-width) solid var(--border-color);
+}
+
+body.neubrutalism .nav-container {
+    background: var(--bg-primary);
+    border-bottom: var(--border-width) solid var(--border-color);
+    box-shadow: 0 4px 0px var(--shadow-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.75rem 0;
+}
+
+body.neubrutalism .nav-list,
+body.neubrutalism #nav-wrap ul#nav,
+body.neubrutalism ul#nav {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body.neubrutalism .nav-list li,
+body.neubrutalism #nav-wrap ul#nav li,
+body.neubrutalism ul#nav li {
+    display: flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body.neubrutalism .nav-list li a,
+body.neubrutalism #nav-wrap ul#nav li a,
+body.neubrutalism ul#nav li a,
+body.neubrutalism .nav-container a {
+    color: var(--text-primary) !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    letter-spacing: 0.02em;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.2s ease;
+    text-transform: uppercase !important;
+    border: var(--border-width) solid var(--border-color) !important;
+    background: var(--bg-secondary) !important;
+    margin: 0 !important;
+    box-shadow: 2px 2px 0px var(--shadow-color) !important;
+    border-radius: var(--border-radius-sm);
+    display: inline-block !important;
+    text-align: center !important;
+    line-height: 1.4 !important;
+}
+
+body.neubrutalism .nav-list li a:hover,
+body.neubrutalism #nav-wrap ul#nav li a:hover,
+body.neubrutalism ul#nav li a:hover,
+body.neubrutalism .nav-container a:hover {
+    color: var(--accent-primary) !important;
+    background: var(--bg-primary) !important;
+    transform: translate(1px, 1px) !important;
+    box-shadow: 1px 1px 0px var(--shadow-color) !important;
+}
+
+body.neubrutalism .nav-list li.current a,
+body.neubrutalism #nav-wrap ul#nav li.current a,
+body.neubrutalism ul#nav li.current a,
+body.neubrutalism .nav-container .nav-list li.current a,
+body.neubrutalism .nav-container ul#nav li.current a {
+    color: var(--accent-primary) !important;
+    background: var(--bg-primary) !important;
+    box-shadow: 2px 2px 0px var(--shadow-color) !important;
+    border: var(--border-width) solid var(--border-color) !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+}
+
+/* Hero Section - Neubrutalism */
+body.neubrutalism .responsive-headline {
+    color: var(--text-primary);
+    font-weight: 800;
+    font-size: 4rem;
+    letter-spacing: -0.02em;
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    background-clip: unset;
+    text-shadow: none;
+    line-height: 1.2;
+}
+
+body.neubrutalism .hero-subtitle {
+    color: var(--text-primary);
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+body.neubrutalism .hero-subtitle span {
+    color: var(--accent-primary);
+    font-weight: 700;
+    background: var(--bg-secondary);
+    padding: 0.2rem 0.4rem;
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: 2px 2px 0px var(--shadow-color);
+    border-radius: var(--border-radius-sm);
+}
+
+body.neubrutalism .hero-divider {
+    background: var(--border-color);
+    height: var(--border-width);
+    width: 80px;
+    margin: 2rem auto;
+    box-shadow: 2px 2px 0px rgba(230, 57, 70, 0.3);
+}
+
+body.neubrutalism .social-links li a {
+    background: var(--bg-secondary);
+    border: var(--border-width) solid var(--border-color);
+    color: var(--text-primary);
+    box-shadow: 2px 2px 0px var(--shadow-color);
+    transition: all 0.2s ease;
+    border-radius: var(--border-radius-sm);
+}
+
+body.neubrutalism .social-links li a:hover {
+    background: var(--accent-primary);
+    color: var(--bg-secondary);
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0px var(--shadow-color);
+}
+
+/* Sections - Neubrutalism */
+body.neubrutalism .section {
+    background: var(--bg-primary);
+    padding: 5rem 0;
+    border-top: 1px solid rgba(42, 42, 42, 0.2);
+}
+
+body.neubrutalism .container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    box-sizing: border-box;
+    width: 100%;
+}
+
+body.neubrutalism .resume-content,
+body.neubrutalism .skills-group-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+body.neubrutalism .resume-section {
+    background: var(--bg-primary);
+}
+
+body.neubrutalism .about-section {
+    background: var(--bg-secondary);
+    border: var(--border-width) solid var(--border-color);
+    padding: 4rem 2rem;
+    box-shadow: var(--shadow-sm);
+    margin: 2rem;
+    border-radius: var(--border-radius);
+}
+
+body.neubrutalism .resume-item {
+    background: var(--bg-secondary);
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: all 0.2s ease;
+    border-radius: var(--border-radius);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+body.neubrutalism .resume-item:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px var(--shadow-color);
+}
+
+body.neubrutalism .resume-header {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+body.neubrutalism .resume-header h3 {
+    color: var(--text-primary);
+    font-weight: 700;
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+body.neubrutalism .resume-header .date {
+    background: var(--accent-primary);
+    color: var(--bg-secondary);
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.4rem 0.8rem;
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: 2px 2px 0px var(--shadow-color);
+    display: inline-block;
+    text-transform: uppercase;
+    border-radius: var(--border-radius-sm);
+}
+
+body.neubrutalism .resume-item .info {
+    color: var(--accent-primary);
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+body.neubrutalism .resume-item .description {
+    color: var(--text-primary);
+    line-height: 1.7;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+body.neubrutalism .resume-item .description p {
+    font-size: 1.3rem;
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+}
+
+body.neubrutalism .resume-header.clickable {
+    cursor: pointer;
+}
+
+body.neubrutalism .resume-header.clickable:hover {
+    opacity: 0.9;
+}
+
+/* Skills - Neubrutalism */
+body.neubrutalism .skill-group-item {
+    background: var(--bg-secondary);
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: var(--border-radius);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+body.neubrutalism .skill-group-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+body.neubrutalism .skill-group-header h3 {
+    color: var(--text-primary);
+    font-weight: 700;
+    font-size: 1.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+body.neubrutalism .skill-group-average {
+    color: var(--bg-secondary);
+    background: var(--accent-primary);
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 0.4rem 0.8rem;
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: 2px 2px 0px var(--shadow-color);
+    display: inline-block;
+    border-radius: var(--border-radius-sm);
+}
+
+body.neubrutalism .skill-group-bar-wrapper {
+    background: var(--bg-tertiary);
+    height: 12px;
+    border: var(--border-width) solid var(--border-color);
+    margin-top: 1rem;
+    box-shadow: inset 2px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+body.neubrutalism .skill-group-bar {
+    background: var(--accent-primary);
+    height: 100%;
+    border: none;
+    box-shadow: none;
+}
+
+body.neubrutalism .skill-name {
+    color: var(--text-primary);
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+body.neubrutalism .skill-bar-wrapper {
+    background: var(--bg-tertiary);
+    height: 10px;
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: inset 2px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+body.neubrutalism .skill-bar {
+    background: var(--accent-primary);
+    height: 100%;
+    border: none;
+    box-shadow: none;
+}
+
+body.neubrutalism .sub-skill-name {
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+body.neubrutalism .skills-intro {
+    background: var(--bg-secondary);
+    border: var(--border-width) solid var(--border-color);
+    color: var(--text-primary);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+    font-size: 1.1rem;
+    font-weight: 500;
+    box-shadow: var(--shadow-sm);
+    border-radius: var(--border-radius);
+}
+
+body.neubrutalism .skills-sub-list {
+    margin-top: 1rem;
+}
+
+body.neubrutalism .skill-sub-item {
+    padding: 1rem 0;
+    border-bottom: var(--border-width) solid var(--border-color);
+}
+
+body.neubrutalism .skill-sub-item:last-child {
+    border-bottom: none;
+}
+
+/* Section Titles - Neubrutalism */
+body.neubrutalism .section-title {
+    color: var(--text-primary);
+    font-weight: 800;
+    font-size: 3rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: none;
+    width: 100%;
+    display: block;
+}
+
+body.neubrutalism .section-title::after {
+    background: var(--border-color);
+    height: var(--border-width);
+    width: 150px;
+    margin: 1rem auto 0;
+    display: block;
+    box-shadow: 2px 2px 0px rgba(230, 57, 70, 0.2);
+}
+
+body.neubrutalism .section-title span {
+    position: relative;
+}
+
+/* Buttons - Neubrutalism */
+body.neubrutalism .btn {
+    background: var(--accent-primary);
+    color: var(--bg-secondary);
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    font-weight: 700;
+    padding: 0.875rem 2rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+    border-radius: var(--border-radius);
+}
+
+body.neubrutalism .btn:hover {
+    background: var(--accent-tertiary);
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px var(--shadow-color);
+    color: var(--bg-secondary);
+}
+
+body.neubrutalism .btn-small {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: var(--border-width) solid var(--border-color);
+    padding: 0.625rem 1.25rem;
+    font-size: 1rem;
+    font-weight: 700;
+    box-shadow: 2px 2px 0px var(--shadow-color);
+    text-transform: uppercase;
+    border-radius: var(--border-radius-sm);
+}
+
+body.neubrutalism .btn-small:hover {
+    background: var(--accent-primary);
+    color: var(--bg-secondary);
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0px var(--shadow-color);
+}
+
+body.neubrutalism .project-link {
+    margin-top: 1rem;
+    display: inline-block;
+}
+
+body.neubrutalism .project-tags {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: var(--border-width) solid var(--border-color);
+}
+
+body.neubrutalism .project-tags strong {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+body.neubrutalism .project-tags span {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+/* Testimonials - Neubrutalism */
+body.neubrutalism .testimonials-section {
+    background: var(--bg-secondary);
+    border-top: var(--border-width) solid var(--border-color);
+}
+
+body.neubrutalism .testimonial-item {
+    background: var(--bg-primary);
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    padding: 2rem;
+    transition: all 0.2s ease;
+    border-radius: var(--border-radius);
+}
+
+body.neubrutalism .testimonial-item:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 4px 4px 0px var(--shadow-color);
+}
+
+body.neubrutalism .testimonial-quote p {
+    color: var(--text-primary);
+    font-style: normal;
+    line-height: 1.7;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+body.neubrutalism .testimonial-quote cite {
+    color: var(--accent-primary);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(42, 42, 42, 0.2);
+}
+
+/* Contact - Neubrutalism */
+body.neubrutalism .contact-section {
+    background: var(--bg-primary);
+}
+
+body.neubrutalism .contact-wrapper {
+    background: var(--bg-secondary);
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: var(--shadow-md);
+    padding: 4rem 2rem;
+    border-radius: var(--border-radius);
+}
+
+body.neubrutalism .contact-icon {
+    color: var(--accent-primary);
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    background-clip: unset;
+    font-size: 3rem;
+}
+
+body.neubrutalism .contact-title {
+    color: var(--text-primary);
+    font-weight: 800;
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-shadow: none;
+}
+
+body.neubrutalism .contact-title::after {
+    background: var(--border-color);
+    height: var(--border-width);
+    width: 150px;
+    margin: 1rem 0 0;
+    box-shadow: 2px 2px 0px rgba(230, 57, 70, 0.2);
+}
+
+body.neubrutalism .contact-lead {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    line-height: 1.7;
+    font-weight: 500;
+}
+
+body.neubrutalism .contact-email-text {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+body.neubrutalism .contact-email-text a {
+    color: var(--accent-primary);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent-primary);
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+body.neubrutalism .contact-email-text a:hover {
+    background: var(--accent-primary);
+    color: var(--bg-secondary);
+    padding: 0.2rem 0.4rem;
+    box-shadow: 2px 2px 0px var(--shadow-color);
+    border-radius: var(--border-radius-sm);
+}
+
+/* Footer - Neubrutalism */
+body.neubrutalism .footer {
+    background: var(--bg-secondary);
+    border-top: var(--border-width) solid var(--border-color);
+    padding: 2rem 0;
+    box-shadow: 0 -4px 0px var(--shadow-color);
+}
+
+body.neubrutalism .copyright {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* Profile Pic - Neubrutalism */
+body.neubrutalism .profile-pic {
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: var(--shadow-md);
+}
+
+/* Portfolio/Projects - Neubrutalism */
+body.neubrutalism #portfolio {
+    background: var(--bg-secondary);
+    border-top: var(--border-width) solid var(--border-color);
+}
+
+body.neubrutalism .portfolio-item {
+    background: var(--bg-primary);
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.1s ease;
+}
+
+body.neubrutalism .portfolio-item:hover {
+    transform: translate(4px, 4px);
+    box-shadow: 4px 4px 0px var(--shadow-color);
+}
+
+body.neubrutalism .overlay {
+    background: rgba(255, 23, 68, 0.95);
+    border: var(--border-width) solid var(--border-color);
+}
+
+body.neubrutalism .link-icon {
+    background: var(--bg-secondary);
+    color: var(--accent-primary);
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: 4px 4px 0px var(--shadow-color);
+}
+
+/* Scroll Down - Neubrutalism */
+body.neubrutalism .scrolldown {
+    position: absolute !important;
+    bottom: 30px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: auto !important;
+    margin: 0 !important;
+}
+
+body.neubrutalism .scrolldown a {
+    color: var(--text-primary) !important;
+    border: var(--border-width) solid var(--border-color) !important;
+    background: var(--bg-secondary) !important;
+    box-shadow: 2px 2px 0px var(--shadow-color) !important;
+    padding: 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important;
+    text-align: center !important;
+    line-height: 1 !important;
+    margin: 0 auto !important;
+}
+
+body.neubrutalism .scrolldown a:hover {
+    color: var(--accent-primary) !important;
+    transform: translate(2px, 2px) !important;
+    box-shadow: 1px 1px 0px var(--shadow-color) !important;
+}
+
+/* Collapsible sections - Neubrutalism */
+body.neubrutalism .description.collapsed {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+body.neubrutalism .description.expanded {
+    max-height: 1000px;
+    opacity: 1;
+}
+
+body.neubrutalism .skill-group-content.collapsed {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+body.neubrutalism .skill-group-content.expanded {
+    max-height: 2000px;
+    opacity: 1;
+}
+
+/* About Section - Neubrutalism */
+body.neubrutalism .about-text p {
+    font-size: 1.35rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+body.neubrutalism .about-text h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    text-shadow: none;
+}
+
+body.neubrutalism .contact-details h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+body.neubrutalism .address {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* Responsive adjustments for neubrutalism theme */
+@media (max-width: 768px) {
+    body.neubrutalism {
+        font-size: 16px !important;
+    }
+    
+    body.neubrutalism .section {
+        padding: 3rem 0;
+    }
+    
+    body.neubrutalism .responsive-headline {
+        font-size: 3.5rem;
+    }
+    
+    body.neubrutalism .section-title {
+        font-size: 3rem;
+    }
+    
+    body.neubrutalism .contact-title {
+        font-size: 3rem;
+    }
+    
+    body.neubrutalism .about-text h2 {
+        font-size: 3rem;
+    }
+    
+    body.neubrutalism .skill-group-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    body.neubrutalism .resume-item {
+        padding: 1.5rem;
+    }
+    
+    body.neubrutalism .nav-list li a,
+    body.neubrutalism #nav-wrap ul#nav li a,
+    body.neubrutalism ul#nav li a {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.75rem;
+    }
+}
+
