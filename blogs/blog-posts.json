@@ -45,61 +45,6 @@
     ]
   },
   {
-    "id": "machine-learning-engineering-chapter-1",
-    "title": "Machine Learning Engineering by Andriy Burkov: Chapter 1 Notes",
-    "date": "2024-07-13",
-    "excerpt": "Notes from Chapter 1 of Machine Learning Engineering by Andriy Burkov, discussing the process of solving practical problems using machine learning, including data collection, model training, and different learning paradigms.",
-    "filename": "machine-learning-engineering-chapter-1.md",
-    "categories": [
-      "AI/ML",
-      "Books",
-      "Software Engineering",
-      "Statistics",
-      "Data Science"
-    ]
-  },
-  {
-    "id": "recmind-recommendation-agent",
-    "title": "RecMind: Large Language Model Powered Agent for Recommendation",
-    "date": "2024-07-13",
-    "excerpt": "A summary of the RecMind paper, discussing the use of large language models as agents for recommendation systems, including architecture, advantages, challenges, and implementation patterns.",
-    "filename": "recmind-recommendation-agent.md",
-    "categories": [
-      "AI/ML"
-    ]
-  },
-  {
-    "id": "topological-sort-all-possible-orders",
-    "title": "Topological Sort: All Possible Orders",
-    "date": "2020-06-13",
-    "excerpt": "An explanation of topological sorting, including how to find all possible variations of task ordering given a set of prerequisites, with examples and complexity analysis.",
-    "filename": "topological-sort-all-possible-orders.md",
-    "categories": [
-      "Algorithms"
-    ]
-  },
-  {
-    "id": "open-closed-principle",
-    "title": "Clean Code Concepts: Be SOLID: Open Closed Principle",
-    "date": "2019-05-11",
-    "excerpt": "An exploration of the Open-Closed Principle, emphasizing designing classes that are open to extension but closed for modification, with examples in Java and Python.",
-    "filename": "open-closed-principle.md",
-    "categories": [
-      "Software Engineering"
-    ]
-  },
-  {
-    "id": "single-responsibility-principle",
-    "title": "Clean Code Concepts: Be SOLID: Single Responsibility Principle",
-    "date": "2019-04-06",
-    "excerpt": "An exploration of the Single Responsibility Principle (SRP) in software development, with examples in Java and Python, emphasizing the importance of writing clean and maintainable code.",
-    "filename": "single-responsibility-principle.md",
-    "categories": [
-      "AI/ML",
-      "Software Engineering"
-    ]
-  },
-  {
     "id": "ai-engineering-chapter-1",
     "title": "AI Engineering Book by Chip Huyen: Chapter 1 High level insights",
     "date": "2025-06-22",
@@ -110,82 +55,6 @@
       "Books",
       "Software Engineering",
       "Data Science"
-    ]
-  },
-  {
-    "id": "exploring-vector-databases",
-    "title": "Exploring Vector Databases",
-    "date": "2023-07-11",
-    "excerpt": "An exploration of vector databases, their use cases, and how they enable semantic search and similarity matching for AI applications.",
-    "filename": "exploring-vector-databases.md",
-    "categories": [
-      "AI/ML",
-      "Data Science"
-    ]
-  },
-  {
-    "id": "ml-best-practices",
-    "title": "Best Practices for Building Machine Learning Applications",
-    "date": "2023-04-22",
-    "excerpt": "Practical guidelines and best practices for building production-ready machine learning applications, covering data, model development, deployment, and monitoring.",
-    "filename": "ml-best-practices.md",
-    "categories": [
-      "AI/ML",
-      "Software Engineering",
-      "Data Science"
-    ]
-  },
-  {
-    "id": "better-backend-engineer",
-    "title": "How to be a Better Backend Engineer",
-    "date": "2023-03-31",
-    "excerpt": "Insights and advice on becoming a better backend engineer, covering system design, scalability, performance optimization, and best practices.",
-    "filename": "better-backend-engineer.md",
-    "categories": [
-      "Software Engineering",
-      "Statistics"
-    ]
-  },
-  {
-    "id": "web-server-multiple-connections",
-    "title": "Writing your own Web server that can handle multiple connections",
-    "date": "2023-01-02",
-    "excerpt": "A guide to building a web server from scratch that can handle multiple concurrent connections, covering networking, threading, and async programming concepts.",
-    "filename": "web-server-multiple-connections.md",
-    "categories": [
-      "Software Engineering",
-      "Algorithms"
-    ]
-  },
-  {
-    "id": "large-feature-development",
-    "title": "How to do large feature development?",
-    "date": "2022-12-24",
-    "excerpt": "Strategies and approaches for managing large feature development in software engineering, including planning, breaking down work, and execution.",
-    "filename": "large-feature-development.md",
-    "categories": [
-      "Software Engineering"
-    ]
-  },
-  {
-    "id": "lru-caches-python",
-    "title": "LRU Caches in Python",
-    "date": "2022-12-24",
-    "excerpt": "An explanation of LRU (Least Recently Used) cache implementation in Python, including the functools.lru_cache decorator and custom implementations.",
-    "filename": "lru-caches-python.md",
-    "categories": [
-      "Programming",
-      "Algorithms"
-    ]
-  },
-  {
-    "id": "emacs-spacemacs-keybindings",
-    "title": "Emacs (spacemacs) Keybindings I use",
-    "date": "2022-06-24",
-    "excerpt": "A personal guide to Emacs (Spacemacs) keybindings, covering various commands and shortcuts for efficient text editing and file management.",
-    "filename": "emacs-spacemacs-keybindings.md",
-    "categories": [
-      "Programming"
     ]
   },
   {
@@ -211,6 +80,41 @@
     ]
   },
   {
+    "id": "machine-learning-engineering-chapter-1",
+    "title": "Machine Learning Engineering by Andriy Burkov: Chapter 1 Notes",
+    "date": "2024-07-13",
+    "excerpt": "Notes from Chapter 1 of Machine Learning Engineering by Andriy Burkov, discussing the process of solving practical problems using machine learning, including data collection, model training, and different learning paradigms.",
+    "filename": "machine-learning-engineering-chapter-1.md",
+    "categories": [
+      "AI/ML",
+      "Books",
+      "Software Engineering",
+      "Statistics",
+      "Data Science"
+    ]
+  },
+  {
+    "id": "recmind-recommendation-agent",
+    "title": "RecMind: Large Language Model Powered Agent for Recommendation",
+    "date": "2024-07-13",
+    "excerpt": "A summary of the RecMind paper, discussing the use of large language models as agents for recommendation systems, including architecture, advantages, challenges, and implementation patterns.",
+    "filename": "recmind-recommendation-agent.md",
+    "categories": [
+      "AI/ML"
+    ]
+  },
+  {
+    "id": "java-trivia",
+    "title": "java trivia",
+    "date": "2024-07-13",
+    "excerpt": "Interesting trivia and lesser-known facts about Java programming language, covering language features, history, and quirks.",
+    "filename": "java-trivia.md",
+    "categories": [
+      "Software Engineering",
+      "Programming"
+    ]
+  },
+  {
     "id": "coursera-neural-networks-week1",
     "title": "Coursera Week 1: Intro to Neural Networks Notes",
     "date": "2023-10-14",
@@ -219,6 +123,17 @@
     "categories": [
       "AI/ML",
       "Books"
+    ]
+  },
+  {
+    "id": "exploring-vector-databases",
+    "title": "Exploring Vector Databases",
+    "date": "2023-07-11",
+    "excerpt": "An exploration of vector databases, their use cases, and how they enable semantic search and similarity matching for AI applications.",
+    "filename": "exploring-vector-databases.md",
+    "categories": [
+      "AI/ML",
+      "Data Science"
     ]
   },
   {
@@ -256,6 +171,51 @@
     ]
   },
   {
+    "id": "ml-best-practices",
+    "title": "Best Practices for Building Machine Learning Applications",
+    "date": "2023-04-22",
+    "excerpt": "Practical guidelines and best practices for building production-ready machine learning applications, covering data, model development, deployment, and monitoring.",
+    "filename": "ml-best-practices.md",
+    "categories": [
+      "AI/ML",
+      "Software Engineering",
+      "Data Science"
+    ]
+  },
+  {
+    "id": "better-backend-engineer",
+    "title": "How to be a Better Backend Engineer",
+    "date": "2023-03-31",
+    "excerpt": "Insights and advice on becoming a better backend engineer, covering system design, scalability, performance optimization, and best practices.",
+    "filename": "better-backend-engineer.md",
+    "categories": [
+      "Software Engineering",
+      "Statistics"
+    ]
+  },
+  {
+    "id": "books-2020",
+    "title": "10 Books I read in 2020",
+    "date": "2023-01-15",
+    "excerpt": "A list of 10 books read in 2020, including technical books on programming, system design, and software engineering practices.",
+    "filename": "books-2020.md",
+    "categories": [
+      "Books",
+      "Software Engineering"
+    ]
+  },
+  {
+    "id": "web-server-multiple-connections",
+    "title": "Writing your own Web server that can handle multiple connections",
+    "date": "2023-01-02",
+    "excerpt": "A guide to building a web server from scratch that can handle multiple concurrent connections, covering networking, threading, and async programming concepts.",
+    "filename": "web-server-multiple-connections.md",
+    "categories": [
+      "Software Engineering",
+      "Algorithms"
+    ]
+  },
+  {
     "id": "adhd-management",
     "title": "ADHD Management The hard way as a software Engineer",
     "date": "2022-12-27",
@@ -263,6 +223,37 @@
     "filename": "adhd-management.md",
     "categories": [
       "Software Engineering"
+    ]
+  },
+  {
+    "id": "large-feature-development",
+    "title": "How to do large feature development?",
+    "date": "2022-12-24",
+    "excerpt": "Strategies and approaches for managing large feature development in software engineering, including planning, breaking down work, and execution.",
+    "filename": "large-feature-development.md",
+    "categories": [
+      "Software Engineering"
+    ]
+  },
+  {
+    "id": "lru-caches-python",
+    "title": "LRU Caches in Python",
+    "date": "2022-12-24",
+    "excerpt": "An explanation of LRU (Least Recently Used) cache implementation in Python, including the functools.lru_cache decorator and custom implementations.",
+    "filename": "lru-caches-python.md",
+    "categories": [
+      "Programming",
+      "Algorithms"
+    ]
+  },
+  {
+    "id": "emacs-spacemacs-keybindings",
+    "title": "Emacs (spacemacs) Keybindings I use",
+    "date": "2022-06-24",
+    "excerpt": "A personal guide to Emacs (Spacemacs) keybindings, covering various commands and shortcuts for efficient text editing and file management.",
+    "filename": "emacs-spacemacs-keybindings.md",
+    "categories": [
+      "Programming"
     ]
   },
   {
@@ -332,14 +323,13 @@
     ]
   },
   {
-    "id": "books-2020",
-    "title": "10 Books I read in 2020",
-    "date": "2023-01-15",
-    "excerpt": "A list of 10 books read in 2020, including technical books on programming, system design, and software engineering practices.",
-    "filename": "books-2020.md",
+    "id": "topological-sort-all-possible-orders",
+    "title": "Topological Sort: All Possible Orders",
+    "date": "2020-06-13",
+    "excerpt": "An explanation of topological sorting, including how to find all possible variations of task ordering given a set of prerequisites, with examples and complexity analysis.",
+    "filename": "topological-sort-all-possible-orders.md",
     "categories": [
-      "Books",
-      "Software Engineering"
+      "Algorithms"
     ]
   },
   {
@@ -444,14 +434,113 @@
     ]
   },
   {
-    "id": "java-trivia",
-    "title": "java trivia",
-    "date": "2024-07-13",
-    "excerpt": "Interesting trivia and lesser-known facts about Java programming language, covering language features, history, and quirks.",
-    "filename": "java-trivia.md",
+    "id": "dimensionality-reduction-part-2",
+    "title": "Dimensionality Reduction In Machine Learning: Some mathematical prerequisites: Mean Vector, Covariance Matrix and Column Standardization",
+    "date": "2019-06-01",
+    "excerpt": "This is part 2 of Introduction to Dimensionality Reduction. In this blog post, we would several different mathematical prerequisites that one must know before trying to understand machine learning. Me...",
+    "filename": "dimensionality-reduction-part-2.md",
     "categories": [
-      "Software Engineering",
-      "Programming"
+      "AI/ML",
+      "Statistics",
+      "Data Science"
+    ]
+  },
+  {
+    "id": "open-closed-principle",
+    "title": "Clean Code Concepts: Be SOLID: Open Closed Principle",
+    "date": "2019-05-11",
+    "excerpt": "An exploration of the Open-Closed Principle, emphasizing designing classes that are open to extension but closed for modification, with examples in Java and Python.",
+    "filename": "open-closed-principle.md",
+    "categories": [
+      "Software Engineering"
+    ]
+  },
+  {
+    "id": "dimensionality-reduction-intro",
+    "title": "Dimensionality Reduction: Part 1: Introduction and defining data as data frame",
+    "date": "2019-05-11",
+    "excerpt": "Introduction to Dimensionality Reduction There are several ways we can define Dimensionality Reduction. One way to define it is: Dimensionality Reduction refers to the process of converting a set of d...",
+    "filename": "dimensionality-reduction-intro.md",
+    "categories": [
+      "Statistics",
+      "Data Science"
+    ]
+  },
+  {
+    "id": "column-normalization",
+    "title": "Data Preprocessing and Cleaning: Part 1: Column Normalization",
+    "date": "2019-04-20",
+    "excerpt": "Before applying any dimensionality reduction technique sometimes it is important to preprocess the data. There are several ways which we can use for preprocessing data. In this post, we will explore o...",
+    "filename": "column-normalization.md",
+    "categories": [
+      "Statistics",
+      "Data Science"
+    ]
+  },
+  {
+    "id": "single-responsibility-principle",
+    "title": "Clean Code Concepts: Be SOLID: Single Responsibility Principle",
+    "date": "2019-04-06",
+    "excerpt": "An exploration of the Single Responsibility Principle (SRP) in software development, with examples in Java and Python, emphasizing the importance of writing clean and maintainable code.",
+    "filename": "single-responsibility-principle.md",
+    "categories": [
+      "AI/ML",
+      "Software Engineering"
+    ]
+  },
+  {
+    "id": "maths-101-part-7",
+    "title": "Maths 101 : Part 7: Estimating Confidence Intervals",
+    "date": "2019-03-23",
+    "excerpt": "In statistics, a confidence interval (CI) is a type of interval estimate which we compute using the statistics of the observed data. The interval has an associated confidence level that, loosely speak...",
+    "filename": "maths-101-part-7.md",
+    "categories": [
+      "Statistics",
+      "Data Science"
+    ]
+  },
+  {
+    "id": "maths-101-part-6",
+    "title": "Maths 101 : Part 6: Measuring relationship between two Random Variables",
+    "date": "2019-03-11",
+    "excerpt": "Suppose you have taken the data for heights and weights of students in class and you want to figure out the correlation between heights and weights of students. The relation between these two paramete...",
+    "filename": "maths-101-part-6.md",
+    "categories": [
+      "Statistics",
+      "Data Science"
+    ]
+  },
+  {
+    "id": "maths-101-part-5",
+    "title": "Maths 101: Part 5: Different Types of Distribution",
+    "date": "2019-02-23",
+    "excerpt": "Types of Distributions Bernoulli and Binomial distribution A Bernoulli random variable has two possible outcomes: 0 or 1. A binomial distribution is the sum of independent and identically distributed ...",
+    "filename": "maths-101-part-5.md",
+    "categories": [
+      "Statistics"
+    ]
+  },
+  {
+    "id": "maths-101-part-4",
+    "title": "Maths 101: Part 4: PDF, Central Limit Theorem and Chebyshev&#8217;s inequality",
+    "date": "2019-02-09",
+    "excerpt": "Populations and Samples The main difference between a population and a sample has to do with how observations are assigned to the data set Population Includes all of the elements from a set of data. S...",
+    "filename": "maths-101-part-4.md",
+    "categories": [
+      "AI/ML",
+      "Statistics",
+      "Data Science"
+    ]
+  },
+  {
+    "id": "maths-101-part-3",
+    "title": "Maths 101: Part 3: Random variables and Normal Distribution",
+    "date": "2019-01-26",
+    "excerpt": "Random Variables The term random variable is not very descriptive. A better term is measurement function.Consider tossing a fair six-sided die. There are only six outcomes possible, \u03a9 = {1, 2, 3, 4, 5...",
+    "filename": "maths-101-part-3.md",
+    "categories": [
+      "AI/ML",
+      "Statistics"
     ]
   }
 ]
