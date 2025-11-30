@@ -21,6 +21,20 @@
     "filename": "prompt-engineering.md"
   },
   {
+    "id": "ai-engineering-chapter-2",
+    "title": "AI Engineering by Chip Huyen: Chapter 2 Notes and Summary",
+    "date": "2025-06-22",
+    "excerpt": "A summary of Chapter 2 from AI Engineering by Chip Huyen, covering foundation model design choices, pre-training and post-training processes, sampling methods, and the probabilistic nature of AI models.",
+    "filename": "ai-engineering-chapter-2.md"
+  },
+  {
+    "id": "machine-learning-engineering-chapter-1",
+    "title": "Machine Learning Engineering by Andriy Burkov: Chapter 1 Notes",
+    "date": "2024-07-13",
+    "excerpt": "Notes from Chapter 1 of Machine Learning Engineering by Andriy Burkov, discussing the process of solving practical problems using machine learning, including data collection, model training, and different learning paradigms.",
+    "filename": "machine-learning-engineering-chapter-1.md"
+  },
+  {
     "id": "recmind-recommendation-agent",
     "title": "RecMind: Large Language Model Powered Agent for Recommendation",
     "date": "2024-07-13",
@@ -28,11 +42,81 @@
     "filename": "recmind-recommendation-agent.md"
   },
   {
-    "id": "sample-post",
-    "title": "Sample Blog Post",
-    "date": "2024-01-15",
-    "excerpt": "This is a sample blog post to demonstrate the blog feature. You can replace this with your own content.",
-    "filename": "sample-post.md"
+    "id": "topological-sort-all-possible-orders",
+    "title": "Topological Sort: All Possible Orders",
+    "date": "2020-06-13",
+    "excerpt": "An explanation of topological sorting, including how to find all possible variations of task ordering given a set of prerequisites, with examples and complexity analysis.",
+    "filename": "topological-sort-all-possible-orders.md"
+  },
+  {
+    "id": "open-closed-principle",
+    "title": "Clean Code Concepts: Be SOLID: Open Closed Principle",
+    "date": "2019-05-11",
+    "excerpt": "An exploration of the Open-Closed Principle, emphasizing designing classes that are open to extension but closed for modification, with examples in Java and Python.",
+    "filename": "open-closed-principle.md"
+  },
+  {
+    "id": "single-responsibility-principle",
+    "title": "Clean Code Concepts: Be SOLID: Single Responsibility Principle",
+    "date": "2019-04-06",
+    "excerpt": "An exploration of the Single Responsibility Principle (SRP) in software development, with examples in Java and Python, emphasizing the importance of writing clean and maintainable code.",
+    "filename": "single-responsibility-principle.md"
+  },
+  {
+    "id": "ai-engineering-chapter-1",
+    "title": "AI Engineering Book by Chip Huyen: Chapter 1 High level insights",
+    "date": "2025-06-22",
+    "excerpt": "High-level insights from Chapter 1 of AI Engineering by Chip Huyen, discussing the scaling up of AI models, the importance of data, and challenges in building AI applications.",
+    "filename": "ai-engineering-chapter-1.md"
+  },
+  {
+    "id": "exploring-vector-databases",
+    "title": "Exploring Vector Databases",
+    "date": "2023-07-11",
+    "excerpt": "An exploration of vector databases, their use cases, and how they enable semantic search and similarity matching for AI applications.",
+    "filename": "exploring-vector-databases.md"
+  },
+  {
+    "id": "ml-best-practices",
+    "title": "Best Practices for Building Machine Learning Applications",
+    "date": "2023-04-22",
+    "excerpt": "Practical guidelines and best practices for building production-ready machine learning applications, covering data, model development, deployment, and monitoring.",
+    "filename": "ml-best-practices.md"
+  },
+  {
+    "id": "better-backend-engineer",
+    "title": "How to be a Better Backend Engineer",
+    "date": "2023-03-31",
+    "excerpt": "Insights and advice on becoming a better backend engineer, covering system design, scalability, performance optimization, and best practices.",
+    "filename": "better-backend-engineer.md"
+  },
+  {
+    "id": "web-server-multiple-connections",
+    "title": "Writing your own Web server that can handle multiple connections",
+    "date": "2023-01-02",
+    "excerpt": "A guide to building a web server from scratch that can handle multiple concurrent connections, covering networking, threading, and async programming concepts.",
+    "filename": "web-server-multiple-connections.md"
+  },
+  {
+    "id": "large-feature-development",
+    "title": "How to do large feature development?",
+    "date": "2022-12-24",
+    "excerpt": "Strategies and approaches for managing large feature development in software engineering, including planning, breaking down work, and execution.",
+    "filename": "large-feature-development.md"
+  },
+  {
+    "id": "lru-caches-python",
+    "title": "LRU Caches in Python",
+    "date": "2022-12-24",
+    "excerpt": "An explanation of LRU (Least Recently Used) cache implementation in Python, including the functools.lru_cache decorator and custom implementations.",
+    "filename": "lru-caches-python.md"
+  },
+  {
+    "id": "emacs-spacemacs-keybindings",
+    "title": "Emacs (spacemacs) Keybindings I use",
+    "date": "2022-06-24",
+    "excerpt": "A personal guide to Emacs (Spacemacs) keybindings, covering various commands and shortcuts for efficient text editing and file management.",
+    "filename": "emacs-spacemacs-keybindings.md"
   }
 ]
 
