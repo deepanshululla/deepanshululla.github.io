@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 
 
 class Header extends Component {
     render() {
         const showHero = this.props.showHero !== false; // Default to true if not specified
-        
+        const isHome = this.props.isHome !== false; // Default to true if not specified
+
         if (this.props.data) {
             var name = this.props.data.name;
             var occupation = this.props.data.occupation;
@@ -16,24 +17,31 @@ class Header extends Component {
             });
         }
 
+        const handleNavClick = (e, id) => {
+            if (!isHome) {
+                e.preventDefault();
+                hashHistory.push('/?section=' + id);
+            }
+        };
+
         return (
             <header id="home" className={`header ${!showHero ? 'no-hero' : ''}`}>
                 <nav id="nav-wrap" className="nav-container">
                     <ul id="nav" className="nav-list">
-                        <li className="current"><a className="smoothscroll" href="#home">Home</a></li>
-                        <li><a className="smoothscroll" href="#about">About</a></li>
-                        <li><a className="smoothscroll" href="#education">Education</a></li>
-                        <li><a className="smoothscroll" href="#work">Work</a></li>
-                        <li><a className="smoothscroll" href="#skills">Skills</a></li>
-                        <li><a className="smoothscroll" href="#portfolio">Projects</a></li>
-                        <li><a className="smoothscroll" href="#testimonials">Testimonials</a></li>
-                        <li><a className="smoothscroll" href="#contact">Contact</a></li>
+                        <li className="current"><a className="smoothscroll" href="#home" onClick={(e) => handleNavClick(e, 'home')}>Home</a></li>
+                        <li><a className={isHome ? "smoothscroll" : ""} href="#about" onClick={(e) => handleNavClick(e, 'about')}>About</a></li>
+                        <li><a className={isHome ? "smoothscroll" : ""} href="#education" onClick={(e) => handleNavClick(e, 'education')}>Education</a></li>
+                        <li><a className={isHome ? "smoothscroll" : ""} href="#work" onClick={(e) => handleNavClick(e, 'work')}>Work</a></li>
+                        <li><a className={isHome ? "smoothscroll" : ""} href="#skills" onClick={(e) => handleNavClick(e, 'skills')}>Skills</a></li>
+                        <li><a className={isHome ? "smoothscroll" : ""} href="#portfolio" onClick={(e) => handleNavClick(e, 'portfolio')}>Projects</a></li>
+                        <li><a className={isHome ? "smoothscroll" : ""} href="#testimonials" onClick={(e) => handleNavClick(e, 'testimonials')}>Testimonials</a></li>
+                        <li><a className={isHome ? "smoothscroll" : ""} href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact</a></li>
                         <li><Link to="/blog">Blog</Link></li>
                     </ul>
                 </nav>
 
                 {showHero && (
-                    <div 
+                    <div
                         className="hero-section"
                         style={{
                             backgroundImage: `url(${process.env.PUBLIC_URL || ''}/images/bonsai.jpg)`
