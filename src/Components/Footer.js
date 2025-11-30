@@ -1,30 +1,18 @@
 import React from 'react';
 
 
-export const Footer =()=> (
-    <div>
-        <footer>
-
-            <div className="row">
-
-                <div className="twelve columns">
-
-                    <ul className="social-links">
-
-                        <li><a target="_blank" href="https://www.linkedin.com/in/deepanshululla"><i className="fa fa-linkedin"></i></a></li>
-                        <li><a target="_blank" href="https://www.github.com/deepanshululla"><i className="fa fa-github"></i></a></li>
-
-                    </ul>
-
-
-
-                </div>
-
-                <div id="go-top"><a className="smoothscroll" title="Back to Top" href="#home"><i
-                    className="icon-up-open"></i></a></div>
-
+export const Footer = () => (
+    <footer className="footer">
+        <div className="container">
+            <div className="footer-content">
+                <ul className="social-links footer-social">
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/deepanshululla"><i className="fa fa-linkedin"></i></a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/deepanshululla"><i className="fa fa-github"></i></a></li>
+                </ul>
+            <div className="copyright">
+                &copy; {new Date().getFullYear()} Deepanshu Lulla. All rights reserved.
             </div>
-
-        </footer>
-    </div>
+            </div>
+        </div>
+    </footer>
 )

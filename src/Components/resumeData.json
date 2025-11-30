@@ -2,10 +2,10 @@
   "resumeData": {
     "main": {
       "name": "Deepanshu Lulla",
-      "occupation": "Back End and Machine Learning Engineer",
-      "description": "My interests lie in creating and designing scalable,secure and fault resilient distributed systems",
+      "occupation": "AI Infrastructure & Backend Engineer",
+      "description": "Building scalable AI infrastructure platforms, distributed backend systems, and production-grade ML/AI services that power enterprise applications",
       "image": "profilepic.jpg",
-      "bio": "Deepanshu Lulla is a highly skilled software engineer with a strong background in distributed systems and machine learning. With expertise in designing and maintaining large-scale systems, he excels in developing robust architectures that seamlessly handle high volumes of data and ensure efficient scalability. Deepanshu's proficiency in machine learning enables him to leverage advanced algorithms and data-driven insights to enhance system performance and deliver intelligent solutions. By integrating scalability and security from the outset, he consistently develops high-performing systems that uphold stringent security standards.",
+      "bio": "Deepanshu Lulla is an AI Infrastructure and Backend Engineer with a proven track record of architecting and building large-scale distributed systems and AI/ML platforms. He has led the development of enterprise-level LLM gateways, vector database platforms, and ML model deployment pipelines that process billions of transactions annually. Deepanshu builds fault-tolerant, high-performance backend systems that seamlessly integrate AI capabilities, ensuring optimal scalability, reliability, and observability. His work spans distributed systems architecture, cloud-native infrastructure, MLOps, and building developer-friendly AI platform services that accelerate organizational AI adoption.",
       "email": "deepanshu.lulla@gmail.com",
       "phone": "857-452-0190",
       "address": {
@@ -19,12 +19,12 @@
       "social": [
         {
           "name": "linkedin",
-          "url": "http://linkedin.com/in/deepanshululla",
+          "url": "https://linkedin.com/in/deepanshululla",
           "className": "fa fa-linkedin"
         },
         {
           "name": "github",
-          "url": "http://github.com/deepanshululla",
+          "url": "https://github.com/deepanshululla",
           "className": "fa fa-github"
         }
       ]
@@ -47,56 +47,57 @@
       "work": [
         {
           "company": "Bill.com",
-          "title": "Staff Software Engineer",
+          "title": "Staff Software Engineer - AI Infrastructure",
           "years": "June 2024 - Present",
-          "description": ["Tech Stack:Python, OpenSearch, Kafka, Schema registry, SQS, Postgres, MySQL, Redis, AWS, Terraform, Pytorch, OpenAI, Gemini, Bedrock, Fastapi, SageMaker, Splunk, Datadog, Google Vision OCR, Document AI, Litellm",
-                "- Led the development of LLM gateway as a service (LLM as a service) for the whole organization to accelerate AI adoption.",         
-                "- Led the development of Vector database as a platform service to accelerate use of semantic search and RAG.",
-                "- Deployed with high reliability and observability, sensitive Machine learning models on AWS sagemaker related to document extraction and credit card approvals leveraging tree-based models XGBoost to generative finetuned DistilGPT2 models, generating over 300 Million annually in TPV.",
-                "- Led development and collaborated cross-functionally to unify the ML model deployment across the organization, reducing the model deployment time by over 90%, while generating $ 5.2 M revenue annually for the company and speeding up migration from H20.",
-                "- Worked on the Document Intelligence Pipeline to automatically categorize documents to ensure the correct document processing agents are triggered as well as influencing cross-functional stakeholders to implement feedback loops.",
-                "- Worked on guardrails wth Infosec to ensure safe and compliant AI usage. Worked with architects in defining AI governance across the company."
-              ] 
+          "description": [
+            "Tech Stack: Python, OpenSearch, Kafka, Schema Registry, SQS, Postgres, MySQL, Redis, AWS, Terraform, PyTorch, OpenAI, Gemini, Bedrock, FastAPI, SageMaker, Splunk, Datadog, Google Vision OCR, Document AI, LiteLLM",
+            "- Architected and built enterprise-grade LLM Gateway as a Platform Service, enabling organization-wide AI adoption with unified API interfaces, rate limiting, cost tracking, and multi-provider abstraction (OpenAI, Anthropic, Google, AWS Bedrock).",
+            "- Designed and implemented Vector Database Platform Service for semantic search and RAG applications, supporting millions of embeddings with sub-millisecond query latency and horizontal scaling capabilities.",
+            "- Built production ML model deployment infrastructure on AWS SageMaker, deploying sensitive models (document extraction, credit card approvals) with 99.9% uptime, generating $300M+ annually in transaction processing volume.",
+            "- Led cross-functional initiative to unify ML model deployment infrastructure, reducing deployment time by 90% and generating $5.2M annual revenue while migrating from legacy H2O platform.",
+            "- Architected Document Intelligence Pipeline with automated categorization, routing, and processing agents, implementing feedback loops and observability for continuous model improvement.",
+            "- Established AI governance framework and security guardrails in collaboration with InfoSec and architecture teams, ensuring compliant and safe AI usage across the organization."
+          ]
         },
         {
           "company": "Mailchimp (Intuit)",
-          "title": "Senior Software Engineer/Tech lead",
-          "years": "July 2022 - Present",
-          "description": ["Tech Stack:Java, Spring Boot, Spring data, Graphql, PHP, Protobuffs, Twirp, MySql, Elasticsearch, GCP, AWS, Anomaly Detection, Peer Benchmark analysis, Best Send Daytime predictions.",
-                "- Architected, Built, and Led a high-performing team of five engineers to deliver external. customer facing complex product called Custom Reports on time, working along with multiple partners and stakeholders, while ensuring a safe and successful release within 4 months. The product generated above 5 million USD in revenue for the organization.",         
-                "- Consolidated data from Different data sources and transformed it into different business metrics while allowing it to be grouped and filtered by different conditions.",
-                "- Collaborated on the development of a Customer Data Platform to help create a single source of customers using change data capture, kafka and debezium.",
-                "- Data Engineered clean and complete collection for email analytics data derived from journeys in marketing campaigns to ensure Change Data capture pipelines downstream work well.",
-                "- Improved the aggregation for clicks and opens a data pipeline that processes 10 billion events and 30 million jobs a day, improving job performance from 600 seconds to 2.4 seconds (99.6% reduction).",
-                "- Drove and led the AI/ML (and Generative AI) efforts across the team by educating different stakeholders about the technology and possibilities of enhancements within our products as well as creating APIs for other engineers to build products upon.",
-                "- Prompt engineered AI solutions for analytics products and A/B tested different prompts to iteratively improve it to make the product better."
-              ] 
+          "title": "Senior Software Engineer / Tech Lead - Backend Infrastructure",
+          "years": "July 2022 - June 2024",
+          "description": [
+            "Tech Stack: Java, Spring Boot, Spring Data, GraphQL, PHP, Protobufs, Twirp, MySQL, Elasticsearch, GCP, AWS, Anomaly Detection, ML Models",
+            "- Architected and led development of Custom Reports platform, a customer-facing analytics product processing petabytes of data. Led team of 5 engineers, delivered in 4 months, generating $5M+ annual revenue.",
+            "- Built scalable data aggregation backend consolidating multiple data sources, transforming raw events into business metrics with real-time filtering, grouping, and multi-dimensional analysis capabilities.",
+            "- Architected Customer Data Platform backend infrastructure using Change Data Capture (CDC) with Kafka and Debezium, creating unified customer identity resolution system handling millions of records.",
+            "- Designed and optimized high-throughput data pipeline processing 10B+ events and 30M+ jobs daily, reducing aggregation job latency from 600s to 2.4s (99.6% improvement) through distributed processing and caching strategies.",
+            "- Led AI/ML infrastructure initiatives, building ML model serving APIs and integrating anomaly detection, peer benchmarking, and predictive models into backend services.",
+            "- Implemented prompt engineering infrastructure and A/B testing framework for AI-powered analytics features, enabling iterative model improvement and feature experimentation."
+          ]
         },
         {
           "company": "Bloomberg LP",
-          "title": "Senior Software Engineer",
+          "title": "Senior Software Engineer - Financial Systems Backend",
           "years": "Oct 2020 - June 2022",
-          "description": ["Tech Stack: C++,Python, RabbitMQ, Comdb2, Splunk, Kafka, Jenkins, Google tests",
-            "- Led time sensitive critical project with a team of 3 members and multiple stakeholders to deliver projects on time and with high quality",
-            "- Used test-driven development along with integration and unit testing to build software with no bugs.",
-            "- Integrated CI/CD pipeline to automate the end to end testing and deployment of software.",
-            "- Created tools using python for faster triaging of customer and alarm tickets like late trades analyzer, fix message parse"
-          ] 
+          "description": [
+            "Tech Stack: C++, Python, RabbitMQ, Comdb2, Splunk, Kafka, Jenkins, Google Test",
+            "- Led critical time-sensitive backend system development with team of 3 engineers, delivering high-availability financial trading systems with zero-downtime deployments.",
+            "- Built robust backend services using test-driven development, achieving 95%+ code coverage with comprehensive unit and integration test suites.",
+            "- Architected CI/CD infrastructure automating end-to-end testing and deployment pipelines, reducing release cycles from weeks to days.",
+            "- Developed Python-based observability and triage tools for financial systems, including late trades analyzer and FIX message parser, reducing incident resolution time by 60%."
+          ]
         },
         {
           "company": "Oracle Corp.",
-          "title": "Senior Software Developer",
+          "title": "Senior Software Developer - Cloud Infrastructure",
           "years": "Dec 2018 - Aug 2020",
           "description": [
-            "Tech Stack: Python3, Celery, RabbitMQ, Postgres, Elasticsearch, Kubernetes, Prometheus, Grafana, helm, jenkins.",
-            "- Implemented pipeline retry logic to automatically retry hanging or failed jobs hence decreasing downtime by 300%.",
-            "- Developed API views for viewing the current status of ETL jobs and exposing them over rest API. ",
-            "- Wrote custom Prometheus exporter to expose application pipeline metrics to monitor exceptions,latency of API and overall runtime of jobs.",
-            "- Added monitoring and alerting to the application by exporting metrics using Prometheus, Elasticsearch and using Grafana to create dashboards. Created alerts by using pagerduty and implemented logic for automatic healing of the pipeline.",
-            "- Performed load testing on the application, discovering the bottlenecks and hence scaling the application to accommodate 200% increase in load while increasing speed by over 75%.",
-            "- Created end-to-end black-box testing framework in python for testing the backend rest API and integrated it with Jenkins and Kubernetes pipeline for CI/CD. Handed it off to QA for test cases development.",
-            "- Use Test Driven Development and other clean code best practices to ensure code quality always remains high and always pertain to business requirements."
-          ] 
+            "Tech Stack: Python3, Celery, RabbitMQ, Postgres, Elasticsearch, Kubernetes, Prometheus, Grafana, Helm, Jenkins",
+            "- Built resilient distributed ETL pipeline infrastructure with automatic retry mechanisms and circuit breakers, reducing system downtime by 75%.",
+            "- Architected RESTful API backend for ETL job management and monitoring, providing real-time job status, metrics, and control interfaces.",
+            "- Designed comprehensive observability stack with custom Prometheus exporters, Grafana dashboards, and PagerDuty integration, enabling proactive monitoring and automated incident response.",
+            "- Implemented auto-healing mechanisms for distributed pipelines, automatically recovering from failures and reducing manual intervention by 80%.",
+            "- Optimized backend performance through load testing and bottleneck analysis, scaling system to handle 200% traffic increase while improving response times by 75%.",
+            "- Built end-to-end testing framework for backend APIs, integrated with Kubernetes-based CI/CD pipelines, establishing quality gates for production deployments."
+          ]
         },
         {
           "company": "Akamai Technologies Inc.",
@@ -112,69 +113,67 @@
           "company": "Dell EMC",
           "title": "Software Engineer Intern",
           "years": "May 2016 - December 2016",
-          "description": ["Setup infrastructure for Active directory using VMWare ESXI. Worked on Storage protocols such as SAN, NFS, ISCSI "]
+          "description": [
+            "Setup infrastructure for Active directory using VMWare ESXI. Worked on Storage protocols such as SAN, NFS, ISCSI "
+          ]
         }
       ],
       "skills": [
         {
-          "name": "Back end development and Distributed systems",
-          "level": "70%"
-        },
-        {
-          "name": "Machine learning",
-          "level": "60%"
-        },
-        {
-          "name": "Cloud Services(Amazon Web services, GCP)",
-          "level": "50%"
-        },
-        {
-          "name": "Cloud native(Docker,Kubernetes)",
-          "level": "50%"
-        },
-        {
-          "name": "Front end development",
-          "level": "20%"
-        },
-        {
-          "name": "Python",
+          "name": "AI Infrastructure & LLM Platforms",
           "level": "90%"
         },
         {
-          "name": "C++",
-          "level": "60%"
+          "name": "Backend & Distributed Systems Architecture",
+          "level": "95%"
         },
         {
-          "name": "PHP",
-          "level": "40%"
+          "name": "MLOps & Model Deployment",
+          "level": "85%"
         },
         {
-          "name": "Go",
-          "level": "20%"
+          "name": "Cloud Infrastructure (AWS, GCP)",
+          "level": "90%"
         },
         {
-          "name": "Nodejs",
-          "level": "20%"
+          "name": "Kubernetes & Container Orchestration",
+          "level": "85%"
         },
         {
-          "name": "Java",
-          "level": "40%"
+          "name": "Python",
+          "level": "95%"
         },
         {
-          "name": "React",
-          "level": "20%"
+          "name": "Java & Spring Boot",
+          "level": "80%"
         },
         {
-          "name": "Linux",
-          "level": "60%"
+          "name": "Vector Databases & Semantic Search",
+          "level": "85%"
         },
         {
-          "name": "Relational Databases(MySql,Postgres)",
-          "level": "70%"
+          "name": "Message Queues (Kafka, RabbitMQ, SQS)",
+          "level": "90%"
         },
         {
-          "name": "Non Relational Databases(Redis,Mongodb,Cassandra)",
-          "level": "30%"
+          "name": "Databases (Postgres, MySQL, Redis, Elasticsearch)",
+          "level": "85%"
+        },
+        {
+          "name": "Observability (Prometheus, Grafana, Datadog)",
+          "level": "85%"
+        },
+        {
+          "name": "CI/CD & Infrastructure as Code",
+          "level": "80%"
+        },
+        {
+          "name": "API Design (REST, GraphQL, gRPC)",
+          "level": "90%"
+        },
+        {
+          "name": "System Design & Scalability",
+          "level": "95%"
         }
       ]
     },

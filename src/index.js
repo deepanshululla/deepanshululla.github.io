@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './stylesheets/app.css'
+import './index.css';
 import {App} from './Components/App';
 import registerServiceWorker from './registerServiceWorker';
 import Modal from 'react-modal';

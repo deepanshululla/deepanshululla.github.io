@@ -2,68 +2,63 @@ import React, { Component } from 'react';
 
 class Resume extends Component {
     render() {
-        if(this.props.data){
-            var education = this.props.data.education.map(function(edu){
-                return <div key={edu.school} className="row item">
-                    <div className="twelve columns">
+        if (this.props.data) {
+            var education = this.props.data.education.map(function (edu) {
+                return <div key={edu.school} className="resume-item">
+                    <div className="resume-header">
                         <h3>{edu.school}</h3>
-                        <p className="info">{edu.degree} <span>&bull;</span> <em className="date">{edu.graduated}</em></p>
-                        <p>
-                            {edu.description}
-                        </p>
+                        <span className="date">{edu.graduated}</span>
                     </div>
+                    <p className="info">{edu.degree}</p>
+                    <p className="description">{edu.description}</p>
                 </div>
             });
 
-            var work = this.props.data.work.map(function(job){
-                return <div key={job.company} className="row item">
-                    <div className="twelve columns">
+            var work = this.props.data.work.map(function (job) {
+                return <div key={job.company} className="resume-item">
+                    <div className="resume-header">
                         <h3>{job.company}</h3>
-                        <p className="info">{job.title}<span>&bull;</span> <em className="date">{job.years}</em></p>
-
-                        <p>
-                            {job.description.map(i => {return <p>{i}</p>})}
-                        </p>
+                        <span className="date">{job.years}</span>
+                    </div>
+                    <p className="info">{job.title}</p>
+                    <div className="description">
+                        {job.description.map((item, i) => <p key={i}>{item}</p>)}
                     </div>
                 </div>
             });
 
-            var skills = this.props.data.skills.map(function(skill){
-                var className = 'bar-expand '+skill.name.toLowerCase();
-                return <li key={skill.name}><span style={{width:skill.level}} className={className}></span><em>{skill.name}</em></li>
+            var skills = this.props.data.skills.map(function (skill) {
+                return <li key={skill.name} className="skill-item">
+                    <span className="skill-name">{skill.name}</span>
+                    <div className="skill-bar-wrapper">
+                        <div className="skill-bar" style={{ width: skill.level }}></div>
+                    </div>
+                </li>
             });
         }
+
         return (
-            <section id="resume">
-                <div className="row education">
-                    <div className="three columns header-col">
-                        <h1><span>Education</span></h1>
+            <section id="resume" className="section resume-section">
+                <div className="container">
+                    <div className="resume-block">
+                        <h2 className="section-title"><span>Education</span></h2>
+                        <div className="resume-content">
+                            {education}
+                        </div>
                     </div>
 
-                    <div className="nine columns main-col">
-                        {education}
-                    </div>
-                </div>
-
-                <div className="row work">
-                    <div className="three columns header-col">
-                        <h1><span>Work</span></h1>
+                    <div className="resume-block">
+                        <h2 className="section-title"><span>Work</span></h2>
+                        <div className="resume-content">
+                            {work}
+                        </div>
                     </div>
 
-                    <div className="nine columns main-col">
-                        {work}
-                    </div>
-                </div>
-
-                <div className="row skill">
-                    <div className="three columns header-col">
-                        <h1><span>Skills</span></h1>
-                    </div>
-                    <div className="nine columns main-col">
-                        <p>My specialization exists in designing and creating full stack scalable secure solutions for the business needs.
-                        </p>
-                        <div className="bars">
-                            <ul className="skills">
+                    <div className="resume-block">
+                        <h2 className="section-title"><span>Skills</span></h2>
+                        <div className="resume-content">
+                            <p className="skills-intro">I specialize in architecting and building production-grade AI infrastructure platforms, scalable backend systems, and distributed services that power enterprise applications. My expertise spans LLM platforms, vector databases, MLOps, cloud-native infrastructure, and high-performance distributed systems.</p>
+                            <ul className="skills-list">
                                 {skills}
                             </ul>
                         </div>
