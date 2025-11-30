@@ -1,0 +1,38 @@
+[
+  {
+    "id": "rnn-vs-cnn-vs-autoencoder-vs-transformer",
+    "title": "RNN vs. CNN vs. Autoencoder vs. Attention/Transformer",
+    "date": "2025-08-03",
+    "excerpt": "A practical guide to various deep learning architectures, including Recurrent Neural Networks (RNNs), Convolutional Neural Networks (CNNs), Autoencoders, and Attention/Transformer models, with examples and use cases.",
+    "filename": "rnn-vs-cnn-vs-autoencoder-vs-transformer.md"
+  },
+  {
+    "id": "rag-and-agents",
+    "title": "AI Engineering: RAG and Agents",
+    "date": "2025-08-03",
+    "excerpt": "Detailed exploration of Retrieval-Augmented Generation (RAG) and AI agents, covering definitions, workflows, tools, planning, control flows, and memory management in AI applications.",
+    "filename": "rag-and-agents.md"
+  },
+  {
+    "id": "prompt-engineering",
+    "title": "AI Engineering: Prompt Engineering",
+    "date": "2025-08-03",
+    "excerpt": "An in-depth look at prompt engineering, discussing its importance in guiding AI models, the anatomy of a prompt, and strategies for effective prompt design.",
+    "filename": "prompt-engineering.md"
+  },
+  {
+    "id": "recmind-recommendation-agent",
+    "title": "RecMind: Large Language Model Powered Agent for Recommendation",
+    "date": "2024-07-13",
+    "excerpt": "A summary of the RecMind paper, discussing the use of large language models as agents for recommendation systems, including architecture, advantages, challenges, and implementation patterns.",
+    "filename": "recmind-recommendation-agent.md"
+  },
+  {
+    "id": "sample-post",
+    "title": "Sample Blog Post",
+    "date": "2024-01-15",
+    "excerpt": "This is a sample blog post to demonstrate the blog feature. You can replace this with your own content.",
+    "filename": "sample-post.md"
+  }
+]
+

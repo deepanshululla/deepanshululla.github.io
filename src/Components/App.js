@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import axios from 'axios'
 
 import Header from './Header';
@@ -9,6 +10,8 @@ import Skills from './Skills';
 import Projects from './Projects';
 import Testimonials from './Testimonials';
 import Contact from './Contact';
+import Blogs from './Blogs';
+import BlogPost from './BlogPost';
 import {Footer} from './Footer';
 import {resumeData} from "./resumeData";
 
@@ -67,10 +70,8 @@ export class App extends Component {
     }
 
     render() {
-
-        return(
-
-            <div className="App">
+        const MainContent = () => (
+            <div>
                 <Header data={this.state.resumeData.main} />
                 <About data={this.state.resumeData.main} />
                 <Education data={this.state.resumeData.resume} />
@@ -81,6 +82,30 @@ export class App extends Component {
                 <Contact data={this.state.resumeData.main} />
                 <Footer />
             </div>
+        );
+
+        const BlogPage = () => (
+            <div>
+                <Header data={this.state.resumeData.main} showHero={false} />
+                <Blogs />
+                <Footer />
+            </div>
+        );
+
+        const BlogPostPage = (props) => (
+            <div>
+                <Header data={this.state.resumeData.main} showHero={false} />
+                <BlogPost params={props.params} />
+                <Footer />
+            </div>
+        );
+
+        return (
+            <Router history={hashHistory}>
+                <Route path="/" component={MainContent} />
+                <Route path="/blog" component={BlogPage} />
+                <Route path="/blog/:id" component={BlogPostPage} />
+            </Router>
         )
     }
 }
