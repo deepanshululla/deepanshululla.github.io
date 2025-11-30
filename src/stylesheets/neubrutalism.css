@@ -822,16 +822,46 @@ body.neubrutalism .link-icon {
 }
 
 /* Scroll Down - Neubrutalism */
-body.neubrutalism .scrolldown {
-    position: absolute !important;
-    bottom: 30px !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
+body.neubrutalism .social-links {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    width: auto !important;
+    gap: 1rem !important;
+    list-style: none !important;
+    padding: 0 !important;
     margin: 0 !important;
+    flex-wrap: wrap !important;
+}
+
+body.neubrutalism .hero-content {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+body.neubrutalism .hero-content h1,
+body.neubrutalism .hero-content h3,
+body.neubrutalism .hero-content hr {
+    width: 100% !important;
+}
+
+body.neubrutalism .hero-content .social-links {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: var(--spacing-md) 0 !important;
+    flex-shrink: 0 !important;
+}
+
+body.neubrutalism .hero-content .scrolldown,
+body.neubrutalism .scrolldown,
+body.neubrutalism .hero-section .scrolldown,
+body.neubrutalism header .scrolldown,
+body.neubrutalism #home .scrolldown {
+    display: none !important;
 }
 
 body.neubrutalism .scrolldown a {
@@ -849,6 +879,10 @@ body.neubrutalism .scrolldown a {
     text-align: center !important;
     line-height: 1 !important;
     margin: 0 auto !important;
+    transition: all 0.2s ease !important;
+    animation: none !important;
+    opacity: 1 !important;
+    font-size: 1.5rem !important;
 }
 
 body.neubrutalism .scrolldown a:hover {

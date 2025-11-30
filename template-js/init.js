@@ -25,12 +25,22 @@
 	    var target = this.hash,
 	    $target = $(target);
 
-	    $('html, body').stop().animate({
-	        'scrollTop': $target.offset().top
-	    }, 800, 'swing', function () {
-	        window.location.hash = target;
-	    });
+	    if ($target.length) {
+	        var offset = $target.offset().top - 80; // Account for fixed nav height
+	        
+	        $('html, body').stop().animate({
+	            'scrollTop': offset
+	        }, 1000, 'easeInOutCubic', function () {
+	            window.location.hash = target;
+	        });
+	    }
 	});
+	
+	// Add custom easing function for smoother animation
+	jQuery.easing.easeInOutCubic = function (x, t, b, c, d) {
+		if ((t/=d/2) < 1) return c/2*t*t*t + b;
+		return c/2*((t-=2)*t*t + 2) + b;
+	};
 
 
 /*----------------------------------------------------*/
@@ -55,7 +65,7 @@
 			active_link.parent().addClass("current");
 
 		},
-		offset: '35%'
+		offset: '40%'
 
 	});
 

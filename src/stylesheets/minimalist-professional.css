@@ -8,17 +8,17 @@
 
 /* Scoped CSS variables for minimalist-professional only */
 body.minimalist-professional {
-    /* Minimalist Professional Colors */
-    --bg-primary: #ffffff;
-    --bg-secondary: #f8f9fa;
-    --bg-tertiary: #f1f3f5;
-    --text-primary: #212529;
-    --text-secondary: #6c757d;
-    --accent-primary: #0066cc;
-    --accent-secondary: #0052a3;
-    --accent-tertiary: #004080;
-    --border-color: #dee2e6;
-    --shadow-color: rgba(0, 0, 0, 0.08);
+    /* Bonsai Theme Colors - Extracted from bonsai.jpg image */
+    --bg-primary: #f8f6f2; /* Light wooden surface tone */
+    --bg-secondary: #f5f3ef; /* Slightly darker wood tone */
+    --bg-tertiary: #ede9e3; /* Weathered wood gray-brown */
+    --text-primary: #0a0a0a; /* Very dark, almost black for maximum contrast */
+    --text-secondary: #1a1a1a; /* Dark gray for secondary text */
+    --accent-primary: #3d6b47; /* Deep green from bonsai leaves */
+    --accent-secondary: #5a8a65; /* Medium green */
+    --accent-tertiary: #a85c3a; /* Terracotta pot reddish-brown */
+    --border-color: #d4c9b8; /* Light wood grain color */
+    --shadow-color: rgba(26, 26, 26, 0.15); /* Dark shadow for depth */
 
     /* Typography */
     --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -44,22 +44,22 @@ body.minimalist-professional {
     --shadow-lg: 0 4px 12px var(--shadow-color);
 
     /* Body styles */
-    background: #ffffff !important;
+    background: var(--bg-primary) !important;
     color: var(--text-primary) !important;
     font-family: var(--font-body) !important;
-    font-size: 18px !important;
+    font-size: 20px !important;
     line-height: 1.7 !important;
 }
 
 /* Header & Navigation - Minimalist */
 body.minimalist-professional .header {
-    background: #ffffff;
+    background: var(--bg-primary);
     border-bottom: 1px solid var(--border-color);
     box-shadow: 0 1px 3px var(--shadow-color);
 }
 
 body.minimalist-professional .nav-container {
-    background: #ffffff;
+    background: var(--bg-primary);
     backdrop-filter: none;
     border-bottom: none;
 }
@@ -70,11 +70,12 @@ body.minimalist-professional ul#nav li a,
 body.minimalist-professional .nav-container a {
     color: var(--text-secondary) !important;
     font-weight: 400 !important;
-    font-size: 1.1rem !important;
+    font-size: 1.25rem !important;
     letter-spacing: 0.01em;
     padding: 0.5rem 1rem;
-    transition: color 0.2s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
     text-transform: uppercase !important;
+    position: relative;
 }
 
 body.minimalist-professional .nav-list li a:hover,
@@ -84,6 +85,7 @@ body.minimalist-professional .nav-container a:hover {
     color: var(--accent-primary) !important;
     background: transparent !important;
     box-shadow: none !important;
+    transform: translateY(-2px) !important;
 }
 
 body.minimalist-professional .nav-list li.current a,
@@ -98,25 +100,62 @@ body.minimalist-professional .nav-container ul#nav li.current a {
     border-bottom: 2px solid var(--accent-primary) !important;
     padding-bottom: calc(0.5rem - 2px) !important;
     text-transform: uppercase !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 /* Hero Section - Minimalist */
+body.minimalist-professional .hero-section {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xl) var(--spacing-md) !important;
+    margin-top: 80px !important;
+}
+
+body.minimalist-professional .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    background: rgba(248, 246, 242, 0.88); /* Light wooden tone overlay - increased opacity to push image back */
+    z-index: 0;
+}
+
+body.minimalist-professional .hero-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
 body.minimalist-professional .responsive-headline {
-    color: var(--text-primary);
-    font-weight: 600;
-    font-size: 4rem;
+    color: var(--text-primary) !important;
+    font-weight: 800;
+    font-size: 5rem;
     letter-spacing: -0.02em;
     background: none;
     -webkit-background-clip: unset;
     -webkit-text-fill-color: unset;
     background-clip: unset;
-    text-shadow: none;
+    text-shadow: 0 2px 6px rgba(255, 255, 255, 0.95), 0 0 10px rgba(255, 255, 255, 0.5); /* Stronger white shadow for better contrast */
 }
 
 body.minimalist-professional .hero-subtitle {
-    color: var(--text-secondary);
-    font-weight: 400;
-    font-size: 1.4rem;
+    color: var(--text-primary) !important;
+    font-weight: 600;
+    font-size: 1.6rem;
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.95), 0 0 8px rgba(255, 255, 255, 0.4); /* Stronger white shadow for better contrast */
 }
 
 body.minimalist-professional .hero-subtitle span {
@@ -146,13 +185,75 @@ body.minimalist-professional .social-links li a:hover {
 }
 
 /* Sections - Minimalist */
-body.minimalist-professional .section {
-    background: #ffffff;
+body.minimalist-professional .section:not(#about):not(.about-section):not(#education):not(#work):not(#skills):not(#portfolio) {
+    background-image: var(--bonsai-bg, none);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
     padding: 5rem 0;
 }
 
+body.minimalist-professional .section:not(#about):not(.about-section):not(#education):not(#work):not(#skills):not(#portfolio)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(248, 246, 242, 0.75); /* Light wooden tone overlay - reduced opacity to show more of bonsai image */
+    z-index: 0;
+}
+
+body.minimalist-professional .section:not(#about):not(.about-section) .container,
+body.minimalist-professional .section:not(#about):not(.about-section) > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Exclude About, Education, Work, Skills, and Projects sections from bonsai background */
+body.minimalist-professional #about,
+body.minimalist-professional .about-section,
+body.minimalist-professional #education,
+body.minimalist-professional #work,
+body.minimalist-professional #skills,
+body.minimalist-professional #portfolio {
+    background-image: none !important;
+    background: var(--bg-secondary) !important;
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+body.minimalist-professional #about::before,
+body.minimalist-professional .about-section::before,
+body.minimalist-professional #education::before,
+body.minimalist-professional #work::before,
+body.minimalist-professional #skills::before,
+body.minimalist-professional #portfolio::before {
+    display: none !important;
+}
+
+body.minimalist-professional #about .container,
+body.minimalist-professional .about-section .container,
+body.minimalist-professional #education .container,
+body.minimalist-professional #work .container,
+body.minimalist-professional #skills .container,
+body.minimalist-professional #portfolio .container {
+    position: relative !important;
+    z-index: 3 !important;
+}
+
+body.minimalist-professional #about .about-content,
+body.minimalist-professional .about-section .about-content {
+    position: relative !important;
+    z-index: 3 !important;
+}
+
 body.minimalist-professional .resume-section {
-    background: #ffffff;
+    background: transparent;
 }
 
 body.minimalist-professional .about-section {
@@ -161,16 +262,20 @@ body.minimalist-professional .about-section {
     padding: 4rem 2rem;
 }
 
-body.minimalist-professional .about-text p {
-    font-size: 1.2rem;
+body.minimalist-professional .about-text p,
+body.minimalist-professional #about p,
+body.minimalist-professional .about-section p {
+    font-size: 1.35rem;
     line-height: 1.8;
-    color: var(--text-secondary);
+    color: var(--text-primary) !important;
 }
 
-body.minimalist-professional .about-text h2 {
-    font-size: 3rem;
-    font-weight: 600;
-    color: var(--text-primary);
+body.minimalist-professional .about-text h2,
+body.minimalist-professional #about h2,
+body.minimalist-professional .about-section h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--text-primary) !important;
     margin-bottom: 1.5rem;
 }
 
@@ -207,16 +312,16 @@ body.minimalist-professional .resume-header {
 }
 
 body.minimalist-professional .resume-header h3 {
-    color: var(--text-primary);
-    font-weight: 600;
-    font-size: 1.75rem;
+    color: var(--text-primary) !important;
+    font-weight: 700;
+    font-size: 2rem;
     margin-bottom: 0.25rem;
 }
 
 body.minimalist-professional .resume-header .date {
     background: transparent;
     color: var(--text-secondary);
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     font-weight: 400;
     padding: 0;
 }
@@ -224,14 +329,14 @@ body.minimalist-professional .resume-header .date {
 body.minimalist-professional .resume-item .info {
     color: var(--accent-primary);
     font-weight: 500;
-    font-size: 1.2rem;
+    font-size: 1.35rem;
     margin-bottom: 0.75rem;
 }
 
 body.minimalist-professional .resume-item .description {
-    color: var(--text-secondary);
+    color: var(--text-primary) !important;
     line-height: 1.7;
-    font-size: 1.15rem;
+    font-size: 1.3rem;
 }
 
 body.minimalist-professional .resume-header.clickable {
@@ -254,7 +359,7 @@ body.minimalist-professional .skill-group-item {
 body.minimalist-professional .skill-group-header h3 {
     color: var(--text-primary);
     font-weight: 600;
-    font-size: 1.75rem;
+    font-size: 2rem;
 }
 
 body.minimalist-professional .skill-group-average {
@@ -280,7 +385,7 @@ body.minimalist-professional .skill-group-bar {
 body.minimalist-professional .skill-name {
     color: var(--text-primary);
     font-weight: 500;
-    font-size: 1.15rem;
+    font-size: 1.3rem;
 }
 
 body.minimalist-professional .skill-bar-wrapper {
@@ -328,7 +433,7 @@ body.minimalist-professional .skill-sub-item:last-child {
 body.minimalist-professional .section-title {
     color: var(--text-primary);
     font-weight: 600;
-    font-size: 3rem;
+    font-size: 3.5rem;
     letter-spacing: -0.02em;
     margin-bottom: 3rem;
     text-align: center;
@@ -363,6 +468,7 @@ body.minimalist-professional .btn:hover {
     border-color: var(--accent-secondary);
     box-shadow: var(--shadow-md);
     color: #ffffff;
+    transform: translateY(-2px);
 }
 
 body.minimalist-professional .btn-small {
@@ -389,7 +495,7 @@ body.minimalist-professional .testimonials-section {
 }
 
 body.minimalist-professional .testimonial-item {
-    background: #ffffff;
+    background: var(--bg-primary);
     border: 1px solid var(--border-color);
     box-shadow: var(--shadow-sm);
     padding: 2rem;
@@ -405,19 +511,19 @@ body.minimalist-professional .testimonial-quote p {
     color: var(--text-primary);
     font-style: italic;
     line-height: 1.7;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 body.minimalist-professional .testimonial-quote cite {
     color: var(--accent-primary);
     font-style: normal;
     font-weight: 500;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
 }
 
 /* Contact - Minimalist */
 body.minimalist-professional .contact-section {
-    background: #ffffff;
+    background: transparent;
 }
 
 body.minimalist-professional .contact-wrapper {
@@ -438,7 +544,7 @@ body.minimalist-professional .contact-icon {
 body.minimalist-professional .contact-title {
     color: var(--text-primary);
     font-weight: 600;
-    font-size: 3rem;
+    font-size: 3.5rem;
 }
 
 body.minimalist-professional .contact-title::after {
@@ -491,11 +597,11 @@ body.minimalist-professional .profile-pic {
 
 /* Portfolio/Projects - Minimalist */
 body.minimalist-professional #portfolio {
-    background: #ffffff;
+    background: transparent;
 }
 
 body.minimalist-professional .portfolio-item {
-    background: #ffffff;
+    background: var(--bg-primary);
     border: 1px solid var(--border-color);
     box-shadow: var(--shadow-sm);
     transition: all 0.2s ease;
@@ -507,22 +613,50 @@ body.minimalist-professional .portfolio-item:hover {
 }
 
 body.minimalist-professional .overlay {
-    background: rgba(0, 102, 204, 0.95);
+    background: rgba(74, 124, 89, 0.95); /* Forest green overlay */
 }
 
 body.minimalist-professional .link-icon {
-    background: #ffffff;
+    background: var(--bg-primary);
     color: var(--accent-primary);
     box-shadow: var(--shadow-md);
 }
 
 /* Scroll Down - Minimalist */
+body.minimalist-professional .scrolldown {
+    position: static !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin-top: 5rem !important;
+    padding: 0 !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    top: auto !important;
+    transform: none !important;
+}
+
 body.minimalist-professional .scrolldown a {
-    color: var(--text-secondary);
+    color: var(--text-primary) !important;
+    font-size: 2rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important;
+    background: var(--accent-primary) !important;
+    border: 2px solid var(--accent-primary) !important;
+    transition: all 0.3s ease !important;
 }
 
 body.minimalist-professional .scrolldown a:hover {
-    color: var(--accent-primary);
+    color: #ffffff !important;
+    background: var(--accent-secondary) !important;
+    border-color: var(--accent-secondary) !important;
+    transform: translateY(3px) !important;
 }
 
 /* Collapsible sections - Minimalist */

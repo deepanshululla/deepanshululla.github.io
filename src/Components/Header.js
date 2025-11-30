@@ -29,7 +29,12 @@ class Header extends Component {
                     </ul>
                 </nav>
 
-                <div className="hero-section">
+                <div 
+                    className="hero-section"
+                    style={{
+                        backgroundImage: `url(${process.env.PUBLIC_URL || ''}/images/bonsai.jpg)`
+                    }}
+                >
                     <div className="hero-content fade-in">
                         <h1 className="responsive-headline">{name}</h1>
                         <h3 className="hero-subtitle">I am a {city} based <span>{occupation}</span>. {description}</h3>
@@ -37,10 +42,9 @@ class Header extends Component {
                         <ul className="social-links">
                             {networks}
                         </ul>
-                    </div>
-
-                    <div className="scrolldown">
-                        <a className="smoothscroll" href="#about"><i className="icon-down-circle"></i></a>
+                        <div className="scrolldown">
+                            <a className="smoothscroll" href="#about"><i className="icon-down-circle"></i></a>
+                        </div>
                     </div>
                 </div>
             </header>

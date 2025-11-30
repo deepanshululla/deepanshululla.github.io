@@ -1,6 +1,6 @@
 {
   "resumeData": {
-    "theme": "neubrutalism",
+    "theme": "minimalist-professional",
     "main": {
       "name": "Deepanshu Lulla",
       "occupation": "AI Infrastructure & Backend Engineer",
@@ -195,7 +195,7 @@
           "description": "Architected and built a production-grade LLM Gateway as a Platform Service enabling organization-wide AI adoption. Implemented unified API interfaces supporting multiple providers (OpenAI, Anthropic, Google, AWS Bedrock) with intelligent routing, rate limiting, cost tracking, and usage analytics. Built on Python FastAPI with Redis caching, PostgreSQL for metadata storage, and Kubernetes for orchestration. Features include request queuing, automatic failover, token management, and comprehensive observability with Prometheus and Datadog integration.",
           "category": "AI Infrastructure",
           "tags": "LLM, AI Platform, Python, FastAPI, Kubernetes, Redis, PostgreSQL, AWS",
-          "image": "yelp.png",
+          "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
           "url": "#",
           "modal": "modal-01"
         },
@@ -205,7 +205,7 @@
           "description": "Designed and implemented a scalable Vector Database Platform Service for semantic search and RAG applications. Built distributed embedding storage supporting millions of vectors with sub-millisecond query latency. Implemented horizontal scaling with sharding, replication, and load balancing. Features include similarity search, hybrid search (vector + keyword), automatic indexing, and multi-tenant isolation. Deployed on Kubernetes with OpenSearch/Pinecone integration, supporting real-time updates and batch ingestion pipelines.",
           "category": "AI Infrastructure",
           "tags": "Vector Database, Semantic Search, RAG, OpenSearch, Kubernetes, Distributed Systems",
-          "image": "flight.jpg",
+          "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
           "url": "#",
           "modal": "modal-02"
         },
@@ -215,7 +215,7 @@
           "description": "Built production ML model deployment infrastructure on AWS SageMaker with 99.9% uptime SLA. Deployed sensitive models for document extraction and credit card approvals, processing $300M+ annually in transaction volume. Implemented automated model versioning, A/B testing framework, canary deployments, and automatic rollback mechanisms. Features include real-time and batch inference endpoints, model monitoring with drift detection, cost optimization through spot instances, and comprehensive logging/alerting.",
           "category": "MLOps",
           "tags": "MLOps, AWS SageMaker, Model Deployment, Python, PyTorch, XGBoost, Monitoring",
-          "image": "openssl.jpg",
+          "image": "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=800&q=80",
           "url": "#",
           "modal": "modal-03"
         },
@@ -225,7 +225,7 @@
           "description": "Led cross-functional initiative to unify ML model deployment infrastructure across organization, reducing deployment time by 90% and generating $5.2M annual revenue. Built CI/CD pipeline for ML models with automated testing, validation, and deployment. Migrated from legacy H2O platform to modern containerized deployment. Implemented model registry, feature store integration, and automated retraining pipelines. Technologies include Kubernetes, Docker, Terraform, Python, and various ML frameworks.",
           "category": "MLOps",
           "tags": "MLOps, CI/CD, Kubernetes, Docker, Terraform, Python, Model Registry",
-          "image": "restapi.jpg",
+          "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
           "url": "#",
           "modal": "modal-04"
         },
@@ -235,7 +235,7 @@
           "description": "Architected Document Intelligence Pipeline with automated categorization, routing, and processing agents. Implemented multi-stage pipeline using Google Vision OCR, Document AI, and custom ML models for document classification and extraction. Built feedback loops for continuous model improvement with human-in-the-loop validation. Features include document queue management with Kafka, parallel processing, retry mechanisms, and comprehensive observability. Processes millions of documents monthly with high accuracy.",
           "category": "AI Infrastructure",
           "tags": "Document AI, OCR, ML Pipeline, Kafka, Python, Google Vision, Distributed Processing",
-          "image": "ovx.png",
+          "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
           "url": "#",
           "modal": "modal-05"
         },
@@ -245,7 +245,7 @@
           "description": "Optimized data aggregation pipeline processing 10B+ events and 30M+ jobs daily, reducing job latency from 600s to 2.4s (99.6% improvement). Implemented distributed processing with Apache Spark, intelligent caching strategies with Redis, and optimized database queries. Built real-time streaming pipeline with Kafka and Flink for click/open analytics. Features include automatic scaling, fault tolerance, and comprehensive monitoring with Grafana dashboards.",
           "category": "Backend Infrastructure",
           "tags": "Data Pipeline, Apache Spark, Kafka, Redis, Performance Optimization, Distributed Systems",
-          "image": "jenkins.png",
+          "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
           "url": "#",
           "modal": "modal-06"
         },
@@ -255,7 +255,7 @@
           "description": "Architected Customer Data Platform backend infrastructure using Change Data Capture (CDC) with Kafka and Debezium. Created unified customer identity resolution system handling millions of records with real-time synchronization across multiple data sources. Implemented event-driven architecture with schema registry, data validation, and conflict resolution. Features include customer profile merging, deduplication, and real-time updates with sub-second latency.",
           "category": "Backend Infrastructure",
           "tags": "CDC, Kafka, Debezium, Data Engineering, Event-Driven Architecture, PostgreSQL",
-          "image": "blog.jpg",
+          "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
           "url": "#",
           "modal": "modal-07"
         },
@@ -265,7 +265,7 @@
           "description": "Built resilient distributed ETL pipeline infrastructure with automatic retry mechanisms, circuit breakers, and auto-healing capabilities. Implemented monitoring and alerting using Prometheus, Elasticsearch, and Grafana. Created custom Prometheus exporters for application metrics. Features include automatic failure recovery, pipeline health checks, and proactive alerting with PagerDuty integration. Reduced manual intervention by 80% and system downtime by 75%.",
           "category": "Backend Infrastructure",
           "tags": "ETL, Distributed Systems, Kubernetes, Prometheus, Observability, Python, Celery",
-          "image": "imdb.jpg",
+          "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
           "url": "#",
           "modal": "modal-08"
         }

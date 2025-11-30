@@ -46,6 +46,12 @@ export class App extends Component {
             if (theme !== 'neopolitan' && allThemes.includes(theme)) {
                 document.body.classList.add(theme);
             }
+            
+            // Set bonsai background image for minimalist-professional theme
+            if (theme === 'minimalist-professional') {
+                const bonsaiUrl = `${process.env.PUBLIC_URL || ''}/images/bonsai.jpg`;
+                document.documentElement.style.setProperty('--bonsai-bg', `url(${bonsaiUrl})`);
+            }
         }
     }
 
