@@ -1,0 +1,546 @@
+[
+  {
+    "id": "rnn-vs-cnn-vs-autoencoder-vs-transformer",
+    "title": "RNN vs. CNN vs. Autoencoder vs. Attention/Transformer",
+    "date": "2025-08-03",
+    "excerpt": "A practical guide to various deep learning architectures, including Recurrent Neural Networks (RNNs), Convolutional Neural Networks (CNNs), Autoencoders, and Attention/Transformer models, with examples and use cases.",
+    "filename": "rnn-vs-cnn-vs-autoencoder-vs-transformer.md",
+    "categories": [
+      "AI/ML"
+    ]
+  },
+  {
+    "id": "rag-and-agents",
+    "title": "AI Engineering: RAG and Agents",
+    "date": "2025-08-03",
+    "excerpt": "Detailed exploration of Retrieval-Augmented Generation (RAG) and AI agents, covering definitions, workflows, tools, planning, control flows, and memory management in AI applications.",
+    "filename": "rag-and-agents.md",
+    "categories": [
+      "AI/ML",
+      "Software Engineering"
+    ]
+  },
+  {
+    "id": "prompt-engineering",
+    "title": "AI Engineering: Prompt Engineering",
+    "date": "2025-08-03",
+    "excerpt": "An in-depth look at prompt engineering, discussing its importance in guiding AI models, the anatomy of a prompt, and strategies for effective prompt design.",
+    "filename": "prompt-engineering.md",
+    "categories": [
+      "AI/ML",
+      "Software Engineering"
+    ]
+  },
+  {
+    "id": "ai-engineering-chapter-2",
+    "title": "AI Engineering by Chip Huyen: Chapter 2 Notes and Summary",
+    "date": "2025-06-22",
+    "excerpt": "A summary of Chapter 2 from AI Engineering by Chip Huyen, covering foundation model design choices, pre-training and post-training processes, sampling methods, and the probabilistic nature of AI models.",
+    "filename": "ai-engineering-chapter-2.md",
+    "categories": [
+      "AI/ML",
+      "Books",
+      "Software Engineering",
+      "Statistics"
+    ]
+  },
+  {
+    "id": "ai-engineering-chapter-1",
+    "title": "AI Engineering Book by Chip Huyen: Chapter 1 High level insights",
+    "date": "2025-06-22",
+    "excerpt": "High-level insights from Chapter 1 of AI Engineering by Chip Huyen, discussing the scaling up of AI models, the importance of data, and challenges in building AI applications.",
+    "filename": "ai-engineering-chapter-1.md",
+    "categories": [
+      "AI/ML",
+      "Books",
+      "Software Engineering",
+      "Data Science"
+    ]
+  },
+  {
+    "id": "llm-zero-shot-conversational-recommenders",
+    "title": "Notes on paper: Large Language Models as Zero-Shot Conversational Recommenders",
+    "date": "2024-07-15",
+    "excerpt": "A summary of research on using large language models as zero-shot conversational recommenders, exploring how LLMs can provide recommendations through natural language conversations without explicit training.",
+    "filename": "llm-zero-shot-conversational-recommenders.md",
+    "categories": [
+      "AI/ML",
+      "Books"
+    ]
+  },
+  {
+    "id": "books-2023",
+    "title": "13 Books I read in 2023",
+    "date": "2024-07-14",
+    "excerpt": "A curated list of 13 books read in 2023, covering topics in technology, software engineering, machine learning, and personal development.",
+    "filename": "books-2023.md",
+    "categories": [
+      "Books",
+      "Software Engineering"
+    ]
+  },
+  {
+    "id": "machine-learning-engineering-chapter-1",
+    "title": "Machine Learning Engineering by Andriy Burkov: Chapter 1 Notes",
+    "date": "2024-07-13",
+    "excerpt": "Notes from Chapter 1 of Machine Learning Engineering by Andriy Burkov, discussing the process of solving practical problems using machine learning, including data collection, model training, and different learning paradigms.",
+    "filename": "machine-learning-engineering-chapter-1.md",
+    "categories": [
+      "AI/ML",
+      "Books",
+      "Software Engineering",
+      "Statistics",
+      "Data Science"
+    ]
+  },
+  {
+    "id": "recmind-recommendation-agent",
+    "title": "RecMind: Large Language Model Powered Agent for Recommendation",
+    "date": "2024-07-13",
+    "excerpt": "A summary of the RecMind paper, discussing the use of large language models as agents for recommendation systems, including architecture, advantages, challenges, and implementation patterns.",
+    "filename": "recmind-recommendation-agent.md",
+    "categories": [
+      "AI/ML"
+    ]
+  },
+  {
+    "id": "java-trivia",
+    "title": "java trivia",
+    "date": "2024-07-13",
+    "excerpt": "Interesting trivia and lesser-known facts about Java programming language, covering language features, history, and quirks.",
+    "filename": "java-trivia.md",
+    "categories": [
+      "Software Engineering",
+      "Programming"
+    ]
+  },
+  {
+    "id": "coursera-neural-networks-week1",
+    "title": "Coursera Week 1: Intro to Neural Networks Notes",
+    "date": "2023-10-14",
+    "excerpt": "Notes from the first week of a Coursera course on neural networks, covering the basics of neural network structure, forward propagation, and activation functions.",
+    "filename": "coursera-neural-networks-week1.md",
+    "categories": [
+      "AI/ML",
+      "Books"
+    ]
+  },
+  {
+    "id": "exploring-vector-databases",
+    "title": "Exploring Vector Databases",
+    "date": "2023-07-11",
+    "excerpt": "An exploration of vector databases, their use cases, and how they enable semantic search and similarity matching for AI applications.",
+    "filename": "exploring-vector-databases.md",
+    "categories": [
+      "AI/ML",
+      "Data Science"
+    ]
+  },
+  {
+    "id": "books-2022",
+    "title": "12 Books I read in 2022",
+    "date": "2023-06-18",
+    "excerpt": "A list of 12 books read in 2022, including technical books on software engineering, machine learning, and system design.",
+    "filename": "books-2022.md",
+    "categories": [
+      "Books",
+      "Software Engineering"
+    ]
+  },
+  {
+    "id": "toxic-workplace",
+    "title": "Recognizing Toxic workplaces(Opinion)",
+    "date": "2023-06-10",
+    "excerpt": "Personal insights and observations on recognizing toxic work environments, including red flags and strategies for maintaining professional well-being.",
+    "filename": "toxic-workplace.md",
+    "categories": [
+      "AI/ML",
+      "Software Engineering"
+    ]
+  },
+  {
+    "id": "books-2021",
+    "title": "13 Books I read in 2021",
+    "date": "2023-04-30",
+    "excerpt": "A collection of 13 books read in 2021, covering software engineering, data science, machine learning, and professional development topics.",
+    "filename": "books-2021.md",
+    "categories": [
+      "Books",
+      "Software Engineering",
+      "Data Science"
+    ]
+  },
+  {
+    "id": "ml-best-practices",
+    "title": "Best Practices for Building Machine Learning Applications",
+    "date": "2023-04-22",
+    "excerpt": "Practical guidelines and best practices for building production-ready machine learning applications, covering data, model development, deployment, and monitoring.",
+    "filename": "ml-best-practices.md",
+    "categories": [
+      "AI/ML",
+      "Software Engineering",
+      "Data Science"
+    ]
+  },
+  {
+    "id": "better-backend-engineer",
+    "title": "How to be a Better Backend Engineer",
+    "date": "2023-03-31",
+    "excerpt": "Insights and advice on becoming a better backend engineer, covering system design, scalability, performance optimization, and best practices.",
+    "filename": "better-backend-engineer.md",
+    "categories": [
+      "Software Engineering",
+      "Statistics"
+    ]
+  },
+  {
+    "id": "books-2020",
+    "title": "10 Books I read in 2020",
+    "date": "2023-01-15",
+    "excerpt": "A list of 10 books read in 2020, including technical books on programming, system design, and software engineering practices.",
+    "filename": "books-2020.md",
+    "categories": [
+      "Books",
+      "Software Engineering"
+    ]
+  },
+  {
+    "id": "web-server-multiple-connections",
+    "title": "Writing your own Web server that can handle multiple connections",
+    "date": "2023-01-02",
+    "excerpt": "A guide to building a web server from scratch that can handle multiple concurrent connections, covering networking, threading, and async programming concepts.",
+    "filename": "web-server-multiple-connections.md",
+    "categories": [
+      "Software Engineering",
+      "Algorithms"
+    ]
+  },
+  {
+    "id": "adhd-management",
+    "title": "ADHD Management The hard way as a software Engineer",
+    "date": "2022-12-27",
+    "excerpt": "Personal experiences and strategies for managing ADHD as a software engineer, including productivity techniques, focus management, and work organization methods.",
+    "filename": "adhd-management.md",
+    "categories": [
+      "Software Engineering"
+    ]
+  },
+  {
+    "id": "large-feature-development",
+    "title": "How to do large feature development?",
+    "date": "2022-12-24",
+    "excerpt": "Strategies and approaches for managing large feature development in software engineering, including planning, breaking down work, and execution.",
+    "filename": "large-feature-development.md",
+    "categories": [
+      "Software Engineering"
+    ]
+  },
+  {
+    "id": "lru-caches-python",
+    "title": "LRU Caches in Python",
+    "date": "2022-12-24",
+    "excerpt": "An explanation of LRU (Least Recently Used) cache implementation in Python, including the functools.lru_cache decorator and custom implementations.",
+    "filename": "lru-caches-python.md",
+    "categories": [
+      "Programming",
+      "Algorithms"
+    ]
+  },
+  {
+    "id": "emacs-spacemacs-keybindings",
+    "title": "Emacs (spacemacs) Keybindings I use",
+    "date": "2022-06-24",
+    "excerpt": "A personal guide to Emacs (Spacemacs) keybindings, covering various commands and shortcuts for efficient text editing and file management.",
+    "filename": "emacs-spacemacs-keybindings.md",
+    "categories": [
+      "Programming"
+    ]
+  },
+  {
+    "id": "chrome-extensions",
+    "title": "My favorite Chrome browser extensions for productivity",
+    "date": "2022-06-18",
+    "excerpt": "A curated list of Chrome browser extensions that enhance productivity for software engineers and developers, including tools for coding, research, and workflow optimization.",
+    "filename": "chrome-extensions.md",
+    "categories": [
+      "Software Engineering",
+      "Programming"
+    ]
+  },
+  {
+    "id": "identifying-priorities",
+    "title": "Identifying priorities in software engineering organizations",
+    "date": "2022-04-30",
+    "excerpt": "Strategies and frameworks for identifying and managing priorities in software engineering organizations, including techniques for balancing technical debt, features, and business needs.",
+    "filename": "identifying-priorities.md",
+    "categories": [
+      "Software Engineering"
+    ]
+  },
+  {
+    "id": "2d-arrays-cpp",
+    "title": "Implementing 2d Arrays in CPP",
+    "date": "2021-12-24",
+    "excerpt": "A guide to implementing and working with 2D arrays in C++, covering memory layout, dynamic allocation, and best practices for multi-dimensional arrays.",
+    "filename": "2d-arrays-cpp.md",
+    "categories": [
+      "Programming",
+      "Algorithms"
+    ]
+  },
+  {
+    "id": "thread-safe-queue-cpp",
+    "title": "Thread-safe queue implementation in C++",
+    "date": "2021-09-06",
+    "excerpt": "An implementation guide for thread-safe queues in C++, covering synchronization primitives, mutexes, condition variables, and concurrent programming patterns.",
+    "filename": "thread-safe-queue-cpp.md",
+    "categories": [
+      "Programming",
+      "Algorithms",
+      "Personal"
+    ]
+  },
+  {
+    "id": "custom-string-cpp",
+    "title": "Custom String implementation in C++",
+    "date": "2021-08-11",
+    "excerpt": "A custom implementation of a string class in C++, demonstrating memory management, copy semantics, move semantics, and operator overloading.",
+    "filename": "custom-string-cpp.md",
+    "categories": [
+      "Programming",
+      "Algorithms"
+    ]
+  },
+  {
+    "id": "array-size-computation-cpp",
+    "title": "Compile-time vs run time size computation for array in C++",
+    "date": "2021-08-08",
+    "excerpt": "An exploration of compile-time versus runtime size computation for arrays in C++, covering template metaprogramming, constexpr, and array size determination techniques.",
+    "filename": "array-size-computation-cpp.md",
+    "categories": [
+      "Programming",
+      "Algorithms"
+    ]
+  },
+  {
+    "id": "topological-sort-all-possible-orders",
+    "title": "Topological Sort: All Possible Orders",
+    "date": "2020-06-13",
+    "excerpt": "An explanation of topological sorting, including how to find all possible variations of task ordering given a set of prerequisites, with examples and complexity analysis.",
+    "filename": "topological-sort-all-possible-orders.md",
+    "categories": [
+      "Algorithms"
+    ]
+  },
+  {
+    "id": "measuring-ml-performance",
+    "title": "Measuring Performance of Machine learning models",
+    "date": "2019-11-24",
+    "excerpt": "A comprehensive guide to measuring and evaluating machine learning model performance, covering various metrics, validation techniques, and best practices.",
+    "filename": "measuring-ml-performance.md",
+    "categories": [
+      "AI/ML",
+      "Statistics"
+    ]
+  },
+  {
+    "id": "median-absolute-deviation",
+    "title": "Median absolute deviation (MAD) of Errors",
+    "date": "2019-11-10",
+    "excerpt": "An explanation of Median Absolute Deviation (MAD) as a robust measure of error in machine learning models, including its advantages over mean-based metrics.",
+    "filename": "median-absolute-deviation.md",
+    "categories": [
+      "Statistics"
+    ]
+  },
+  {
+    "id": "liskov-substitution-principle",
+    "title": "Clean Code Concepts: Be Solid: Liskov Substitution Principle",
+    "date": "2019-10-27",
+    "excerpt": "An exploration of the Liskov Substitution Principle (LSP), one of the SOLID principles, with examples demonstrating how derived classes should be substitutable for their base classes.",
+    "filename": "liskov-substitution-principle.md",
+    "categories": [
+      "Software Engineering"
+    ]
+  },
+  {
+    "id": "r-squared",
+    "title": "R-Squared/Coefficient of determination",
+    "date": "2019-10-20",
+    "excerpt": "An explanation of R-squared (coefficient of determination), a statistical measure used to evaluate the goodness of fit in regression models.",
+    "filename": "r-squared.md",
+    "categories": [
+      "Statistics"
+    ]
+  },
+  {
+    "id": "distribution-error-functions",
+    "title": "Distribution of error functions",
+    "date": "2019-09-22",
+    "excerpt": "A discussion of different error functions and their distributions in machine learning, covering when to use each type and their properties.",
+    "filename": "distribution-error-functions.md",
+    "categories": [
+      "Statistics"
+    ]
+  },
+  {
+    "id": "logarithmic-loss",
+    "title": "Logarithmic loss (or cross-entropy)",
+    "date": "2019-08-25",
+    "excerpt": "An explanation of logarithmic loss (cross-entropy) as a loss function for classification problems, including its mathematical foundation and use cases.",
+    "filename": "logarithmic-loss.md",
+    "categories": [
+      "Statistics"
+    ]
+  },
+  {
+    "id": "roc-curve",
+    "title": "Receiver operating characteristic (ROC ) curve",
+    "date": "2019-08-11",
+    "excerpt": "A guide to understanding ROC curves, including how to interpret them, calculate AUC, and use them for model evaluation in binary classification.",
+    "filename": "roc-curve.md",
+    "categories": [
+      "Statistics"
+    ]
+  },
+  {
+    "id": "confusion-matrix",
+    "title": "Confusion Matrix",
+    "date": "2019-07-27",
+    "excerpt": "An explanation of confusion matrices for evaluating classification models, covering true positives, false positives, true negatives, and false negatives.",
+    "filename": "confusion-matrix.md",
+    "categories": [
+      "Statistics"
+    ]
+  },
+  {
+    "id": "maths-101-part-8",
+    "title": "Maths 101: Part 8: Hypothesis testing",
+    "date": "2019-06-29",
+    "excerpt": "An introduction to hypothesis testing in statistics, covering null and alternative hypotheses, p-values, significance levels, and statistical inference.",
+    "filename": "maths-101-part-8.md",
+    "categories": [
+      "Statistics"
+    ]
+  },
+  {
+    "id": "python-version",
+    "title": "Write python like a pro: Part 1: Know your python version",
+    "date": "2019-06-15",
+    "excerpt": "A guide to understanding Python versions, checking your current version, and writing code that is compatible with different Python versions.",
+    "filename": "python-version.md",
+    "categories": [
+      "Programming"
+    ]
+  },
+  {
+    "id": "dimensionality-reduction-part-2",
+    "title": "Dimensionality Reduction In Machine Learning: Some mathematical prerequisites: Mean Vector, Covariance Matrix and Column Standardization",
+    "date": "2019-06-01",
+    "excerpt": "This is part 2 of Introduction to Dimensionality Reduction. In this blog post, we would several different mathematical prerequisites that one must know before trying to understand machine learning. Me...",
+    "filename": "dimensionality-reduction-part-2.md",
+    "categories": [
+      "AI/ML",
+      "Statistics",
+      "Data Science"
+    ]
+  },
+  {
+    "id": "open-closed-principle",
+    "title": "Clean Code Concepts: Be SOLID: Open Closed Principle",
+    "date": "2019-05-11",
+    "excerpt": "An exploration of the Open-Closed Principle, emphasizing designing classes that are open to extension but closed for modification, with examples in Java and Python.",
+    "filename": "open-closed-principle.md",
+    "categories": [
+      "Software Engineering"
+    ]
+  },
+  {
+    "id": "dimensionality-reduction-intro",
+    "title": "Dimensionality Reduction: Part 1: Introduction and defining data as data frame",
+    "date": "2019-05-11",
+    "excerpt": "Introduction to Dimensionality Reduction There are several ways we can define Dimensionality Reduction. One way to define it is: Dimensionality Reduction refers to the process of converting a set of d...",
+    "filename": "dimensionality-reduction-intro.md",
+    "categories": [
+      "Statistics",
+      "Data Science"
+    ]
+  },
+  {
+    "id": "column-normalization",
+    "title": "Data Preprocessing and Cleaning: Part 1: Column Normalization",
+    "date": "2019-04-20",
+    "excerpt": "Before applying any dimensionality reduction technique sometimes it is important to preprocess the data. There are several ways which we can use for preprocessing data. In this post, we will explore o...",
+    "filename": "column-normalization.md",
+    "categories": [
+      "Statistics",
+      "Data Science"
+    ]
+  },
+  {
+    "id": "single-responsibility-principle",
+    "title": "Clean Code Concepts: Be SOLID: Single Responsibility Principle",
+    "date": "2019-04-06",
+    "excerpt": "An exploration of the Single Responsibility Principle (SRP) in software development, with examples in Java and Python, emphasizing the importance of writing clean and maintainable code.",
+    "filename": "single-responsibility-principle.md",
+    "categories": [
+      "AI/ML",
+      "Software Engineering"
+    ]
+  },
+  {
+    "id": "maths-101-part-7",
+    "title": "Maths 101 : Part 7: Estimating Confidence Intervals",
+    "date": "2019-03-23",
+    "excerpt": "In statistics, a confidence interval (CI) is a type of interval estimate which we compute using the statistics of the observed data. The interval has an associated confidence level that, loosely speak...",
+    "filename": "maths-101-part-7.md",
+    "categories": [
+      "Statistics",
+      "Data Science"
+    ]
+  },
+  {
+    "id": "maths-101-part-6",
+    "title": "Maths 101 : Part 6: Measuring relationship between two Random Variables",
+    "date": "2019-03-11",
+    "excerpt": "Suppose you have taken the data for heights and weights of students in class and you want to figure out the correlation between heights and weights of students. The relation between these two paramete...",
+    "filename": "maths-101-part-6.md",
+    "categories": [
+      "Statistics",
+      "Data Science"
+    ]
+  },
+  {
+    "id": "maths-101-part-5",
+    "title": "Maths 101: Part 5: Different Types of Distribution",
+    "date": "2019-02-23",
+    "excerpt": "Types of Distributions Bernoulli and Binomial distribution A Bernoulli random variable has two possible outcomes: 0 or 1. A binomial distribution is the sum of independent and identically distributed ...",
+    "filename": "maths-101-part-5.md",
+    "categories": [
+      "Statistics"
+    ]
+  },
+  {
+    "id": "maths-101-part-4",
+    "title": "Maths 101: Part 4: PDF, Central Limit Theorem and Chebyshev&#8217;s inequality",
+    "date": "2019-02-09",
+    "excerpt": "Populations and Samples The main difference between a population and a sample has to do with how observations are assigned to the data set Population Includes all of the elements from a set of data. S...",
+    "filename": "maths-101-part-4.md",
+    "categories": [
+      "AI/ML",
+      "Statistics",
+      "Data Science"
+    ]
+  },
+  {
+    "id": "maths-101-part-3",
+    "title": "Maths 101: Part 3: Random variables and Normal Distribution",
+    "date": "2019-01-26",
+    "excerpt": "Random Variables The term random variable is not very descriptive. A better term is measurement function.Consider tossing a fair six-sided die. There are only six outcomes possible, \u03a9 = {1, 2, 3, 4, 5...",
+    "filename": "maths-101-part-3.md",
+    "categories": [
+      "AI/ML",
+      "Statistics"
+    ]
+  }
+]
