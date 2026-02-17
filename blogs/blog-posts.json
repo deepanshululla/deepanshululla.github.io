@@ -1,5 +1,49 @@
 [
   {
+    "id": "mixed-precision-training",
+    "title": "Mixed Precision Training: bfloat16, FP8, and When to Use What",
+    "date": "2026-02-17",
+    "excerpt": "A practical guide to floating point formats in deep learning training, covering float32, float16, bfloat16, and FP8. Explains why bfloat16 is the modern default, when FP8 makes sense, and how mixed precision training works in PyTorch.",
+    "filename": "mixed-precision-training.md",
+    "categories": [
+      "AI/ML",
+      "Software Engineering"
+    ]
+  },
+  {
+    "id": "chain-of-density-summarization",
+    "title": "Chain of Density Summarization: Getting Better Summaries from LLMs",
+    "date": "2026-02-17",
+    "excerpt": "A practical guide to Chain of Density prompting, an iterative summarization technique that produces concise, information-dense summaries by progressively packing more entities into a fixed word count across multiple rewriting rounds.",
+    "filename": "chain-of-density-summarization.md",
+    "categories": [
+      "AI/ML",
+      "Software Engineering"
+    ]
+  },
+  {
+    "id": "speculative-decoding",
+    "title": "Speculative Decoding: Making LLM Inference Faster",
+    "date": "2026-02-17",
+    "excerpt": "A deep dive into speculative decoding, an inference optimization technique that achieves 2-3x speedups in LLM token generation by using a small draft model to propose candidates verified in parallel by the target model, with no quality degradation.",
+    "filename": "speculative-decoding.md",
+    "categories": [
+      "AI/ML",
+      "Software Engineering"
+    ]
+  },
+  {
+    "id": "prefill-vs-decode-llm-inference",
+    "title": "Prefill vs Decode: Understanding the Two Phases of LLM Inference",
+    "date": "2026-02-17",
+    "excerpt": "A deep dive into the two core phases of LLM inference -- prefill and decode -- covering KV caching, GPU memory breakdown, inference metrics, batching strategies, and attention variants like MHA, GQA, and MQA.",
+    "filename": "prefill-vs-decode-llm-inference.md",
+    "categories": [
+      "AI/ML",
+      "Software Engineering"
+    ]
+  },
+  {
     "id": "rnn-vs-cnn-vs-autoencoder-vs-transformer",
     "title": "RNN vs. CNN vs. Autoencoder vs. Attention/Transformer",
     "date": "2025-08-03",
