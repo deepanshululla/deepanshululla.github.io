@@ -95,6 +95,24 @@ New entries go at the **top** of the JSON array (newest first). Each entry:
 - The `master` branch contains **built output** (not just source). The deploy script copies `build/*` to root and force-pushes to master.
 - The site is served from master root, not a `gh-pages` branch in the typical sense — `deploy.sh` handles this.
 - CNAME file points to `deepanshululla.com`.
+- **To deploy changes to the live site, run `./deploy.sh`**. This is required after any content changes (new blog posts, code updates, etc.) — local changes are not visible on `deepanshululla.com` until deployed.
+
+### What `deploy.sh` Does
+
+```bash
+rm -rf node_modules          # Clean install
+rm -rf ./static
+rm package-lock.json
+git push origin :gh-pages    # Delete remote gh-pages branch
+npm install                  # Reinstall dependencies
+npm run deploy               # Build + deploy to gh-pages
+cp -aR ./build/* ./          # Copy build output to repo root
+git add .
+git commit -am "build"
+git push -f origin master    # Force-push to master (serves the site)
+```
+
+This is a destructive deploy (force-push). It wipes `node_modules`, rebuilds from scratch, and force-pushes the built output to master.
 
 ## Conventions
 
