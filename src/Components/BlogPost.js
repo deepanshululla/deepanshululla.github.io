@@ -1,6 +1,21 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import marked from 'marked';
+import hljs from 'highlight.js/lib/core';
+import python from 'highlight.js/lib/languages/python';
+import javascript from 'highlight.js/lib/languages/javascript';
+import bash from 'highlight.js/lib/languages/bash';
+import json from 'highlight.js/lib/languages/json';
+import sql from 'highlight.js/lib/languages/sql';
+import yaml from 'highlight.js/lib/languages/yaml';
+import 'highlight.js/styles/github-dark-dimmed.css';
+
+hljs.registerLanguage('python', python);
+hljs.registerLanguage('javascript', javascript);
+hljs.registerLanguage('bash', bash);
+hljs.registerLanguage('json', json);
+hljs.registerLanguage('sql', sql);
+hljs.registerLanguage('yaml', yaml);
 
 class BlogPost extends Component {
     constructor(props) {
@@ -25,12 +40,24 @@ class BlogPost extends Component {
         }
     }
 
-    componentDidUpdate(prevProps) {
+    componentDidUpdate(prevProps, prevState) {
         const currentPostId = this.props.params?.id;
         const prevPostId = prevProps.params?.id;
         if (currentPostId && currentPostId !== prevPostId) {
             this.fetchBlogPost(currentPostId);
             this.fetchAllPosts(currentPostId);
+        }
+        if (this.state.content && this.state.content !== prevState.content) {
+            this.highlightCode();
+        }
+    }
+
+    highlightCode() {
+        const el = document.querySelector('.blog-post-body');
+        if (el) {
+            el.querySelectorAll('pre code').forEach(block => {
+                hljs.highlightElement(block);
+            });
         }
     }
 
