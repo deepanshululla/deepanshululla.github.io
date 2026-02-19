@@ -126,7 +126,7 @@ class Header extends Component {
                     >
                         <div className="hero-content fade-in">
                             <h1 className="responsive-headline">{name}</h1>
-                            <h3 className="hero-subtitle">I am a {city} based <span>{occupation}</span>. {description}</h3>
+                            <h3 className="hero-subtitle">I am an <span>{occupation}</span>. {description}</h3>
                             <hr className="hero-divider" />
                             <ul className="social-links">
                                 {networks}

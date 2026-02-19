@@ -4,7 +4,7 @@
     "main": {
       "name": "Deepanshu Lulla",
       "occupation": "AI Infrastructure & Backend Engineer",
-      "description": "Building scalable AI infrastructure platforms, distributed backend systems, and production-grade ML/AI services that power enterprise applications",
+      "description": "I build distributed systems, MLOps platforms, and AI infrastructure -- from model serving to real-time data pipelines -- that run reliably at enterprise scale",
       "image": "profilepic.jpg",
       "bio": "Deepanshu Lulla is an AI Infrastructure and Backend Engineer with a proven track record of architecting and building large-scale distributed systems and AI/ML platforms. He has led the development of enterprise-level LLM gateways, vector database platforms, and ML model deployment pipelines that process billions of transactions annually. Deepanshu builds fault-tolerant, high-performance backend systems that seamlessly integrate AI capabilities, ensuring optimal scalability, reliability, and observability. His work spans distributed systems architecture, cloud-native infrastructure, MLOps, and building developer-friendly AI platform services that accelerate organizational AI adoption.",
       "email": "deepanshu.lulla@gmail.com",
