@@ -9,7 +9,7 @@ The term random variable is not very descriptive.
 
 A better term is measurement function.Consider tossing a fair six-sided die. There are only six outcomes possible,
 
-Ω = {1, 2, 3, 4, 5, 6}
+Omega = {1, 2, 3, 4, 5, 6}
 
 As we know, if the die is fair, then the probability of each outcome is 1/6. To say this formally, the measure of each set (i.e., {1}, {2}, . . . , {6}) is
 
@@ -25,15 +25,37 @@ For example, In a throw of dice, we can define our random variable, we can defin
 
 X --> Value of random variable
 
-{1} → 1/6
+{1} --> 1/6
 
-{2} → 1/6
+{2} --> 1/6
 
 ;
 
 :
 
-{6} →  1/6
+{6} -->  1/6
+
+```mermaid
+graph LR
+    subgraph Sample Space
+        O1[Outcome 1]
+        O2[Outcome 2]
+        O3[Outcome 3]
+        O4[Outcome 4]
+        O5[Outcome 5]
+        O6[Outcome 6]
+    end
+    subgraph Random Variable X
+        V[Maps to Real Numbers]
+    end
+    O1 -->|X = 1, P = 1/6| V
+    O2 -->|X = 2, P = 1/6| V
+    O3 -->|X = 3, P = 1/6| V
+    O4 -->|X = 4, P = 1/6| V
+    O5 -->|X = 5, P = 1/6| V
+    O6 -->|X = 6, P = 1/6| V
+    style V fill:#4a90d9,color:#fff
+```
 
 Random variables are of different types.
 
@@ -50,16 +72,26 @@ The way the data is distributed in the graph is called the distribution of the d
 
 Random variables are also classified by their distributions for eg. Gaussian, uniform, log normal etc.
 
-Examples of Gaussian distribution would include the height of students in a class and examples of uniform distribution would include tossing a coin or throwing a dice where each outcome is equally probable.
+```mermaid
+graph TD
+    A[Random Variables] --> B[Discrete]
+    A --> C[Continuous]
+    B --> D[Uniform: Dice Roll]
+    B --> E[Binomial: Coin Flips]
+    C --> F[Gaussian: Heights]
+    C --> G[Uniform: Random Real Number]
+    C --> H[Log Normal]
+    style A fill:#4a90d9,color:#fff
+    style B fill:#e67e22,color:#fff
+    style C fill:#2ecc71,color:#fff
+```
 
- 
+Examples of Gaussian distribution would include the height of students in a class and examples of uniform distribution would include tossing a coin or throwing a dice where each outcome is equally probable.
 
 That being said it doesn't mean all uniform random variable are discrete and all Gaussian random variable is continuous. We can have a continuous uniform random variable.
 
- 
-
 ### **Normal Distribution**
-In probability theory, the normal (or Gaussian or Gauss or Laplace–Gauss) distribution is a very common continuous probability distribution.
+In probability theory, the normal (or Gaussian or Gauss or Laplace-Gauss) distribution is a very common continuous probability distribution.
 
 Normal distributions are important in statistics and are often used in the natural and social sciences to represent real-valued random variables whose distributions are not known.
 
@@ -68,11 +100,24 @@ A random variable with a Gaussian distribution is said to be normally distribute
 #### The 68-95-99.7 rule for a Normal Distribution
 The normal distribution is commonly associated with the 68-95-99.7 rule which you can see in the image above.
 
-Further one can see that roughly 68% of the data lies within 1 standard deviation (σ) of the mean (μ).
+Further one can see that roughly 68% of the data lies within 1 standard deviation of the mean.
 
-Similarly, we can say that around 95% of the data is within 2 standard deviations (σ) of the mean (μ), and 99.7% of the data is within 3 standard deviations (σ) of the mean (μ).
+Similarly, we can say that around 95% of the data is within 2 standard deviations of the mean, and 99.7% of the data is within 3 standard deviations of the mean.
 
-#### 
+```mermaid
+graph TD
+    A[Normal Distribution - Bell Curve] --> B[68% within 1 std dev]
+    A --> C[95% within 2 std devs]
+    A --> D[99.7% within 3 std devs]
+    B --> E[mu - sigma to mu + sigma]
+    C --> F[mu - 2sigma to mu + 2sigma]
+    D --> G[mu - 3sigma to mu + 3sigma]
+    style A fill:#4a90d9,color:#fff
+    style B fill:#2ecc71,color:#fff
+    style C fill:#f39c12,color:#fff
+    style D fill:#e74c3c,color:#fff
+```
+
 #### Skewness
 is the measure of how much distributions look departed from the symmetry. Distributions can be positive or negative skewed.
 
@@ -85,15 +130,11 @@ Such an asymmetry is referred to as positive skewness.
 The opposite, negative skewness, is rare.
 
 #### Kurtosis
-In layman terms, Kurtosis is a measure of the “peakedness” of the probability distribution.
+In layman terms, Kurtosis is a measure of the "peakedness" of the probability distribution.
 
 However that is not accurate, read **Peter Westfall's comments below why that is not the case.**
 
 Distributions with negative or positive excess kurtosis are called platykurtic distributions or leptokurtic distributions, respectively.
-
- 
-
- 
 
 Hope you liked it and let us know what you think in the comments.
 
@@ -105,4 +146,4 @@ Math 101: Part 2: Measures of central tendency and Skewness
 
 Maths 101: Part 3: Random variables and Normal Distribution
 
-Maths 101: Part 4: PDF, Central Limit Theorem and Chebyshev’s inequality
+Maths 101: Part 4: PDF, Central Limit Theorem and Chebyshev's inequality

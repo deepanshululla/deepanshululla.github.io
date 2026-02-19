@@ -98,6 +98,23 @@ JDK (Java Development Kit), JVM (Java Virtual Machine), and JRE (Java Runtime En
 
 - End-users typically install JRE on their systems to run Java applications without needing to install the full JDK.
 
+```mermaid
+graph TD
+    subgraph JDK [JDK - Java Development Kit]
+        subgraph JRE [JRE - Java Runtime Environment]
+            subgraph JVM [JVM - Java Virtual Machine]
+                CL[Class Loader]
+                BE[Bytecode Execution Engine]
+                GC[Garbage Collector]
+            end
+            LIBS[Standard Libraries and APIs]
+        end
+        JAVAC[Java Compiler - javac]
+        DBG[Debugger and Profiler]
+        DOCS[Documentation Tools]
+    end
+```
+
 In summary, JDK is used for Java application development and includes development tools and libraries, JVM is the runtime environment that executes Java bytecode, and JRE is a minimal runtime environment used for running Java applications without development tools.
 
 ### 5 . What are the important differences between C++ and Java?
@@ -169,6 +186,17 @@ In Java, the classloader is a crucial component of the Java Runtime Environment 
 - **Isolation**:
 
 - Classloaders provide class isolation, ensuring that classes loaded by different classloaders do not interfere with each other. This isolation is crucial for application servers, containers, and modular applications, where different components may rely on different versions of libraries.
+
+```mermaid
+graph TD
+    A[Bootstrap ClassLoader] -->|parent of| B[Extension ClassLoader]
+    B -->|parent of| C[Application ClassLoader]
+    C -->|parent of| D[Custom ClassLoader]
+    A --- A1[Loads core Java classes from rt.jar]
+    B --- B1[Loads from lib/ext directory]
+    C --- C1[Loads from application classpath]
+    D --- D1[Loads from custom sources]
+```
 
 #### Types of Classloaders
 

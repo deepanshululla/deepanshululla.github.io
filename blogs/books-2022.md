@@ -6,6 +6,28 @@
 
 Every once in a while, we stumble upon a book that profoundly impacts our lives, instigates change, and even redefines our perspectives. Today, I bring you a curated list of 12 transformative books that encompass personal development, professional growth, financial wisdom, entrepreneurial journeys, software engineering, spirituality, mental health, and leadership skills that I got a chance to read in 2022.
 
+```mermaid
+graph TD
+    A[12 Books in 2022] --> B[Leadership - 3 books]
+    A --> C[Self-Help - 3 books]
+    A --> D[Spirituality - 2 books]
+    A --> E[Tech and Programming - 2 books]
+    A --> F[Finance - 1 book]
+    A --> G[Mental Health - 1 book]
+    B --> B1[The First 90 Days]
+    B --> B2[The Coaching Habit]
+    B --> B3[5 Languages of Appreciation]
+    C --> C1[Happier No Matter What]
+    C --> C2[The Subtle Art of Not Giving a Fk]
+    C --> C3[Start with Why]
+    D --> D1[7 Spiritual Laws of Success]
+    D --> D2[Think Like a Monk]
+    E --> E1[Senior Software Engineer]
+    E --> E2[SQL Antipatterns]
+    F --> F1[The Psychology of Money]
+    G --> G1[ADHD 2.0]
+```
+
 1) **"The First 90 Days" by Michael Watkins**
 
 This book is a roadmap for leaders at all levels. Watkins provides strategies for getting up to speed quickly in a new role, whether it's a promotion or a career transition. With detailed plans and explicit guidelines, this book is an essential read for those seeking to make a mark in their initial days in a new position.

@@ -5,6 +5,20 @@
 ![Statistical distributions](https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&h=400&fit=crop&q=80)
 
 ## Types of Distributions
+
+```mermaid
+graph TD
+    A["Statistical Distributions"] --> B["Discrete"]
+    A --> C["Continuous"]
+    B --> D["Bernoulli: single trial, 0 or 1"]
+    B --> E["Binomial: sum of n Bernoulli trials"]
+    C --> F["Gaussian / Normal"]
+    C --> G["Log-Normal: ln of X is Normal"]
+    C --> H["Power Law / Pareto"]
+    D -->|"n=1 special case"| E
+    G -->|"Box-Cox transform"| F
+    H -->|"Box-Cox transform"| F
+```
 #### **Bernoulli and Binomial distribution**
 A Bernoulli random variable has two possible outcomes: 0 or 1. A binomial distribution is the sum of independent and identically distributed Bernoulli random variables.
 
@@ -49,6 +63,21 @@ As value of alpha decrease the tail becomes fatter.
 Usually, this estimator is the proportion of times that the number occurs in the data set. If the points in the plot tend to "converge" to a straight line for large numbers in the x axis, then we can conclude that the distribution has a power-law tail.
 
  
+
+```mermaid
+graph LR
+    A["Non-Gaussian Distribution"] --> B{"Identify Type"}
+    B -->|"Log-Normal"| C["Apply ln to X"]
+    B -->|"Power Law"| D["Apply Box-Cox Transform"]
+    C --> E["Check with QQ Plot"]
+    D --> F["Get lambda value"]
+    F --> G{"lambda = 0?"}
+    G -->|"Yes"| H["Use ln of X"]
+    G -->|"No"| I["Use X^lambda - 1 / lambda"]
+    H --> E
+    I --> E
+    E --> J["Gaussian Distribution"]
+```
 
 #### Box Cox Transformation
 So for transforming log-normal distribution to gaussian distributions we use the log of the random variable. What to do in case of power law or pareto distributions.

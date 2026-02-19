@@ -11,6 +11,14 @@ There are several ways which we can use for preprocessing data.
 In this post, we will explore one of the common ways to do data preprocessing which is column normalization (or feature scaling).
 
 ### **Feature scaling**
+
+```mermaid
+graph LR
+    A["Raw Feature Values\nVarying ranges"] --> B["Find min and max"]
+    B --> C["Apply formula:\nai_new = ai - amin / amax - amin"]
+    C --> D["Normalized Values\nRange: 0 to 1"]
+```
+
 Feature scaling is a method used to standardize the range of independent variables or features of data.
 
 In data processing, it is also known as data normalization(or column normalization) and is generally performed during the data preprocessing step.
@@ -45,6 +53,18 @@ Needless to say as amin' =0 and amax' =1
 In this way, we created a new normalized vector from our original vector and the values of that normalized vector lie between 0 and 1.
 
 #### Why do we need to do feature/column normalization?
+
+```mermaid
+graph TD
+    A["Why Normalize?"] --> B["Different units\ne.g. cm vs meters"]
+    A --> C["Faster convergence\nin regression"]
+    A --> D["Fair comparison\nacross features"]
+    B --> E["Normalization:\nAll features in 0 to 1"]
+    C --> E
+    D --> E
+    E --> F["Key property:\nRelationships between\nfeatures are preserved"]
+```
+
 We may have multiple sources of data of which we want to combine all of it, however not all of it is in the same unit system. For eg two datasets one with length in cm and one with length in meters.
 
 So to put everything on the same scale. The second advantage is when it comes to regression as it converges faster to a minimum.

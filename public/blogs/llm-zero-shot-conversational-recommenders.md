@@ -10,9 +10,27 @@ https://arxiv.org/abs/2308.10053
 
 ### Notes
 
-CRS possesses the potential to: 
+The following diagram shows the multi-turn conversational recommendation flow between a user and the CRS system:
 
-(1) understand not only users’ historical actions but also users’ (multi-turn) natural-language inputs; 
+```mermaid
+sequenceDiagram
+    participant U as User
+    participant CRS as Conversational Recommender
+    participant G as Generator
+    participant R as Recommender
+    U->>CRS: Express preference or ask for suggestion
+    CRS->>G: Generate clarifying response
+    G-->>U: Ask follow-up question
+    U->>CRS: Provide more context
+    CRS->>R: Rank candidate items
+    R-->>CRS: Ranked item list
+    CRS->>G: Generate recommendation response
+    G-->>U: Recommended items with justification
+```
+
+CRS possesses the potential to:
+
+(1) understand not only users’ historical actions but also users’ (multi-turn) natural-language inputs;
 
 (2) Provide not only recommended items but also human-like responses for multiple purposes, such as preference refinement, knowledgeable discussion, or recommendation justification.
 Towards this a typical conversational recommender contains two components a generator to generate natural-language responses and a recommender to rank items to meet users’ needs
@@ -42,6 +60,19 @@ the recommender component of a CRS is specifically designed to optimize the foll
 
 ### Framework
 
+The following diagram illustrates the overall conversational recommendation pipeline, from user input through the LLM to the final ranked list of items:
+
+```mermaid
+flowchart LR
+    A[User Query] --> B[Conversational Context S]
+    B --> C[LLM F]
+    D[Task Description T] --> C
+    E[Format Requirement F] --> C
+    C --> F[Natural Language Output]
+    F --> G[Post-Processor Phi]
+    G --> H[Ranked Item List]
+```
+
 Our goal is to utilize LLMs as zero-shot conversational recommenders. Specifically, without the need for fine-tuning, we intend to prompt an LLM, denoted as F, using a task description template 𝑇 , format requirement 𝐹 , and conversational context 𝑆 before the 𝑘 th turn. This process can be formally represented as: Iˆ 𝑘 = Φ (F (𝑇 , 𝐹, 𝑆)) .
 
 Models. We consider several popular LLMs F that exhibit zero-shot prompting abilities in two groups. To try to ensure deterministic results, we set the decoding temperature to 0 for all models. • GPT-3.5-turbo 4 and GPT-4 from OPENAI with abilities of solving many complex tasks in zero-shot setting but are closed-sourced. • BAIZE 5 and Vicuna , which are representative open-sourced LLMs fine-tuned based on LLAMA-13B.
@@ -56,6 +87,22 @@ Processing. We do not assess model weights or output logits from LLMs. Therefore
 3) LLMs may generate out-of-dataset item titles, but few hallucinated recommendations. We note that language models trained on open-domain data naturally produce items out of the allowed item set during generation. In practice, removing these items improves the models’ recommendation performance.
 
 ## Setup
+
+The following diagram contrasts the two types of knowledge that LLMs use for recommendation:
+
+```mermaid
+flowchart TD
+    A[Knowledge in LLMs] --> B[Content and Context Knowledge]
+    A --> C[Collaborative Knowledge]
+    B --> D[Genre descriptions]
+    B --> E[Director and actor names]
+    B --> F[Mood and tone cues]
+    C --> G[Users who like A also like B]
+    C --> H[Item co-occurrence patterns]
+    C --> I[Community interaction signals]
+    B --> J[Strong in LLMs]
+    C --> K[Weak in LLMs]
+```
 
 Knowledge in LLMs
 * Collaborative filtering; Collaborative knowledge, which requires the model to match items with similar ones, according to community interactions like “users who like A typically also like B”.we define the collaborative knowledge in LLMs as the ability to make accurate recommendations using item mentions in conversational contexts

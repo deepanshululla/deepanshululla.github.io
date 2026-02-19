@@ -30,6 +30,20 @@ Think of it as a compression exercise. The first summary is loose and general. E
 
 The Chain of Density process runs for 5 rounds. In each round, the model performs two steps:
 
+```mermaid
+graph LR
+    A["Source<br/>Document"] --> R1["Round 1<br/>Sparse"]
+    R1 -->|"+1-3 entities"| R2["Round 2<br/>Denser"]
+    R2 -->|"+1-3 entities"| R3["Round 3<br/>Moderate"]
+    R3 -->|"+1-3 entities"| R4["Round 4<br/>Dense"]
+    R4 -->|"+1-3 entities"| R5["Round 5<br/>Very Dense"]
+    style R3 fill:#4CAF50,color:#fff
+    style R4 fill:#4CAF50,color:#fff
+    style R1 fill:#ccc,color:#333
+    style R5 fill:#FF9800,color:#fff
+```
+*The iterative refinement process. Rounds 3-4 (green) are the sweet spot for readability and density.*
+
 ### Step 1: Identify Missing Entities
 
 The model examines the source document and identifies 1 to 3 informative entities that are salient to the main topic but missing from the current summary. These entities must be:
@@ -54,6 +68,20 @@ The model produces a new version of the summary that incorporates the missing en
 | 5 | Very dense | Maximum compression, may sacrifice some readability |
 
 The key insight from the original paper is that human evaluators consistently preferred summaries from rounds 3 and 4. Round 5 summaries, while maximally dense, sometimes become so compressed that they are harder to read. The sweet spot is in the middle.
+
+```mermaid
+graph TD
+    subgraph "Each Round"
+        S1["Read current summary"] --> S2["Identify 1-3 missing entities"]
+        S2 --> S3["Compress existing text"]
+        S3 --> S4["Insert new entities"]
+        S4 --> S5["Output new summary<br/>same word count"]
+    end
+    style S2 fill:#2196F3,color:#fff
+    style S3 fill:#FF9800,color:#fff
+    style S4 fill:#4CAF50,color:#fff
+```
+*Within each round, the model identifies missing entities, compresses existing text, and inserts new information while maintaining the same word count.*
 
 ## The Full Prompt Template
 

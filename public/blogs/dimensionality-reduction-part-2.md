@@ -12,6 +12,17 @@ This is part 2 of Introduction to Dimensionality Reduction. In this blog post, w
 
 The sample mean is a vector each of whose elements is the sample mean of one of the random variables – that is, each of whose elements is the arithmetic average of the observed values of one of the variables.
 
+```mermaid
+graph TD
+    A["Input Vectors"] --> B["x1 = 2.2, 4.2, ..."]
+    A --> C["x2 = 1.2, 3.2, ..."]
+    B --> D["Sum element-wise: x1 + x2"]
+    C --> D
+    D --> E["3.4, 7.4, ..."]
+    E --> F["Divide by n=2"]
+    F --> G["Mean Vector = 1.7, 3.7, ..."]
+```
+
 mean-vector1
 
 **Lets say we have two vectors**
@@ -35,6 +46,16 @@ If we plot all these arrays and their indices in a multidimensional space,we wou
 We can define mean vector for that scattered group geometrically something like this picture below.
 
 #### Data preprocessing: Column Standardization
+
+```mermaid
+graph LR
+    A["Raw Feature Values\na1, a2, ... an"] --> B["Compute mean\namean"]
+    A --> C["Compute std dev\nastd"]
+    B --> D["Subtract mean\nai - amean"]
+    C --> E["Divide by std dev\nresult / astd"]
+    D --> E
+    E --> F["Standardized Values\nmean=0, std=1"]
+```
 
 **Column standardization is a type of feature normalization where we move the data in such a way that the mean of the data becomes 0 and the standard deviation becomes 1.**
 
@@ -71,6 +92,16 @@ Geometrically speaking we move the distribution to the origin and constrict it i
 We may need to squish or expand the data depending upon if the standard dev of the data is greater or less than 1.
 
 #### Covariance Matrix
+
+```mermaid
+graph TD
+    A["Data Matrix X\nn rows x d columns"] --> B["Covariance Matrix S\nd x d square matrix"]
+    B --> C["Diagonal: S_ii = Var of feature i"]
+    B --> D["Off-diagonal: S_ij = Cov between features i and j"]
+    C --> E["Symmetric: S_ij = S_ji"]
+    D --> E
+    E --> F["For standardized X:\nS = 1/n times X_transpose times X"]
+```
 
 Let's say we have a matrix X
 

@@ -8,6 +8,26 @@ A few years ago, I started reading books to improve myself and look to become be
 
 A few years ago, I embarked on a journey of self-improvement through reading. In this blog post, I aim to document the books I've read and the impact they've had on my personal and professional life. This serves as a personal record and hopefully provides value to others seeking book recommendations for personal growth.
 
+```mermaid
+graph TD
+    A[10 Books in 2020] --> B[Self-Help and Productivity - 3 books]
+    A --> C[Personal Finance - 2 books]
+    A --> D[Tech and Programming - 2 books]
+    A --> E[Parenting - 1 book]
+    A --> F[Biography - 1 book]
+    A --> G[Data Science - 1 book]
+    B --> B1[Deep Work]
+    B --> B2[Atomic Habits]
+    B --> B3[David and Goliath]
+    C --> C1[I Now Pronounce You Financially Fit]
+    C --> C2[I Will Teach You to Be Rich]
+    D --> D1[Beginning Database Design Solutions]
+    D --> D2[Understanding Software]
+    E --> E1[Expectant Dad]
+    F --> F1[You Ought to Know Adam Wade]
+    G --> G1[Data Science - MIT Press]
+```
+
 - **Expectant Dad** As I was about to become a new dad in 2020, I sought guidance on how to be a better parent. This book provided valuable insights and advice for expecting fathers, preparing me for the challenges and joys of fatherhood.
 
 - **I now pronounce y****ou financially fit**. I read this book because I also got married in 2020 (yeah 2020 was surely eventful). This book was okayish but helps you understand how to manage your finances with your partner.

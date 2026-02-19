@@ -24,6 +24,24 @@ When things start getting toxic, it is okay to leave in short term.
 **I think I have given myself permission to leave these places in the short term if I notice any of these in the future.
 **After working for all these years, I think I have a much more precise definition of what I consider toxic. I think this is highly personal, and what I consider toxic, you might not consider it and vice versa.,
 
+The following diagram shows a decision flow for evaluating your workplace situation:
+
+```mermaid
+graph TD
+    A[Evaluate Your Workplace] --> B{Are you facing any red flags?}
+    B -->|Yes| C{Is it toxic or just not great?}
+    B -->|No| D[Stay and Grow]
+    C -->|Toxic: Abuse, Fear, Discrimination| E[Give yourself permission to leave soon]
+    C -->|Not Great: Stagnation, Burnout| F{Has it been over 2 years?}
+    F -->|Yes| G[Start looking for better opportunities]
+    F -->|No| H[Try to improve from your end]
+    H --> I{Did things improve?}
+    I -->|Yes| D
+    I -->|No| G
+    E --> J[Life is short - find something better]
+    G --> J
+```
+
 Toxic workplaces often have certain common characteristics, which may include the following:
 
 - **Inappropriate Requests:** Work assignments are given inappropriately, either in terms of unrealistic deadlines or the nature of the tasks themselves.

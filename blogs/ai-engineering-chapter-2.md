@@ -11,6 +11,22 @@
 - The training process splits into **pre-training** (makes model capable) and **post-training** (aligns model to human preferences).
 - **Sampling** (how outputs are chosen from all possibilities) is a crucial, often-underestimated factor impacting model behavior and performance.
 
+```mermaid
+graph LR
+    A[Training Data] --> B[Pre-training]
+    B --> C[Base Model]
+    C --> D[Post-training]
+    D --> D1[SFT]
+    D --> D2[RLHF / DPO]
+    D1 --> E[Aligned Model]
+    D2 --> E
+    E --> F[Sampling and Inference]
+    F --> G[Model Output]
+    style B fill:#e6f3ff
+    style D fill:#fff3cd
+    style F fill:#d4edda
+```
+
 ---
 
 ### Training Data
@@ -101,8 +117,27 @@ Google’s Med-PaLM2 (medical data)
 
 ### Post-Training
 
-- **Purpose:** Addresses two main pre-training issues—models aren’t optimized for conversation and may be unsafe/offensive.
-- 
+- **Purpose:** Addresses two main pre-training issues--models are not optimized for conversation and may be unsafe/offensive.
+
+```mermaid
+graph TD
+    A[Pre-trained Base Model] --> B[Supervised Finetuning - SFT]
+    B --> |Prompt-Response Pairs| C[Instruction-Following Model]
+    C --> D[Preference Finetuning]
+    D --> D1[RLHF Path]
+    D --> D2[DPO Path]
+    D1 --> E1[Train Reward Model]
+    E1 --> E2[RL Optimization]
+    E2 --> F[Aligned Model]
+    D2 --> F
+    F --> G[Best-of-N Selection]
+    style A fill:#f8d7da
+    style B fill:#fff3cd
+    style D fill:#e6f3ff
+    style F fill:#d4edda
+```
+
+-
 **Two Steps:**
 
 **Supervised Finetuning (SFT):** Trains the model on high-quality instruction data (prompt, response pairs).
@@ -126,7 +161,27 @@ Google’s Med-PaLM2 (medical data)
 
 #### Sampling Strategies
 
-- 
+```mermaid
+graph TD
+    A[Model Hidden State] --> B[Logits - Raw Scores]
+    B --> C[Softmax]
+    C --> D[Probability Distribution]
+    D --> E{Sampling Strategy}
+    E --> F[Temperature Scaling]
+    E --> G[Top-k: Keep k Most Probable]
+    E --> H[Top-p: Keep Until Cumulative p]
+    F --> I[Selected Token]
+    G --> I
+    H --> I
+    I --> J{Stop Condition Met?}
+    J -->|No| A
+    J -->|Yes| K[Final Output]
+    style D fill:#e6f3ff
+    style E fill:#fff3cd
+    style K fill:#d4edda
+```
+
+-
 **Temperature:** Adjusts creativity—higher = more diverse, lower = more predictable.
 
 Setting temperature to 0 picks the highest probability token deterministically.

@@ -4,6 +4,30 @@
 
 ![Books and reading](https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&h=400&fit=crop&q=80)
 
+```mermaid
+graph TD
+    A[13 Books in 2021] --> B[Self-Help and Productivity - 3 books]
+    A --> C[Programming - 2 books]
+    A --> D[Finance and Investing - 2 books]
+    A --> E[Parenting - 2 books]
+    A --> F[Real Estate - 2 books]
+    A --> G[Career Development - 1 book]
+    A --> H[Philosophy - 1 book]
+    B --> B1[The Miracle Morning]
+    B --> B2[Unleash the Power Within]
+    B --> B3[The Ideal Team Player]
+    C --> C1[More Effective C++]
+    C --> C2[Effective C++]
+    D --> D1[A Random Walk Down Wall Street]
+    D --> D2[The Smartest 401k Book]
+    E --> E1[Take Back the House]
+    E --> E2[The New Father]
+    F --> F1[Rental Property Investing]
+    F --> F2[First-Time Home Buyer]
+    G --> G1[How to Become an Expert Software Engineer]
+    H --> H1[Almanac of Naval Ravikant]
+```
+
 - **More Effective C++ by Scott Meyers**: This book is a sequel to the popular book "Effective C++" and provides further insights into writing effective and efficient C++ code. The book includes 35 new guidelines for using C++ effectively, covering topics such as constructors, assignment operators, and templates.
 
 - **Effective C++ by Scott Meyers**: This book provides practical advice and guidelines for writing high-quality C++ code. The book covers topics such as object creation and destruction, resource management, and performance optimization, and is considered a must-read for any serious C++ developer.

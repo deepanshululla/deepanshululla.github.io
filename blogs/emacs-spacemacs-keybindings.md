@@ -7,6 +7,38 @@
 I recently started using Emacs for text editing purposes and was pleasantly surprised. My main goal to learn it was to work efficiently in teams that don't have a nice local dev environment and you need to have a dev machine running to run, build, and debug your code.
 I started with spacemacs because it lets me merge Vim and Emacs bindings and I can choose what's easier for me to move around in the file/directory I am editing.
 
+```mermaid
+graph TD
+    A[Spacemacs Keybindings] --> B[Window and Frame Management]
+    A --> C[Buffer Operations]
+    A --> D[File Operations]
+    A --> E[Navigation]
+    A --> F[Editing - Select Copy Paste]
+    A --> G[Search]
+    A --> H[Terminal and Shell]
+    B --> B1["C-x 2 / C-x 3: Split"]
+    B --> B2["C-x o: Switch Window"]
+    B --> B3["C-x 0/1: Close Windows"]
+    C --> C1["C-x C-b: List Buffers"]
+    C --> C2["C-x k: Kill Buffer"]
+    C --> C3["C-x LEFT/RIGHT: Navigate"]
+    D --> D1["C-x C-f: Find File"]
+    D --> D2["C-x C-s: Save"]
+    D --> D3["C-x d: Directory"]
+    E --> E1["C-a / C-e: Line Start/End"]
+    E --> E2["M-< / M->: Buffer Start/End"]
+    E --> E3["C-s: Incremental Search"]
+    F --> F1["C-space: Set Mark"]
+    F --> F2["C-w: Cut / M-w: Copy"]
+    F --> F3["C-y: Paste / C-k: Kill Line"]
+    G --> G1["SPC s s: Swoop Search"]
+    G --> G2["SPC s p: Search Project"]
+    G --> G3["SPC S P: Pattern Search"]
+    H --> H1["M-x shell: Basic Shell"]
+    H --> H2["M-x term: Full Terminal"]
+    H --> H3["M-x eshell: Emacs Shell"]
+```
+
 ***Some basics first***
 
 Understanding the basic terminology will help make the most out of Spacemacs and allow very effective use.

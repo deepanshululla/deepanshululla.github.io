@@ -16,6 +16,39 @@
 
 ## Week 1: Introduction
 
+```mermaid
+graph LR
+    subgraph Input Layer
+        X1[Size]
+        X2[Bedrooms]
+        X3[Zip Code]
+        X4[Wealth]
+    end
+    subgraph Hidden Layer
+        H1[Neuron 1]
+        H2[Neuron 2]
+        H3[Neuron 3]
+    end
+    subgraph Output Layer
+        Y[Price]
+    end
+    X1 --> H1
+    X1 --> H2
+    X1 --> H3
+    X2 --> H1
+    X2 --> H2
+    X2 --> H3
+    X3 --> H1
+    X3 --> H2
+    X3 --> H3
+    X4 --> H1
+    X4 --> H2
+    X4 --> H3
+    H1 --> Y
+    H2 --> Y
+    H3 --> Y
+```
+
 Let's say you have a data set with six houses, so you know the size of the houses in square feet or square meters and you know the price of the house and you want to fit a function to predict the price of a house as a function of its size.
 
 You can do this in linear regression but the way to do it in deep learning is to use a single function called "neuron" that can be used to capture the behavior. The shape of the function here is RELU(Rectified Linear Unit). And all that the neuron does is it inputs the size, computes this linear function, takes a max of zero, and then outputs the estimated price.
@@ -32,6 +65,19 @@ NN are highly successful for supervised learning usecases.
 
 ### Applications of Neural Networks
 
+```mermaid
+graph TD
+    D{Data Type?}
+    D -->|Tabular / Structured| SNN[Standard Neural Network]
+    D -->|Images| CNN[Convolutional NN - CNN]
+    D -->|Sequence / Temporal| RNN[Recurrent NN - RNN / LSTM]
+    D -->|Mixed / Complex| HYB[Hybrid Architecture]
+    SNN --> E1[Real Estate, Ads]
+    CNN --> E2[Image Recognition, Vision]
+    RNN --> E3[Speech, Text, Audio]
+    HYB --> E4[Autonomous Driving]
+```
+
 A lot of the value creation through neural networks has been through cleverly selecting what should be x and what should be y for your particular problem, and then fitting this supervised learning component into often a bigger system such as an autonomous vehicle. It turns out that slightly different types of neural networks are useful for different applications. For example, in the real estate application that we saw in the previous video, we use a universally standard neural network architecture, right? Maybe for real estate and online advertising might be a relatively standard neural network, like the one that we saw.
 For image applications we'll often use convolutional neural networks, often abbreviated CNN. And for sequence data. So for example, audio has a temporal component, right? Audio is played out over time, so audio is most naturally represented as a one-dimensional time series or as a one-dimensional temporal sequence. And so for sequence data, you often use an RNN, a recurrent neural network. Language, English and Chinese, the alphabets or the words come one at a time. So language is also most naturally represented as sequence data. And so more complex versions of RNNs are often used for these applications.
 
@@ -40,6 +86,18 @@ And then, for more complex applications, like autonomous driving, where you have
 There is structured data(databases) and unstructured data(pixel values or individual words). Deep learning is good at unstructured data.
 
 ### Scale Drives Deep learning Progress
+
+```mermaid
+graph LR
+    subgraph Key Factors for DL Progress
+        A[More Data] --> P[Higher Performance]
+        B[Bigger Networks] --> P
+        C[Algorithmic Innovation] --> F[Faster Training]
+        D[Better Hardware / GPUs] --> F
+        F --> E[More Experiments]
+        E --> P
+    end
+```
 
 If you want to hit this very high level of performance then you need two things first:
 

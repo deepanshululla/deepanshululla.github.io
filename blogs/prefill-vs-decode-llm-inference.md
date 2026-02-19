@@ -37,6 +37,25 @@ The critical insight is that not all steps in this loop are equal. The very firs
 
 ## The Two Phases: Prefill and Decode
 
+```mermaid
+graph LR
+    subgraph Prefill Phase
+        direction LR
+        P1[tok1] & P2[tok2] & P3[tok3] & P4[...] & P5[tokN]
+        P1 & P2 & P3 & P4 & P5 --> KV[(KV Cache)]
+    end
+
+    subgraph Decode Phase
+        direction LR
+        KV2[(KV Cache)] --> A1[Generate tok1]
+        A1 --> A2[Generate tok2]
+        A2 --> A3[Generate tok3]
+        A3 --> A4[...]
+    end
+
+    KV --> KV2
+```
+
 ### Prefill Phase
 
 The prefill phase processes the entire input prompt in a single forward pass. Since all prompt tokens are known upfront, they can be processed **in parallel** through the transformer layers. This means the attention computation involves multiplying large matrices together -- it is a **matrix-matrix multiplication** (GEMM) operation.
@@ -316,6 +335,21 @@ These are composable for multiplicative savings. A model using GQA + CLA + slidi
 ## PagedAttention and Memory Management
 
 One of the most impactful practical innovations in LLM serving is **PagedAttention**, introduced in vLLM by Kwon et al. (2023). The problem it solves is deceptively simple: how do you efficiently allocate GPU memory for KV caches of varying and unpredictable lengths?
+
+```mermaid
+graph TD
+    subgraph Without PagedAttention
+        direction LR
+        R1[Request 1\n■■■□□□□□] --- R2[Request 2\n■■■■■□□□]
+        R2 --- R3[Request 3\n■□□□□□□□]
+    end
+
+    subgraph With PagedAttention
+        direction LR
+        B1[Block 1\nReq 1] --- B2[Block 2\nReq 2] --- B3[Block 3\nReq 1]
+        B3 --- B4[Block 4\nReq 2] --- B5[Block 5\nReq 3] --- B6[Block 6\nReq 2]
+    end
+```
 
 ### The Problem: Memory Fragmentation
 

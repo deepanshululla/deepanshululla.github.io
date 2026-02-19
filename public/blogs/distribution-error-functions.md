@@ -10,6 +10,22 @@ based on it.
 
 We can use plot Probability Density functions(PDF) and Cumulative density function (CDF) by using the error function as a random variable
 
+```mermaid
+graph TD
+    A[Error Function Values] --> B{Analysis Method}
+    B --> C[PDF - Probability Density Function]
+    B --> D[CDF - Cumulative Density Function]
+    C --> E{Skewness?}
+    E -->|Positive Skew| F[Most errors are small - Good]
+    E -->|Negative Skew| G[Most errors are large - Bad]
+    D --> H[Compare multiple models]
+    H --> I[Plot CDF curves together]
+    I --> J[Curve on top = Best model]
+    style F fill:#90EE90
+    style G fill:#FF6B6B
+    style J fill:#90EE90
+```
+
 ### Using PDF of error distribution
 
 An ideal pdf for error distributions would be a curve which is positively skewed. 
@@ -20,7 +36,24 @@ On the other hand, if error distribution is negatively skewed it means most of t
 
 ### Using CDF of error distribution
 
-Let's say we want to compare error functions of different models. One good way to do it is to find and plot CDF of all these error functions. 
+```mermaid
+graph TD
+    A[Model A Error Function] --> D[Compute CDF]
+    B[Model B Error Function] --> E[Compute CDF]
+    C[Model C Error Function] --> F[Compute CDF]
+    D --> G[Plot all CDFs together]
+    E --> G
+    F --> G
+    G --> H{Which curve is on top?}
+    H -->|Top curve| I[Best model - least errors]
+    H -->|Bottom curve| J[Worst model - most errors]
+    I --> K[Check: 80% errors below threshold X]
+    K --> L[Lower X = Better model]
+    style I fill:#90EE90
+    style J fill:#FF6B6B
+```
+
+Let's say we want to compare error functions of different models. One good way to do it is to find and plot CDF of all these error functions.
 
 The curve which is on top of the other curves(in this case the green curve) would be the most ideal here. The one on top of other curves would show the least amount of errors.
 

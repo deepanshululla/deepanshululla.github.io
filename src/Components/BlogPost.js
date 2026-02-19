@@ -56,8 +56,52 @@ class BlogPost extends Component {
         const el = document.querySelector('.blog-post-body');
         if (el) {
             el.querySelectorAll('pre code').forEach(block => {
-                hljs.highlightElement(block);
+                if (!block.classList.contains('language-mermaid')) {
+                    hljs.highlightElement(block);
+                }
             });
+            this.renderMermaid(el);
+        }
+    }
+
+    renderMermaid(el) {
+        const mermaidBlocks = el.querySelectorAll('code.language-mermaid');
+        if (mermaidBlocks.length === 0) return;
+
+        const loadAndRender = () => {
+            if (window.mermaid) {
+                window.mermaid.initialize({
+                    startOnLoad: false,
+                    theme: 'base',
+                    themeVariables: {
+                        primaryColor: '#fff0f3',
+                        primaryTextColor: '#2d3748',
+                        primaryBorderColor: '#ff9bb5',
+                        lineColor: '#ff9bb5',
+                        secondaryColor: '#f0f7ff',
+                        tertiaryColor: '#faf5f0',
+                        fontFamily: 'Outfit, sans-serif',
+                        fontSize: '14px'
+                    }
+                });
+                mermaidBlocks.forEach((block, i) => {
+                    const pre = block.parentElement;
+                    const div = document.createElement('div');
+                    div.className = 'mermaid';
+                    div.textContent = block.textContent;
+                    pre.parentElement.replaceChild(div, pre);
+                });
+                window.mermaid.run();
+            }
+        };
+
+        if (window.mermaid) {
+            loadAndRender();
+        } else {
+            const script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js';
+            script.onload = loadAndRender;
+            document.head.appendChild(script);
         }
     }
 

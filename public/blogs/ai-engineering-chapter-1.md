@@ -10,6 +10,18 @@
 - Foundation models like ChatGPT and Gemini are highly powerful but require enormous compute resources and vast amounts of data.
 - Only a few organizations have the capability to train these models, leading to the “model as a service” approach, where others can access AI via APIs.
 
+```mermaid
+graph LR
+    A[1950s: Early Language Models] --> B[2010s: Word Embeddings]
+    B --> C[2017: Transformer Architecture]
+    C --> D[2018: BERT / GPT-1]
+    D --> E[2020: GPT-3 175B params]
+    E --> F[2022: ChatGPT]
+    F --> G[2023-2025: Multimodal Foundation Models]
+    style A fill:#e6f3ff
+    style G fill:#c6e6c6
+```
+
 ### 2. Rise of AI Engineering
 
 - Foundation models have roots in decades of language modeling research, from the 1950s onward.
@@ -62,8 +74,40 @@
 
 ### 10. The AI Engineering Stack
 
-- 
+-
 **Three layers:**
+
+```mermaid
+graph TD
+    subgraph Application Layer
+        A1[Prompt Engineering]
+        A2[Context Construction]
+        A3[Evaluation]
+        A4[User Interface]
+    end
+    subgraph Model Layer
+        M1[Training and Fine-tuning]
+        M2[Dataset Engineering]
+        M3[Inference Optimization]
+    end
+    subgraph Infrastructure Layer
+        I1[Model Serving]
+        I2[Compute and Data Management]
+        I3[Monitoring]
+    end
+    Application Layer --> Model Layer
+    Model Layer --> Infrastructure Layer
+    style A1 fill:#d4edda
+    style A2 fill:#d4edda
+    style A3 fill:#d4edda
+    style A4 fill:#d4edda
+    style M1 fill:#fff3cd
+    style M2 fill:#fff3cd
+    style M3 fill:#fff3cd
+    style I1 fill:#f8d7da
+    style I2 fill:#f8d7da
+    style I3 fill:#f8d7da
+```
 
 **Application Development**: Prompts, context, evaluation, and user interface.
 - **Model Development**: Training, fine-tuning, dataset engineering, and inference optimization.
@@ -77,6 +121,21 @@
 - AI engineering must handle larger models, higher compute, and open-ended outputs, making efficient inference and robust evaluation more critical.
 
 #### Model Adaptation
+
+```mermaid
+graph TD
+    FM[Foundation Model] --> PA[Prompt-based Adaptation]
+    FM --> FT[Fine-tuning]
+    PA --> P1[Instructions and Examples]
+    PA --> P2[RAG - Retrieval Augmented Generation]
+    PA --> P3[No Weight Changes]
+    FT --> F1[Update Model Weights]
+    FT --> F2[Requires Labeled Data]
+    FT --> F3[Higher Performance]
+    style FM fill:#e6f3ff
+    style PA fill:#d4edda
+    style FT fill:#fff3cd
+```
 
 - **Prompt-based adaptation:** Uses instructions and context without changing model weights.
 - **Fine-tuning:** Updates model weights for higher performance but requires more expertise and data.

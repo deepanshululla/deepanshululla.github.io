@@ -12,6 +12,20 @@ For eg, if we want to determine the average salary of people in a country, we wo
 
 The % value is what I call confidence value and the range (60k-80k) is called a confidence interval.
 
+```mermaid
+graph TD
+    A[Population with unknown mean] --> B[Draw random sample of size n]
+    B --> C[Compute sample mean and std dev]
+    C --> D{Is population std dev known?}
+    D -->|Yes| E[Use Z-score method]
+    D -->|No| F[Use Bootstrapping method]
+    E --> G[CI = sample mean +/- Z * sigma / sqrt n]
+    F --> H[Resample and compute medians]
+    H --> I[Sort medians and pick percentiles]
+    G --> J[Confidence Interval]
+    I --> J
+```
+
 Let's understand it with an example.
 
 Let's say we have a population of data which contain weights of all students in a class.
@@ -58,6 +72,23 @@ Here if we want to have a confidence level of 95%, we will have to take the valu
 
 #### **Case 2: If we don't know the standard deviation of the population**
 Confidence interval using bootstrapping
+
+```mermaid
+graph TD
+    A["Original Sample S of size n"] --> B["Resample 1: size m, with replacement"]
+    A --> C["Resample 2: size m, with replacement"]
+    A --> D["..."]
+    A --> E["Resample k: size m, with replacement"]
+    B --> F["Median m1"]
+    C --> G["Median m2"]
+    D --> H["..."]
+    E --> I["Median mk"]
+    F --> J["Sort all k medians"]
+    G --> J
+    H --> J
+    I --> J
+    J --> K["95% CI: pick 2.5th and 97.5th percentile"]
+```
 Let's say we want to find the 95% confidence interval for the median.
 
 So when we find the sample of size n: S: {x1,x2,x3...xn}

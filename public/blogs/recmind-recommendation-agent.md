@@ -24,12 +24,18 @@ Instead of treating recommendation as a pure prediction problem, RecMind frames 
 
 ### Architecture Overview
 
-```
-User Profile + Item Catalog + Context
-           ↓
-    LLM Agent (Reasoning)
-           ↓
-    Recommendation + Explanation
+The following diagram shows the high-level RecMind architecture, where the LLM agent receives multiple input sources and produces recommendations with explanations:
+
+```mermaid
+flowchart TD
+    A[User Profile] --> D[LLM Agent]
+    B[Item Catalog] --> D
+    C[Context: time, location] --> D
+    D --> E{Reasoning Engine}
+    E --> F[Candidate Generation]
+    F --> G[Ranking]
+    G --> H[Recommendations]
+    G --> I[Explanations]
 ```
 
 ## Core Components
@@ -52,7 +58,19 @@ Items are represented using:
 
 ### 3. Reasoning Process
 
-The LLM agent performs multi-step reasoning:
+The LLM agent performs multi-step reasoning, as shown in the following loop diagram:
+
+```mermaid
+flowchart LR
+    A[User Request] --> B[Profile Analysis]
+    B --> C[Item Matching]
+    C --> D[Ranking]
+    D --> E[Explanation Generation]
+    E --> F{User Satisfied?}
+    F -- No --> G[Refine Preferences]
+    G --> B
+    F -- Yes --> H[Final Recommendation]
+```
 
 1. **Profile Analysis**: Understands user preferences
 2. **Item Matching**: Identifies relevant items
@@ -150,6 +168,23 @@ Agent: "Based on your love for sci-fi and action, I recommend..."
 ```
 
 ## Hybrid Approaches
+
+The following diagram shows how LLM-based and traditional recommendation methods can be combined in a hybrid system:
+
+```mermaid
+flowchart TD
+    A[User Query] --> B[LLM Agent]
+    A --> C[Traditional RecSys]
+    B --> D[LLM Candidates and Scores]
+    C --> E[CF and CB Scores]
+    D --> F[Score Fusion Layer]
+    E --> F
+    F --> G{Confidence Check}
+    G -- High --> H[LLM Recommendations]
+    G -- Low --> I[Traditional Fallback]
+    H --> J[Final Output]
+    I --> J
+```
 
 Combining LLM reasoning with traditional methods:
 

@@ -40,6 +40,16 @@ We can apply the same concept to a module level as well.
 
 Ideally, when requirements change, we want to just have to extend the module with the new required behavior in order to comply with the new requirements, but without having to modify the code.
 
+```mermaid
+graph LR
+    A[New Requirement] --> B{OCP Compliant?}
+    B -->|Yes| C[Add new class or module]
+    B -->|No| D[Modify existing code]
+    C --> E[Existing code untouched]
+    D --> F[Risk of breaking changes]
+    F --> G[Ripple effects across codebase]
+```
+
 In this example, we are designing a home entertainment situation.
 
 #### **Let's see first how a bad design would look like**
@@ -73,6 +83,19 @@ class RemoteControlBad:
   def turn_off_projector(self):
     pass
 
+```mermaid
+classDiagram
+    class RemoteControlBad {
+        +turn_on_tv()
+        +turn_off_tv()
+        +turn_on_projector()
+        +turn_off_projector()
+        +turn_on_surround_sound()
+        +turn_off_surround_sound()
+    }
+    note for RemoteControlBad "OCP Violation: Adding a new device\nrequires modifying this class\nand adding new methods"
+```
+
 **Why is this design bad?**
 
 Every time we want to add a new device lets say a Surround Sound System we have to modify the class and its methods.
@@ -90,6 +113,41 @@ So now we can keep adding as many devices and remote control can connect to all 
 We don't need to modify the Remote Control Class however any new device can extend the Device class.
 
 Hence it is open for extension and closed for modification.
+
+```mermaid
+classDiagram
+    class Device {
+        <<interface>>
+        +turnOn()
+        +turnOff()
+    }
+    class TV {
+        +turnOn()
+        +turnOff()
+    }
+    class Projector {
+        +turnOn()
+        +turnOff()
+    }
+    class SurroundSoundSystem {
+        +turnOn()
+        +turnOff()
+    }
+    class NewDevice {
+        +turnOn()
+        +turnOff()
+    }
+    class RemoteControl {
+        -device: Device
+        +pressOn()
+        +pressOff()
+    }
+    Device <|.. TV : implements
+    Device <|.. Projector : implements
+    Device <|.. SurroundSoundSystem : implements
+    Device <|.. NewDevice : extends without modification
+    RemoteControl --> Device : uses
+```
 
 Here is an implementation in python.
 

@@ -16,6 +16,21 @@ The relation between these two parameters is defined mathematically by one of th
 
 Each of these metrics has its own pros and cons so let's dive deeper into them.
 
+```mermaid
+graph TD
+    A["Measuring Relationship Between Variables"] --> B["Covariance"]
+    A --> C["Pearson Correlation"]
+    A --> D["Spearman Correlation"]
+    B --> B1["Unbounded range"]
+    B --> B2["Sensitive to scale/units"]
+    C --> C1["Range: -1 to +1"]
+    C --> C2["Best for linear relationships"]
+    D --> D1["Range: -1 to +1"]
+    D --> D2["Best for monotonic relationships"]
+    B -->|"Standardize"| C
+    C -->|"Use ranks instead of values"| D
+```
+
  
 
 ### Covariance
@@ -53,6 +68,19 @@ lbs to kgs the covariance for the same dataset will change.
 What if we standardize the datasets before applying covariance, that becomes correlation and that can tell how much the data is correlated.
 
 2) **However, if there are outliers in the dataset, we may have a situation where covariance is -time for monotonically increasing relation.**
+
+```mermaid
+graph LR
+    subgraph Positive["Positive Covariance"]
+        A1["X increases"] --> A2["Y increases"]
+    end
+    subgraph Negative["Negative Covariance"]
+        B1["X increases"] --> B2["Y decreases"]
+    end
+    subgraph Zero["Zero Covariance"]
+        C1["X increases"] --> C2["Y has no pattern"]
+    end
+```
 
 ### Pearson correlation coefficient
 The Pearson correlation coefficient (PCC), also referred to as Pearson's r, the Pearson product-moment correlation coefficient (PPMCC) or the bivariate correlation, is a measure of the linear correlation between two variables X and Y.

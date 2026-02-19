@@ -10,6 +10,23 @@ Machine learning can also be defined as the process of solving a practical probl
 
 Learning can be supervised, semi-supervised, unsupervised, and reinforcement.
 
+The following diagram compares the four major learning paradigms and their characteristics:
+
+```mermaid
+flowchart TD
+    A[Machine Learning Paradigms] --> B[Supervised]
+    A --> C[Semi-Supervised]
+    A --> D[Unsupervised]
+    A --> E[Reinforcement]
+    B --> B1[Labeled data]
+    B --> B2[Classification or Regression]
+    C --> C1[Mix of labeled and unlabeled]
+    D --> D1[Unlabeled data]
+    D --> D2[Clustering, Dimensionality Reduction]
+    E --> E1[Agent in environment]
+    E --> E2[Actions and rewards]
+```
+
 ### **Supervised Learning**
 
 In supervised learning the data analyst works with collection of labelled examples and {$(x_1,y_1),(x_2,y_2)$…}
@@ -79,6 +96,19 @@ In machine learning, a baseline is a simple algorithm for solving a problem, usu
 
 #### ML pipeline
 
+The following diagram shows the typical stages in a machine learning pipeline:
+
+```mermaid
+flowchart LR
+    A[Raw Data] --> B[Data Partitioning]
+    B --> C[Missing Data Imputation]
+    C --> D[Class Imbalance Handling]
+    D --> E[Dimensionality Reduction]
+    E --> F[Model Training]
+    F --> G[Evaluation]
+    G --> H[Deployment]
+```
+
 In practice, machine learning is implemented as a pipeline that contains chained stages of data transformation, from data partitioning to missing-data imputation, to class imbalance and dimensionality reduction, to model training.
 
 The hyperparameters of the entire pipeline are usually optimized; the entire pipeline can be deployed and used for predictions.
@@ -128,6 +158,22 @@ database, and when data is hard to get or too expensive.
 Machine learning engineering (MLE) is the use of scientific principles, tools, and techniques of machine learning and traditional software engineering to design and build complex computing systems. MLE encompasses all stages from data collection, to model training, to making the model available for use by the product or the consumers.
 
 A machine learning project life cycle consists of the following stages:
+
+```mermaid
+flowchart TD
+    A[1. Goal Definition] --> B[2. Data Collection and Preparation]
+    B --> C[3. Feature Engineering]
+    C --> D[4. Model Training]
+    D --> E[5. Model Evaluation]
+    E --> F{Model Good Enough?}
+    F -- No --> C
+    F -- Yes --> G[6. Model Deployment]
+    G --> H[7. Model Serving]
+    H --> I[8. Model Monitoring]
+    I --> J[9. Model Maintenance]
+    J --> B
+```
+
 1) goal definition,
 2) data collection and preparation,
 3) feature engineering,

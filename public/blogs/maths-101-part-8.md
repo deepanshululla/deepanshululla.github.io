@@ -4,7 +4,7 @@
 
 ![Hypothesis testing in statistics](https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800&h=400&fit=crop&q=80)
 
-## 
+##
 ## Hypothesis Testing
 
 Hypothesis tests, also called significance tests, are ubiquitous in the traditional statistical analysis of published research. Their purpose is to help you learn whether random chance might be responsible for an observed effect.
@@ -22,11 +22,20 @@ Hypothesis test that counts chance results only in one direction.
 #### **Two-way test**
 Hypothesis test that counts chance results in two directions.
 
+```mermaid
+graph TD
+    A["Start: Define Test Statistic"] --> B["Define Null Hypothesis H0"]
+    B --> C["Calculate p-value"]
+    C --> D{"Is p-value < 0.05?"}
+    D -->|Yes| E["Reject H0\nResult is statistically significant"]
+    D -->|No| F["Fail to reject H0\nCannot rule out chance"]
+```
+
 #### **Example of how we do hypothesis testing**
 Suppose we need to compare two classes of students whose heights are given. The problem we are trying to solve is to find out which class has a higher height. To do that what we do is
 
 Step1: Define a parameter for measurement.
-For eg, in this case, we took mean which is our test statistic. Let's say the mean of the two classes are µ2 and µ.
+For eg, in this case, we took mean which is our test statistic. Let's say the mean of the two classes are µ2 and µ.
 
 We can say if µ2 > µ1 the heights of class2 students are more. By calculating the means of those samples we find that µ2 - µ1 = 10cm. Now, this is the ground truth.
 
@@ -36,7 +45,18 @@ We call it H0. We define the hypothesis that "there is no difference in the clas
 Step 3: Find out the p-value which is the probability that µ2 - µ1 >=10cm given H0.
 If p>0.9 we can say that our null hypothesis is acceptable if it is lower something like 0.05(lower than 5%) we can reject the hypothesis.
 
-#### How to calculate the p-value for hypothesis testing
+#### How to calculate the p-value for hypothesis testing
+
+```mermaid
+graph TD
+    A["Step 1: Combine samples\n50 + 50 = 100 total"] --> B["Step 2: Randomly split\ninto two groups of 50"]
+    B --> C["Compute delta =\nmean2 - mean1"]
+    C --> D{"Repeated k times?"}
+    D -->|No| B
+    D -->|Yes| E["Sort all k deltas"]
+    E --> F["Find where observed\ndifference falls"]
+    F --> G["p-value = count of deltas\ngreater than observed / k"]
+```
 
 Step 1: Combine the 50 samples from class 1 and class 2 into one bigger sample of 100 samples.
 
@@ -70,6 +90,15 @@ So the probability of µ2-µ1>=10cm given that there is no difference in class h
 We choose hypothesis in such a way that it is easier to simulate
 
 #### Hypothesis Testing: Coin Toss Example
+
+```mermaid
+graph TD
+    A["Flip coin 5 times"] --> B["Observation: 5 heads"]
+    B --> C["H0: Coin is fair"]
+    C --> D["P of 5 heads given fair coin\n= 1/32 = 3%"]
+    D --> E{"p-value 3% < 5%?"}
+    E -->|Yes| F["Reject H0:\nCoin is likely biased"]
+```
 
 Suppose we are testing a hypothesis for coin toss example. Our task is to find out if the coin is biased towards heads or not.
 

@@ -6,6 +6,15 @@
 
 Median Absolute deviation is one of the other techniques specifically used for analyzing the performance of regression models.
 
+```mermaid
+graph TD
+    A[Input Data: X1, X2, ..., Xn] --> B[Step 1: Compute median of data]
+    B --> C[X_median = median of X]
+    C --> D["Step 2: Compute absolute deviations |Xi - X_median|"]
+    D --> E["Step 3: Take median of absolute deviations"]
+    E --> F[MAD Result]
+```
+
 #### **Computing MAD of errors**
 
 For a univariate data set X1, X2, ..., Xn, the MAD is defined as the median of the absolute deviations from the data's median,
@@ -26,6 +35,18 @@ So the median absolute deviation for this data is 1.
 
 **Why is it important**
 
+```mermaid
+graph LR
+    subgraph Standard Deviation and R-Squared
+        A1[Data with outlier] --> A2[Squaring amplifies outlier effect]
+        A2 --> A3[Distorted result]
+    end
+    subgraph MAD
+        B1[Data with outlier] --> B2[Median ignores extreme values]
+        B2 --> B3[Robust result]
+    end
+```
+
 If we recall the formula for calculating Sum of Squares Residual
 
 The issue with R-Squared is it contains SSresidue which is 
@@ -35,6 +56,18 @@ So even if one of the errors is an outlier, it can screw up the calculation of S
 So coefficient of distribution is prone to outliers.
 
 ### Understanding MAD of errors
+
+```mermaid
+graph TD
+    A[Predicted values y_hat] --> B[Compute errors: ei = yi - yi_hat]
+    C[Actual values y] --> B
+    B --> D[Find median of errors: e_median]
+    D --> E["Compute |ei - e_median| for each point"]
+    E --> F[MAD of Errors = median of absolute deviations]
+    F --> G{MAD Value}
+    G -->|Small or near 0| H[Good model fit]
+    G -->|Large| I[Poor model fit]
+```
 
 Assuming Error e, to be a random variable with being a vector of size n. Let e1, e2, e3.. en represent the computation of errors for each point in a univariate data set X1, X2, ..., Xn, .
 

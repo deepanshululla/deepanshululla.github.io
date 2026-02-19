@@ -122,6 +122,20 @@ Generate multiple responses to the same prompt (using temperature > 0) and selec
 
 Extends chain-of-thought by exploring multiple reasoning paths in parallel, evaluating each branch, and selecting the most promising one. More expensive but more thorough for complex reasoning tasks.
 
+```mermaid
+graph TD
+    A["Zero-Shot"] -->|"Add examples"| B["Few-Shot"]
+    B -->|"Add reasoning steps"| C["Chain-of-Thought"]
+    C -->|"Multiple samples + vote"| D["Self-Consistency"]
+    C -->|"Branch and evaluate"| E["Tree-of-Thoughts"]
+    style A fill:#ccc,color:#333
+    style B fill:#2196F3,color:#fff
+    style C fill:#4CAF50,color:#fff
+    style D fill:#9C27B0,color:#fff
+    style E fill:#9C27B0,color:#fff
+```
+*Prompting techniques build on each other, increasing capability and cost from left to right.*
+
 ## Practical LLM Capabilities
 
 Modern instruction-tuned LLMs are remarkably versatile. Here are concrete patterns for common tasks:
@@ -209,6 +223,22 @@ System messages are ideal for:
 - Providing background context the user does not need to see
 - Defining output format requirements
 
+```mermaid
+graph TD
+    subgraph "Prompt Structure"
+        A["System Message<br/>Persona, rules, constraints"] --> D["LLM"]
+        B["User Message<br/>Task or question"] --> D
+        C["Few-Shot Examples<br/>Input-output pairs"] --> D
+        D --> E["Model Response"]
+    end
+    style A fill:#9C27B0,color:#fff
+    style B fill:#2196F3,color:#fff
+    style C fill:#FF9800,color:#fff
+    style D fill:#333,color:#fff
+    style E fill:#4CAF50,color:#fff
+```
+*Anatomy of a prompt: system message, user message, and optional few-shot examples combine to guide the model response.*
+
 ## Iterative Prompt Development
 
 Prompt engineering is inherently iterative. The process mirrors the scientific method:
@@ -226,6 +256,22 @@ A concrete example of iterative refinement for a product description task:
 - **Issue 3 (missing format)**: Add "Format the output as HTML with a product title in an h2 tag and a table of technical specifications"
 
 Each iteration addresses one specific failure mode. This systematic approach is more reliable than trying to write the perfect prompt on the first attempt.
+
+```mermaid
+graph TD
+    A["Write Initial Prompt"] --> B["Test with Representative Inputs"]
+    B --> C["Examine Outputs"]
+    C --> D{"Acceptable?"}
+    D -->|"No"| E["Identify Failure Mode"]
+    E --> F["Refine Prompt"]
+    F --> B
+    D -->|"Yes"| G["Deploy to Production"]
+    style A fill:#2196F3,color:#fff
+    style D fill:#FF9800,color:#fff
+    style E fill:#f44336,color:#fff
+    style G fill:#4CAF50,color:#fff
+```
+*Iterative prompt development cycle: test, identify failure modes, refine, and repeat until the outputs are reliable.*
 
 ## Hallucination
 

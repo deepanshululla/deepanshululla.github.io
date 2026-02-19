@@ -12,7 +12,23 @@ Lets consider a binary classifier with results 1 or 0.
 
 A confusion matrix here will be a 2x2 matrix where along one axis you have actual values and along an orthrogonal axis you have predicted values.
 
-Let's define some keyterms here 
+The following diagram shows the layout of a binary confusion matrix and what each cell represents:
+
+```mermaid
+graph TD
+    A[Model Prediction] --> B{Predicted Positive}
+    A --> C{Predicted Negative}
+    B --> D{Actually Positive?}
+    B --> E{Actually Negative?}
+    C --> F{Actually Positive?}
+    C --> G{Actually Negative?}
+    D -->|Yes| H[True Positive - TP]
+    E -->|Yes| I[False Positive - FP]
+    F -->|Yes| J[False Negative - FN]
+    G -->|Yes| K[True Negative - TN]
+```
+
+Let's define some keyterms here
 
 **True positive (TP)**
 
@@ -86,43 +102,61 @@ The percentage of true positives over the sum of predicted positives and false p
 
 The percentage of true positives over actual positives. Of all the actually positive points, how many were predicted positive.
 
+The following diagram shows how each metric is derived from the four confusion matrix values:
+
+```mermaid
+graph LR
+    TP[True Positives] --> TPR[TPR = TP / TP+FN]
+    FN[False Negatives] --> TPR
+    TP --> PREC[Precision = TP / TP+FP]
+    FP[False Positives] --> PREC
+    TN[True Negatives] --> TNR[TNR = TN / TN+FP]
+    FP --> TNR
+    FN --> FNR[FNR = FN / TP+FN]
+    TP --> FNR
+    FP --> FPRate[FPR = FP / TN+FP]
+    TN --> FPRate
+    TP --> REC[Recall = TP / TP+FN]
+    FN --> REC
+```
+
 In our example of Hotdog or not, let's say Jian Yang took 1000 samples.
 
-  
+
     Actual Values ↓
     Predictions→
     Predicted Hotdog
     Predicted Not hotdog
     Total
-  
-  
-    
-    
-    
-    
-    
-  
-  
+
+
+
+
+
+
+
+
+
     Hotdog
-    
+
     750(True Positive)
     80(False Negative)
     830
-  
-  
+
+
     Not Hotdog
-    
+
     20(False Positive)
     150(True Negative)
     170
-  
-  
+
+
     Total
-    
+
     770
     230
-    
-  
+
+
 
 In this example,
 
@@ -143,6 +177,22 @@ Hence we need TPR to be high and FNR to be low. We want to really reduce false n
 However we are sort of okay here with high false positives which mean we detected cancer but the patient didn't have cancer. In that case we will have to say the patient must undergo more tests.
 
 In hotdog or not example, we would want higher TPR and higher TNR which means we want to minimize both false positives and false negatives.
+
+The following diagram illustrates how domain requirements guide metric selection:
+
+```mermaid
+flowchart TD
+    A[Choose Your Priority] --> B{What cost is higher?}
+    B -->|Missing positives is costly| C[Minimize FNR]
+    B -->|False alarms are costly| D[Minimize FPR]
+    B -->|Both matter equally| E[Use F1 Score]
+    C --> F[Maximize TPR and Recall]
+    C --> G["Example: Cancer detection"]
+    D --> H[Maximize Precision and TNR]
+    D --> I["Example: Spam filtering"]
+    E --> J[Balance Precision and Recall]
+    E --> K["Example: Hotdog classifier"]
+```
 
 ### F1 score
 

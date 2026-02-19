@@ -38,6 +38,18 @@ We want to **avoid creating classes that try to "Do it All".**
 
 SRP can be applied to a variety of contexts. You can apply it to methods(or functions), classes and even modules(or packages).
 
+```mermaid
+graph TD
+    A[SRP at Different Levels] --> B[Method Level]
+    A --> C[Class Level]
+    A --> D[Module Level]
+    A --> E[Application Level]
+    B --> B1[Each function does one thing]
+    C --> C1[Each class has one reason to change]
+    D --> D1[Each package has one purpose]
+    E --> E1[Microservice architecture]
+```
+
 I would even argue the **modern microservice architecture is just SRP at the application level.**
 
 #### Refactoring Code to SRP
@@ -65,6 +77,21 @@ Let's say we create a class with a UML like this:
 - printXMLReport()
 - printCSVReport()
 
+```mermaid
+classDiagram
+    class Employee {
+        -id: long
+        -name: String
+        -dept: String
+        -working: Boolean
+        +saveEmployee()
+        +removeEmployee()
+        +printXMLReport()
+        +printCSVReport()
+    }
+    note for Employee "SRP Violation: This class has\nthree reasons to change:\n1. Employee data changes\n2. Database logic changes\n3. Report format changes"
+```
+
 #### What is wrong with this approach
 
 - The class is trying to do too much. It is saving to DB , preparing reports. Let’s say, nurses, doctors, etc inherit from the employee class. Now it will become a nightmare for programmers if every different employee object wants to handle the class in their own way. A single indentation change would require us to make code changes in a lot of places.
@@ -77,6 +104,35 @@ Let's say we create a class with a UML like this:
 - Also, see **do you see two mutually exclusive features here. **The report formatting part of employee and data class of employee.
 
 Let's try to implement classes which follow SRP. Suppose we have
+
+```mermaid
+classDiagram
+    class Employee {
+        -id: long
+        -name: String
+        -dept: String
+        -working: Boolean
+    }
+    class EmployeeDAO {
+        +saveEmployee()
+        +removeEmployee()
+    }
+    class DatabaseConnectionManager {
+        +getConnection()
+    }
+    class ReportFormatter {
+        +formatXML()
+        +formatCSV()
+    }
+    class EmployeeReportFormatter {
+        +formatXML()
+        +formatCSV()
+    }
+    EmployeeDAO --> Employee : uses
+    EmployeeDAO o-- DatabaseConnectionManager : has a
+    EmployeeReportFormatter --|> ReportFormatter : inherits
+    EmployeeReportFormatter --> Employee : has a
+```
 
 #### Few things to note here are
 

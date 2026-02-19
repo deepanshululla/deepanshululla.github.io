@@ -40,6 +40,21 @@ To put it in more detail, a good class must define a clear and concise interface
 
 A good example of LSP here is
 
+```mermaid
+graph TD
+    A[Client Code] --> B[Base Class Reference]
+    B --> C[Subtype A]
+    B --> D[Subtype B]
+    B --> E[Subtype C]
+    style A fill:#f9f,stroke:#333
+    style B fill:#bbf,stroke:#333
+    style C fill:#bfb,stroke:#333
+    style D fill:#bfb,stroke:#333
+    style E fill:#bfb,stroke:#333
+```
+
+*LSP says the client should be able to use any subtype through the base class reference without knowing or caring which subtype it is.*
+
 A great example illustrating LSP (given by Uncle Bob in a podcast I heard recently) was how sometimes something that sounds right in natural language doesn't quite work in code.
 
 In mathematics, a Square is a Rectangle. Indeed it is a specialization of a rectangle. The "is a" makes you want to model this with inheritance. However if in the code you made Square derive from, then a `Square` should be usable anywhere you expect a `Rectangle`. This makes for some strange behavior.
@@ -48,6 +63,25 @@ Imagine you had `SetWidth` and `SetHeight` methods on your `Rectangle` bas
 
 https://stackoverflow.com/questions/56860/what-is-an-example-of-the-liskov-substitution-principle
 
+```mermaid
+classDiagram
+    class Rectangle {
+        -width: int
+        -height: int
+        +setWidth(w)
+        +setHeight(h)
+        +getArea() int
+    }
+    class Square {
+        +setWidth(w)
+        +setHeight(h)
+    }
+    Rectangle <|-- Square : LSP Violation
+    note for Square "setWidth also changes height\nsetHeight also changes width\nBreaks client expectations"
+```
+
+*The Square-Rectangle problem: Square inheriting from Rectangle violates LSP because Square changes the behavior of setWidth and setHeight in unexpected ways.*
+
 Lets take another example of how we can use LSP as part of our code:
 
 So in this ScienceTeacher, MathsTeacher, EnglishTeacher extend the functionality of SchoolStaff class and inherit performOtherReponsibilities() function. Rest of the methods of the schoolstaff class are private.
@@ -55,5 +89,38 @@ So in this ScienceTeacher, MathsTeacher, EnglishTeacher extend the functionality
 So why not put teach() method in the SchoolStaff class because there is other staff in school who are not teaching. For eg, a substitute teacher may come in and perform all responsibilities except Teaching.
 
 That's why the course instructor interface is created so that the Science, maths and English teacher can implement it.
+
+```mermaid
+classDiagram
+    class SchoolStaff {
+        +performOtherResponsibilities()
+    }
+    class CourseInstructor {
+        <<interface>>
+        +teach()
+    }
+    class ScienceTeacher {
+        +teach()
+        +performOtherResponsibilities()
+    }
+    class MathsTeacher {
+        +teach()
+        +performOtherResponsibilities()
+    }
+    class EnglishTeacher {
+        +teach()
+        +performOtherResponsibilities()
+    }
+    class SubstituteTeacher {
+        +performOtherResponsibilities()
+    }
+    SchoolStaff <|-- ScienceTeacher
+    SchoolStaff <|-- MathsTeacher
+    SchoolStaff <|-- EnglishTeacher
+    SchoolStaff <|-- SubstituteTeacher
+    CourseInstructor <|.. ScienceTeacher : implements
+    CourseInstructor <|.. MathsTeacher : implements
+    CourseInstructor <|.. EnglishTeacher : implements
+```
 
 Now we will have no problem replacing objects of SchoolStaff with either of Science, Maths or a Substitute teacher.

@@ -18,6 +18,23 @@ But for older applications, you may want to create applications that may need to
 
 This post may not cover all the differences but here are the major differences.
 
+```mermaid
+graph TD
+    A[Which Python Version?] --> B{New project?}
+    B -->|Yes| C[Use Python 3 only]
+    B -->|No| D{Need to support Python 2?}
+    D -->|No| C
+    D -->|Yes| E[Support both during migration]
+    E --> F[Watch for key differences]
+    F --> F1[Print: statement vs function]
+    F --> F2[Division: integer vs float]
+    F --> F3[Strings: ASCII vs Unicode]
+    F --> F4[Range: list vs sequence]
+    F --> F5[Namespace leaking in loops]
+    F --> F6[Mismatched type comparisons]
+    C --> G[Enjoy modern Python features]
+```
+
  
 
 #### **Print Statement**

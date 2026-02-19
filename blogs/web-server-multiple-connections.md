@@ -8,6 +8,40 @@ If you are familiar with socket programming, you would be aware that send and re
 
 This prevents us from writing TCP servers that can respond to multiple clients. However, there are different ways where we can write our own web server that can handle multiple connections.
 
+The following diagram compares the three approaches covered in this post:
+
+```mermaid
+flowchart TD
+    subgraph Select["Select / Selector Based"]
+        S1[Single Thread] --> S2[Event Loop]
+        S2 --> S3[Monitor All Sockets]
+        S3 --> S4{Socket Ready?}
+        S4 -->|Read Ready| S5[Accept or Recv]
+        S4 -->|Write Ready| S6[Send Response]
+        S5 --> S2
+        S6 --> S2
+    end
+
+    subgraph Thread["Thread Based"]
+        T1[Main Thread] --> T2[Accept Connection]
+        T2 --> T3[Spawn New Thread]
+        T3 --> T4[Handle Client]
+        T2 --> T5[Spawn New Thread]
+        T5 --> T6[Handle Client]
+        T2 --> T7[Spawn New Thread]
+        T7 --> T8[Handle Client]
+    end
+
+    subgraph Async["Async / Event Loop"]
+        A1[Single Thread] --> A2[Event Loop]
+        A2 --> A3[Await Accept]
+        A3 --> A4[Create Task]
+        A4 --> A5[Await Recv]
+        A5 --> A6[Await Send]
+        A6 --> A2
+    end
+```
+
 ## Using select system call
 
 The `.select()` method allows you to check for I/O completion on more than one socket. This enables you to use more than one socket for a port and multiplex connection using the system call.
@@ -315,6 +349,28 @@ The `.select()` method allows you to check for I/O completion on more than one
     
 
 ## Server with Threads
+
+In the threading model, the main thread accepts connections and spawns a dedicated thread for each client:
+
+```mermaid
+sequenceDiagram
+    participant C1 as Client 1
+    participant C2 as Client 2
+    participant M as Main Thread
+    participant T1 as Thread 1
+    participant T2 as Thread 2
+
+    C1->>M: Connect
+    M->>T1: Spawn thread for Client 1
+    C2->>M: Connect
+    M->>T2: Spawn thread for Client 2
+    C1->>T1: Send PING
+    T1->>C1: PONG
+    C2->>T2: Send PING
+    T2->>C2: PONG
+    C1->>T1: Send PING
+    T1->>C1: PONG
+```
 
 Another way to handle multiple client connections is to allocate a single thread to each of the clients.
 

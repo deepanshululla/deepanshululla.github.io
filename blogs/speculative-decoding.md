@@ -53,6 +53,20 @@ The algorithm involves two models:
 - A **draft model** (small and fast, e.g., 68M-1B parameters)
 - A **target model** (the large model we actually want outputs from, e.g., 70B parameters)
 
+```mermaid
+sequenceDiagram
+    participant D as Draft Model (1B)
+    participant T as Target Model (70B)
+    participant O as Output
+
+    D->>D: Generate K tokens autoregressively
+    D->>T: Send K draft tokens
+    T->>T: Score all K positions in parallel
+    T->>O: Accept matching tokens
+    T->>O: Resample at first rejection
+    Note over O: 1 to K+1 tokens per iteration
+```
+
 ### Step 1: Draft Generation
 
 The draft model generates K candidate tokens autoregressively. Because the draft model is small, each forward pass is fast. Even though this is still sequential, the total time is much less than running K passes through the target model.

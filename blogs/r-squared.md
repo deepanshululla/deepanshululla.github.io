@@ -8,6 +8,22 @@ R-squared is a statistical measure of how close the data are to the fitted regre
 
 This metric is specifically designed for regression-based algorithms where the output is a real value.
 
+```mermaid
+graph TD
+    A[Training Data: x, y pairs] --> B[Fit Regression Model]
+    B --> C[Predicted values y_hat]
+    A --> D[Compute mean y_mean]
+    D --> E[SS_total = Sum of squared deviations from mean]
+    C --> F[SS_residual = Sum of squared prediction errors]
+    E --> G[R-squared = 1 - SS_residual / SS_total]
+    F --> G
+    G --> H{R-squared Value}
+    H -->|R2 = 1| I[Perfect fit]
+    H -->|0 < R2 < 1| J[Typical model]
+    H -->|R2 = 0| K[Same as naive mean model]
+    H -->|R2 < 0| L[Worse than mean model]
+```
+
 #### Computing Coefficient of determination
 
 Let x, y, y^ be the input, output and predicted output vectors in linear regression.
@@ -51,6 +67,22 @@ SSresidue=SStotal
 Hence we can say coefficient of determination is
 
 R2 can be seen to be related to the fraction of variance unexplained (FVU), since the second term compares the unexplained variance (variance of the model's errors) with the total variance (of the data)
+
+```mermaid
+graph LR
+    subgraph SS_total
+        A1[y1 - y_mean squared]
+        A2[y2 - y_mean squared]
+        A3[yn - y_mean squared]
+    end
+    subgraph SS_residual
+        B1[y1 - y1_hat squared]
+        B2[y2 - y2_hat squared]
+        B3[yn - yn_hat squared]
+    end
+    SS_total --> C[R2 = 1 - SS_res / SS_tot]
+    SS_residual --> C
+```
 
 Now there are 4 cases related to this
 

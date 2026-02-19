@@ -4,6 +4,28 @@
 
 ![Books and reading](https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&h=400&fit=crop&q=80)
 
+```mermaid
+graph TD
+    A[13 Books in 2023] --> B[Productivity - 4 books]
+    A --> C[Self-Help and Philosophy - 3 books]
+    A --> D[Career - 2 books]
+    A --> E[Finance and Investing - 2 books]
+    A --> F[Tech - 2 books]
+    B --> B1[Four Thousand Weeks]
+    B --> B2[Get Epic Shit Done]
+    B --> B3[Art of Less Doing]
+    B --> B4[Building a Second Brain]
+    C --> C1[Daily Stoic]
+    C --> C2[Embracing Uncertainty]
+    C --> C3[Turning Pro]
+    D --> D1[So Good They Cant Ignore You]
+    D --> D2[Linchpin]
+    E --> E1[The Tao of Charlie Munger]
+    E --> E2[Thinking in Bets]
+    F --> F1[Fundamentals of Data Engineering]
+    F --> F2[Freelancers Guide to Upwork]
+```
+
 ### 1. **Fundamentals of Data Engineering**
 
 This book dives into the world of data engineering, covering everything from how data is collected and stored to how it's processed and used. It talks about best practices, security, and designing systems that handle data efficiently and safely.

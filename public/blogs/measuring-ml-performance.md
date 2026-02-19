@@ -6,9 +6,27 @@
 
 To measure how well our models are performing we may need to define some metrics. One of the metrics which is quite straight forward is accuracy.
 
-Accuracy is defined as the number of correctly classified points divided by the total number of points in Dtest. 
+Accuracy is defined as the number of correctly classified points divided by the total number of points in Dtest.
 
-But there are several places where accuracy may not be a good performance measure. Read more about it here
+But there are several places where accuracy may not be a good performance measure. Read more about it here
+
+The following diagram shows the hierarchy of common ML performance metrics and when they apply:
+
+```mermaid
+graph TD
+    A[ML Performance Metrics] --> B[Classification Metrics]
+    A --> C[Regression Metrics]
+    B --> D[Confusion Matrix]
+    B --> E[ROC and AUC]
+    B --> F[Log Loss]
+    D --> G[Accuracy]
+    D --> H[Precision and Recall]
+    D --> I[F1 Score]
+    E --> J[TPR vs FPR Plot]
+    C --> K[R-Squared]
+    C --> L[MAD of Errors]
+    C --> M[Error Distribution]
+```
 
 ### Confusion Matrix
 
@@ -18,7 +36,7 @@ It is a specific table layout that allows visualization of the performance of an
 
 We also compute something called a F1 score which is a very good metric for information retrieval and document searching.
 
-Read more about it here
+Read more about it here
 
 ### Receiver Operating Characteristic Curve (ROC) curve and Area under Curve(AUC)
 
@@ -34,7 +52,7 @@ Why would be even need this metric is in itself a great question. The issue with
 
 Which of these models would we pick here. Hence we need a more determinstic metric to decide.
 
-Read more about here
+Read more about here
 
 ### Log loss
 
@@ -56,7 +74,7 @@ R-squared is a statistical measure of how close the data are to the fitted regre
 
 This metric is specifically designed for regression based algorithms where the output is a real value.
 
-Read about it more here
+Read about it more here
 
 ## Median absolute deviation (MAD) of Errors
 
@@ -72,10 +90,26 @@ that is, starting with the residuals (deviations) from the data's median, the MA
 
 We can use the same technique by treating errors as our random variable X here and finding MAD of errors.
 
-You can read more about it here
+The following diagram illustrates the process of selecting the right metric based on your ML task:
+
+```mermaid
+flowchart TD
+    A[What is your ML task?] --> B{Classification or Regression?}
+    B -->|Classification| C{Binary or Multiclass?}
+    B -->|Regression| D[Use R-Squared or MAD]
+    C -->|Binary| E{Data balanced?}
+    C -->|Multiclass| F[Use Confusion Matrix and Accuracy]
+    E -->|Yes| G[Use Accuracy or F1 Score]
+    E -->|No| H{What matters more?}
+    H -->|Probability calibration| I[Use Log Loss]
+    H -->|Ranking ability| J[Use ROC AUC]
+    H -->|Positive class detection| K[Use Precision and Recall]
+```
+
+You can read more about it here
 
 ### Distribution of errors
 
 We can plot error distributions like probability density function and cumulative density function and make important deductions based on it.
 
-You can read more about it here
+You can read more about it here

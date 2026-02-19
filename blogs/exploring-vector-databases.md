@@ -12,6 +12,22 @@ Traditional scalar databases are inadequate to handle the intricacy and magnitud
 
 The vector database can quickly retrieve similar objects to a specific query due to pre-computations. This is performed using the concept of the approximate nearest neighbor search that involves the implementation of algorithms for indexing and calculating the similarities.
 
+The following diagram illustrates how vector search works at a high level, from raw data to query results:
+
+```mermaid
+flowchart LR
+    A[Raw Data] --> B[Embedding Model]
+    B --> C[Vector Embeddings]
+    C --> D[Vector Database]
+    D --> E[Index Building]
+    E --> F[ANN Index]
+    G[User Query] --> H[Embedding Model]
+    H --> I[Query Vector]
+    I --> F
+    F --> J[Similarity Search]
+    J --> K[Top-K Results]
+```
+
 In this blog, we will go over some of the popular vector databases.
 
 ## **Most Popular Vector Databases and Libraries**
@@ -137,6 +153,30 @@ Elasticsearch is a distributed RESTful search and analytics engine providing sup
 - The platform offers exceptional scalability.
 
 - Hardware builds are accessible and features such as dynamic query planning and payload data indexing guarantee the most effective utilization of resources.
+
+The following diagram summarizes the key differentiators across the vector databases discussed above:
+
+```mermaid
+flowchart TD
+    VDB[Choosing a Vector Database]
+    VDB --> OS{Open Source?}
+    OS -->|Yes| OSY[Milvus / Weaviate / Chroma / Qdrant / Elasticsearch]
+    OS -->|No| OSN[Pinecone]
+    VDB --> USE{Primary Use Case}
+    USE --> PROD[Production Scale]
+    PROD --> P1[Milvus]
+    PROD --> P2[Pinecone]
+    PROD --> P3[Elasticsearch]
+    USE --> PROTO[Prototyping]
+    PROTO --> PR1[Chroma]
+    USE --> SIM[Similarity Search]
+    SIM --> S1[Qdrant]
+    SIM --> S2[Weaviate]
+    VDB --> LANG{Dev Language}
+    LANG --> PY[Python] --> PY1[Chroma / Milvus]
+    LANG --> RS[Rust] --> RS1[Qdrant / Pinecone]
+    LANG --> JV[Java] --> JV1[Elasticsearch]
+```
 
 There are multiple vector databases, but not all of them are created equal. Each platform has unique features, so take it would be best to take a glance at some of the aspects to contemplate before finalizing your vector database.
 

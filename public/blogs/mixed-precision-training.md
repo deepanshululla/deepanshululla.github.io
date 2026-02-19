@@ -76,6 +76,20 @@ FP8 formats were standardized in 2022 specifically for machine learning workload
 
 The key pattern in this table: as you move from float32 down to FP8, you trade precision and range for memory efficiency and compute speed. The art of mixed precision training is knowing where each format is safe to use.
 
+```mermaid
+graph LR
+    A["FP32<br/>4 bytes<br/>8 exp + 23 man"] -->|"Half memory"| B["BF16<br/>2 bytes<br/>8 exp + 7 man"]
+    A -->|"Half memory"| C["FP16<br/>2 bytes<br/>5 exp + 10 man"]
+    B -->|"Half memory"| D["FP8 E4M3<br/>1 byte<br/>4 exp + 3 man"]
+    B -->|"Half memory"| E["FP8 E5M2<br/>1 byte<br/>5 exp + 2 man"]
+    style A fill:#4CAF50,color:#fff
+    style B fill:#2196F3,color:#fff
+    style C fill:#FF9800,color:#fff
+    style D fill:#9C27B0,color:#fff
+    style E fill:#9C27B0,color:#fff
+```
+*Precision format hierarchy: each step down halves memory but reduces precision or range.*
+
 ## Why float16 Can Be Dangerous
 
 The underflow problem with float16 deserves deeper examination because it is subtle and can cause silent failures.
@@ -116,6 +130,24 @@ The term "mixed precision" is key: you do not use a single format everywhere. In
 - **Gradients**: bfloat16 or float32, depending on the specific operation. Gradient accumulation should be done in float32.
 - **Optimizer states**: float32. Adam's moment estimates need full precision to track gradient statistics accurately.
 
+```mermaid
+graph TD
+    A["FP32 Master Weights"] -->|"Cast to BF16"| B["BF16 Compute Weights"]
+    B --> C["Forward Pass<br/>BF16 activations"]
+    C --> D["Loss Computation"]
+    D --> E["Backward Pass<br/>BF16 gradients"]
+    E -->|"Accumulate in FP32"| F["FP32 Gradients"]
+    F --> G["Optimizer Step<br/>FP32 Adam states"]
+    G -->|"Update"| A
+    style A fill:#4CAF50,color:#fff
+    style B fill:#2196F3,color:#fff
+    style C fill:#2196F3,color:#fff
+    style E fill:#2196F3,color:#fff
+    style F fill:#4CAF50,color:#fff
+    style G fill:#4CAF50,color:#fff
+```
+*Mixed precision training loop: BF16 for compute-heavy operations, FP32 for numerically sensitive updates.*
+
 ### The 16 Bytes Per Parameter Rule
 
 A useful rule of thumb for memory budgeting with AdamW in mixed precision: each model parameter costs approximately **16 bytes** of GPU memory.
@@ -130,6 +162,21 @@ Per parameter with AdamW (BF16 compute + FP32 master):
 ```
 
 For a 7B parameter model, that is 7 billion x 16 bytes = 112 GB -- already exceeding a single 80 GB A100. This is why distributed training is necessary even for "small" modern models.
+
+```mermaid
+graph LR
+    subgraph "16 Bytes Per Parameter"
+        A["Master Weights<br/>FP32: 4 bytes"]
+        B["Gradients<br/>FP32: 4 bytes"]
+        C["Adam Mean<br/>FP32: 4 bytes"]
+        D["Adam Variance<br/>FP32: 4 bytes"]
+    end
+    style A fill:#4CAF50,color:#fff
+    style B fill:#FF9800,color:#fff
+    style C fill:#9C27B0,color:#fff
+    style D fill:#9C27B0,color:#fff
+```
+*Memory breakdown per parameter with AdamW mixed precision training.*
 
 One counterintuitive point: **mixed precision does not save static memory** for weights and optimizer states. With BF16 compute plus FP32 master weights, the total per-parameter cost is still 16 bytes. The real benefits of mixed precision are: (1) BF16 matrix multiplications are 2-8x faster on Tensor Cores, (2) activations stored in BF16 are half the size, and (3) BF16 gradients are half the size for distributed all-reduce communication.
 

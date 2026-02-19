@@ -32,6 +32,20 @@ I have created a step by step process that has worked pretty much anywhere I hav
 
 - Release but carefully.
 
+```mermaid
+graph TD
+    S1[1. Understand the Problem] --> S2[2. Understand the System]
+    S2 --> S3[3. Create Acceptance Tests]
+    S3 --> S4[4. Plan Implementation]
+    S4 --> S5[5. Test/Fix/Refactor Cycle]
+    S5 --> S6[6. Code Review]
+    S6 -->|Changes Requested| S5
+    S6 -->|Approved| S7[7. Commit and QA]
+    S7 --> S8[8. Monitoring Dashboards]
+    S8 --> S9[9. Release Plan]
+    S9 --> S10[10. Gradual Release]
+```
+
 ## Step 1: Understanding the problem
 
 - **Meet stakeholders/users of the feature.** Before the meeting, **become familiar with the documentation** that you have been given.
@@ -88,6 +102,15 @@ The best approach to do it is to discuss it with another developer or get it rev
 
 ## Step 5: Implementation or test-fix-refactor cycle
 
+```mermaid
+graph LR
+    A[Write Tests] --> B[Run Tests]
+    B -->|Fail| C[Fix Code]
+    C --> D[Refactor]
+    D --> B
+    B -->|Pass| E[Done]
+```
+
 This phase is where you write the actual code to implement the changes to business logic. Calling it a test-fix-refactor cycle is appropriate here because you may be stuck in this loop for a while until you feel the changes work the way you intend them to.
 If not write some tests, then fix and refactor and keep doing it until you have reached a good enough state based on the timelines.
 
@@ -114,6 +137,19 @@ Remember no matter how much confidence we have in our tests, production could be
 This step ensures creating a central piece of document that notifies everyone about the potential release and the timelines for such. This is especially useful if you have downstream dependencies and the impacted teams could monitor their system on their end to inform any impact on their particular systems.
 
 ## Step 10: Release but carefully
+
+```mermaid
+graph LR
+    A[Canary Release 1%] --> B[Monitor Metrics]
+    B -->|Healthy| C[Expand to 10%]
+    C --> D[Monitor Metrics]
+    D -->|Healthy| E[Expand to 50%]
+    E --> F[Monitor Metrics]
+    F -->|Healthy| G[Full Rollout 100%]
+    B -->|Issues| H[Rollback]
+    D -->|Issues| H
+    F -->|Issues| H
+```
 
 This step is all about minimizing risk and making sure what we release is correct and gradual. It is vital to see the impact of our release over time and see how changes are impacting our users.
 

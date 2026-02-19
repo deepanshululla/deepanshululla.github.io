@@ -20,6 +20,22 @@ But I would lie if I had everything going well since the start. It was a long pr
 
 I am not perfect yet and still a work in progress, but here is what I have learned so far, and I will keep updating as I discover more things.
 
+```mermaid
+graph TD
+    A[ADHD Management Strategies] --> B[Mind]
+    A --> C[Body]
+    A --> D[Work Systems]
+    A --> E[Environment]
+    B --> B1[Meditation - daily practice]
+    B --> B2[Reading books]
+    B --> B3[Reframe feedback as a gift]
+    C --> C1[Gym and exercise]
+    D --> D1[Automated testing for code]
+    D --> D2[Reminders and to-do lists]
+    D --> D3[Document manual processes]
+    E --> E1[Remote work - saves commute time]
+```
+
 ## Practicing Meditation
 
 This is somewhat unobvious, but meditation had a tremendous effect on me. I have been meditating for over six years every day, but practicing meditation has helped me start sitting down in one place.

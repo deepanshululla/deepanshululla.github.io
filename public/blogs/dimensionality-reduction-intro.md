@@ -16,6 +16,15 @@ The other way which I prefer more is:
 
 **The process can be done either by feature selection and feature extraction.**
 
+```mermaid
+graph LR
+    A[High-Dimensional Data\nF1, F2, ..., Fm] --> B{Dimensionality Reduction}
+    B --> C[Feature Selection\nKeep subset of original features]
+    B --> D[Feature Extraction\nCreate new features]
+    C --> E[Low-Dimensional Data\nF1, F3, F7]
+    D --> F[Low-Dimensional Data\nPC1, PC2, PC3]
+```
+
 In this blog post, we will explore and try to understand what dimensionality reduction is. Also, we will cover how to represent a dataset in the matrix format.
 
 **There are two techniques we will learn to do dimensionality reduction**
@@ -42,6 +51,20 @@ These techniques are typically used while solving machine learning problems to o
 
 #### **Why having too many features or dimensions is bad?**:The Curse of Dimensionality
 
+```mermaid
+graph TD
+    A[Increasing Dimensions] --> B[Data becomes sparse]
+    A --> C[Hard to visualize]
+    A --> D[Performance degrades past optimal]
+    B --> E[Need exponentially more data]
+    C --> F[Too many pair plots]
+    D --> G[Overfitting risk]
+    E --> H[Curse of Dimensionality]
+    F --> H
+    G --> H
+    H --> I[Solution: Dimensionality Reduction]
+```
+
 The curse of dimensionality refers to all the problems that arise when working with data in the higher dimensions, that did not exist in the lower dimensions.
 
 The common theme of these problems is that when the dimensionality increases, the volume of the space increases so fast that the available data becomes sparse. 
@@ -59,6 +82,18 @@ The third and last issue as number of features, the performance of features decr
 Curse of dimensionality(towardsdatasciece.com)
 
 #### **Representing Data as a data frame**
+
+```mermaid
+graph TD
+    A[Dataset D] --> B[Matrix Representation]
+    B --> C[Rows = Data Points X1..Xn]
+    B --> D[Columns = Features F1..Fm]
+    B --> E[Optional: Class Label Column]
+    C --> F[Each row is a row vector]
+    D --> G[Each column is a column vector]
+    F --> H[n x m Data Matrix + Label Vector]
+    G --> H
+```
 
 Column and Row vector
 

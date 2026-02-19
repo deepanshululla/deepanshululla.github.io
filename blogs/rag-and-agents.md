@@ -20,6 +20,24 @@ The core idea is simple: before generating a response, retrieve relevant informa
 
 The RAG pipeline has two phases:
 
+```mermaid
+graph TD
+    subgraph Indexing Phase
+        A[Documents] --> B[Chunking]
+        B --> C[Embedding Model]
+        C --> D[Vector Database]
+    end
+
+    subgraph Query Phase
+        E[User Query] --> F[Embedding Model]
+        F --> G[Vector Search]
+        D --> G
+        G --> H[Top-K Chunks]
+        H --> I[LLM + Context]
+        I --> J[Response]
+    end
+```
+
 **Indexing phase** (offline, done once):
 1. Load documents from your knowledge base
 2. Split documents into chunks
@@ -114,10 +132,14 @@ An AI agent is a system where an LLM acts as the reasoning core, using tools and
 
 An agent operates in a loop:
 
-```
-Perceive → Plan → Execute → Reflect → (repeat)
-            ↑                    ↓
-            └────── Memory ──────┘
+```mermaid
+graph LR
+    A[Perceive] --> B[Plan]
+    B --> C[Execute Tools]
+    C --> D[Reflect]
+    D --> B
+    E[(Memory)] --> B
+    D --> E
 ```
 
 The key components are:
