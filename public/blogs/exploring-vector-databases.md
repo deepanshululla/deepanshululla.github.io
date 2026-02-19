@@ -182,9 +182,14 @@ There are multiple vector databases, but not all of them are created equal. Each
 
 ## Tabular comparison
 
-**Vector Database****Open-Source****Licensing****Development Language****Supported Index****Approximate Nearest Neighbor Support****Benchmark (according to jina.ai report: Min.1 million data with 32 max.connections)
-****Milvus**YesApache License 2.0Python, Go, C++HNSW, IVF PQ, RHNSW FLAT, RHNSW SQYesNA
-**Weaviate**YesBSDC++, GoHNSW, NGT, ANNOYYesRecall:0.99 Finding by vector: 6.64 (ms) Read: 2.64 (ms) Update: 5.91(ms) Delete: 22.22 (ms)**Pinecone**NoProprietary (No sublicensing)RustProprietaryYesNA**Elasticsearch**YesSSPL/ Elastic LicenseJavaHNSWYesRecall:0.99 Finding by vector: 11.55 (ms) Read: 13.37 (ms) Update: 50.19(ms) Delete: 58.59 (ms)**Chroma**YesApache License 2.0PythonHNSW, IVFADC, IVFPQYesNA**Qdrant**YesApache License 2.0RustSelf-hosted and managedYesRecall:0.99 Finding by vector: 4.42 (ms) Read: 1.48 (ms) Update: 1.67(ms) Delete: 3.83 (ms)
+| Vector Database | Open-Source | Licensing | Language | Supported Index | ANN Support | Benchmark (jina.ai, 1M data, 32 max connections) |
+|---|---|---|---|---|---|---|
+| **Milvus** | Yes | Apache License 2.0 | Python, Go, C++ | HNSW, IVF PQ, RHNSW FLAT, RHNSW SQ | Yes | NA |
+| **Weaviate** | Yes | BSD | C++, Go | HNSW, NGT, ANNOY | Yes | Recall: 0.99, Find: 6.64ms, Read: 2.64ms, Update: 5.91ms, Delete: 22.22ms |
+| **Pinecone** | No | Proprietary (No sublicensing) | Rust | Proprietary | Yes | NA |
+| **Elasticsearch** | Yes | SSPL / Elastic License | Java | HNSW | Yes | Recall: 0.99, Find: 11.55ms, Read: 13.37ms, Update: 50.19ms, Delete: 58.59ms |
+| **Chroma** | Yes | Apache License 2.0 | Python | HNSW, IVFADC, IVFPQ | Yes | NA |
+| **Qdrant** | Yes | Apache License 2.0 | Rust | Self-hosted and managed | Yes | Recall: 0.99, Find: 4.42ms, Read: 1.48ms, Update: 1.67ms, Delete: 3.83ms |
 
 **Conclusion**
 

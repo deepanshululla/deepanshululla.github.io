@@ -1488,10 +1488,16 @@ ul#nav li a:hover,
 .blog-post-body strong {
     color: var(--text-primary);
     font-weight: 600;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
 }
 
 .blog-post-body em {
     color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
 }
 
 /* --- Links --- */
