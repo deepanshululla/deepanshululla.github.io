@@ -234,3 +234,19 @@ Inconsistency: Results from probabilistic sampling; can be mitigated but not eli
 
 - 
 Hallucination: Can occur due to the probabilistic, aggregate nature of training; is complex to address and subject of ongoing research.
+
+## References
+
+- Huyen, C. (2025). *AI Engineering*. O'Reilly Media. Chapter 2: Understanding Foundation Models.
+- Vaswani, A., Shazeer, N., Parmar, N., et al. (2017). "Attention Is All You Need." [arXiv:1706.03762](https://arxiv.org/abs/1706.03762)
+- Hoffmann, J., Borgeaud, S., Mensch, A., et al. (2022). "Training Compute-Optimal Large Language Models (Chinchilla)." [arXiv:2203.15556](https://arxiv.org/abs/2203.15556)
+- Touvron, H., Martin, L., Stone, K., et al. (2023). "Llama 2: Open Foundation and Fine-Tuned Chat Models." [arXiv:2307.09288](https://arxiv.org/abs/2307.09288)
+- Brown, T.B., Mann, B., Ryder, N., et al. (2020). "Language Models are Few-Shot Learners (GPT-3)." [arXiv:2005.14165](https://arxiv.org/abs/2005.14165)
+- Ouyang, L., Wu, J., Jiang, X., et al. (2022). "Training language models to follow instructions with human feedback (InstructGPT)." [arXiv:2203.02155](https://arxiv.org/abs/2203.02155)
+- Rafailov, R., Sharma, A., Mitchell, E., et al. (2023). "Direct Preference Optimization: Your Language Model is Secretly a Reward Model." [arXiv:2305.18290](https://arxiv.org/abs/2305.18290)
+- Gu, A., Goel, K., and Re, C. (2021). "Efficiently Modeling Long Sequences with Structured State Spaces (S4)." [arXiv:2111.00396](https://arxiv.org/abs/2111.00396)
+- Gu, A. and Dao, T. (2023). "Mamba: Linear-Time Sequence Modeling with Selective State Spaces." [arXiv:2312.00752](https://arxiv.org/abs/2312.00752)
+- Lieber, O., Lenz, B., Bata, H., et al. (2024). "Jamba: A Hybrid Transformer-Mamba Language Model." [arXiv:2403.19887](https://arxiv.org/abs/2403.19887)
+- Gunasekar, S., Zhang, Y., Anber, J., et al. (2023). "Textbooks Are All You Need (Phi)." [arXiv:2306.11644](https://arxiv.org/abs/2306.11644)
+- Wei, J., Tay, Y., Bommasani, R., et al. (2022). "Emergent Abilities of Large Language Models." [arXiv:2206.07682](https://arxiv.org/abs/2206.07682)
+- Perez, E., Ringer, S., Lukosuite, K., et al. (2022). "Discovering Language Model Behaviors with Model-Written Evaluations." [arXiv:2212.09251](https://arxiv.org/abs/2212.09251)

@@ -292,6 +292,57 @@ llama_70b = kv_cache_size_bytes(80, 8, 128, 2048, 1)    # ~640 MB (despite 10x p
 
 Notice how Llama 2 70B, despite having 10x more parameters than Llama 2 7B, can have a smaller KV cache per sequence thanks to GQA. This is a deliberate architectural decision to make the larger model more practical to serve.
 
+### Beyond Head Reduction: MLA and CLA
+
+GQA reduces KV cache by sharing KV heads across query heads. But this is only one of four orthogonal dimensions along which KV cache can be reduced. Two recent techniques push further:
+
+**Multi-Head Latent Attention (MLA)**, introduced in DeepSeek V2 (2024), takes a fundamentally different approach. Instead of reducing the *number* of KV heads, MLA projects the KV representations to a much lower dimensionality. For example, DeepSeek V2 compresses from 16,000 dimensions to 512 dimensions -- a 31x reduction -- while maintaining model quality through a learned up-projection during attention. This is orthogonal to GQA: you could combine both techniques.
+
+**Cross-Layer Attention (CLA)**, proposed by Brandon et al. (2024), shares KV cache *across layers* rather than across heads within a layer. Instead of each layer maintaining its own KV cache, adjacent layers share the same cached keys and values. Character AI deployed a production hybrid using 1 global attention layer per 6 local layers, achieving 2-6x KV cache reduction with minimal quality impact.
+
+### The KV Cache Reduction Taxonomy
+
+These techniques reveal four orthogonal dimensions for reducing KV cache, each with different characteristics:
+
+| Dimension | Technique | Reduction | What It Does |
+|---|---|---|---|
+| KV heads (K) | GQA/MQA | 5-8x | Shares KV across query head groups |
+| KV dimension (H) | MLA | 10-30x | Projects KV to lower dimensionality |
+| Layers (L) | CLA | 2-6x | Shares KV across transformer layers |
+| Sequence length (S) | Sliding window attention | Constant cache | Attends only to recent tokens |
+
+These are composable for multiplicative savings. A model using GQA + CLA + sliding window attention could reduce KV cache by 50-100x compared to standard MHA, fundamentally changing the economics of serving long-context models.
+
+## PagedAttention and Memory Management
+
+One of the most impactful practical innovations in LLM serving is **PagedAttention**, introduced in vLLM by Kwon et al. (2023). The problem it solves is deceptively simple: how do you efficiently allocate GPU memory for KV caches of varying and unpredictable lengths?
+
+### The Problem: Memory Fragmentation
+
+Without PagedAttention, serving systems must pre-allocate contiguous memory for each request's KV cache based on the maximum possible sequence length. If a request might generate up to 2048 tokens, the system reserves KV cache memory for all 2048 tokens upfront, even if the request ends after 50 tokens. Studies show this leads to **55-70% memory waste** in typical serving workloads.
+
+### The Solution: Virtual Memory for KV Cache
+
+PagedAttention borrows the operating system's virtual memory concept. Instead of contiguous pre-allocation, it divides KV cache into fixed-size **blocks** (analogous to memory pages). A **block table** (analogous to a page table) maps logical token positions to physical memory blocks. Blocks are allocated on demand as new tokens are generated.
+
+This eliminates fragmentation, reduces memory waste to under 5%, and enables approximately **4x more concurrent requests** within the same GPU memory budget. It also enables **copy-on-write** for scenarios like beam search, where multiple candidate sequences share a common prefix -- the shared portion's KV cache is stored once and referenced by all candidates.
+
+PagedAttention is the core innovation behind vLLM and has been adopted by TensorRT-LLM, TGI, and most modern serving frameworks.
+
+## Advanced Serving Techniques
+
+### Chunked Prefill
+
+For requests with very long input prompts, the prefill phase can block the GPU for an extended period, preventing any decode steps from running. **Chunked prefill** splits the prompt into smaller pieces and processes them across multiple iterations, interleaving with ongoing decode steps for other requests. This keeps TPOT low for existing requests while processing new long-context requests.
+
+### Prefill-Decode Disaggregation
+
+Since prefill is compute-bound and decode is memory-bound, some serving systems run them on **separate GPU pools**. Prefill GPUs are optimized for maximum compute throughput, while decode GPUs are optimized for memory bandwidth and capacity. Common ratios are 2:1 (prefill:decode GPUs) when inputs are long, or 1:2 when outputs are long.
+
+### Prompt Caching
+
+When many requests share the same system prompt or common prefix (e.g., a RAG system with a standard instruction template), **prompt caching** stores the computed KV cache for the shared prefix and reuses it across requests. Anthropic reports up to 90% cost savings and 75% latency reduction on cached prefixes. This is especially valuable for agentic workloads where the same tools and instructions are sent with every request.
+
 ## Conclusion
 
 The prefill-decode distinction is the foundation for understanding LLM inference performance. Here are the key takeaways:
@@ -300,6 +351,20 @@ The prefill-decode distinction is the foundation for understanding LLM inference
 - **The KV cache is the central data structure of inference.** It eliminates redundant computation during decode but introduces a significant and growing memory cost. Managing KV cache memory efficiently is one of the most important problems in inference serving.
 - **TTFT and TPOT map to prefill and decode respectively.** When diagnosing latency issues, identify which phase is the bottleneck before applying optimizations.
 - **Continuous batching is essential for throughput.** Static batching leaves GPU resources stranded; continuous batching keeps the GPU busy by dynamically managing request lifecycles.
-- **Attention variants (MHA, GQA, MQA) directly control KV cache size.** This architectural choice, made at training time, has profound implications for inference efficiency. GQA has emerged as the practical sweet spot, adopted by most modern open-weight models.
+- **Attention variants (MHA, GQA, MQA) directly control KV cache size.** This architectural choice, made at training time, has profound implications for inference efficiency. GQA has emerged as the practical sweet spot, but newer techniques like MLA and CLA push further.
+- **PagedAttention eliminates memory waste.** By applying virtual memory concepts to KV cache management, it enables 4x more concurrent requests within the same memory budget.
+- **Inference cost dominates training cost at scale.** OpenAI generates over 100 billion words per day; the annualized inference cost (approximately $475M) dwarfs the one-time training cost (approximately $100M) by 4-5x. Every percentage point of inference efficiency matters.
 
 Understanding these fundamentals will help you make better decisions when choosing serving frameworks, selecting model architectures, provisioning hardware, and debugging performance bottlenecks in production LLM deployments.
+
+## References
+
+- Kwon, W., Li, Z., Zhuang, S., Sheng, Y., et al. (2023). "Efficient Memory Management for Large Language Model Serving with PagedAttention." [arXiv:2309.06180](https://arxiv.org/abs/2309.06180)
+- Ainslie, J., Lee-Thorp, J., de Jong, M., Zemlyanskiy, Y., et al. (2023). "GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints." [arXiv:2305.13245](https://arxiv.org/abs/2305.13245)
+- Shazeer, N. (2019). "Fast Transformer Decoding: One Write-Head is All You Need." [arXiv:1911.02150](https://arxiv.org/abs/1911.02150)
+- DeepSeek AI. (2024). "DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model." [arXiv:2405.04434](https://arxiv.org/abs/2405.04434)
+- Brandon, W., Mishra, M., Nrusimha, A., Panda, R., and Reich, J. (2024). "Reducing Transformer Key-Value Cache Size with Cross-Layer Attention." [arXiv:2405.12981](https://arxiv.org/abs/2405.12981)
+- Gu, A. and Dao, T. (2023). "Mamba: Linear-Time Sequence Modeling with Selective State Spaces." [arXiv:2312.00752](https://arxiv.org/abs/2312.00752)
+- Williams, S., Waterman, A., and Patterson, D. (2009). "Roofline: An Insightful Visual Performance Model for Multicore Architectures." *Communications of the ACM*.
+- Huyen, C. (2025). *AI Engineering*. O'Reilly Media. Chapter 9: Inference Optimization.
+- CS336: Language Modeling from Scratch, Stanford University. Lecture 10: Inference.

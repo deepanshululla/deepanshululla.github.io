@@ -89,3 +89,15 @@
 
 - Differentiation now comes from the application layer: evaluation, prompt engineering, and user interface design are key.
 - Open-ended tasks and various adaptation techniques make robust evaluation both more important and more challenging.
+
+## References
+
+- Huyen, C. (2025). *AI Engineering*. O'Reilly Media. Chapter 1: Introduction to Building AI Applications with Foundation Models.
+- Bommasani, R., Hudson, D.A., Adeli, E., et al. (2021). "On the Opportunities and Risks of Foundation Models." [arXiv:2108.07258](https://arxiv.org/abs/2108.07258)
+- Villalobos, P., Sevilla, J., Heim, L., et al. (2022). "Will we run out of data? An analysis of the limits of scaling datasets in Machine Learning." [arXiv:2211.04325](https://arxiv.org/abs/2211.04325)
+- Eloundou, T., Manning, S., Mishkin, P., and Rock, D. (2023). "GPTs are GPTs: An Early Look at the Labor Market Impact Potential of Large Language Models." [arXiv:2303.10130](https://arxiv.org/abs/2303.10130)
+- Radford, A., Kim, J.W., Hallacy, C., et al. (2021). "Learning Transferable Visual Models From Natural Language Supervision (CLIP)." [arXiv:2103.00020](https://arxiv.org/abs/2103.00020)
+- Devlin, J., Chang, M.W., Lee, K., and Toutanova, K. (2018). "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding." [arXiv:1810.04805](https://arxiv.org/abs/1810.04805)
+- Hendrycks, D., Burns, C., Basart, S., et al. (2020). "Measuring Massive Multitask Language Understanding (MMLU)." [arXiv:2009.03300](https://arxiv.org/abs/2009.03300)
+- Park, J.S., O'Brien, J.C., Cai, C.J., et al. (2023). "Generative Agents: Interactive Simulacra of Human Behavior." [arXiv:2304.03442](https://arxiv.org/abs/2304.03442)
+- Ding, N., Chen, Y., Xu, B., et al. (2023). "Enhancing Chat Language Models by Scaling High-quality Instructional Conversations (UltraChat)." [arXiv:2305.14233](https://arxiv.org/abs/2305.14233)

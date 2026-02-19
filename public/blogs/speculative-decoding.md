@@ -152,6 +152,8 @@ Result: 2 tokens accepted + 1 resampled = 3 tokens from one target forward pass
 
 The most remarkable property of speculative decoding is that it produces the **exact same distribution** as running the target model alone. This is not an approximation. The output is mathematically identical in distribution.
 
+Interestingly, speculative decoding was independently invented by two Google teams at the same time: Leviathan et al. ("Fast Inference from Transformers via Speculative Decoding") and Chen et al. ("Accelerating Large Language Model Decoding with Speculative Sampling"), both published in 2023. The technique draws directly from the Metropolis-Hastings algorithm in Markov Chain Monte Carlo (MCMC) methods -- if the accept/reject mechanism looks familiar to anyone with a statistics background, that is where it comes from.
+
 This is achieved through a modified rejection sampling scheme. At each position, given the draft token `x` with draft probability `q(x)` and target probability `p(x)`:
 
 1. **If `p(x) >= q(x)`**: Always accept. The target model is at least as likely to generate this token as the draft model, so accepting it does not introduce bias.
@@ -191,6 +193,13 @@ The draft model selection is critical for performance. Common approaches:
 - **Quantized version of the target**: Use a heavily quantized (e.g., 4-bit) version of the target model as the draft.
 
 The draft model must be **significantly faster** than the target. If the draft model is too large, the time spent on draft generation eats into the speedup from parallel verification. A good rule of thumb is that the draft model should be at least 10x faster per token than the target.
+
+In practice, common pairings include:
+
+- **Target 70B + Draft 7-8B** (e.g., Llama 70B with Llama 8B)
+- **Target 8B + Draft 1B** (e.g., Llama 8B with a 1B distilled variant)
+
+One practical tip: **distillation helps**. Training a draft model to specifically mimic the target model's distribution (rather than using a generic small model) can significantly improve acceptance rates. DeepMind demonstrated approximately 2x speedup on Chinchilla 70B using a well-matched draft model.
 
 ### Acceptance Rate
 
@@ -266,6 +275,14 @@ The target model can verify all paths in the tree using a specially structured a
 
 This approach chains multiple draft models of increasing size. For example, a tiny model (10M params) drafts candidates, a medium model (1B params) filters them, and finally the target model (70B params) does the final verification. Each stage reduces the number of candidates, making the final verification cheaper.
 
+### Inference with Reference
+
+A related technique that applies when the output is expected to overlap significantly with the input -- for example, code editing, RAG with long quoted passages, or document revision tasks. Instead of generating tokens from scratch, the system copies tokens directly from the input context, then verifies them against the target model. This can achieve approximately 2x speedups on workloads where the output heavily references the input, and it requires no draft model at all.
+
+### A Note on Throughput
+
+One important caveat: speculative decoding optimizes **latency** (time per request), not throughput. It actually increases total compute because the draft model's forward passes are additional work. In high-throughput serving scenarios where the system is already batching many requests and the GPU is well-utilized, speculative decoding may provide little benefit or even hurt overall throughput. It is most valuable when serving individual requests or small batches where latency is the priority.
+
 ## Conclusion
 
 Speculative decoding is one of the most impactful inference optimization techniques for large language models. Its key strengths are worth summarizing:
@@ -278,3 +295,12 @@ Speculative decoding is one of the most impactful inference optimization techniq
 The technique reflects a broader principle in systems optimization: when you identify an asymmetry between the cost of producing a result and the cost of checking it, you can often exploit that gap for significant performance gains. In the case of LLM inference, the gap between memory-bound token generation and compute-bound token verification is large enough to make speculative decoding a practical and elegant solution.
 
 As models continue to grow in size and deployment scales increase, techniques like speculative decoding will remain essential tools in the ML engineer's toolkit for making inference fast and cost-effective.
+
+## References
+
+- Leviathan, Y., Kalman, M., and Matias, Y. (2023). "Fast Inference from Transformers via Speculative Decoding." [arXiv:2211.17192](https://arxiv.org/abs/2211.17192)
+- Chen, C., Borgeaud, S., Irving, G., Lespiau, J.B., Sifre, L., and Jumper, J. (2023). "Accelerating Large Language Model Decoding with Speculative Sampling." [arXiv:2302.01318](https://arxiv.org/abs/2302.01318)
+- Cai, T., Li, Y., Geng, Z., Peng, H., Lee, J.D., Chen, D., and Dao, T. (2024). "Medusa: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads." [arXiv:2401.10774](https://arxiv.org/abs/2401.10774)
+- Li, Y., Cai, T., Zhang, Y., Chen, D., and Dao, T. (2024). "EAGLE: Speculative Sampling Requires Rethinking Feature Uncertainty." [arXiv:2401.15077](https://arxiv.org/abs/2401.15077)
+- Huyen, C. (2025). *AI Engineering*. O'Reilly Media. Chapter 9: Inference Optimization.
+- CS336: Language Modeling from Scratch, Stanford University. Lecture 10: Inference.

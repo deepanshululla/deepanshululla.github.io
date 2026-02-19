@@ -326,4 +326,7 @@ Key takeaways:
 
 If you regularly work with LLM-generated summaries and find them lacking in specificity, Chain of Density is one of the most effective prompt engineering techniques you can add to your toolkit. The original paper is well worth reading for the full experimental results and human evaluation data.
 
-**Reference:** Adams, G., Fabbri, A., Ladhak, F., Lehman, E., and Elhadad, N. (2023). "From Sparse to Dense: GPT-4 Summarization with Chain of Density Prompting." arXiv:2309.04269.
+## References
+
+- Adams, G., Fabbri, A., Ladhak, F., Lehman, E., and Elhadad, N. (2023). "From Sparse to Dense: GPT-4 Summarization with Chain of Density Prompting." [arXiv:2309.04269](https://arxiv.org/abs/2309.04269)
+- DeepLearning.AI. "ChatGPT Prompt Engineering for Developers." [Course Materials](https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/)
