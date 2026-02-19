@@ -8,23 +8,22 @@ class Blogs extends Component {
             blogPosts: [],
             currentPage: 1,
             postsPerPage: 6,
-            selectedCategory: 'All'
+            selectedCategory: 'All',
+            searchQuery: ''
         };
         this.handlePageChange = this.handlePageChange.bind(this);
         this.handleCategoryChange = this.handleCategoryChange.bind(this);
+        this.handleSearchChange = this.handleSearchChange.bind(this);
     }
 
     componentDidMount() {
-        // Fetch blog posts list
         this.fetchBlogPosts();
     }
 
     fetchBlogPosts() {
-        // Fetch blog posts list from JSON file
         fetch(`${process.env.PUBLIC_URL || ''}/blogs/blog-posts.json`)
             .then(response => response.json())
             .then(blogPosts => {
-                // Sort by date (newest first)
                 const sortedPosts = blogPosts.sort((a, b) => {
                     return new Date(b.date) - new Date(a.date);
                 });
@@ -38,7 +37,6 @@ class Blogs extends Component {
 
     handlePageChange(pageNumber) {
         this.setState({ currentPage: pageNumber });
-        // Scroll to top of blog section
         const blogsSection = document.getElementById('blogs');
         if (blogsSection) {
             blogsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -46,9 +44,16 @@ class Blogs extends Component {
     }
 
     handleCategoryChange(category) {
-        this.setState({ 
+        this.setState({
             selectedCategory: category,
-            currentPage: 1 // Reset to first page when category changes
+            currentPage: 1
+        });
+    }
+
+    handleSearchChange(e) {
+        this.setState({
+            searchQuery: e.target.value,
+            currentPage: 1
         });
     }
 
@@ -63,30 +68,47 @@ class Blogs extends Component {
         return Array.from(categories).sort();
     }
 
+    estimateReadingTime(post) {
+        const excerptWords = post.excerpt ? post.excerpt.split(/\s+/).length : 0;
+        const estimatedWords = excerptWords * 15;
+        const minutes = Math.max(1, Math.round(estimatedWords / 200));
+        return minutes;
+    }
+
     getFilteredPosts() {
-        const { blogPosts, selectedCategory } = this.state;
-        if (selectedCategory === 'All') {
-            return blogPosts;
+        const { blogPosts, selectedCategory, searchQuery } = this.state;
+        let filtered = blogPosts;
+
+        if (selectedCategory !== 'All') {
+            filtered = filtered.filter(post =>
+                post.categories && post.categories.includes(selectedCategory)
+            );
         }
-        return blogPosts.filter(post => 
-            post.categories && post.categories.includes(selectedCategory)
-        );
+
+        if (searchQuery.trim()) {
+            const query = searchQuery.toLowerCase().trim();
+            filtered = filtered.filter(post => {
+                const titleMatch = post.title && post.title.toLowerCase().includes(query);
+                const excerptMatch = post.excerpt && post.excerpt.toLowerCase().includes(query);
+                const categoryMatch = post.categories && post.categories.some(cat => cat.toLowerCase().includes(query));
+                return titleMatch || excerptMatch || categoryMatch;
+            });
+        }
+
+        return filtered;
     }
 
     render() {
-        const { currentPage, postsPerPage, selectedCategory } = this.state;
-        
-        // Get filtered posts
+        const { currentPage, postsPerPage, selectedCategory, searchQuery } = this.state;
+
         const filteredPosts = this.getFilteredPosts();
         const allCategories = this.getAllCategories();
 
-        // Calculate pagination
         const indexOfLastPost = currentPage * postsPerPage;
         const indexOfFirstPost = indexOfLastPost - postsPerPage;
         const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
         const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
 
-        // Generate page numbers
         const pageNumbers = [];
         for (let i = 1; i <= totalPages; i++) {
             pageNumbers.push(i);
@@ -96,7 +118,19 @@ class Blogs extends Component {
             <section id="blogs" className="section">
                 <div className="container">
                     <h2 className="section-title"><span>Blog</span></h2>
-                    
+
+                    {/* Search Bar */}
+                    <div className="blog-search-wrapper">
+                        <i className="fa fa-search blog-search-icon"></i>
+                        <input
+                            type="text"
+                            className="blog-search-input"
+                            placeholder="Search posts..."
+                            value={searchQuery}
+                            onChange={this.handleSearchChange}
+                        />
+                    </div>
+
                     {/* Category Filter */}
                     {allCategories.length > 0 && (
                         <div className="blog-categories">
@@ -117,10 +151,10 @@ class Blogs extends Component {
                             ))}
                         </div>
                     )}
-                    
+
                     <div className="blog-list">
                         {filteredPosts.length === 0 ? (
-                            <p>No blog posts found in this category. Check back soon!</p>
+                            <p>No blog posts found. Try a different search or category.</p>
                         ) : (
                             <>
                                 {currentPosts.map((post) => (
@@ -129,6 +163,9 @@ class Blogs extends Component {
                                             <h3>{post.title}</h3>
                                             <div className="blog-meta">
                                                 <span className="blog-date">{post.date}</span>
+                                                <span className="blog-read-time">
+                                                    <i className="fa fa-clock-o"></i> {this.estimateReadingTime(post)} min read
+                                                </span>
                                                 {post.categories && post.categories.length > 0 && (
                                                     <div className="blog-categories-list">
                                                         {post.categories.map((category, index) => (
@@ -144,7 +181,7 @@ class Blogs extends Component {
                                         </Link>
                                     </article>
                                 ))}
-                                
+
                                 {totalPages > 1 && (
                                     <div className="blog-pagination">
                                         <button
@@ -155,10 +192,9 @@ class Blogs extends Component {
                                         >
                                             <i className="fa fa-chevron-left"></i>
                                         </button>
-                                        
+
                                         <div className="pagination-numbers">
                                             {pageNumbers.map((number) => {
-                                                // Show first page, last page, current page, and pages around current
                                                 if (
                                                     number === 1 ||
                                                     number === totalPages ||
@@ -187,7 +223,7 @@ class Blogs extends Component {
                                                 return null;
                                             })}
                                         </div>
-                                        
+
                                         <button
                                             className="pagination-button"
                                             onClick={() => this.handlePageChange(currentPage + 1)}
@@ -208,4 +244,3 @@ class Blogs extends Component {
 }
 
 export default Blogs;
-

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
-import axios from 'axios'
 
 import Header from './Header';
 import About from './About';
@@ -14,6 +13,7 @@ import Blogs from './Blogs';
 import BlogPost from './BlogPost';
 import { Footer } from './Footer';
 import { resumeData } from "./resumeData";
+import { initScrollReveal, initSkillBarAnimation } from '../utils/scrollReveal';
 
 
 export class App extends Component {
@@ -60,6 +60,7 @@ export class App extends Component {
 
     componentDidMount() {
         this.getResumeData();
+        document.body.classList.add('js-loaded');
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -78,14 +79,16 @@ export class App extends Component {
                     setTimeout(() => {
                         const element = document.getElementById(sectionId);
                         if (element) {
-                            // Use jQuery animate for consistency with init.js smooth scroll
-                            // or just native scrollIntoView
-                            // Using native for simplicity first, but init.js uses jQuery.
-                            // Let's try native first.
                             element.scrollIntoView({ behavior: 'smooth' });
                         }
                     }, 100);
                 }
+
+                // Initialize scroll animations after render
+                setTimeout(() => {
+                    initScrollReveal();
+                    initSkillBarAnimation();
+                }, 200);
             }, [props.location]);
 
             return (

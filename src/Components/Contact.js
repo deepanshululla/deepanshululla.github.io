@@ -6,7 +6,7 @@ class Contact extends Component {
             var email = this.props.data.email;
         }
         return (
-            <section id="contact" className="section contact-section">
+            <section id="contact" className="section contact-section reveal-on-scroll">
                 <div className="container">
                     <div className="contact-wrapper fade-in">
                         <div className="contact-header">

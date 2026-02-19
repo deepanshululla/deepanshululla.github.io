@@ -45,7 +45,7 @@ class Skills extends Component {
                             <span className="skill-group-name">{skillGroup.group}</span>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
                                 <div className="skill-group-bar-wrapper">
-                                    <div className="skill-group-bar" style={{ width: averageLevel }}></div>
+                                    <div className="skill-group-bar" style={{ width: 0 }} data-width={averageLevel}></div>
                                 </div>
                                 <i className={`fa fa-chevron-${isExpanded ? 'up' : 'down'}`} style={{ fontSize: '0.9rem', color: 'var(--accent-primary)' }}></i>
                             </div>
@@ -55,7 +55,7 @@ class Skills extends Component {
                                 <li key={index} className="sub-skill-item">
                                     <span className="sub-skill-name">{subSkill.name}</span>
                                     <div className="skill-bar-wrapper">
-                                        <div className="skill-bar" style={{ width: subSkill.level }}></div>
+                                        <div className="skill-bar" style={{ width: 0 }} data-width={subSkill.level}></div>
                                     </div>
                                 </li>
                             ))}
@@ -65,7 +65,7 @@ class Skills extends Component {
             });
 
             return (
-                <section id="skills" className="section resume-section">
+                <section id="skills" className="section resume-section reveal-on-scroll">
                     <div className="container">
                         <h2 className="section-title"><span>Skills</span></h2>
                         <div className="resume-content">

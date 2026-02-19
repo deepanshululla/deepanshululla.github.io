@@ -100,7 +100,7 @@ class Testimonials extends Component {
         const currentIndex = this.state.currentIndex;
 
         return (
-            <section id="testimonials" className="section testimonials-section">
+            <section id="testimonials" className="section testimonials-section reveal-on-scroll">
                 <div className="container">
                     <h2 className="section-title center"><span>Testimonials</span></h2>
                     <div 

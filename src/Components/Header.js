@@ -3,9 +3,66 @@ import { Link, hashHistory } from 'react-router';
 
 
 class Header extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            menuOpen: false,
+            activeSection: 'home'
+        };
+        this.toggleMenu = this.toggleMenu.bind(this);
+        this.closeMenu = this.closeMenu.bind(this);
+        this.sectionObserver = null;
+    }
+
+    toggleMenu() {
+        this.setState(prevState => ({ menuOpen: !prevState.menuOpen }));
+    }
+
+    closeMenu() {
+        this.setState({ menuOpen: false });
+    }
+
+    componentDidMount() {
+        if (this.props.isHome !== false) {
+            this.initSectionObserver();
+        }
+    }
+
+    componentWillUnmount() {
+        if (this.sectionObserver) {
+            this.sectionObserver.disconnect();
+        }
+    }
+
+    initSectionObserver() {
+        const sectionIds = ['home', 'about', 'education', 'work', 'skills', 'portfolio', 'testimonials', 'contact'];
+
+        this.sectionObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        this.setState({ activeSection: entry.target.id });
+                    }
+                });
+            },
+            { rootMargin: '-20% 0px -60% 0px', threshold: 0 }
+        );
+
+        // Delay to ensure DOM is ready
+        setTimeout(() => {
+            sectionIds.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    this.sectionObserver.observe(el);
+                }
+            });
+        }, 300);
+    }
+
     render() {
-        const showHero = this.props.showHero !== false; // Default to true if not specified
-        const isHome = this.props.isHome !== false; // Default to true if not specified
+        const showHero = this.props.showHero !== false;
+        const isHome = this.props.isHome !== false;
+        const { menuOpen, activeSection } = this.state;
 
         if (this.props.data) {
             var name = this.props.data.name;
@@ -18,25 +75,45 @@ class Header extends Component {
         }
 
         const handleNavClick = (e, id) => {
+            this.closeMenu();
             if (!isHome) {
                 e.preventDefault();
                 hashHistory.push('/?section=' + id);
             }
         };
 
+        const navItems = [
+            { id: 'home', label: 'Home' },
+            { id: 'about', label: 'About' },
+            { id: 'education', label: 'Education' },
+            { id: 'work', label: 'Work' },
+            { id: 'skills', label: 'Skills' },
+            { id: 'portfolio', label: 'Projects' },
+            { id: 'testimonials', label: 'Testimonials' },
+            { id: 'contact', label: 'Contact' }
+        ];
+
         return (
             <header id="home" className={`header ${!showHero ? 'no-hero' : ''}`}>
-                <nav id="nav-wrap" className="nav-container">
+                <nav id="nav-wrap" className={`nav-container ${menuOpen ? 'nav-open' : ''}`}>
+                    <button className="nav-hamburger" onClick={this.toggleMenu} aria-label="Toggle navigation">
+                        <span className="hamburger-bar"></span>
+                        <span className="hamburger-bar"></span>
+                        <span className="hamburger-bar"></span>
+                    </button>
                     <ul id="nav" className="nav-list">
-                        <li className="current"><a className="smoothscroll" href="#home" onClick={(e) => handleNavClick(e, 'home')}>Home</a></li>
-                        <li><a className={isHome ? "smoothscroll" : ""} href="#about" onClick={(e) => handleNavClick(e, 'about')}>About</a></li>
-                        <li><a className={isHome ? "smoothscroll" : ""} href="#education" onClick={(e) => handleNavClick(e, 'education')}>Education</a></li>
-                        <li><a className={isHome ? "smoothscroll" : ""} href="#work" onClick={(e) => handleNavClick(e, 'work')}>Work</a></li>
-                        <li><a className={isHome ? "smoothscroll" : ""} href="#skills" onClick={(e) => handleNavClick(e, 'skills')}>Skills</a></li>
-                        <li><a className={isHome ? "smoothscroll" : ""} href="#portfolio" onClick={(e) => handleNavClick(e, 'portfolio')}>Projects</a></li>
-                        <li><a className={isHome ? "smoothscroll" : ""} href="#testimonials" onClick={(e) => handleNavClick(e, 'testimonials')}>Testimonials</a></li>
-                        <li><a className={isHome ? "smoothscroll" : ""} href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact</a></li>
-                        <li><Link to="/blog">Blog</Link></li>
+                        {navItems.map(item => (
+                            <li key={item.id} className={activeSection === item.id ? 'current' : ''}>
+                                <a
+                                    className={isHome ? 'smoothscroll' : ''}
+                                    href={`#${item.id}`}
+                                    onClick={(e) => handleNavClick(e, item.id)}
+                                >
+                                    {item.label}
+                                </a>
+                            </li>
+                        ))}
+                        <li><Link to="/blog" onClick={this.closeMenu}>Blog</Link></li>
                     </ul>
                 </nav>
 

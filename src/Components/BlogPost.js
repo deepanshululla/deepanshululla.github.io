@@ -9,7 +9,11 @@ class BlogPost extends Component {
             post: null,
             content: '',
             loading: true,
-            error: null
+            error: null,
+            allPosts: [],
+            currentPost: null,
+            prevPost: null,
+            nextPost: null
         };
     }
 
@@ -17,6 +21,7 @@ class BlogPost extends Component {
         const postId = this.props.params?.id;
         if (postId) {
             this.fetchBlogPost(postId);
+            this.fetchAllPosts(postId);
         }
     }
 
@@ -25,15 +30,31 @@ class BlogPost extends Component {
         const prevPostId = prevProps.params?.id;
         if (currentPostId && currentPostId !== prevPostId) {
             this.fetchBlogPost(currentPostId);
+            this.fetchAllPosts(currentPostId);
         }
+    }
+
+    fetchAllPosts(currentId) {
+        fetch(`${process.env.PUBLIC_URL || ''}/blogs/blog-posts.json`)
+            .then(response => response.json())
+            .then(posts => {
+                const sorted = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+                const currentIndex = sorted.findIndex(p => p.id === currentId);
+                this.setState({
+                    allPosts: sorted,
+                    currentPost: currentIndex >= 0 ? sorted[currentIndex] : null,
+                    prevPost: currentIndex > 0 ? sorted[currentIndex - 1] : null,
+                    nextPost: currentIndex < sorted.length - 1 ? sorted[currentIndex + 1] : null
+                });
+            })
+            .catch(() => {});
     }
 
     fetchBlogPost(postId) {
         this.setState({ loading: true, error: null });
-        
-        // Fetch the markdown file
+
         const markdownUrl = `${process.env.PUBLIC_URL || ''}/blogs/${postId}.md`;
-        
+
         fetch(markdownUrl)
             .then(response => {
                 if (!response.ok) {
@@ -42,14 +63,12 @@ class BlogPost extends Component {
                 return response.text();
             })
             .then(markdown => {
-                // Parse markdown to HTML
-                // Handle both function and object exports
-                const parseMarkdown = typeof marked === 'function' 
-                    ? marked 
-                    : (marked && marked.parse) 
-                        ? marked.parse 
-                        : (marked && marked.default) 
-                            ? marked.default 
+                const parseMarkdown = typeof marked === 'function'
+                    ? marked
+                    : (marked && marked.parse)
+                        ? marked.parse
+                        : (marked && marked.default)
+                            ? marked.default
                             : marked;
                 const html = parseMarkdown(markdown);
                 this.setState({
@@ -67,7 +86,7 @@ class BlogPost extends Component {
     }
 
     render() {
-        const { content, loading, error } = this.state;
+        const { content, loading, error, currentPost, prevPost, nextPost } = this.state;
 
         if (loading) {
             return (
@@ -95,12 +114,44 @@ class BlogPost extends Component {
             <section id="blog-post" className="section">
                 <div className="container">
                         <Link to="/blog" className="back-link">← Back to Blog</Link>
+
+                    {currentPost && currentPost.categories && currentPost.categories.length > 0 && (
+                        <div className="post-categories">
+                            {currentPost.categories.map((cat, i) => (
+                                <span key={i} className="blog-category-tag">{cat}</span>
+                            ))}
+                        </div>
+                    )}
+
                     <article className="blog-post-content">
-                        <div 
+                        <div
                             className="blog-post-body"
                             dangerouslySetInnerHTML={{ __html: content }}
                         />
                     </article>
+
+                    {(prevPost || nextPost) && (
+                        <nav className="post-nav">
+                            <div className="post-nav-link post-nav-prev">
+                                {prevPost && (
+                                    <Link to={`/blog/${prevPost.id}`}>
+                                        <i className="fa fa-chevron-left"></i>
+                                        <span className="post-nav-label">Previous</span>
+                                        <span className="post-nav-title">{prevPost.title}</span>
+                                    </Link>
+                                )}
+                            </div>
+                            <div className="post-nav-link post-nav-next">
+                                {nextPost && (
+                                    <Link to={`/blog/${nextPost.id}`}>
+                                        <span className="post-nav-label">Next</span>
+                                        <span className="post-nav-title">{nextPost.title}</span>
+                                        <i className="fa fa-chevron-right"></i>
+                                    </Link>
+                                )}
+                            </div>
+                        </nav>
+                    )}
                 </div>
             </section>
         );
@@ -108,4 +159,3 @@ class BlogPost extends Component {
 }
 
 export default BlogPost;
-

@@ -75,6 +75,13 @@ Key takeaways as a summary.
 - No emojis in blog post content
 - Filenames use kebab-case (e.g., `mixed-precision-training.md`)
 
+### Blog Post Images
+
+- Images are stored in `public/blogs/images/` only (no duplication in `blogs/`)
+- Use absolute paths in markdown: `![Alt text](/blogs/images/filename.png)`
+- Optional captions: place `*Caption text*` on the line immediately after the image
+- Use descriptive filenames prefixed with the post slug: `speculative-decoding-draft-verify.png`
+
 ### blog-posts.json Entry Format
 
 New entries go at the **top** of the JSON array (newest first). Each entry:

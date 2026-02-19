@@ -58,7 +58,7 @@ class Projects extends Component {
             });
 
             return (
-                <section id="portfolio" className="section resume-section">
+                <section id="portfolio" className="section resume-section reveal-on-scroll">
                     <div className="container">
                         <h2 className="section-title"><span>Projects</span></h2>
                         <div className="resume-content">

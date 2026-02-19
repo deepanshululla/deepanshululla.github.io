@@ -16,7 +16,7 @@ class About extends Component {
         }
 
         return (
-            <section id="about" className="section about-section">
+            <section id="about" className="section about-section reveal-on-scroll">
                 <div className="container">
                     <div className="about-content">
                         <div className="about-image-wrapper fade-in">

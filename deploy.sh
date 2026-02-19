@@ -17,6 +17,7 @@ npm run deploy
 
 echo "==> Copying build output to repo root..."
 cp -aR ./build/* ./
+touch .nojekyll
 
 echo "==> Committing and pushing to master..."
 git add .
