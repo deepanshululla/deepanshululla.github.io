@@ -2,6 +2,8 @@
 
 **Published:** 2023-01-15
 
+![Books and reading](https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&h=400&fit=crop&q=80)
+
 A few years ago, I started reading books to improve myself and look to become better in my career and personal life.
 
 A few years ago, I embarked on a journey of self-improvement through reading. In this blog post, I aim to document the books I've read and the impact they've had on my personal and professional life. This serves as a personal record and hopefully provides value to others seeking book recommendations for personal growth.

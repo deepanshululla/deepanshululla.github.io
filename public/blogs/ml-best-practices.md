@@ -2,6 +2,8 @@
 
 **Published:** 2023-04-22
 
+![Machine learning best practices](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop&q=80)
+
 ## ** Introduction to Building Machine Learning Applications**
 
 Building machine learning applications requires a thorough understanding of the fundamentals of machine learning and software development. This section will provide an overview of the key considerations and best practices for building machine learning applications.

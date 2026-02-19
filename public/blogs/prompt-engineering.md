@@ -2,6 +2,8 @@
 
 **Published:** August 3, 2025
 
+![Crafting effective AI prompts](https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop&q=80)
+
 Prompt engineering is the craft of designing instructions to guide AI models toward desired outputs. It's the simplest and most common adaptation technique—no model weights are changed, yet it can dramatically improve performance.
 
 ## What is Prompt Engineering?

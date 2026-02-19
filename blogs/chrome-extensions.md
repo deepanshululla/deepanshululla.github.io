@@ -2,6 +2,8 @@
 
 **Published:** 2022-06-18
 
+![Browser productivity extensions](https://images.unsplash.com/photo-1542744094-24638eff58bb?w=800&h=400&fit=crop&q=80)
+
 AdBlock for blocking ads. also adblock plus
 
 Go Fucking Work is what I use to block sites like Reddit or Facebook so that I don’t get distracted.

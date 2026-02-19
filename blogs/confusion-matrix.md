@@ -2,6 +2,8 @@
 
 **Published:** 2019-07-27
 
+![Classification model evaluation](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop&q=80)
+
 ## Confusion Matrix
 
 Confusion Matrix is a group or matrix of metrics in supervised learning scenarios which determine how good a model is in predictions.

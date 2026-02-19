@@ -2,6 +2,8 @@
 
 **Published:** 2022-12-27
 
+![Focus and brain management](https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=400&fit=crop&q=80)
+
 I was recently diagnosed with ADHD (Attention Deficit Hyperactivity Disorder) as an adult, and suddenly, an epiphany ran through my eyes.
 
 My life span through my eyes in a short video clip when I learned more about it. It made sense now why I couldn't sit at a place for a longer duration as a kid or how I never paid any attention to what my teachers were teaching in the classroom.

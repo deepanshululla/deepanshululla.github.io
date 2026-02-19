@@ -2,6 +2,8 @@
 
 **Published:** 2023-03-31
 
+![Backend engineering and server architecture](https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80)
+
 **Header Outline:**
 
 - Understand the Basics of Backend Development

@@ -2,6 +2,8 @@
 
 **Published:** 2022-04-30
 
+![Identifying engineering priorities](https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=400&fit=crop&q=80)
+
 It is very important to identify everyone’s priorities in a software engineering organization. In a sense, priorities are about people and what facts are about things. Because of this, it can be easy to overlook priorities, since they are more difficult to ascertain than simply reading documentation or playing around with the code.
 
 Even if you are making a decision on your own, identifying priorities is a good gut check.

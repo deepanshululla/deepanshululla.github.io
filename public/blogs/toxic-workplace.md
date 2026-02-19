@@ -2,6 +2,8 @@
 
 **Published:** 2023-06-10
 
+![Workplace culture and environment](https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=400&fit=crop&q=80)
+
 Toxic workplaces are somewhat a taboo to talk about. It is also something very much personable. The same workplace can be toxic for one and energizing for another.
 
 There is really no one size fits all situation here.

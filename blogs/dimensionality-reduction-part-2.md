@@ -2,6 +2,8 @@
 
 **Published:** 2019-06-01
 
+![Dimensionality reduction mathematics](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop&q=80)
+
 This is part 2 of Introduction to Dimensionality Reduction. In this blog post, we would several different mathematical prerequisites that one must know before trying to understand machine learning.
 
  

@@ -2,6 +2,8 @@
 
 **Published:** June 13, 2020
 
+![Graph algorithms and topological sorting](https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&h=400&fit=crop&q=80)
+
 Topological Sort is used to find a linear ordering of elements that have dependencies on each other. For example, if event 'B' is dependent on event 'A', 'A' comes before 'B' in topological ordering.
 
 Lets say we are asked to find all possible variations of topological sort.

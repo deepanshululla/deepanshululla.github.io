@@ -2,6 +2,8 @@
 
 **Published:** 2019-06-29
 
+![Hypothesis testing in statistics](https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800&h=400&fit=crop&q=80)
+
 ## 
 ## Hypothesis Testing
 

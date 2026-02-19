@@ -2,6 +2,8 @@
 
 **Published:** 2023-10-14
 
+![Introduction to neural networks](https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&h=400&fit=crop&q=80)
+
 ## Executive Summary
 
 - A neural network is just a lego-like formation of smaller functions(neurons).

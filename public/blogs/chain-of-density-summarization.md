@@ -2,6 +2,8 @@
 
 **Published:** February 17, 2026
 
+![Iterative refinement and compression of text](https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=800&h=400&fit=crop&q=80)
+
 If you have ever asked an LLM to "summarize this article," you have probably noticed the results can be underwhelming. The summary is either so vague it could apply to almost anything, or so long-winded it barely counts as a summary at all. Chain of Density (CoD) prompting is a technique designed to solve exactly this problem, producing summaries that are both concise and packed with information. In this post, we will break down how it works, why it is effective, and how you can use it in practice.
 
 ## The Problem with LLM Summaries

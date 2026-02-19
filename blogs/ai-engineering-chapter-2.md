@@ -2,6 +2,8 @@
 
 **Published:** June 22, 2025
 
+![Foundation model design](https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=400&fit=crop&q=80)
+
 ## Chapter 2: Understanding Foundation Models
 ### Overview
 

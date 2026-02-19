@@ -2,6 +2,8 @@
 
 **Published:** July 13, 2024
 
+![AI-powered recommendation agent](https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80)
+
 This post summarizes key insights from the RecMind paper, which explores using large language models as agents for recommendation systems—a novel approach that combines the reasoning capabilities of LLMs with recommendation tasks.
 
 ## Introduction

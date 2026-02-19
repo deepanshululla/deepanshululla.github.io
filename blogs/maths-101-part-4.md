@@ -2,6 +2,8 @@
 
 **Published:** 2019-02-09
 
+![Central limit theorem](https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&h=400&fit=crop&q=80)
+
 #### Populations and Samples
 The main difference between a population and a sample has to do with how
 

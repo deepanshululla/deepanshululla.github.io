@@ -2,6 +2,8 @@
 
 **Published:** February 17, 2026
 
+![Circuit board representing GPU floating point precision](https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80)
+
 Training large language models is fundamentally a problem of resource management. Every parameter, gradient, activation, and optimizer state lives in GPU memory as a floating point number, and the choice of floating point format has a direct, measurable impact on how much memory you need, how fast your model trains, and whether training remains numerically stable. This post walks through the major floating point formats used in deep learning today, explains why some formats are dangerous, and provides practical guidance on when to use what. The material draws heavily from CS336 Lecture 2 notes on PyTorch and resource accounting.
 
 ## Why Precision Matters in Deep Learning

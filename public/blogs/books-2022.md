@@ -2,6 +2,8 @@
 
 **Published:** 2023-06-18
 
+![Books and reading](https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&h=400&fit=crop&q=80)
+
 Every once in a while, we stumble upon a book that profoundly impacts our lives, instigates change, and even redefines our perspectives. Today, I bring you a curated list of 12 transformative books that encompass personal development, professional growth, financial wisdom, entrepreneurial journeys, software engineering, spirituality, mental health, and leadership skills that I got a chance to read in 2022.
 
 1) **"The First 90 Days" by Michael Watkins**

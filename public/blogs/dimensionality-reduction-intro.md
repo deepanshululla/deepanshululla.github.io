@@ -2,6 +2,8 @@
 
 **Published:** 2019-05-11
 
+![Introduction to dimensionality reduction](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop&q=80)
+
 ### Introduction to Dimensionality Reduction
 
 There are several ways we can define Dimensionality Reduction. One way to define it is:

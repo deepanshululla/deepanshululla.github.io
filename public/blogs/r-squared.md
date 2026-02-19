@@ -2,6 +2,8 @@
 
 **Published:** 2019-10-20
 
+![Regression analysis and statistics](https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800&h=400&fit=crop&q=80)
+
 R-squared is a statistical measure of how close the data are to the fitted regression line. It is also known as the coefficient of determination, or the coefficient of multiple determination for multiple regression.
 
 This metric is specifically designed for regression-based algorithms where the output is a real value.

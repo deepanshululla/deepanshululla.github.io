@@ -2,6 +2,8 @@
 
 **Published:** February 17, 2026
 
+![Data center infrastructure powering LLM inference](https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80)
+
 Large language models have become foundational to modern AI applications, but serving them efficiently at scale remains one of the hardest engineering challenges in the field. Whether you are building a chatbot, a code assistant, or a summarization pipeline, understanding how LLM inference actually works under the hood is critical for making good system design decisions. This post breaks down the two core phases of LLM inference -- prefill and decode -- and explores the key concepts that determine inference performance: KV caching, GPU memory allocation, batching strategies, and attention variants.
 
 ## What is LLM Inference?

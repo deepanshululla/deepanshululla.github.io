@@ -2,6 +2,8 @@
 
 **Published:** 2019-11-24
 
+![Measuring model performance metrics](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop&q=80)
+
 To measure how well our models are performing we may need to define some metrics. One of the metrics which is quite straight forward is accuracy.
 
 Accuracy is defined as the number of correctly classified points divided by the total number of points in Dtest. 

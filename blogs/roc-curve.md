@@ -2,6 +2,8 @@
 
 **Published:** 2019-08-11
 
+![ROC curve model evaluation](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop&q=80)
+
 For binary classification problems, a good way to measure the performance of a model is by finding out AUC (Area Under The Curve) of ROC (Receiver Operating Characteristics).
 
 #### **What is a ROC ****curve?**

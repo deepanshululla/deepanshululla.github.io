@@ -2,6 +2,8 @@
 
 **Published:** 2019-03-11
 
+![Correlation between random variables](https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&h=400&fit=crop&q=80)
+
 Suppose you have taken the data for heights and weights of students in class and you want to figure out the correlation between heights and weights of students.
 
 The relation between these two parameters is defined mathematically by one of the 3 ways

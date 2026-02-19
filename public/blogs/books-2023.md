@@ -2,6 +2,8 @@
 
 **Published:** 2024-07-14
 
+![Books and reading](https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&h=400&fit=crop&q=80)
+
 ### 1. **Fundamentals of Data Engineering**
 
 This book dives into the world of data engineering, covering everything from how data is collected and stored to how it's processed and used. It talks about best practices, security, and designing systems that handle data efficiently and safely.

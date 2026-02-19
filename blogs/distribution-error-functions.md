@@ -2,6 +2,8 @@
 
 **Published:** 2019-09-22
 
+![Statistical distributions](https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&h=400&fit=crop&q=80)
+
 We can plot error distributions like probability density function
 and cumulative density function and make important deductions
 based on it.

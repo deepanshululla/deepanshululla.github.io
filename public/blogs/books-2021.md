@@ -2,6 +2,8 @@
 
 **Published:** 2023-04-30
 
+![Books and reading](https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&h=400&fit=crop&q=80)
+
 - **More Effective C++ by Scott Meyers**: This book is a sequel to the popular book "Effective C++" and provides further insights into writing effective and efficient C++ code. The book includes 35 new guidelines for using C++ effectively, covering topics such as constructors, assignment operators, and templates.
 
 - **Effective C++ by Scott Meyers**: This book provides practical advice and guidelines for writing high-quality C++ code. The book covers topics such as object creation and destruction, resource management, and performance optimization, and is considered a must-read for any serious C++ developer.

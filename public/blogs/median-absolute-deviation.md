@@ -2,6 +2,8 @@
 
 **Published:** 2019-11-10
 
+![Statistical error measurement](https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800&h=400&fit=crop&q=80)
+
 Median Absolute deviation is one of the other techniques specifically used for analyzing the performance of regression models.
 
 #### **Computing MAD of errors**

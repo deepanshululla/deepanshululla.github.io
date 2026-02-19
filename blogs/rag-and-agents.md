@@ -2,6 +2,8 @@
 
 **Published:** August 3, 2025
 
+![AI agents and retrieval systems](https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80)
+
 Retrieval-Augmented Generation (RAG) and AI agents represent two of the most important patterns in modern AI application development. This post explores their definitions, architectures, and implementation strategies.
 
 ## Retrieval-Augmented Generation (RAG)

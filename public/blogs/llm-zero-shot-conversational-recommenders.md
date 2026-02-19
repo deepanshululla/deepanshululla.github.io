@@ -2,6 +2,8 @@
 
 **Published:** 2024-07-15
 
+![LLM conversational AI](https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop&q=80)
+
 ### Link to paper
 
 https://arxiv.org/abs/2308.10053

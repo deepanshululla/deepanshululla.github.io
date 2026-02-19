@@ -2,6 +2,8 @@
 
 **Published:** 2019-02-23
 
+![Statistical distributions](https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&h=400&fit=crop&q=80)
+
 ## Types of Distributions
 #### **Bernoulli and Binomial distribution**
 A Bernoulli random variable has two possible outcomes: 0 or 1. A binomial distribution is the sum of independent and identically distributed Bernoulli random variables.

@@ -2,6 +2,8 @@
 
 **Published:** 2022-06-24
 
+![Emacs text editor and keybindings](https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800&h=400&fit=crop&q=80)
+
 I recently started using Emacs for text editing purposes and was pleasantly surprised. My main goal to learn it was to work efficiently in teams that don't have a nice local dev environment and you need to have a dev machine running to run, build, and debug your code.
 I started with spacemacs because it lets me merge Vim and Emacs bindings and I can choose what's easier for me to move around in the file/directory I am editing.
 

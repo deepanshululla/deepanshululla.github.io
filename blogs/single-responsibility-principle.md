@@ -2,6 +2,8 @@
 
 **Published:** April 6, 2019
 
+![Clean code and SOLID principles](https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80)
+
 Writing clean code is more of an art rather than a science. So What really makes code **cleaner**?. In this series called Clean Code Concepts, we investigate some of the ways to write code in a clean way.
 
 There are several aspects to write cleaner code, some are language agnostic others are language dependent.

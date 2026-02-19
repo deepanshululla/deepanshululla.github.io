@@ -2,6 +2,8 @@
 
 **Published:** 2025-06-22
 
+![AI engineering foundations](https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=400&fit=crop&q=80)
+
 ## Chapter 1 Summary: Introduction to Building AI Applications with Foundation Models
 ### 1. The Scaling Up of AI Models
 

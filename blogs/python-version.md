@@ -2,6 +2,8 @@
 
 **Published:** 2019-06-15
 
+![Python version management](https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80)
+
 Welcome to part 1 of writing python like a pro. This series is definitely part of the advanced python series. It assumes you already know python and are definitely comfortable with it.
 
 However, you are a person who wants to know how you can up your python game. You want to learn coding styles for writing cleaner code or write more effective ways to optimize your python code, then this series is for you.

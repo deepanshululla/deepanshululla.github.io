@@ -2,6 +2,8 @@
 
 **Published:** 2023-01-02
 
+![Web server networking](https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&h=400&fit=crop&q=80)
+
 If you are familiar with socket programming, you would be aware that send and recv are usually blocking calls. This means that the code execution will be blocked until they are successfully resolved.
 
 This prevents us from writing TCP servers that can respond to multiple clients. However, there are different ways where we can write our own web server that can handle multiple connections.

@@ -2,6 +2,8 @@
 
 **Published:** July 13, 2024
 
+![Machine learning engineering](https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=400&fit=crop&q=80)
+
 Machine learning can also be defined as the process of solving a practical problem by,
 1) collecting a dataset, and
 2) algorithmically training a statistical model based on that dataset

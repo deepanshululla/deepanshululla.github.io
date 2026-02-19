@@ -2,6 +2,8 @@
 
 **Published:** 2019-04-20
 
+![Data preprocessing and normalization](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop&q=80)
+
 Before applying any dimensionality reduction technique sometimes it is important to preprocess the data.
 
 There are several ways which we can use for preprocessing data.

@@ -2,6 +2,8 @@
 
 **Published:** 2024-07-13
 
+![Java programming language](https://images.unsplash.com/photo-1514432324607-a09d9b4aefda?w=800&h=400&fit=crop&q=80)
+
 ## Java Platform
 
 ### 1 . Why is Java so popular?

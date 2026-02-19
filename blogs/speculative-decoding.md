@@ -2,6 +2,8 @@
 
 **Published:** February 17, 2026
 
+![Accelerating LLM inference with parallel verification](https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80)
+
 Large language models have become remarkably capable, but their inference speed remains a persistent bottleneck in production systems. Generating a single response from a 70-billion parameter model can take several seconds, and much of that time is spent waiting on memory bandwidth rather than computation. Speculative decoding is an elegant technique that can deliver 2-3x speedups in token generation without changing the output distribution at all. In this post, we will break down how it works, why it preserves exactness, and what to consider when deploying it in practice.
 
 ## The Decode Bottleneck

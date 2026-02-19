@@ -2,6 +2,8 @@
 
 **Published:** August 3, 2025
 
+![Deep learning neural network architectures](https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&h=400&fit=crop&q=80)
+
 Understanding different deep learning architectures is crucial for building effective AI systems. This post provides a practical guide to various neural network architectures, their use cases, and implementation considerations.
 
 ## Recurrent Neural Networks (RNNs)

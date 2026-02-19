@@ -2,6 +2,8 @@
 
 **Published:** 2019-03-23
 
+![Confidence intervals](https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800&h=400&fit=crop&q=80)
+
 In statistics, a confidence interval (CI) is a type of interval estimate which we compute using the statistics of the observed data.
 
 The interval has an associated confidence level that, loosely speaking, quantifies the level of confidence that the value of the parameter lies in the interval.

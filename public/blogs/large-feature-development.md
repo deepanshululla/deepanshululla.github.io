@@ -2,6 +2,8 @@
 
 **Published:** 2022-12-24
 
+![Software project planning](https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=800&h=400&fit=crop&q=80)
+
 When I was a junior engineer I was given small bugs to fix and small features to work on. However the way we develop larger features is different from the way smaller bugs are fixed or features are developed.
 
 I have worked at couple of big names at the current point in my career and have delivered several important and big features. Over the years I have developed a system which I follow to ensure the safety and success of a big feature I worked on.

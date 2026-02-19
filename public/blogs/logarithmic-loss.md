@@ -2,6 +2,8 @@
 
 **Published:** 2019-08-25
 
+![Cross-entropy and loss functions](https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&h=400&fit=crop&q=80)
+
 Logarithmic loss (or cross-entropy) measures the performance of a classification model where the prediction input is a probability value between 0 and 1.
 
 The goal of our machine learning models is to minimize this value. It is also heavily used in Kaggle competitions to estimate the score of submissions.

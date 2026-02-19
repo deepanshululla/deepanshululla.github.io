@@ -2,6 +2,8 @@
 
 **Published:** May 11, 2019
 
+![Software design principles](https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80)
+
 In this series, we would focus on some of the language-agnostic parts which can be used to improve your ability to write cleaner code in any language.
 
 So let’s dive right into the SOLID concepts of object-oriented design.
