@@ -1,5 +1,13 @@
 [
   {
+    "id": "natural-language-to-sql-with-tiny-llama",
+    "title": "Natural Language to SQL with TinyLlama: Four Approaches Compared",
+    "date": "2026-03-23",
+    "excerpt": "Building a natural language to SQL system using a 1.1B parameter model, comparing template matching, direct schema-to-SQL, slim prompting, and agentic ReAct approaches with rigorous evaluations.",
+    "filename": "natural-language-to-sql-with-tiny-llama.md",
+    "categories": ["AI/ML"]
+  },
+  {
     "id": "crucial-conversations-putting-it-all-together",
     "title": "Crucial Conversations Ch. 13: Putting It All Together",
     "date": "2026-03-23",
