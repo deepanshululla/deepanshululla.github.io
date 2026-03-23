@@ -1,5 +1,7 @@
 # CLAUDE.md
 
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
 ## Project Overview
 
 Personal portfolio website for deepanshululla.com, hosted on GitHub Pages.
@@ -26,10 +28,11 @@ deploy.sh          # Build and deploy script
 
 ## Key Commands
 
-- `npm start` — Run dev server (uses `--openssl-legacy-provider` flag)
+- `npm start` — Run dev server (uses `--openssl-legacy-provider` flag for Node 17+ OpenSSL compatibility)
 - `npm run build` — Production build
 - `npm run deploy` — Deploy to GitHub Pages
 - `./deploy.sh` — Full clean deploy: reinstalls deps, builds, deploys to gh-pages, then force-pushes build output to master
+- `npm test` — Run tests with jsdom environment
 
 ## Blog Posts
 
@@ -121,8 +124,28 @@ git push -f origin master    # Force-push to master (serves the site)
 
 This is a destructive deploy (force-push). It wipes `node_modules`, rebuilds from scratch, and force-pushes the built output to master.
 
+## Architecture
+
+### Routing and Data Flow
+
+- Uses `react-router` v3 with `hashHistory` (all routes are hash-based: `/#/`, `/#/blog`, `/#/blog/:id`)
+- Three routes defined in `App.js`: home (`/`), blog listing (`/blog`), individual post (`/blog/:id`)
+- Resume/portfolio data lives in `src/Components/resumeData.json` (imported as a static JSON module, not fetched at runtime)
+- Blog data is fetched at runtime: `Blogs.js` and `BlogPost.js` each fetch `public/blogs/blog-posts.json` and markdown files via `fetch()`
+
+### Theme System
+
+- Theme is set via `resumeData.json` field `"theme"` — applies a CSS class to `document.body`
+- Available themes: `neopolitan` (default/no class), `dark-tech-theme`, `minimalist-professional`, `neubrutalism`
+- Theme CSS files are in `template-css/`
+
+### Blog Rendering Pipeline
+
+`BlogPost.js` fetches `/blogs/{id}.md` → parses with `marked` library → injects HTML via `dangerouslySetInnerHTML` → applies syntax highlighting with `highlight.js` (python, javascript, bash, json, sql, yaml) → renders Mermaid diagrams if present (loaded from CDN on demand)
+
 ## Conventions
 
 - Component files use PascalCase (e.g., `BlogPost.js`)
 - Blog filenames use kebab-case (e.g., `exploring-vector-databases.md`)
 - No TypeScript — plain JavaScript with PropTypes
+- `.nojekyll` file must exist in repo root and `public/` — GitHub Pages needs it to skip Jekyll processing on this pre-built React app
