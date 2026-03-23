@@ -8,6 +8,8 @@ import bash from 'highlight.js/lib/languages/bash';
 import json from 'highlight.js/lib/languages/json';
 import sql from 'highlight.js/lib/languages/sql';
 import yaml from 'highlight.js/lib/languages/yaml';
+import cpp from 'highlight.js/lib/languages/cpp';
+import java from 'highlight.js/lib/languages/java';
 import 'highlight.js/styles/github-dark-dimmed.css';
 
 hljs.registerLanguage('python', python);
@@ -16,6 +18,8 @@ hljs.registerLanguage('bash', bash);
 hljs.registerLanguage('json', json);
 hljs.registerLanguage('sql', sql);
 hljs.registerLanguage('yaml', yaml);
+hljs.registerLanguage('cpp', cpp);
+hljs.registerLanguage('java', java);
 
 class BlogPost extends Component {
     constructor(props) {
