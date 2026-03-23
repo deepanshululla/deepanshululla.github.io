@@ -133,7 +133,7 @@ Think step-by-step before writing SQL:
 
 ### The Problem: Context Budget
 
-V2 consumed roughly 600 tokens on the system prompt alone. For a model with a 2K context window, that leaves very little room for the user's question and the model's reasoning. Initial evaluations showed **1/5 SQL hit rate**. The model could handle the simplest query ("Who is the tallest player?") but failed on anything requiring more reasoning.
+V2 consumed roughly 600 tokens on the system prompt alone. For a model with a ~2K usable context window, that leaves very little room for the user's question and the model's reasoning. A larger prompt does not just cost tokens -- it actively competes with the model's ability to think. Initial evaluations showed **1/5 SQL hit rate**. The model could handle the simplest query ("Who is the tallest player?") but failed on anything requiring more reasoning.
 
 ## Approach 3: Slim Schema-to-SQL (V2b)
 
@@ -382,13 +382,13 @@ Small models learn by pattern matching, not by reasoning about metadata. Show th
 
 ### 2. Context Window Budget Is Everything with Small Models
 
-TinyLlama has roughly 2K usable tokens. Every token spent on the system prompt is a token the model cannot use for reasoning about the user's question. V2's 600-token prompt left almost no room. V2b's 250-token prompt left enough for the model to think, and the results were dramatic: 3x faster inference and 5x better hit rate.
+TinyLlama has roughly 2K usable tokens. Every token spent on the system prompt is a token the model cannot use for reasoning about the user's question. V2's 600-token prompt left almost no room for the model to think. V2b's 250-token prompt freed up ~350 tokens of reasoning headroom, and the results were dramatic: 3x faster inference and 5x better hit rate. The smaller prompt did not just save tokens -- it gave the model the space it needed to actually work through the problem.
 
 When working with constrained models, treat prompt tokens as a scarce resource and optimize aggressively.
 
-### 3. The Same Root Cause Can Look Like Different Failures
+### 3. Non-Instruction-Tuned Models Struggle with Structured Output and Tool Calling
 
-TinyLlama's inability to follow format instructions manifested differently across approaches: V1 failed to produce JSON for template selection, V2 occasionally produced JSON with SQL, V3 failed to emit `TOOL:` lines. The hypothesis that text-based formats would be easier than JSON for a small model was not confirmed. The fundamental limitation is format adherence capacity, not format complexity.
+TinyLlama is a base (non-instruction-tuned) model, and it shows. The inability to follow format instructions manifested differently across approaches: V1 failed to produce JSON for template selection, V2 occasionally produced JSON with SQL, V3 failed to emit `TOOL:` lines. The hypothesis that text-based formats would be easier than JSON for a small model was not confirmed. The fundamental limitation is that base models lack the instruction-following training that makes structured output and tool calling reliable. Format adherence capacity, not format complexity, is the bottleneck.
 
 ### 4. Fuzzy Matching Fixes Real Problems
 
@@ -398,7 +398,7 @@ V3's hit rate jumped from 1/5 to 4/5 with a single change: accepting `list_playe
 
 Without deduplication, the "Find players named Ruth" query triggered 5 identical `search_player` calls in a row, consuming 257 seconds. With a simple call key (tool name + sorted arguments), repeated calls are detected and the loop breaks with a forced final answer. This single optimization gave a 12x speedup on that query and a 4.7x speedup overall.
 
-Agent loops with small models will produce runaway repetitions. Plan for it.
+Agent loops with small models will repeat the same tool call over and over. Plan for it.
 
 ### 6. Hybrid Routing Combines the Best of Both Worlds
 
