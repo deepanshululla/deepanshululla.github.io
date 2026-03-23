@@ -98,29 +98,25 @@ else for lambda=0(or tending to zero)
 
 We often use QQPlots to plot pdf(probability plot). Here is a code snippet that generates a normal and then a random uniform variable and then plot it.
 
-      
+```python
+import numpy as np
+import scipy.stats as stats
+import matplotlib.pyplot as plt
 
-  
-    
-    
-    Loading
+# Generate normal and uniform random variables
+normal_data = np.random.normal(loc=0, scale=1, size=1000)
+uniform_data = np.random.uniform(low=0, high=1, size=1000)
 
-Sorry, something went wrong. Reload?
-Sorry, we cannot display this file.
-Sorry, this file is invalid so it cannot be displayed.
-      
+fig, axes = plt.subplots(1, 2, figsize=(12, 5))
 
-          Viewer requires iframe.
+# QQ plot for normal data
+stats.probplot(normal_data, dist="norm", plot=axes[0])
+axes[0].set_title("QQ Plot: Normal Distribution")
 
-      
-    
+# QQ plot for uniform data
+stats.probplot(uniform_data, dist="norm", plot=axes[1])
+axes[1].set_title("QQ Plot: Uniform Distribution")
 
-        view raw
-
-        
-
-          qqplot.ipynb
-
-        
-
-        hosted with ❤ by GitHub
+plt.tight_layout()
+plt.show()
+```
