@@ -61,6 +61,36 @@ graph LR
     style E fill:#2ecc71,color:#fff
 ```
 
+Here is how to plot the PDF of several common distributions and compute expected values:
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+
+x = np.linspace(-5, 10, 1000)
+
+# Define several distributions
+distributions = {
+    "Normal (mu=2, sigma=1)": stats.norm(loc=2, scale=1),
+    "Exponential (lambda=1)": stats.expon(scale=1),
+    "Uniform (0, 5)": stats.uniform(loc=0, scale=5),
+}
+
+plt.figure(figsize=(8, 4))
+for name, dist in distributions.items():
+    pdf = dist.pdf(x)
+    ev = dist.mean()
+    plt.plot(x, pdf, label=f"{name}, E[X]={ev:.2f}")
+
+plt.title("Probability Density Functions")
+plt.xlabel("x")
+plt.ylabel("f(x)")
+plt.legend()
+plt.xlim(-3, 8)
+plt.show()
+```
+
 ### **Central Limit Theorem**
 In probability theory, the central limit theorem (CLT) establishes that, in some situations, when independent random variables are added, their properly normalized sum tends toward a normal distribution (informally a "bell curve") even if the original variables themselves are not normally distributed.
 
@@ -84,6 +114,34 @@ graph TD
     style E fill:#2ecc71,color:#fff
 ```
 
+The following example demonstrates the CLT by drawing samples from a heavily skewed exponential distribution and showing that the distribution of sample means becomes normal:
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+np.random.seed(42)
+population = np.random.exponential(scale=2.0, size=100000)
+
+sample_sizes = [2, 5, 30]
+fig, axes = plt.subplots(1, 3, figsize=(14, 4))
+
+for ax, n in zip(axes, sample_sizes):
+    sample_means = [np.mean(np.random.choice(population, size=n)) for _ in range(5000)]
+    ax.hist(sample_means, bins=50, density=True, alpha=0.7)
+    ax.set_title(f"Sample size n={n}")
+    ax.set_xlabel("Sample Mean")
+
+fig.suptitle("CLT: Sample Means from Exponential Distribution")
+plt.tight_layout()
+plt.show()
+
+# As n grows, the distribution of sample means approaches a normal distribution
+# with mean = population mean and std = population std / sqrt(n)
+print(f"Population mean: {population.mean():.3f}")
+print(f"Population std:  {population.std():.3f}")
+```
+
 ### Chebyshev's inequality
 In probability theory, Chebyshev's inequality (also called the Bienayme-Chebyshev inequality) guarantees that, for a wide class of probability distributions, no more than a certain fraction of values can be more than a certain distance from the mean.
 
@@ -102,6 +160,24 @@ graph TD
     style A fill:#4a90d9,color:#fff
     style F fill:#2ecc71,color:#fff
     style G fill:#2ecc71,color:#fff
+```
+
+You can verify Chebyshev's inequality empirically with any distribution that has a finite mean and variance:
+
+```python
+import numpy as np
+
+np.random.seed(0)
+# Use a skewed distribution to show the inequality is universal
+data = np.random.exponential(scale=2.0, size=100000)
+mu = data.mean()
+sigma = data.std()
+
+for k in [1, 2, 3, 4]:
+    within = np.mean(np.abs(data - mu) <= k * sigma) * 100
+    chebyshev_lower = max(0, (1 - 1/k**2)) * 100
+    print(f"k={k}: {within:.1f}% within k*sigma "
+          f"(Chebyshev guarantees >= {chebyshev_lower:.1f}%)")
 ```
 
 Note the only requirement for applying Chebyshev's inequality is that it has fixed mean.

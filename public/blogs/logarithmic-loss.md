@@ -54,6 +54,47 @@ graph LR
     style F fill:#FF6B6B
 ```
 
+Here is how to compute log loss both manually and with scikit-learn:
+
+```python
+import numpy as np
+from sklearn.metrics import log_loss
+
+y_actual = np.array([1, 0, 1, 1, 0])
+y_probs  = np.array([0.95, 0.91, 0.87, 0.65, 0.7])
+
+# Manual computation
+# For each sample: -[y*log(p) + (1-y)*log(1-p)]
+losses = -(y_actual * np.log(y_probs) + (1 - y_actual) * np.log(1 - y_probs))
+manual_log_loss = np.mean(losses)
+print(f"Manual log loss: {manual_log_loss:.4f}")
+
+# Using sklearn (produces the same result)
+sklearn_log_loss = log_loss(y_actual, y_probs)
+print(f"Sklearn log loss: {sklearn_log_loss:.4f}")
+```
+
 ### Multiclass Log loss
 
 The formula we discussed above only holds for binary classifiers. For multiclass log loss estimation we use:
+
+Here is multiclass log loss computation in Python:
+
+```python
+import numpy as np
+from sklearn.metrics import log_loss
+
+# Three classes: 0, 1, 2
+y_actual = [0, 1, 2, 1, 0]
+# Predicted probability for each class per sample
+y_probs = [
+    [0.85, 0.10, 0.05],
+    [0.05, 0.90, 0.05],
+    [0.10, 0.20, 0.70],
+    [0.15, 0.60, 0.25],
+    [0.70, 0.20, 0.10],
+]
+
+loss = log_loss(y_actual, y_probs)
+print(f"Multiclass log loss: {loss:.4f}")
+```

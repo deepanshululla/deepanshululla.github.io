@@ -45,6 +45,31 @@ We call it H0. We define the hypothesis that "there is no difference in the clas
 Step 3: Find out the p-value which is the probability that µ2 - µ1 >=10cm given H0.
 If p>0.9 we can say that our null hypothesis is acceptable if it is lower something like 0.05(lower than 5%) we can reject the hypothesis.
 
+Here is how to perform a two-sample t-test in Python to compare the means of two groups:
+
+```python
+import numpy as np
+from scipy import stats
+
+np.random.seed(42)
+class1_heights = np.random.normal(loc=165, scale=8, size=50)
+class2_heights = np.random.normal(loc=175, scale=8, size=50)
+
+observed_diff = np.mean(class2_heights) - np.mean(class1_heights)
+
+# Two-sample independent t-test
+t_stat, p_value = stats.ttest_ind(class2_heights, class1_heights)
+
+print(f"Observed difference in means: {observed_diff:.2f} cm")
+print(f"T-statistic: {t_stat:.4f}")
+print(f"P-value: {p_value:.6f}")
+
+if p_value < 0.05:
+    print("Reject H0: the difference is statistically significant.")
+else:
+    print("Fail to reject H0: cannot rule out chance.")
+```
+
 #### How to calculate the p-value for hypothesis testing
 
 ```mermaid
@@ -85,6 +110,33 @@ Step 4: We find out where our difference of 10cm lie in those deltas
 Let's say k=10000, In this example, let's say 10cm lies at 8001 points after sorting. Hence we can say there are 2000 deltas>10cm.
 
 So the probability of µ2-µ1>=10cm given that there is no difference in class heights is 2000/10000=0.2 which is 20% which indicates our hypothesis is acceptable.
+
+Here is a Python implementation of the permutation test described above:
+
+```python
+import numpy as np
+
+np.random.seed(42)
+class1 = np.random.normal(loc=165, scale=8, size=50)
+class2 = np.random.normal(loc=175, scale=8, size=50)
+
+observed_diff = np.mean(class2) - np.mean(class1)
+combined = np.concatenate([class1, class2])
+
+k = 10000
+deltas = np.zeros(k)
+for i in range(k):
+    np.random.shuffle(combined)
+    group1 = combined[:50]
+    group2 = combined[50:]
+    deltas[i] = np.mean(group2) - np.mean(group1)
+
+p_value = np.mean(deltas >= observed_diff)
+
+print(f"Observed difference: {observed_diff:.2f} cm")
+print(f"Permutation p-value: {p_value:.4f}")
+print(f"Number of permutation deltas >= observed: {np.sum(deltas >= observed_diff)}/{k}")
+```
 
 ### **How do we choose our hypothesis**
 We choose hypothesis in such a way that it is easier to simulate
@@ -129,5 +181,28 @@ P((observation by experiment)/assumption) =0.03 (or 3%)
 Since it is so small we can say our assumption that the coin is biased is not true and we can comfortably reject the hypothesis.
 
 Since the p-value is so low (less than 5%) we can reject the hypothesis
+
+Here is how to compute the p-value for the coin toss example using both the exact binomial test and a simulation approach:
+
+```python
+from scipy import stats
+
+# Exact binomial test: probability of getting 5 heads in 5 flips
+# given a fair coin (p=0.5)
+result = stats.binomtest(k=5, n=5, p=0.5, alternative='greater')
+print(f"Exact p-value (binomial test): {result.pvalue:.4f}")
+
+# Manual calculation
+p_value_manual = 0.5 ** 5
+print(f"Manual calculation: 1/2^5 = {p_value_manual:.4f}")
+
+# Simulation approach
+import numpy as np
+np.random.seed(42)
+n_simulations = 100000
+flips = np.random.binomial(n=5, p=0.5, size=n_simulations)
+p_value_sim = np.mean(flips >= 5)
+print(f"Simulated p-value ({n_simulations} trials): {p_value_sim:.4f}")
+```
 
 All images are subject to copyright to their respective authors.

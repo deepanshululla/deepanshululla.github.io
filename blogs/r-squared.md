@@ -98,25 +98,46 @@ which is the best case we could have.
 
 This would be the worst case. This means our model is behaving worse than the naive mean model.
 
->>> from sklearn.metrics import r2_score
->>> y_true = [3, -0.5, 2, 7]
->>> y_pred = [2.5, 0.0, 2, 8]
->>> r2_score(y_true, y_pred)  
-0.948...
->>> y_true = [[0.5, 1], [-1, 1], [7, -6]]
->>> y_pred = [[0, 2], [-1, 2], [8, -5]]
->>> r2_score(y_true, y_pred,
-...          multioutput='variance_weighted') 
-0.938...
->>> y_true = [1, 2, 3]
->>> y_pred = [1, 2, 3]
->>> r2_score(y_true, y_pred)
-1.0
->>> y_true = [1, 2, 3]
->>> y_pred = [2, 2, 2]
->>> r2_score(y_true, y_pred)
-0.0
->>> y_true = [1, 2, 3]
->>> y_pred = [3, 2, 1]
->>> r2_score(y_true, y_pred)
--3.0
+#### Python Examples
+
+Computing R-squared manually with numpy:
+
+```python
+import numpy as np
+
+y_true = np.array([3, -0.5, 2, 7])
+y_pred = np.array([2.5, 0.0, 2, 8])
+
+# Compute SS_total and SS_residual
+ss_total = np.sum((y_true - np.mean(y_true)) ** 2)
+ss_residual = np.sum((y_true - y_pred) ** 2)
+
+r_squared = 1 - (ss_residual / ss_total)
+print(f"SS_total:    {ss_total:.4f}")
+print(f"SS_residual: {ss_residual:.4f}")
+print(f"R-squared:   {r_squared:.4f}")
+# R-squared: 0.9486
+```
+
+Computing R-squared with sklearn:
+
+```python
+from sklearn.metrics import r2_score
+
+y_true = [3, -0.5, 2, 7]
+y_pred = [2.5, 0.0, 2, 8]
+print(r2_score(y_true, y_pred))
+# 0.9486
+
+# Perfect predictions: R2 = 1.0
+print(r2_score([1, 2, 3], [1, 2, 3]))
+# 1.0
+
+# Predicting the mean for everything: R2 = 0.0
+print(r2_score([1, 2, 3], [2, 2, 2]))
+# 0.0
+
+# Worse than the mean model: R2 < 0
+print(r2_score([1, 2, 3], [3, 2, 1]))
+# -3.0
+```

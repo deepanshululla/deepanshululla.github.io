@@ -58,6 +58,27 @@ False Positive will be when it predicts something which is not an hotdog like pi
 
 False negative will be when it incorrectly predicts something as hotdog when it was not a hotdog.
 
+Here is how to build a confusion matrix using scikit-learn:
+
+```python
+import numpy as np
+from sklearn.metrics import confusion_matrix, classification_report
+
+# Simulated predictions for the hotdog classifier
+y_actual =    [1, 1, 1, 1, 1, 0, 0, 0, 1, 0]
+y_predicted = [1, 1, 1, 0, 1, 0, 1, 0, 1, 0]
+
+cm = confusion_matrix(y_actual, y_predicted)
+print("Confusion Matrix:")
+print(cm)
+# Output:
+# [[3, 1],   <-- TN=3, FP=1
+#  [1, 5]]   <-- FN=1, TP=5
+
+tn, fp, fn, tp = cm.ravel()
+print(f"TP={tp}, TN={tn}, FP={fp}, FN={fn}")
+```
+
 ### Multiclass Classifier
 
 Lets say in a hypothetical universe where Jian yang pursued his idea(sorry about the spoilers) and decided hotdog and not hotdog app is not good enough but he should also support other food items.
@@ -203,3 +224,25 @@ We also want both precision and recall to be high.
 F1 score is the harmonic mean of precision and recall.
 
 F1 = 2*((P*R)/P+R)
+
+Here is how to compute precision, recall, and F1 score in Python:
+
+```python
+from sklearn.metrics import precision_score, recall_score, f1_score
+
+y_actual =    [1, 1, 1, 1, 1, 0, 0, 0, 1, 0]
+y_predicted = [1, 1, 1, 0, 1, 0, 1, 0, 1, 0]
+
+precision = precision_score(y_actual, y_predicted)
+recall = recall_score(y_actual, y_predicted)
+f1 = f1_score(y_actual, y_predicted)
+
+print(f"Precision: {precision:.4f}")  # 0.8333
+print(f"Recall:    {recall:.4f}")     # 0.8333
+print(f"F1 Score:  {f1:.4f}")         # 0.8333
+
+# You can also get all metrics at once with classification_report
+from sklearn.metrics import classification_report
+print(classification_report(y_actual, y_predicted,
+                            target_names=["Not Hotdog", "Hotdog"]))
+```

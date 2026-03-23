@@ -69,6 +69,33 @@ What if we standardize the datasets before applying covariance, that becomes cor
 
 2) **However, if there are outliers in the dataset, we may have a situation where covariance is -time for monotonically increasing relation.**
 
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+np.random.seed(42)
+
+# Generate correlated data: heights (cm) and weights (kg)
+n = 200
+heights = np.random.normal(170, 10, n)
+weights = 0.5 * heights + np.random.normal(0, 5, n)  # positively correlated
+
+# Compute covariance matrix
+cov_matrix = np.cov(heights, weights)
+print(f"Covariance(height, weight): {cov_matrix[0, 1]:.2f}")
+print(f"Variance(height): {cov_matrix[0, 0]:.2f}")
+print(f"Variance(weight): {cov_matrix[1, 1]:.2f}")
+
+# Scatter plot showing positive covariance
+plt.figure(figsize=(7, 5))
+plt.scatter(heights, weights, alpha=0.5, s=20)
+plt.xlabel("Height (cm)")
+plt.ylabel("Weight (kg)")
+plt.title(f"Positive Covariance: {cov_matrix[0, 1]:.2f}")
+plt.tight_layout()
+plt.show()
+```
+
 ```mermaid
 graph LR
     subgraph Positive["Positive Covariance"]
@@ -107,6 +134,39 @@ Similarly when -1< ρ <0 means they are inversely related and lower the ρ means
 
 **PCC is good when we a linear relationship but doesn't that well for nonlinear relations**
 
+```python
+import numpy as np
+from scipy.stats import pearsonr
+import matplotlib.pyplot as plt
+
+np.random.seed(42)
+n = 200
+
+# Linear relationship
+x = np.random.normal(0, 1, n)
+y_linear = 2 * x + np.random.normal(0, 0.5, n)
+
+# Nonlinear (quadratic) relationship
+y_quadratic = x**2 + np.random.normal(0, 0.3, n)
+
+fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+
+r_lin, _ = pearsonr(x, y_linear)
+axes[0].scatter(x, y_linear, alpha=0.5, s=20)
+axes[0].set_title(f"Linear: Pearson r = {r_lin:.3f}")
+axes[0].set_xlabel("X")
+axes[0].set_ylabel("Y")
+
+r_quad, _ = pearsonr(x, y_quadratic)
+axes[1].scatter(x, y_quadratic, alpha=0.5, s=20)
+axes[1].set_title(f"Quadratic: Pearson r = {r_quad:.3f} (misleading)")
+axes[1].set_xlabel("X")
+axes[1].set_ylabel("Y")
+
+plt.tight_layout()
+plt.show()
+```
+
  
 
 ### Spearman's rank correlation coefficient
@@ -123,6 +183,33 @@ Spearman's correlation assesses monotonic relationships (whether linear or not).
 If there are no repeated data values, a perfect Spearman correlation of +1 or −1 occurs when each of the variables is a perfect monotone function of the other.
 
 **Spearman’s correlation coefficient does not take into consideration the linear or not.**
+
+```python
+import numpy as np
+from scipy.stats import pearsonr, spearmanr
+import matplotlib.pyplot as plt
+
+np.random.seed(42)
+n = 200
+
+# Monotonic but nonlinear relationship (exponential)
+x = np.random.uniform(0, 3, n)
+y = np.exp(x) + np.random.normal(0, 0.5, n)
+
+r_pearson, _ = pearsonr(x, y)
+r_spearman, _ = spearmanr(x, y)
+
+print(f"Pearson r:  {r_pearson:.3f}  (underestimates nonlinear association)")
+print(f"Spearman r: {r_spearman:.3f} (captures monotonic relationship)")
+
+plt.figure(figsize=(7, 5))
+plt.scatter(x, y, alpha=0.5, s=20)
+plt.xlabel("X")
+plt.ylabel("Y = exp(X) + noise")
+plt.title(f"Pearson r={r_pearson:.3f}, Spearman r={r_spearman:.3f}")
+plt.tight_layout()
+plt.show()
+```
 
  
 

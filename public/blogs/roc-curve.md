@@ -91,6 +91,37 @@ graph TD
     D --> H[Higher AUC means better separation]
 ```
 
+Here is how to plot an ROC curve and compute AUC in Python:
+
+```python
+import numpy as np
+from sklearn.metrics import roc_curve, roc_auc_score
+import matplotlib.pyplot as plt
+
+# Actual labels and predicted probabilities
+y_actual = np.array([1, 0, 1, 1, 0])
+y_probs  = np.array([0.95, 0.91, 0.87, 0.65, 0.7])
+
+# Compute ROC curve points
+fpr, tpr, thresholds = roc_curve(y_actual, y_probs)
+
+# Compute AUC
+auc = roc_auc_score(y_actual, y_probs)
+print(f"AUC: {auc:.4f}")
+
+# Plot the ROC curve
+plt.figure(figsize=(6, 5))
+plt.plot(fpr, tpr, label=f"ROC curve (AUC = {auc:.2f})")
+plt.plot([0, 1], [0, 1], linestyle="--", color="gray", label="Random")
+plt.xlabel("False Positive Rate")
+plt.ylabel("True Positive Rate")
+plt.title("ROC Curve")
+plt.legend()
+plt.tight_layout()
+plt.savefig("roc_curve.png")
+plt.show()
+```
+
 ### Key Points about ROC curve
 
 - ROC curve is not a good metric in case of unbalanced data. For imbalanced data, AUC can be high for very naive models. For eg if we have 90% positive data, a model which naively classifies everything as +tive will still have a AUC of >0.5- Lets say we have two models trying to classify a dataset.

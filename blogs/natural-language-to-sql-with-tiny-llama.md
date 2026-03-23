@@ -10,12 +10,41 @@ The task was straightforward: build a REST API that accepts natural language que
 
 This constraint forced careful thinking about prompt design. Every token in the system prompt is a token the model cannot use for reasoning.
 
+## High-Level Architecture
+
+All four approaches share the same outer pipeline: a REST API receives a natural language question, routes it through an LLM-powered pipeline, and returns results from a SQLite database. The approaches differ in how the LLM is used.
+
+```mermaid
+graph LR
+    A[User Question] --> B[REST API]
+    B --> C{Approach}
+    C -->|V1| D[Template Matching<br/>2 LLM calls]
+    C -->|V2/V2b| E[Schema-to-SQL<br/>1 LLM call]
+    C -->|V3| F[Agentic ReAct<br/>1-4 LLM calls]
+    D --> G[SQLite]
+    E --> G
+    F --> G
+    G --> H[JSON Response]
+```
+
 ## Approach 1: Template Matching (V1)
 
 The most conservative approach. Instead of asking the LLM to write SQL, I defined 21 SQL query templates covering common questions (count by country, tallest players, players by birth year, etc.) and asked the LLM to do two simpler tasks:
 
 1. **Match** the user's question to the best template
 2. **Extract** parameter values from the question
+
+```mermaid
+graph TD
+    A[User Question] --> B["LLM Call 1:<br/>Match to Template"]
+    B --> C{Valid JSON?}
+    C -->|Yes| D["LLM Call 2:<br/>Extract Parameters"]
+    C -->|No| E[Fallback:<br/>Chat Response]
+    D --> F{Valid JSON?}
+    F -->|Yes| G[Fill SQL Template<br/>+ Execute]
+    F -->|No| E
+    G --> H[Results]
+```
 
 ### The Prompts
 
@@ -58,6 +87,18 @@ After warming up the model container (eliminating cold-start latency), V1 improv
 ## Approach 2: Direct Schema-to-SQL (V2)
 
 Instead of the two-step template matching, V2 sends the full database schema directly to the LLM in a single call and asks it to write SQL.
+
+```mermaid
+graph TD
+    A[User Question] --> B["Single LLM Call:<br/>Full Schema + Question"]
+    B --> C{Valid JSON<br/>with SQL?}
+    C -->|Yes| D["Validate SQL<br/>(sqlglot AST)"]
+    C -->|No| E[Fallback:<br/>Chat Response]
+    D --> F{Safe SELECT?}
+    F -->|Yes| G[Execute Query]
+    F -->|No| H[Reject]
+    G --> I[Results]
+```
 
 ### The Prompt
 
@@ -173,6 +214,27 @@ The pipeline has three stages:
 1. **Classify** the question: single-step tool dispatch or multi-step ReAct loop
 2. **Execute** by calling one of five tools: `search_player`, `get_player`, `count_player`, `aggregate_player`, `list_player`
 3. **Reason** over observations and decide next steps (up to 3 iterations)
+
+```mermaid
+graph TD
+    A[User Question] --> B["Classifier LLM Call"]
+    B --> C{Simple or<br/>Complex?}
+    C -->|Simple| D["Direct Tool Dispatch<br/>(single tool call)"]
+    C -->|Complex| E["ReAct Loop"]
+    E --> F["Thought: reason<br/>about question"]
+    F --> G["Action: call tool<br/>(TOOL/ARG format)"]
+    G --> H["Observation:<br/>tool result"]
+    H --> I{Done or<br/>max steps?}
+    I -->|No| F
+    I -->|Yes| J[Final Answer]
+    D --> J
+
+    style E fill:#f5f5dc
+    style F fill:#f5f5dc
+    style G fill:#f5f5dc
+    style H fill:#f5f5dc
+    style I fill:#f5f5dc
+```
 
 Each tool maps to safe, parameterized SQL with column and value whitelists, eliminating the need for runtime SQL validation.
 
@@ -357,4 +419,15 @@ The V3 eval suite had the highest pass rate (20/22) despite having the worst too
 ### 10. Defense in Depth for SQL Safety
 
 No single layer of SQL safety is sufficient when LLM output is unpredictable. The system uses four layers: prompt instructions ("only SELECT queries"), AST-based validation via sqlglot (blocks UNION, subqueries, non-SELECT statements, multi-statement injection), automatic LIMIT enforcement (appends LIMIT 100 if missing), and parameterized execution (? placeholders prevent injection even if validation is bypassed). Each layer catches attacks the others might miss.
+
+```mermaid
+graph TD
+    A["LLM Output<br/>(raw SQL string)"] --> B["Layer 1: Prompt Instructions<br/>'only SELECT queries'"]
+    B --> C["Layer 2: AST Validation<br/>(sqlglot)"]
+    C --> D{Blocks UNION,<br/>subqueries,<br/>DROP, DELETE,<br/>multi-statement}
+    D -->|Rejected| E[Query Blocked]
+    D -->|Passed| F["Layer 3: LIMIT Enforcement<br/>(append LIMIT 100 if missing)"]
+    F --> G["Layer 4: Parameterized Execution<br/>(? placeholders)"]
+    G --> H[Safe Query Executed]
+```
 

@@ -33,6 +33,31 @@ The absolute deviations about 2 are (1, 1, 0, 0, 2, 4, 7) which in turn have a m
 
 So the median absolute deviation for this data is 1.
 
+Computing MAD with scipy and numpy:
+
+```python
+import numpy as np
+from scipy.stats import median_abs_deviation
+
+data = np.array([1, 1, 2, 2, 4, 6, 9])
+
+# Using scipy (scale=1.0 gives the raw MAD without normalization)
+mad_scipy = median_abs_deviation(data, scale=1.0)
+print(f"MAD (scipy): {mad_scipy}")
+# MAD (scipy): 1.0
+
+# Manual computation with numpy
+median_val = np.median(data)
+abs_deviations = np.abs(data - median_val)
+mad_manual = np.median(abs_deviations)
+print(f"Median:      {median_val}")
+print(f"Abs devs:    {abs_deviations}")
+print(f"MAD (manual):{mad_manual}")
+# Median:      2.0
+# Abs devs:    [1. 1. 0. 0. 2. 4. 7.]
+# MAD (manual): 1.0
+```
+
 **Why is it important**
 
 ```mermaid
@@ -85,11 +110,28 @@ So if |ei| is small or approximately equal to zero for i={1..n}; that's the best
 
 However if |ei| is large then it signifies a problem
 
-def mad(arr):
-    """ Median Absolute Deviation: a "Robust" version of standard deviation.
-        Indices variabililty of the sample.
-        https://en.wikipedia.org/wiki/Median_absolute_deviation 
+Computing MAD of prediction errors:
+
+```python
+import numpy as np
+from scipy.stats import median_abs_deviation
+
+def mad_of_errors(y_true, y_pred):
+    """Median Absolute Deviation of prediction errors.
+    A robust alternative to standard deviation for measuring model fit.
     """
-    arr = np.ma.array(arr).compressed() # should be faster to not use masked arrays.
-    med = np.median(arr)
-    return np.median(np.abs(arr - med))
+    errors = np.array(y_true) - np.array(y_pred)
+    med = np.median(errors)
+    return np.median(np.abs(errors - med))
+
+y_true = np.array([3.0, -0.5, 2.0, 7.0, 4.5])
+y_pred = np.array([2.5,  0.0, 2.0, 8.0, 4.0])
+errors = y_true - y_pred
+
+print(f"Errors:    {errors}")
+print(f"MAD of errors: {mad_of_errors(y_true, y_pred):.4f}")
+print(f"Scipy MAD:     {median_abs_deviation(errors, scale=1.0):.4f}")
+# Errors:    [ 0.5 -0.5  0.  -1.   0.5]
+# MAD of errors: 0.5000
+# Scipy MAD:     0.5000
+```

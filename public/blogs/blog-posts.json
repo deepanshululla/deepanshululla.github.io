@@ -310,7 +310,6 @@
     "excerpt": "Personal insights and observations on recognizing toxic work environments, including red flags and strategies for maintaining professional well-being.",
     "filename": "toxic-workplace.md",
     "categories": [
-      "AI/ML",
       "Software Engineering"
     ]
   },
@@ -345,8 +344,7 @@
     "excerpt": "Insights and advice on becoming a better backend engineer, covering system design, scalability, performance optimization, and best practices.",
     "filename": "better-backend-engineer.md",
     "categories": [
-      "Software Engineering",
-      "Statistics"
+      "Software Engineering"
     ]
   },
   {
@@ -452,8 +450,7 @@
     "filename": "thread-safe-queue-cpp.md",
     "categories": [
       "Programming",
-      "Algorithms",
-      "Personal"
+      "Algorithms"
     ]
   },
   {

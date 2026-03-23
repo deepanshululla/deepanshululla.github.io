@@ -39,6 +39,26 @@ mean-vector1
 
 So essentially we summed up elements at ith index of the first array and the corresponding index of the second array.
 
+```python
+import numpy as np
+
+# Computing the mean vector from multiple data points
+x1 = np.array([2.2, 4.2, 1.5])
+x2 = np.array([1.2, 3.2, 2.8])
+x3 = np.array([3.0, 5.0, 0.9])
+
+# Stack into a matrix where each row is a data point
+X = np.vstack([x1, x2, x3])
+
+# Mean vector: average across rows (axis=0)
+mean_vector = np.mean(X, axis=0)
+print(f"Mean vector: {mean_vector}")  # [2.133, 4.133, 1.733]
+
+# Equivalent to summing all vectors and dividing by n
+manual_mean = (x1 + x2 + x3) / 3
+print(f"Manual mean: {manual_mean}")
+```
+
 **So we can say every array can be considered as a vector with each of its indices as one of the dimensions**.
 
 If we plot all these arrays and their indices in a multidimensional space,we would see that they look like a 3d scattered plot. 
@@ -91,6 +111,28 @@ Geometrically speaking we move the distribution to the origin and constrict it i
 
 We may need to squish or expand the data depending upon if the standard dev of the data is greater or less than 1.
 
+```python
+import numpy as np
+from sklearn.preprocessing import StandardScaler
+
+# Sample feature values (e.g., heights in cm)
+data = np.array([[170], [160], [180], [175], [165]])
+
+# Manual column standardization
+mean_val = np.mean(data, axis=0)
+std_val = np.std(data, axis=0)
+standardized = (data - mean_val) / std_val
+print(f"Mean before: {np.mean(data, axis=0)}")      # [170.0]
+print(f"Std before:  {np.std(data, axis=0)}")        # [7.07]
+print(f"Mean after:  {np.mean(standardized, axis=0):.1f}")  # 0.0
+print(f"Std after:   {np.std(standardized, axis=0):.1f}")   # 1.0
+
+# Using sklearn StandardScaler (equivalent)
+scaler = StandardScaler()
+standardized_sklearn = scaler.fit_transform(data)
+print(f"Sklearn result matches: {np.allclose(standardized, standardized_sklearn)}")
+```
+
 #### Covariance Matrix
 
 ```mermaid
@@ -130,6 +172,36 @@ Whereas the covariance matrix is of size d*d. Hence covariance matrix is always 
 Another interesting property is for a column normalized vector X,
 
 **covariance matrix S=(1/n)*****(X****transpose**** ***** *X)**
+
+```python
+import numpy as np
+
+# Create a sample data matrix (4 data points, 3 features)
+X = np.array([
+    [1.0, 2.0, 3.0],
+    [4.0, 5.0, 6.0],
+    [7.0, 8.0, 9.0],
+    [2.0, 4.0, 6.0]
+])
+
+# Compute covariance matrix using numpy (uses n-1 by default)
+cov_matrix = np.cov(X, rowvar=False)
+print(f"Data shape: {X.shape}")           # (4, 3)
+print(f"Covariance matrix shape: {cov_matrix.shape}")  # (3, 3)
+print(f"Covariance matrix:\n{cov_matrix}")
+
+# Verify symmetry: Cov(X,Y) = Cov(Y,X)
+print(f"Symmetric: {np.allclose(cov_matrix, cov_matrix.T)}")  # True
+
+# Verify diagonal contains variances: Cov(X,X) = Var(X)
+for i in range(X.shape[1]):
+    print(f"Var(F{i+1}): {np.var(X[:, i], ddof=1):.2f} == Cov({i},{i}): {cov_matrix[i,i]:.2f}")
+
+# For mean-centered data: S = (1/n) * X_T @ X
+X_centered = X - X.mean(axis=0)
+cov_manual = (1 / len(X)) * X_centered.T @ X_centered
+print(f"Manual covariance (1/n * X_T @ X):\n{cov_manual}")
+```
 
 We will leave the proof as an exercise but proving it should be trivial.
 

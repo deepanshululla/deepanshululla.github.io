@@ -57,6 +57,20 @@ graph LR
     style V fill:#4a90d9,color:#fff
 ```
 
+Here is how you can simulate a discrete random variable like a dice roll in Python and compute its mean and variance:
+
+```python
+import numpy as np
+
+# Simulate 10,000 dice rolls (discrete uniform random variable)
+rolls = np.random.randint(1, 7, size=10000)
+
+print(f"Sample mean: {rolls.mean():.3f}")       # Expected: 3.5
+print(f"Sample variance: {rolls.var():.3f}")     # Expected: 2.917
+print(f"Theoretical mean: {(1+2+3+4+5+6)/6:.3f}")
+print(f"Theoretical variance: {np.mean([(x - 3.5)**2 for x in range(1,7)]):.3f}")
+```
+
 Random variables are of different types.
 
 They could be
@@ -118,6 +132,35 @@ graph TD
     style D fill:#e74c3c,color:#fff
 ```
 
+You can plot a normal distribution and verify the 68-95-99.7 rule in Python:
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+
+mu, sigma = 0, 1
+x = np.linspace(mu - 4*sigma, mu + 4*sigma, 1000)
+pdf = stats.norm.pdf(x, mu, sigma)
+
+plt.figure(figsize=(8, 4))
+plt.plot(x, pdf, 'k-', linewidth=2)
+plt.fill_between(x, pdf, where=(x >= mu-sigma) & (x <= mu+sigma), alpha=0.4, label='68%')
+plt.fill_between(x, pdf, where=(x >= mu-2*sigma) & (x <= mu+2*sigma), alpha=0.25, label='95%')
+plt.fill_between(x, pdf, where=(x >= mu-3*sigma) & (x <= mu+3*sigma), alpha=0.1, label='99.7%')
+plt.legend()
+plt.title("Normal Distribution: 68-95-99.7 Rule")
+plt.xlabel("x")
+plt.ylabel("Density")
+plt.show()
+
+# Verify with random samples
+samples = np.random.normal(mu, sigma, 100000)
+print(f"Within 1 std dev: {np.mean(np.abs(samples - mu) <= sigma)*100:.1f}%")
+print(f"Within 2 std devs: {np.mean(np.abs(samples - mu) <= 2*sigma)*100:.1f}%")
+print(f"Within 3 std devs: {np.mean(np.abs(samples - mu) <= 3*sigma)*100:.1f}%")
+```
+
 #### Skewness
 is the measure of how much distributions look departed from the symmetry. Distributions can be positive or negative skewed.
 
@@ -128,6 +171,22 @@ the mean.
 Such an asymmetry is referred to as positive skewness.
 
 The opposite, negative skewness, is rare.
+
+You can compute and visualize skewness using scipy:
+
+```python
+import numpy as np
+from scipy import stats
+
+# Positively skewed data (e.g., income distribution)
+positive_skew = np.random.exponential(scale=2.0, size=10000)
+
+# Symmetric data (normal distribution)
+symmetric = np.random.normal(loc=5, scale=1, size=10000)
+
+print(f"Exponential skewness: {stats.skew(positive_skew):.3f}")  # Positive
+print(f"Normal skewness: {stats.skew(symmetric):.3f}")           # Near zero
+```
 
 #### Kurtosis
 In layman terms, Kurtosis is a measure of the "peakedness" of the probability distribution.

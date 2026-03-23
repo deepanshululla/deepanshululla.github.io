@@ -52,6 +52,27 @@ Needless to say as amin' =0 and amax' =1
 
 In this way, we created a new normalized vector from our original vector and the values of that normalized vector lie between 0 and 1.
 
+```python
+import numpy as np
+from sklearn.preprocessing import MinMaxScaler
+
+# Sample feature values (e.g., student heights in cm)
+heights = np.array([[150], [160], [170], [180], [190]])
+
+# Manual min-max normalization
+a_min = heights.min()
+a_max = heights.max()
+normalized = (heights - a_min) / (a_max - a_min)
+print(f"Original:   {heights.ravel()}")       # [150 160 170 180 190]
+print(f"Normalized: {normalized.ravel()}")     # [0.   0.25 0.5  0.75 1.  ]
+print(f"Min: {normalized.min()}, Max: {normalized.max()}")  # 0.0, 1.0
+
+# Using sklearn MinMaxScaler (equivalent)
+scaler = MinMaxScaler()
+normalized_sklearn = scaler.fit_transform(heights)
+print(f"Sklearn result matches: {np.allclose(normalized, normalized_sklearn)}")
+```
+
 #### Why do we need to do feature/column normalization?
 
 ```mermaid
@@ -78,5 +99,35 @@ The one thing to however notice here is it doesn't change the relationship betwe
 For eg for two features if we plot it and they lie on y=mx+c, even after normalization they will still lie on the same line.
 
 As one can see, The relationship between X and Y is not affected because of feature scaling.
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import MinMaxScaler
+
+# Two features with very different scales
+np.random.seed(42)
+income = np.random.normal(50000, 15000, 100).reshape(-1, 1)  # dollars
+age = np.random.normal(35, 10, 100).reshape(-1, 1)           # years
+
+data = np.hstack([income, age])
+
+# Normalize both columns to [0, 1]
+scaler = MinMaxScaler()
+data_normalized = scaler.fit_transform(data)
+
+fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+axes[0].scatter(data[:, 0], data[:, 1])
+axes[0].set_xlabel('Income ($)')
+axes[0].set_ylabel('Age (years)')
+axes[0].set_title('Before Normalization')
+
+axes[1].scatter(data_normalized[:, 0], data_normalized[:, 1])
+axes[1].set_xlabel('Income (normalized)')
+axes[1].set_ylabel('Age (normalized)')
+axes[1].set_title('After Normalization')
+plt.tight_layout()
+plt.show()
+```
 
 This is it for this part. We learned about column normalization. Hope you liked it. Comment what you would like to read about and keep sharing.

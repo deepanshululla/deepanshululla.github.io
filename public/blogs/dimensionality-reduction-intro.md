@@ -37,6 +37,27 @@ t-SNE is more state of the art technology but PCA is still used as well.
 
 Let us understand this with an example.
 
+```python
+import numpy as np
+from sklearn.decomposition import PCA
+from sklearn.manifold import TSNE
+
+# Generate sample high-dimensional data (100 samples, 10 features)
+np.random.seed(42)
+X = np.random.randn(100, 10)
+
+# Reduce to 2 dimensions using PCA
+pca = PCA(n_components=2)
+X_pca = pca.fit_transform(X)
+print(f"Original shape: {X.shape}")       # (100, 10)
+print(f"After PCA shape: {X_pca.shape}")   # (100, 2)
+
+# Reduce to 2 dimensions using t-SNE
+tsne = TSNE(n_components=2, random_state=42)
+X_tsne = tsne.fit_transform(X)
+print(f"After t-SNE shape: {X_tsne.shape}")  # (100, 2)
+```
+
 Let's say we have data which has 2 or 3 dimensions. This kind of data is easier to visualize using scatter plots or pair plots.
 
 **However, consider a dataset which has 1000 dimensions. Firstly, It is not at all easy to visualize a dataset more than 3 dimensions.**
@@ -113,6 +134,23 @@ We can represent the different data points and the features they have in the for
 
 Essentially each data point is a row and each feature is a column.
 
+Here is how we represent a dataset as a data frame in Python:
+
+```python
+import pandas as pd
+from sklearn.datasets import load_iris
+
+# Load the Iris dataset and represent it as a DataFrame
+iris = load_iris()
+df = pd.DataFrame(iris.data, columns=iris.feature_names)
+df['species'] = iris.target
+
+print(f"Shape: {df.shape}")  # (150, 5) -> 150 data points, 4 features + 1 label
+print(f"Features (columns): {iris.feature_names}")
+print(f"Data points (rows): {len(df)}")
+print(df.head())
+```
+
 For eg in Iris dataset, we can represent dataset as a matrix in the following format.
 
 ** ****Petal length****Petal Width****Sepal length****Sepal width****Flower-1****Flower-2****:****Flower-n**
@@ -139,5 +177,24 @@ In the case of Iris dataset, xi  can be any real number whereas yi is a value
 So how does this relate to dimensionality reduction? Petal length, Petal width, Sepal Length, Sepal width are all features of the dataset. 
 
 We can use dimensionality reduction to create a new set of features that can be used to accurately differentiate between flowers without using pair plots.
+
+```python
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
+from sklearn.datasets import load_iris
+
+# Reduce Iris from 4 dimensions to 2 using PCA
+iris = load_iris()
+pca = PCA(n_components=2)
+X_reduced = pca.fit_transform(iris.data)
+
+# Visualize all species in a single 2D scatter plot
+plt.scatter(X_reduced[:, 0], X_reduced[:, 1], c=iris.target, cmap='viridis')
+plt.xlabel('Principal Component 1')
+plt.ylabel('Principal Component 2')
+plt.title('Iris Dataset: 4D reduced to 2D via PCA')
+plt.colorbar(label='Species')
+plt.show()
+```
 
 Hence the analysis we did here, we can easily eliminate all the pair plots by using dimensionality reduction

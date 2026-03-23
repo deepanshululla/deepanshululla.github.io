@@ -38,6 +38,22 @@ We also compute something called a F1 score which is a very good metric for info
 
 Read more about it here
 
+```python
+import numpy as np
+from sklearn.metrics import confusion_matrix, accuracy_score, f1_score
+
+y_actual =    [1, 0, 1, 1, 0, 1, 0, 0, 1, 0]
+y_predicted = [1, 0, 1, 0, 0, 1, 1, 0, 1, 0]
+
+# Confusion matrix
+cm = confusion_matrix(y_actual, y_predicted)
+print("Confusion Matrix:\n", cm)
+
+# Accuracy and F1
+print(f"Accuracy: {accuracy_score(y_actual, y_predicted):.4f}")
+print(f"F1 Score: {f1_score(y_actual, y_predicted):.4f}")
+```
+
 ### Receiver Operating Characteristic Curve (ROC) curve and Area under Curve(AUC)
 
 Another way to measure performance of machine learning models is area under ROC curve. This is a specific measure for binary classifiers.
@@ -54,6 +70,16 @@ Which of these models would we pick here. Hence we need a more determinstic metr
 
 Read more about here
 
+```python
+from sklearn.metrics import roc_auc_score
+
+y_actual = [1, 0, 1, 1, 0]
+y_probs  = [0.9, 0.3, 0.8, 0.6, 0.4]
+
+auc = roc_auc_score(y_actual, y_probs)
+print(f"ROC AUC: {auc:.4f}")
+```
+
 ### Log loss
 
 It is an error function which measures the performance of a classification model where the prediction input is a probability value between 0 and 1.
@@ -68,6 +94,15 @@ Minimising the Log Loss is basically equivalent to maximising the accuracy of th
 
 It is also very highly used in Kaggle competitions.
 
+```python
+from sklearn.metrics import log_loss
+
+y_actual = [1, 0, 1, 1, 0]
+y_probs  = [0.9, 0.3, 0.8, 0.6, 0.4]
+
+print(f"Log Loss: {log_loss(y_actual, y_probs):.4f}")
+```
+
 ### R-Squared/Coefficient of determination
 
 R-squared is a statistical measure of how close the data are to the fitted regression line. It is also known as the coefficient of determination, or the coefficient of multiple determination for multiple regression.
@@ -75,6 +110,16 @@ R-squared is a statistical measure of how close the data are to the fitted regre
 This metric is specifically designed for regression based algorithms where the output is a real value.
 
 Read about it more here
+
+```python
+from sklearn.metrics import r2_score
+
+y_actual    = [3.0, 5.0, 2.5, 7.0, 4.5]
+y_predicted = [2.8, 5.1, 2.7, 6.8, 4.2]
+
+r2 = r2_score(y_actual, y_predicted)
+print(f"R-Squared: {r2:.4f}")
+```
 
 ## Median absolute deviation (MAD) of Errors
 
@@ -89,6 +134,17 @@ Median Absolute deviation = median(|Xi-X_median|)
 that is, starting with the residuals (deviations) from the data's median, the MAD is the median of their absolute values.
 
 We can use the same technique by treating errors as our random variable X here and finding MAD of errors.
+
+```python
+import numpy as np
+
+y_actual    = np.array([3.0, 5.0, 2.5, 7.0, 4.5])
+y_predicted = np.array([2.8, 5.1, 2.7, 6.8, 4.2])
+
+errors = y_actual - y_predicted
+mad = np.median(np.abs(errors - np.median(errors)))
+print(f"MAD of errors: {mad:.4f}")
+```
 
 The following diagram illustrates the process of selecting the right metric based on your ML task:
 
