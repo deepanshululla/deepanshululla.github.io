@@ -1,17 +1,31 @@
-# Crucial Conversations: Master My Stories
+# Crucial Conversations Ch. 5: Master My Stories
 
 **Published:** March 23, 2026
 
-Have you ever walked out of a code review feeling angry, only to realize hours later that the feedback was actually reasonable? Or stewed over a Slack message all afternoon, convinced that a colleague was undermining you, when they were simply being direct? The gap between what happens and how we feel about it is filled by something invisible: the stories we tell ourselves. Chapter 5 of Crucial Conversations introduces one of the most powerful concepts in the book -- that other people do not create our emotions. We do, through the narratives we construct in milliseconds. For engineers who pride themselves on rational thinking, this is a humbling and deeply useful insight.
+Have you ever walked out of a code review feeling angry, only to realize hours later that the feedback was actually reasonable? Or stewed over a Slack message all afternoon, convinced that a colleague was undermining you, when they were simply being direct? The gap between what happens and how we feel about it is filled by something invisible: the stories we tell ourselves. Chapter 5 of Crucial Conversations introduces one of the most powerful concepts in the book —that other people do not create our emotions. We do, through the narratives we construct in milliseconds. For engineers who pride themselves on rational thinking, this is a humbling and deeply useful insight.
 
 ## The Path to Action
 
 The authors introduce a model called the Path to Action that traces how we get from observation to behavior:
 
-1. **See and Hear** -- You observe raw facts. A colleague rewrites your function in a pull request. Your manager schedules a 1:1 with no agenda.
-2. **Tell a Story** -- You instantly interpret what you observed. "They think my code is bad." "I'm about to get put on a PIP."
-3. **Feel** -- The story generates an emotion. Anger, anxiety, resentment.
-4. **Act** -- The emotion drives behavior. You fire off a defensive comment. You disengage from the project.
+1. **See and Hear** —You observe raw facts. A colleague rewrites your function in a pull request. Your manager schedules a 1:1 with no agenda.
+2. **Tell a Story** —You instantly interpret what you observed. "They think my code is bad." "I'm about to get put on a PIP."
+3. **Feel** —The story generates an emotion. Anger, anxiety, resentment.
+4. **Act** —The emotion drives behavior. You fire off a defensive comment. You disengage from the project.
+
+```mermaid
+graph LR
+    A[See & Hear] --> B[Tell a Story]
+    B --> C[Feel]
+    C --> D[Act]
+    D -.->|Retrace Your Path| C
+    C -.->|Retrace Your Path| B
+    B -.->|Retrace Your Path| A
+    style A fill:#ccffcc
+    style B fill:#fff3cd
+    style C fill:#ffcccc
+    style D fill:#ffcccc
+```
 
 The critical insight is that the story step happens so fast it feels like the event directly caused the emotion. You do not experience "I saw a rewrite, then I told myself a story about my competence, then I felt angry." You experience "They rewrote my code and it made me angry." But the story is always there, and it is always yours.
 
@@ -19,7 +33,7 @@ The critical insight is that the story step happens so fast it feels like the ev
 
 This distinction matters enormously in engineering work because so much of our communication is ambiguous. A terse code review comment could mean the reviewer is dismissive, or it could mean they are busy and being efficient. A manager assigning your project to someone else could be a vote of no confidence, or it could be a resourcing decision you are not aware of.
 
-The facts do not change. What changes is the story you attach to them. And the story determines everything that follows -- your emotional state, your behavior in the next meeting, whether you escalate or collaborate.
+The facts do not change. What changes is the story you attach to them. And the story determines everything that follows —your emotional state, your behavior in the next meeting, whether you escalate or collaborate.
 
 Engineers are trained to separate signal from noise in data. The Path to Action model asks you to apply that same discipline to your own emotional responses: separate the facts from the interpretation.
 
@@ -60,7 +74,7 @@ The antidote is to work backward through the Path to Action. When you notice a s
 3. **Analyze your stories.** What story is generating this feeling? Is it a Victim, Villain, or Helpless story?
 4. **Get back to facts.** What did I actually see and hear, stripped of all interpretation? If I were a camera in the room, what would the footage show?
 
-This is not easy. It requires the same kind of disciplined thinking that debugging requires -- refusing to accept your first hypothesis and instead following the evidence.
+This is not easy. It requires the same kind of disciplined thinking that debugging requires —refusing to accept your first hypothesis and instead following the evidence.
 
 ### A Practical Example
 
@@ -99,5 +113,5 @@ The Path to Action model is especially valuable in a few common engineering scen
 
 ## Conclusion
 
-The core message of this chapter is that between what happens and how you feel, there is a story -- and that story is yours to examine and change. You cannot control what other people say or do, but you can control the narrative you construct about it. For engineers, this is not soft, feel-good advice. It is a debugging technique for your own emotional responses, and it is one of the most practically useful skills in the entire book. The next time you feel a strong negative emotion at work, pause and ask: what is the story I am telling myself, and is it the only possible story?
+The core message of this chapter is that between what happens and how you feel, there is a story —and that story is yours to examine and change. You cannot control what other people say or do, but you can control the narrative you construct about it. For engineers, this is not soft, feel-good advice. It is a debugging technique for your own emotional responses, and it is one of the most practically useful skills in the entire book. The next time you feel a strong negative emotion at work, pause and ask: what is the story I am telling myself, and is it the only possible story?
 

@@ -1421,7 +1421,7 @@ ul#nav li a:hover,
 .blog-post-body {
     color: var(--text-primary);
     line-height: 1.85;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     letter-spacing: -0.01em;
 }
 
@@ -1736,7 +1736,7 @@ ul#nav li a:hover,
     }
 
     .blog-post-body {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
 
     .blog-post-body h1 {

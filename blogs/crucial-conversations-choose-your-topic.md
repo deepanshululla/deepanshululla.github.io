@@ -1,4 +1,4 @@
-# Crucial Conversations: Choose Your Topic
+# Crucial Conversations Ch. 3: Choose Your Topic
 
 **Published:** March 23, 2026
 
@@ -16,7 +16,7 @@ Two natural tendencies pull us toward the wrong topic:
 
 **We choose easy over hard.** It is easier to talk about a specific incident than to talk about a pattern of behavior. It is much easier to talk about a pattern than to talk about how that pattern is affecting your trust in someone. We gravitate toward the version of the conversation that feels least threatening.
 
-**We choose recent over right.** The most recent occurrence is vivid and top of mind, so we talk about that. But the most recent event is often just a symptom. The underlying issue -- the one that would actually solve the problem if addressed -- may stretch back months.
+**We choose recent over right.** The most recent occurrence is vivid and top of mind, so we talk about that. But the most recent event is often just a symptom. The underlying issue — the one that would actually solve the problem if addressed — may stretch back months.
 
 ## Three Warning Signs You Are on the Wrong Topic
 
@@ -31,6 +31,19 @@ The book identifies three reliable indicators that you are discussing the wrong 
 ## The CPR Framework
 
 The most actionable tool in this chapter is the CPR model, which gives you three distinct levels at which to engage a problem: Content, Pattern, and Relationship.
+
+```mermaid
+graph TD
+    A{What level is the issue?} --> |First time| B[Content]
+    A --> |Recurring| C[Pattern]
+    A --> |Trust affected| D[Relationship]
+    B --> E[Address what happened this time]
+    C --> F[Address the trend]
+    D --> G[Address impact on trust & respect]
+    style B fill:#ccffcc
+    style C fill:#fff3cd
+    style D fill:#ffcccc
+```
 
 ### Content: What Happened
 
@@ -64,7 +77,7 @@ In engineering, relationship-level conversations sound like:
 
 - "When commitments are repeatedly missed without early communication, it affects my ability to trust estimates from you, and that changes how I plan the team's work."
 - "The pattern of merging code without addressing review feedback is making me question whether you value the review process, and it is affecting how I approach reviewing your work."
-- "We have talked about on-call handoff quality several times now. At this point, the issue is not just about handoffs -- it is about whether I can count on you to follow through on things we have agreed on."
+- "We have talked about on-call handoff quality several times now. At this point, the issue is not just about handoffs — it is about whether I can count on you to follow through on things we have agreed on."
 
 Relationship conversations are uncomfortable because they name the impact on trust and respect directly. But they are often the only conversations that produce lasting change, because they make the real stakes visible.
 
@@ -82,10 +95,10 @@ The book offers a three-step process for ensuring you have the right conversatio
 
 The CPR model is especially useful in engineering because technical work generates a constant stream of small issues, and deciding which level to address them at determines whether they get resolved or fester.
 
-A useful heuristic: if it is the first time, have the content conversation. If it has happened before and you have already addressed it, move to pattern. If the pattern is affecting your working relationship, move to relationship. Do not skip levels prematurely -- jumping to a relationship conversation the first time something happens will feel disproportionate. But do not stay stuck at content when the evidence clearly points to a pattern.
+A useful heuristic: if it is the first time, have the content conversation. If it has happened before and you have already addressed it, move to pattern. If the pattern is affecting your working relationship, move to relationship. Do not skip levels prematurely — jumping to a relationship conversation the first time something happens will feel disproportionate. But do not stay stuck at content when the evidence clearly points to a pattern.
 
 The discipline of choosing your topic before entering the conversation is one of the highest-leverage habits you can develop. It takes two minutes of reflection and saves twenty minutes of unproductive discussion.
 
 ## Conclusion
 
-Most crucial conversations fail not because people lack courage or skill, but because they are having the wrong conversation. The natural tendency to choose easy over hard and recent over right keeps people stuck at the surface level. The three warning signs -- unexpected emotional escalation, post-conversation skepticism, and deja vu -- reliably indicate that you need to go deeper. The CPR framework (Content, Pattern, Relationship) gives you a clear model for identifying the right level. And the discipline of unbundling, choosing, and simplifying your topic before you start talking is one of the simplest and most effective practices for making crucial conversations productive.
+Most crucial conversations fail not because people lack courage or skill, but because they are having the wrong conversation. The natural tendency to choose easy over hard and recent over right keeps people stuck at the surface level. The three warning signs — unexpected emotional escalation, post-conversation skepticism, and deja vu — reliably indicate that you need to go deeper. The CPR framework (Content, Pattern, Relationship) gives you a clear model for identifying the right level. And the discipline of unbundling, choosing, and simplifying your topic before you start talking is one of the simplest and most effective practices for making crucial conversations productive.
