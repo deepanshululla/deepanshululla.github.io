@@ -21,8 +21,30 @@ The user will provide either:
 
 Ask the user (if not provided):
 - Post title
-- Category (common ones: "AI/ML", "Software Engineering", "Leadership", "Data Science", "Books")
+- Category (see category selection rules below)
 - One-sentence excerpt/description
+
+#### Category Selection Rules
+
+Categories are displayed as filter buttons on the blog listing page, derived dynamically from `blog-posts.json`. Assign the most appropriate category (or multiple if the post spans topics). Use an existing category whenever possible; only create a new one if none fit.
+
+**Existing categories (as of March 2026):**
+- **AI/ML** — Machine learning, deep learning, LLMs, NLP, model training/inference, MLOps, AI infrastructure
+- **Software Engineering** — System design, distributed systems, backend architecture, DevOps, testing, code quality
+- **Books** — Book summaries, chapter notes, reading lists. Use alongside a topic category for technical books (e.g., `["AI/ML", "Books"]` for an ML book summary)
+- **Leadership** — Management, communication, team dynamics, career growth
+- **Programming** — Language-specific topics, coding patterns, algorithms implemented in code
+- **Data Science** — Data analysis, statistics, visualization, data pipelines
+- **Algorithms** — Algorithm explanations, complexity analysis, data structures
+- **Statistics** — Statistical methods, probability, hypothesis testing
+- **Personal** — Non-technical posts, reflections, personal updates
+
+**Guidelines:**
+- A post can have multiple categories (e.g., `["AI/ML", "Books"]` for an AI book review)
+- Prefer specificity: use "AI/ML" not "Software Engineering" for a post about model serving
+- If the post truly does not fit any existing category, create a new one using Title Case (e.g., "Cloud Infrastructure", "Security", "Databases")
+- Keep category names short (1-3 words)
+- When updating this skill with new categories, add them to the list above so it stays current
 
 Derive from the title:
 - `id`: kebab-case slug (e.g., "mixed-precision-training")

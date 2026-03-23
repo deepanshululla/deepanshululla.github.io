@@ -474,8 +474,7 @@
     "excerpt": "An exploration of compile-time versus runtime size computation for arrays in C++, covering template metaprogramming, constexpr, and array size determination techniques.",
     "filename": "array-size-computation-cpp.md",
     "categories": [
-      "Programming",
-      "Algorithms"
+      "Programming"
     ]
   },
   {
@@ -640,7 +639,6 @@
     "excerpt": "An exploration of the Single Responsibility Principle (SRP) in software development, with examples in Java and Python, emphasizing the importance of writing clean and maintainable code.",
     "filename": "single-responsibility-principle.md",
     "categories": [
-      "AI/ML",
       "Software Engineering"
     ]
   },
@@ -683,9 +681,7 @@
     "excerpt": "Populations and Samples The main difference between a population and a sample has to do with how observations are assigned to the data set Population Includes all of the elements from a set of data. S...",
     "filename": "maths-101-part-4.md",
     "categories": [
-      "AI/ML",
-      "Statistics",
-      "Data Science"
+      "Statistics"
     ]
   },
   {
@@ -695,7 +691,6 @@
     "excerpt": "Random Variables The term random variable is not very descriptive. A better term is measurement function.Consider tossing a fair six-sided die. There are only six outcomes possible, \u03a9 = {1, 2, 3, 4, 5...",
     "filename": "maths-101-part-3.md",
     "categories": [
-      "AI/ML",
       "Statistics"
     ]
   }
