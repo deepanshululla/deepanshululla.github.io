@@ -28,6 +28,40 @@ The book identifies three reliable indicators that you are discussing the wrong 
 
 **Deja vu.** You have had this exact conversation before. Same person, same issue, same assurances. If you are having the same discussion for the second or third time, you are definitively having the wrong conversation. Repeating the same conversation and expecting different results is a reliable sign that you need to move to a deeper level.
 
+```mermaid
+graph TD
+    A[Having a Conversation] --> B{Warning Signs?}
+    B --> |Emotions escalate unexpectedly| C[Wrong Topic]
+    B --> |Walk away skeptical| C
+    B --> |Deja vu dialogue| C
+    B --> |None| D[Right Topic]
+    C --> E[Stop and Reassess]
+    E --> F[Unbundle Issues]
+    F --> G[Choose the Real Topic]
+    G --> H[Simplify to One Sentence]
+    D --> I[Continue Dialogue]
+    style C fill:#ffcccc
+    style D fill:#ccffcc
+    style E fill:#fff3cd
+```
+
+```mermaid
+graph TD
+    A[Having a Conversation] --> B{Warning Signs?}
+    B --> |Emotions escalate unexpectedly| C[Wrong Topic]
+    B --> |Walk away skeptical| C
+    B --> |Deja vu dialogue| C
+    B --> |None| D[Right Topic]
+    C --> E[Stop and Reassess]
+    E --> F[Unbundle Issues]
+    F --> G[Choose the Real Topic]
+    G --> H[Simplify to One Sentence]
+    D --> I[Continue Dialogue]
+    style C fill:#ffcccc
+    style D fill:#ccffcc
+    style E fill:#fff3cd
+```
+
 ## The CPR Framework
 
 The most actionable tool in this chapter is the CPR model, which gives you three distinct levels at which to engage a problem: Content, Pattern, and Relationship.
@@ -102,3 +136,24 @@ The discipline of choosing your topic before entering the conversation is one of
 ## Conclusion
 
 Most crucial conversations fail not because people lack courage or skill, but because they are having the wrong conversation. The natural tendency to choose easy over hard and recent over right keeps people stuck at the surface level. The three warning signs — unexpected emotional escalation, post-conversation skepticism, and deja vu — reliably indicate that you need to go deeper. The CPR framework (Content, Pattern, Relationship) gives you a clear model for identifying the right level. And the discipline of unbundling, choosing, and simplifying your topic before you start talking is one of the simplest and most effective practices for making crucial conversations productive.
+
+---
+
+## Series Navigation
+
+This post is part of a 13-part series on Crucial Conversations for Engineers.
+
+1. [Ch. 1: What Makes a Conversation Crucial](/#/blog/crucial-conversations-what-makes-them-crucial)
+2. [Ch. 2: The Power of Dialogue](/#/blog/crucial-conversations-the-power-of-dialogue)
+3. **Ch. 3: Choose Your Topic** (you are here)
+4. [Ch. 4: Start With Heart](/#/blog/crucial-conversations-start-with-heart)
+5. [Ch. 5: Master My Stories](/#/blog/crucial-conversations-master-my-stories)
+6. [Ch. 6: Learn to Look](/#/blog/crucial-conversations-learn-to-look)
+7. [Ch. 7: Make It Safe](/#/blog/crucial-conversations-make-it-safe)
+8. [Ch. 8: STATE My Path](/#/blog/crucial-conversations-state-my-path)
+9. [Ch. 9: Explore Others' Paths](/#/blog/crucial-conversations-explore-others-paths)
+10. [Ch. 10: Retake Your Pen](/#/blog/crucial-conversations-retake-your-pen)
+11. [Ch. 11: Move to Action](/#/blog/crucial-conversations-move-to-action)
+12. [Ch. 12: Navigating Tough Cases](/#/blog/crucial-conversations-tough-cases)
+13. [Ch. 13: Putting It All Together](/#/blog/crucial-conversations-putting-it-all-together)
+

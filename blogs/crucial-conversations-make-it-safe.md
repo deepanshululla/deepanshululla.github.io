@@ -109,6 +109,19 @@ Contrasting works because it directly addresses the safety problem. When someone
 
 It is not a softening technique or a compliment sandwich. It is a precision tool for correcting a specific misunderstanding about intent.
 
+```mermaid
+graph LR
+    A[Misunderstanding Detected] --> B[Contrasting Statement]
+    B --> C["I DON'T want... (deny feared intent)"]
+    B --> D["I DO want... (clarify real intent)"]
+    C --> E[Safety Restored]
+    D --> E
+    E --> F[Return to Content]
+    style A fill:#ffcccc
+    style E fill:#ccffcc
+    style F fill:#ccffcc
+```
+
 ## Tool: CRIB for Finding Mutual Purpose
 
 Sometimes the problem is not a misunderstanding of intent —it is a genuine conflict of purpose. You want one thing, they want another, and both positions seem incompatible. The CRIB framework helps in these situations:
@@ -130,6 +143,17 @@ If you cannot find a shared purpose at the current level, move up to a higher-le
 ### Brainstorm New Strategies
 
 Once you have a shared purpose, brainstorm new strategies together. With a shared purpose of "ship reliably without accumulating debt," you might find a third option: ship the feature with the current auth module but scope a follow-up refactor with a specific timeline, and add integration tests that will catch the issues you are worried about.
+
+```mermaid
+graph TD
+    A[Genuine Conflict of Purpose] --> B[Commit to Seek Mutual Purpose]
+    B --> C[Recognize Purpose Behind Strategies]
+    C --> D[Invent a Mutual Purpose]
+    D --> E[Brainstorm New Strategies]
+    E --> F[Both Parties Satisfied]
+    style A fill:#ffcccc
+    style F fill:#ccffcc
+```
 
 ## When to Use Each Tool
 
@@ -153,4 +177,24 @@ With safety tools:
 ## Conclusion
 
 Making it safe is not about being nice, avoiding hard topics, or sugarcoating your message. It is about ensuring that the conditions exist for honest dialogue. When you step out of the content to address safety, you are not avoiding the issue —you are removing the obstacle that prevents the issue from being discussed productively. Mutual Purpose and Mutual Respect are the two conditions to maintain. Contrasting is the tool you will use most often, and it is worth practicing until it becomes natural. The pattern of step out, make it safe, step back in is simple to describe but requires real discipline to execute in the moment, especially when your own emotions are running high. Like any engineering skill, it improves with deliberate practice.
+
+---
+
+## Series Navigation
+
+This post is part of a 13-part series on Crucial Conversations for Engineers.
+
+1. [Ch. 1: What Makes a Conversation Crucial](/#/blog/crucial-conversations-what-makes-them-crucial)
+2. [Ch. 2: The Power of Dialogue](/#/blog/crucial-conversations-the-power-of-dialogue)
+3. [Ch. 3: Choose Your Topic](/#/blog/crucial-conversations-choose-your-topic)
+4. [Ch. 4: Start With Heart](/#/blog/crucial-conversations-start-with-heart)
+5. [Ch. 5: Master My Stories](/#/blog/crucial-conversations-master-my-stories)
+6. [Ch. 6: Learn to Look](/#/blog/crucial-conversations-learn-to-look)
+7. **Ch. 7: Make It Safe** (you are here)
+8. [Ch. 8: STATE My Path](/#/blog/crucial-conversations-state-my-path)
+9. [Ch. 9: Explore Others' Paths](/#/blog/crucial-conversations-explore-others-paths)
+10. [Ch. 10: Retake Your Pen](/#/blog/crucial-conversations-retake-your-pen)
+11. [Ch. 11: Move to Action](/#/blog/crucial-conversations-move-to-action)
+12. [Ch. 12: Navigating Tough Cases](/#/blog/crucial-conversations-tough-cases)
+13. [Ch. 13: Putting It All Together](/#/blog/crucial-conversations-putting-it-all-together)
 

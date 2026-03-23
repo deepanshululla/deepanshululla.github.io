@@ -33,6 +33,21 @@ The first thing to watch for is the moment a routine conversation becomes a cruc
 
 These cues are your early warning system. The goal is to catch them before you act on them.
 
+```mermaid
+graph TD
+    A[Normal Conversation] --> B{Cues Detected?}
+    B --> |Physical: tight stomach, flushed face| C[Conversation Turning Crucial]
+    B --> |Emotional: fear, anger, defensiveness| C
+    B --> |Behavioral: raised voice, withdrawal| C
+    C --> D[Pause]
+    D --> E[Start With Heart]
+    E --> F[Re-enter Dialogue Consciously]
+    B --> |No cues| G[Continue Normally]
+    style C fill:#fff3cd
+    style D fill:#ccffcc
+    style F fill:#ccffcc
+```
+
 ## Safety Problems: Intent, Not Content
 
 One of the most important distinctions in the book appears in this chapter: people do not get defensive because of what you say. They get defensive because of why they think you are saying it.
@@ -138,4 +153,24 @@ Here is a practical framework for engineering settings:
 ## Conclusion
 
 Learning to look is fundamentally about expanding your awareness during conversations. Most engineers are excellent at tracking logical content but undertrained in reading conversational dynamics. The specific patterns described here —silence (masking, avoiding, withdrawing) and violence (controlling, labeling, attacking) —give you a vocabulary for what you are seeing. And the core distinction between safety and comfort is essential for building a team culture where hard things can actually be discussed. The earlier you notice a safety problem, the less effort it takes to fix. Like catching a bug before it ships, catching a conversation going sideways early is far cheaper than cleaning up the aftermath.
+
+---
+
+## Series Navigation
+
+This post is part of a 13-part series on Crucial Conversations for Engineers.
+
+1. [Ch. 1: What Makes a Conversation Crucial](/#/blog/crucial-conversations-what-makes-them-crucial)
+2. [Ch. 2: The Power of Dialogue](/#/blog/crucial-conversations-the-power-of-dialogue)
+3. [Ch. 3: Choose Your Topic](/#/blog/crucial-conversations-choose-your-topic)
+4. [Ch. 4: Start With Heart](/#/blog/crucial-conversations-start-with-heart)
+5. [Ch. 5: Master My Stories](/#/blog/crucial-conversations-master-my-stories)
+6. **Ch. 6: Learn to Look** (you are here)
+7. [Ch. 7: Make It Safe](/#/blog/crucial-conversations-make-it-safe)
+8. [Ch. 8: STATE My Path](/#/blog/crucial-conversations-state-my-path)
+9. [Ch. 9: Explore Others' Paths](/#/blog/crucial-conversations-explore-others-paths)
+10. [Ch. 10: Retake Your Pen](/#/blog/crucial-conversations-retake-your-pen)
+11. [Ch. 11: Move to Action](/#/blog/crucial-conversations-move-to-action)
+12. [Ch. 12: Navigating Tough Cases](/#/blog/crucial-conversations-tough-cases)
+13. [Ch. 13: Putting It All Together](/#/blog/crucial-conversations-putting-it-all-together)
 

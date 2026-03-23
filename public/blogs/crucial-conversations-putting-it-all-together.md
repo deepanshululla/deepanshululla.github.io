@@ -91,6 +91,27 @@ The power of having a complete model is that it functions as a diagnostic tool. 
 
 This diagnostic is genuinely useful. Instead of the vague feeling that "communication is hard," you can pinpoint the specific failure mode and apply the specific tool.
 
+```mermaid
+graph TD
+    A[Conversation Not Working] --> B{What is happening?}
+    B --> |I am emotional or reactive| C[Master My Stories]
+    B --> |They are silent or aggressive| D[Make It Safe]
+    B --> |Same argument again| E[Choose Your Topic with CPR]
+    B --> |Cannot say what I need to| F[STATE My Path]
+    B --> |They will not open up| G[Explore Others Paths with AMPP]
+    B --> |We talked but nothing changed| H[Move to Action with WWWF]
+    B --> |Feedback is crushing me| I[Retake Your Pen]
+    C --> J[Return to Dialogue]
+    D --> J
+    E --> J
+    F --> J
+    G --> J
+    H --> J
+    I --> J
+    style A fill:#ffcccc
+    style J fill:#ccffcc
+```
+
 ## Self-Coaching Questions
 
 For each principle, there is a question you can ask yourself in the moment.
@@ -140,3 +161,24 @@ The common thread is that the biggest communication failures are not caused by b
 ## Conclusion
 
 The Crucial Conversations framework is not a personality transplant or a set of manipulative techniques. It is a learnable system for staying in productive dialogue when everything in your brain is telling you to fight or flee. The two foundational skills — Learn to Look and Make It Safe — will carry you through most situations. The nine-step model gives you precision when you need it. And the most important insight is that you do not need perfection. Identify your weakest step, improve it by even a small margin, and watch the quality of your professional relationships and outcomes change. In engineering, where the most consequential decisions emerge from conversations between people who see the world differently, this is not a soft skill. It is a core competency.
+
+---
+
+## Series Navigation
+
+This post is part of a 13-part series on Crucial Conversations for Engineers.
+
+1. [Ch. 1: What Makes a Conversation Crucial](/#/blog/crucial-conversations-what-makes-them-crucial)
+2. [Ch. 2: The Power of Dialogue](/#/blog/crucial-conversations-the-power-of-dialogue)
+3. [Ch. 3: Choose Your Topic](/#/blog/crucial-conversations-choose-your-topic)
+4. [Ch. 4: Start With Heart](/#/blog/crucial-conversations-start-with-heart)
+5. [Ch. 5: Master My Stories](/#/blog/crucial-conversations-master-my-stories)
+6. [Ch. 6: Learn to Look](/#/blog/crucial-conversations-learn-to-look)
+7. [Ch. 7: Make It Safe](/#/blog/crucial-conversations-make-it-safe)
+8. [Ch. 8: STATE My Path](/#/blog/crucial-conversations-state-my-path)
+9. [Ch. 9: Explore Others' Paths](/#/blog/crucial-conversations-explore-others-paths)
+10. [Ch. 10: Retake Your Pen](/#/blog/crucial-conversations-retake-your-pen)
+11. [Ch. 11: Move to Action](/#/blog/crucial-conversations-move-to-action)
+12. [Ch. 12: Navigating Tough Cases](/#/blog/crucial-conversations-tough-cases)
+13. **Ch. 13: Putting It All Together** (you are here)
+

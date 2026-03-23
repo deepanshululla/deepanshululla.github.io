@@ -69,6 +69,23 @@ This separation is not about dismissing feedback or pretending criticism does no
 
 A practical exercise: after receiving feedback that stings, write down two things. First, the exact words that were said (or written). Second, the story you told yourself about what those words mean. Seeing them side by side on paper (or in a notes app) makes the gap between fact and story uncomfortably clear.
 
+```mermaid
+graph TD
+    A[Harsh Feedback Received] --> B[What Was Actually Said]
+    A --> C[What You Made It Mean]
+    B --> D[Specific behavior or observation]
+    C --> E[Story about your identity and worth]
+    E --> F[Pain and Defensiveness]
+    D --> G[Evaluate on merits]
+    G --> H[Grow from useful parts]
+    F --> I[Spiral into self-doubt]
+    style E fill:#ffcccc
+    style F fill:#ffcccc
+    style I fill:#ffcccc
+    style G fill:#ccffcc
+    style H fill:#ccffcc
+```
+
 ## Taking Your Pen Back
 
 The authors describe three steps to retake your pen.
@@ -108,3 +125,24 @@ The new story is not softer — it is more accurate. It deals with the specific 
 ## Conclusion
 
 Retaking your pen does not mean ignoring feedback or becoming impervious to criticism. It means being the primary author of your own professional narrative. You can take feedback seriously without letting it define you. You can respect someone's technical opinion without making their approval a prerequisite for your own confidence. For engineers, who work in environments saturated with evaluation — code reviews, design reviews, performance reviews, promotion panels — this skill is not optional. It is the difference between a career driven by growth and a career driven by anxiety.
+
+---
+
+## Series Navigation
+
+This post is part of a 13-part series on Crucial Conversations for Engineers.
+
+1. [Ch. 1: What Makes a Conversation Crucial](/#/blog/crucial-conversations-what-makes-them-crucial)
+2. [Ch. 2: The Power of Dialogue](/#/blog/crucial-conversations-the-power-of-dialogue)
+3. [Ch. 3: Choose Your Topic](/#/blog/crucial-conversations-choose-your-topic)
+4. [Ch. 4: Start With Heart](/#/blog/crucial-conversations-start-with-heart)
+5. [Ch. 5: Master My Stories](/#/blog/crucial-conversations-master-my-stories)
+6. [Ch. 6: Learn to Look](/#/blog/crucial-conversations-learn-to-look)
+7. [Ch. 7: Make It Safe](/#/blog/crucial-conversations-make-it-safe)
+8. [Ch. 8: STATE My Path](/#/blog/crucial-conversations-state-my-path)
+9. [Ch. 9: Explore Others' Paths](/#/blog/crucial-conversations-explore-others-paths)
+10. **Ch. 10: Retake Your Pen** (you are here)
+11. [Ch. 11: Move to Action](/#/blog/crucial-conversations-move-to-action)
+12. [Ch. 12: Navigating Tough Cases](/#/blog/crucial-conversations-tough-cases)
+13. [Ch. 13: Putting It All Together](/#/blog/crucial-conversations-putting-it-all-together)
+

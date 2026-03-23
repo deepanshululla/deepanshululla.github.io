@@ -102,6 +102,20 @@ When you start with facts ("Here are the incident trends and the development vel
 
 This is why starting with conclusions in engineering discussions so often leads to unproductive debates. Two people arguing about conclusions without first aligning on facts will talk past each other indefinitely.
 
+```mermaid
+graph TD
+    A{How Do You Open?}
+    A --> |Start with Conclusion| B[Listener Evaluates and Argues]
+    B --> C[Positional Debate]
+    A --> |Start with Facts| D[Listener Follows Your Reasoning]
+    D --> E[Sees the Same Data]
+    E --> F[Collaborative Discussion]
+    style B fill:#ffcccc
+    style C fill:#ffcccc
+    style D fill:#ccffcc
+    style F fill:#ccffcc
+```
+
 ## Walking Others Through Your Path to Action
 
 The STATE framework is essentially walking someone through your Path to Action in order:
@@ -164,4 +178,24 @@ Suppose you believe a proposed design has a fundamental flaw, but the design is 
 ## Conclusion
 
 The STATE framework solves a problem that engineers face constantly: how to share an unpopular or uncomfortable view in a way that is honest, persuasive, and does not damage the relationship. The sequence matters —facts first, then interpretation, then invitation. The tone matters —confident enough to share your view, humble enough to mean it when you say you might be wrong. And the follow-through matters —if you ask for disagreement, you must actually welcome it. This is not a natural communication style for most people, which is why it needs to be practiced deliberately. But for engineers who regularly need to raise concerns, challenge assumptions, and speak up about risks, it is an essential skill.
+
+---
+
+## Series Navigation
+
+This post is part of a 13-part series on Crucial Conversations for Engineers.
+
+1. [Ch. 1: What Makes a Conversation Crucial](/#/blog/crucial-conversations-what-makes-them-crucial)
+2. [Ch. 2: The Power of Dialogue](/#/blog/crucial-conversations-the-power-of-dialogue)
+3. [Ch. 3: Choose Your Topic](/#/blog/crucial-conversations-choose-your-topic)
+4. [Ch. 4: Start With Heart](/#/blog/crucial-conversations-start-with-heart)
+5. [Ch. 5: Master My Stories](/#/blog/crucial-conversations-master-my-stories)
+6. [Ch. 6: Learn to Look](/#/blog/crucial-conversations-learn-to-look)
+7. [Ch. 7: Make It Safe](/#/blog/crucial-conversations-make-it-safe)
+8. **Ch. 8: STATE My Path** (you are here)
+9. [Ch. 9: Explore Others' Paths](/#/blog/crucial-conversations-explore-others-paths)
+10. [Ch. 10: Retake Your Pen](/#/blog/crucial-conversations-retake-your-pen)
+11. [Ch. 11: Move to Action](/#/blog/crucial-conversations-move-to-action)
+12. [Ch. 12: Navigating Tough Cases](/#/blog/crucial-conversations-tough-cases)
+13. [Ch. 13: Putting It All Together](/#/blog/crucial-conversations-putting-it-all-together)
 

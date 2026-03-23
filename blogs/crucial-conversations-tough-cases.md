@@ -44,6 +44,24 @@ Conversely, you might fully trust a colleague's technical ability but question t
 
 In practice, this means you can have targeted conversations: "I have no doubt you want this project to succeed. I'm concerned about whether we have the right expertise on the team to handle the distributed consensus piece. Can we talk about how to bridge that gap?" This is far more productive than the vague "I don't trust them" that usually drives avoidance.
 
+```mermaid
+graph TD
+    A[Trust Assessment] --> B{Binary View}
+    A --> C{Topic-Specific View}
+    B --> D[Trust them completely]
+    B --> E[Do not trust them at all]
+    C --> F[Motive: Do they want to do right?]
+    C --> G[Ability: Can they do it well?]
+    F --> H[Calibrated Assessment]
+    G --> H
+    D --> I[Naive or Unfair]
+    E --> I
+    style B fill:#ffcccc
+    style I fill:#ffcccc
+    style C fill:#ccffcc
+    style H fill:#ccffcc
+```
+
 ## Addressing Sensitive Topics
 
 Some conversations are hard not because of conflict but because of sensitivity. Giving feedback about personal hygiene. Raising concerns about someone's communication style. Pointing out that a colleague's behavior is making others uncomfortable. These topics feel radioactive.
@@ -109,3 +127,24 @@ For engineering managers, this is the core skill for performance conversations. 
 ## Conclusion
 
 The toughest conversations are not exceptions to the Crucial Conversations framework — they are the reason it exists. Trust is not binary; it is specific and addressable. Sensitive topics can be discussed with facts, privacy, and respect. Silent people can be drawn out with patient, skillful listening. Broken promises require pattern-level conversations, not just content-level ones. None of these scenarios are comfortable, but all of them are navigable. For engineers, who regularly face underperformance, interpersonal friction, and politically charged decisions, the ability to handle these tough cases is what separates teams that talk about problems from teams that solve them.
+
+---
+
+## Series Navigation
+
+This post is part of a 13-part series on Crucial Conversations for Engineers.
+
+1. [Ch. 1: What Makes a Conversation Crucial](/#/blog/crucial-conversations-what-makes-them-crucial)
+2. [Ch. 2: The Power of Dialogue](/#/blog/crucial-conversations-the-power-of-dialogue)
+3. [Ch. 3: Choose Your Topic](/#/blog/crucial-conversations-choose-your-topic)
+4. [Ch. 4: Start With Heart](/#/blog/crucial-conversations-start-with-heart)
+5. [Ch. 5: Master My Stories](/#/blog/crucial-conversations-master-my-stories)
+6. [Ch. 6: Learn to Look](/#/blog/crucial-conversations-learn-to-look)
+7. [Ch. 7: Make It Safe](/#/blog/crucial-conversations-make-it-safe)
+8. [Ch. 8: STATE My Path](/#/blog/crucial-conversations-state-my-path)
+9. [Ch. 9: Explore Others' Paths](/#/blog/crucial-conversations-explore-others-paths)
+10. [Ch. 10: Retake Your Pen](/#/blog/crucial-conversations-retake-your-pen)
+11. [Ch. 11: Move to Action](/#/blog/crucial-conversations-move-to-action)
+12. **Ch. 12: Navigating Tough Cases** (you are here)
+13. [Ch. 13: Putting It All Together](/#/blog/crucial-conversations-putting-it-all-together)
+

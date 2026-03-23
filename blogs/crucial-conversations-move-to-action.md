@@ -12,6 +12,27 @@ The problem is seductive: a good conversation feels like progress. When a design
 
 In engineering, this shows up constantly. The architecture discussion where "we should probably move to event-driven" never gets a DRI or a timeline. The retro where the team identifies three process improvements but assigns none of them. The incident review that produces a thorough timeline but no follow-up action items. The conversation was real; the outcomes were not.
 
+```mermaid
+graph TD
+    A[Good Conversation] --> B{Clear Decision Made?}
+    B --> |No| C[Everyone Walks Away Satisfied]
+    C --> D[No One Acts]
+    D --> E[Nothing Changes]
+    B --> |Yes| F[WWWF Defined]
+    F --> G[Who: Clear Owner]
+    F --> H[What: Specific Task]
+    F --> I[When: Deadline Set]
+    F --> J[Follow-up: Check Scheduled]
+    G --> K[Accountability and Results]
+    H --> K
+    I --> K
+    J --> K
+    style C fill:#ffcccc
+    style E fill:#ffcccc
+    style F fill:#ccffcc
+    style K fill:#ccffcc
+```
+
 ## Decide How to Decide
 
 Before making any decision, the group needs to answer a meta-question: how will this decision be made? Skipping this step is the source of enormous frustration in engineering teams.
@@ -120,3 +141,24 @@ Once a decision is made, the conversation is not over. The authors introduce WWW
 ## Conclusion
 
 Dialogue without decision is just a pleasant conversation. The most important move in any crucial conversation is often the last one: converting shared understanding into clear commitments. Decide how to decide before you decide. Then close with Who does What by When with Follow-up. These are not bureaucratic formalities — they are the bridge between talking about change and actually making it happen. In engineering, where the gap between "we should" and "we did" is measured in sprints and quarters, this bridge is everything.
+
+---
+
+## Series Navigation
+
+This post is part of a 13-part series on Crucial Conversations for Engineers.
+
+1. [Ch. 1: What Makes a Conversation Crucial](/#/blog/crucial-conversations-what-makes-them-crucial)
+2. [Ch. 2: The Power of Dialogue](/#/blog/crucial-conversations-the-power-of-dialogue)
+3. [Ch. 3: Choose Your Topic](/#/blog/crucial-conversations-choose-your-topic)
+4. [Ch. 4: Start With Heart](/#/blog/crucial-conversations-start-with-heart)
+5. [Ch. 5: Master My Stories](/#/blog/crucial-conversations-master-my-stories)
+6. [Ch. 6: Learn to Look](/#/blog/crucial-conversations-learn-to-look)
+7. [Ch. 7: Make It Safe](/#/blog/crucial-conversations-make-it-safe)
+8. [Ch. 8: STATE My Path](/#/blog/crucial-conversations-state-my-path)
+9. [Ch. 9: Explore Others' Paths](/#/blog/crucial-conversations-explore-others-paths)
+10. [Ch. 10: Retake Your Pen](/#/blog/crucial-conversations-retake-your-pen)
+11. **Ch. 11: Move to Action** (you are here)
+12. [Ch. 12: Navigating Tough Cases](/#/blog/crucial-conversations-tough-cases)
+13. [Ch. 13: Putting It All Together](/#/blog/crucial-conversations-putting-it-all-together)
+

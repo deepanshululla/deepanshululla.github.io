@@ -102,6 +102,21 @@ After you have listened and the other person has fully shared their perspective,
 
 Compare is powerful because it keeps both perspectives alive. It does not demand that someone abandon their view — it just places another view alongside it for examination.
 
+```mermaid
+graph TD
+    A[They Share Their View] --> B{Do You Agree?}
+    B --> |Yes| C[Agree Explicitly]
+    B --> |Partially| D[Build: Agree First Then Add]
+    B --> |No| E[Compare: Different Not Wrong]
+    C --> F[Pool of Shared Meaning Grows]
+    D --> F
+    E --> F
+    style C fill:#ccffcc
+    style D fill:#fff3cd
+    style E fill:#fff3cd
+    style F fill:#ccffcc
+```
+
 ## Engineering Applications
 
 **Postmortems.** The AMPP toolkit is essential for blameless postmortems. When the on-call engineer goes silent, they are probably afraid of being blamed. Ask genuinely, mirror their discomfort, paraphrase what they share, and prime if needed: "I'm guessing it felt like you were put in an impossible position with incomplete runbooks. Is that close?"
@@ -115,3 +130,24 @@ Compare is powerful because it keeps both perspectives alive. It does not demand
 ## Conclusion
 
 When dialogue breaks down, the instinct is to push harder — to repeat your point more forcefully, to overwhelm objections with data, to escalate. The AMPP toolkit offers a counterintuitive but far more effective approach: stop talking and start listening. Ask, Mirror, Paraphrase, and Prime create the safety that allows honest conversation to resume. For engineers, who work in environments where silence can hide critical risks and violence can suppress crucial dissent, these listening skills are not soft — they are load-bearing.
+
+---
+
+## Series Navigation
+
+This post is part of a 13-part series on Crucial Conversations for Engineers.
+
+1. [Ch. 1: What Makes a Conversation Crucial](/#/blog/crucial-conversations-what-makes-them-crucial)
+2. [Ch. 2: The Power of Dialogue](/#/blog/crucial-conversations-the-power-of-dialogue)
+3. [Ch. 3: Choose Your Topic](/#/blog/crucial-conversations-choose-your-topic)
+4. [Ch. 4: Start With Heart](/#/blog/crucial-conversations-start-with-heart)
+5. [Ch. 5: Master My Stories](/#/blog/crucial-conversations-master-my-stories)
+6. [Ch. 6: Learn to Look](/#/blog/crucial-conversations-learn-to-look)
+7. [Ch. 7: Make It Safe](/#/blog/crucial-conversations-make-it-safe)
+8. [Ch. 8: STATE My Path](/#/blog/crucial-conversations-state-my-path)
+9. **Ch. 9: Explore Others' Paths** (you are here)
+10. [Ch. 10: Retake Your Pen](/#/blog/crucial-conversations-retake-your-pen)
+11. [Ch. 11: Move to Action](/#/blog/crucial-conversations-move-to-action)
+12. [Ch. 12: Navigating Tough Cases](/#/blog/crucial-conversations-tough-cases)
+13. [Ch. 13: Putting It All Together](/#/blog/crucial-conversations-putting-it-all-together)
+
