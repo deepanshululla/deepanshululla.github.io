@@ -127,7 +127,7 @@ It is a better use of your time to be wrong than to be vague. If you are wrong, 
 
 ## Related Reading
 
-Shared understanding is not just a cross-team skill. It starts with your relationship with your own manager. I have written a separate post on [Aligning with Your Manager](/#/blog/aligning-with-your-manager) that covers how to develop deep shared understanding upward: knowing when to accept direction, when to push back, and how to disagree and commit.
+Shared understanding is not just a cross-team skill. It starts with your relationship with your own manager. I have written a separate post on [Aligning with Leadership](/#/blog/aligning-with-your-manager) that covers how to develop deep shared understanding upward: knowing when to accept direction, when to push back, and how to disagree and commit.
 
 ## Conclusion
 

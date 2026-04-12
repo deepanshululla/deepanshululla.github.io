@@ -1,4 +1,4 @@
-# Aligning with Your Manager: How to Become Their Right Hand
+# Aligning with Leadership
 
 **Published:** April 12, 2026
 
