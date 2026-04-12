@@ -125,6 +125,10 @@ It is a better use of your time to be wrong than to be vague. If you are wrong, 
 - [ ] Feedback collected and incorporated from reviewers
 - [ ] Final design approved by key stakeholders
 
+## Related Reading
+
+Shared understanding is not just a cross-team skill. It starts with your relationship with your own manager. I have written a separate post on [Aligning with Your Manager](/#/blog/aligning-with-your-manager) that covers how to develop deep shared understanding upward: knowing when to accept direction, when to push back, and how to disagree and commit.
+
 ## Conclusion
 
 Shared understanding is not a luxury. It is a prerequisite for effective collaboration on large projects. Build mental models that connect to what people already know. Name things carefully and consistently. Use diagrams to make the abstract concrete. Write your plans down so people can actually engage with them. The time you spend making things clear for others is not overhead. It is the core work of leading a project that spans multiple teams.
