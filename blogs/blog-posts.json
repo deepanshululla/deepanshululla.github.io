@@ -1,5 +1,93 @@
 [
   {
+    "id": "staff-engineers-path-lead-through-people",
+    "title": "Leading Large Projects: Lead Through People, Not Authority",
+    "date": "2026-04-12",
+    "excerpt": "The capstone skill of staff-level project leadership: creating alignment through influence, trust, and making people feel heard, when you have no direct authority over the teams doing the work.",
+    "filename": "staff-engineers-path-lead-through-people.md",
+    "categories": ["Software Engineering", "Leadership", "Books"]
+  },
+  {
+    "id": "staff-engineers-path-create-shared-understanding",
+    "title": "Leading Large Projects: Create Shared Understanding",
+    "date": "2026-04-12",
+    "excerpt": "How to reduce complexity across teams using mental models, precise naming, diagrams, and written design documents so that everyone sees the same picture.",
+    "filename": "staff-engineers-path-create-shared-understanding.md",
+    "categories": ["Software Engineering", "Leadership", "Books"]
+  },
+  {
+    "id": "staff-engineers-path-explore-before-you-decide",
+    "title": "Leading Large Projects: Explore Before You Decide",
+    "date": "2026-04-12",
+    "excerpt": "Why jumping to solutions too early is one of the most common mistakes in large projects, and how to align mental models across teams before committing to an approach.",
+    "filename": "staff-engineers-path-explore-before-you-decide.md",
+    "categories": ["Software Engineering", "Leadership", "Books"]
+  },
+  {
+    "id": "staff-engineers-path-drive-the-project",
+    "title": "Leading Large Projects: Drive the Project",
+    "date": "2026-04-12",
+    "excerpt": "Driving a project is not about moving fast. It is about making decisions, adjusting direction, reacting to risks, and keeping everyone pointed at the destination.",
+    "filename": "staff-engineers-path-drive-the-project.md",
+    "categories": ["Software Engineering", "Leadership", "Books"]
+  },
+  {
+    "id": "staff-engineers-path-add-structure",
+    "title": "Leading Large Projects: Add Structure",
+    "date": "2026-04-12",
+    "excerpt": "How to convert ambiguity into clarity by defining roles, agreeing on scope and milestones, setting up logistics, and giving the project a skeleton it can grow into.",
+    "filename": "staff-engineers-path-add-structure.md",
+    "categories": ["Software Engineering", "Leadership", "Books"]
+  },
+  {
+    "id": "staff-engineers-path-clarify-the-fundamentals",
+    "title": "Leading Large Projects: Clarify the Fundamentals",
+    "date": "2026-04-12",
+    "excerpt": "Before execution begins, make the goals, customers, success metrics, stakeholders, constraints, risks, and history explicit. Skipping this step is how you solve the wrong problem with perfect execution.",
+    "filename": "staff-engineers-path-clarify-the-fundamentals.md",
+    "categories": ["Software Engineering", "Leadership", "Books"]
+  },
+  {
+    "id": "staff-engineers-path-build-context",
+    "title": "Leading Large Projects: Build Context with Three Maps",
+    "date": "2026-04-12",
+    "excerpt": "Staff engineers navigate organizations, not just systems. Build three maps to understand where the project fits, how the org works, and where you are going.",
+    "filename": "staff-engineers-path-build-context.md",
+    "categories": ["Software Engineering", "Leadership", "Books"]
+  },
+  {
+    "id": "staff-engineers-path-align-on-the-why",
+    "title": "Leading Large Projects: Align on the Why",
+    "date": "2026-04-12",
+    "excerpt": "One of the most common failure modes in large projects is building the wrong thing really well. Align with your project sponsor on what success looks like before doing anything else.",
+    "filename": "staff-engineers-path-align-on-the-why.md",
+    "categories": ["Software Engineering", "Leadership", "Books"]
+  },
+  {
+    "id": "staff-engineers-path-build-your-second-brain",
+    "title": "Leading Large Projects: Build Your Second Brain",
+    "date": "2026-04-12",
+    "excerpt": "Before you try to solve a large project, externalize it. Create a single document that acts as an extension of your brain for the duration of the project.",
+    "filename": "staff-engineers-path-build-your-second-brain.md",
+    "categories": ["Software Engineering", "Leadership", "Books"]
+  },
+  {
+    "id": "staff-engineers-path-embrace-the-chaos",
+    "title": "Leading Large Projects: Embrace the Chaos",
+    "date": "2026-04-12",
+    "excerpt": "The beginning of a large project is supposed to feel chaotic. Feeling overwhelmed is not a signal you are failing. It is a signal you are doing staff-level work.",
+    "filename": "staff-engineers-path-embrace-the-chaos.md",
+    "categories": ["Software Engineering", "Leadership", "Books"]
+  },
+  {
+    "id": "staff-engineers-path-leading-large-projects",
+    "title": "Leading Large Projects as a Staff Engineer: A Series Overview",
+    "date": "2026-04-12",
+    "excerpt": "A 10-phase guide to leading large, ambiguous, cross-team projects as a staff engineer, drawn from The Staff Engineer's Path with a running LLM Gateway example.",
+    "filename": "staff-engineers-path-leading-large-projects.md",
+    "categories": ["Software Engineering", "Leadership", "Books"]
+  },
+  {
     "id": "natural-language-to-sql-with-tiny-llama",
     "title": "Natural Language to SQL with TinyLlama: Four Approaches Compared",
     "date": "2026-03-23",
