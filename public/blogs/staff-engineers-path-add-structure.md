@@ -49,6 +49,16 @@ However you approach it, try to get every leader aligned on what the roles are a
 
 One more thing: if you are the project lead, you are ultimately responsible for the project. That means you are implicitly filling any roles that do not already have someone in them. If nobody is tracking user requirements, that is you. If nobody is project managing, that is you as well.
 
+### Watch for over-ownership
+
+There is a subtle failure mode that is the opposite of dropped responsibilities: over-ownership. This is when you assume you own something that someone else already owns. It happens easily on cross-team projects where boundaries are blurry. You see a gap, you step in, and you start making decisions -- only to discover that someone else was already responsible for that area and now feels stepped on.
+
+For the LLM Gateway, imagine you start designing the authentication model for the gateway because nobody seems to be working on it. You spend a week on it, present your design, and then Priya from the Security team says: "We were already planning to handle this. We have a standard auth pattern that all new services are supposed to use." You have not just wasted a week. You have also signaled to Priya that you do not respect her team's domain.
+
+The fix is simple but requires discipline: before you step into a gap, ask first. "I noticed nobody seems to be owning the auth model for the gateway. Is that something your team is planning to cover, or should I take a first pass?" This one question is the difference between being helpful and being territorial. It costs thirty seconds and can save weeks of friction.
+
+Over-ownership is especially tempting for staff engineers because you are used to operating with broad scope. But broad scope does not mean you own everything. It means you are responsible for making sure everything is owned. Those are very different things.
+
 ## Recruit the Right People
 
 If there are unfilled roles, you may have to find someone. Sometimes that means recruiting someone internally or picking subleads. Look for people who complement your own skill set. If you are a big-picture person, look for someone who loves getting into the details. For bonus points, find people who love doing the kind of work that you hate to do.

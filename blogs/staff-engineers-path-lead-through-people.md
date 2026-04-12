@@ -84,6 +84,7 @@ As a project lead with influence over multiple teams, you can inadvertently crea
 
 - **Surprise people.** If a decision affects someone's team, they should hear about it from you before they hear about it in a meeting or read about it in a document.
 - **Undermine managers.** You are a technical lead, not the manager of the people working on your project. Respect the reporting lines. If you need someone's priorities to change, talk to their manager, not around them.
+- **Over-own.** Just because you see a gap does not mean it is yours to fill. Someone else may already own that area. Before stepping in, ask: "Is anyone already covering this?" Broad scope means you are responsible for making sure everything is owned, not that you own everything. (I cover this in more detail in [Add Structure](/#/blog/staff-engineers-path-add-structure).)
 - **Create urgency unnecessarily.** Not everything is a fire. If you constantly escalate or create pressure, people will stop taking your signals seriously.
 - **Take credit for collective work.** Nothing erodes trust faster than a leader who presents the team's work as their own. Be generous with credit and specific about who contributed what.
 
