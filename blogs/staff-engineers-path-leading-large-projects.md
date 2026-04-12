@@ -12,6 +12,18 @@ This series walks through the lifecycle of a large, ambiguous, multi-team projec
 
 As a staff engineer leading a project, you are often in a position where multiple teams are involved, no one reports to you, ownership is unclear, and expectations are fuzzy. And yet, you are still responsible for the outcome. This is the defining challenge of staff-level work: end-to-end accountability without direct control.
 
+## What Leadership Actually Means
+
+When engineers hear "you are leading this project," many picture themselves making big architectural decisions, writing the most critical code, or presenting the final design to leadership. That is not what leadership means at this level.
+
+Leadership means making the people around you more effective. In practice, that looks like:
+
+- **Clearing blockers.** An engineer on the project is stuck waiting on another team's API. A dependency is unclear. A decision is sitting in limbo because nobody knows who has the authority to make it. Your job is to notice these things and resolve them, whether that means having a conversation, escalating, or just making the decision yourself.
+- **Helping people deliver their work.** You are not here to do everything. You are here to make sure everyone else can do their part. That might mean pair programming on a tricky problem, reviewing a design, breaking a vague ticket into concrete steps, or simply asking "what do you need from me to finish this?"
+- **Aligning yourself with leadership's vision.** You need to understand what your manager, your director, and the organization care about, and make sure the project is moving toward those goals. If leadership cares about cost reduction and you are optimizing for developer experience, you are misaligned no matter how good the work is. (I cover this in depth in a separate post on [Aligning with Leadership](/#/blog/aligning-with-your-manager).)
+
+Leadership is not about being the smartest person in the room or writing the most code. It is about making sure the right things happen, the right people are unblocked, and the project stays pointed at the outcome the organization actually needs.
+
 ## The Phases
 
 Leading a large project is not a single skill. It is a sequence of overlapping phases, each with its own challenges. Here is the roadmap we will follow:
