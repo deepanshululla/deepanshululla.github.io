@@ -50,30 +50,14 @@ None of these are wrong. But they are different, and if you design the system to
 
 ```mermaid
 graph TD
-    subgraph ML Platform View
-        A1[Model serving extension]
-        A2[Prompt optimization]
-        A3[They own it]
-    end
-    subgraph Product Team View
-        B1[Thin proxy]
-        B2[Simple API]
-        B3[Minimal migration]
-    end
-    subgraph Security View
-        C1[Audit tool]
-        C2[Prompt logging]
-        C3[PII detection]
-    end
-    subgraph Finance View
-        D1[Cost management]
-        D2[Per-team budgets]
-        D3[Usage reports]
-    end
-    A1 --> E[Your Job: Unified Vision]
-    B1 --> E
-    C1 --> E
-    D1 --> E
+    A[ML Platform: Model serving extension] --> E[Your Job: Unified Vision]
+    B[Product: Thin proxy with simple API] --> E
+    C[Security: Audit and compliance tool] --> E
+    D[Finance: Cost management tool] --> E
+    style A fill:#e8f4f8
+    style B fill:#e8f4f8
+    style C fill:#e8f4f8
+    style D fill:#e8f4f8
     style E fill:#d4edda
 ```
 

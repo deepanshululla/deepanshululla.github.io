@@ -55,28 +55,32 @@ For the LLM Gateway, the word "model" means different things to different teams.
 
 If you really want to reduce complexity, use pictures. There is no easier way to help people visualize what you are talking about. If something is changing, a set of "before" and "after" pictures can be clearer than an entire essay.
 
-```mermaid
-graph TD
-    subgraph Before: Direct Integrations
-        T1[Search Team] -->|OpenAI SDK| O1[OpenAI]
-        T2[Support Team] -->|Anthropic SDK| A1[Anthropic]
-        T3[Analytics Team] -->|Custom code| O2[OpenAI]
-        T4[Marketing Team] -->|OpenAI SDK| O3[OpenAI]
-    end
-```
+**Before: Direct Integrations**
 
 ```mermaid
-graph TD
-    subgraph After: LLM Gateway
-        T1[Search Team] --> GW[LLM Gateway]
-        T2[Support Team] --> GW
-        T3[Analytics Team] --> GW
-        T4[Marketing Team] --> GW
-        GW -->|Route + Log| O1[OpenAI]
-        GW -->|Route + Log| A1[Anthropic]
-        GW -->|Route + Log| OS1[Open Source]
-        style GW fill:#d4edda
-    end
+graph LR
+    T1[Search Team] -->|OpenAI SDK| O1[OpenAI]
+    T2[Support Team] -->|Anthropic SDK| A1[Anthropic]
+    T3[Analytics Team] -->|Custom code| O2[OpenAI]
+    T4[Marketing Team] -->|OpenAI SDK| O3[OpenAI]
+    style O1 fill:#f8d7da
+    style A1 fill:#f8d7da
+    style O2 fill:#f8d7da
+    style O3 fill:#f8d7da
+```
+
+**After: LLM Gateway**
+
+```mermaid
+graph LR
+    T1[Search Team] --> GW[LLM Gateway]
+    T2[Support Team] --> GW
+    T3[Analytics Team] --> GW
+    T4[Marketing Team] --> GW
+    GW -->|Route + Log| O1[OpenAI]
+    GW -->|Route + Log| A1[Anthropic]
+    GW -->|Route + Log| OS1[Open Source]
+    style GW fill:#d4edda
 ```
 
 Be aware of existing visual associations. Do not use a cylinder on your diagram unless you are okay with readers thinking of it as a datastore. If you use colors, some of your audience will try to interpret their meaning, assuming green means good and red means bad.

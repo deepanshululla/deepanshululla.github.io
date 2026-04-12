@@ -9,33 +9,18 @@ The start of a project is full of ambiguity. You can create perspective, for you
 ## The Three Maps
 
 ```mermaid
-graph TD
-    subgraph Locator Map
-        L1[Why does this project matter?]
-        L2[How important is it to the business?]
-        L3[What are the business goals?]
-    end
-    subgraph Topographical Map
-        T1[Who makes decisions?]
-        T2[Where are the friction points?]
-        T3[What are the political boundaries?]
-    end
-    subgraph Treasure Map
-        TR1[What are the milestones?]
-        TR2[What does success look like?]
-        TR3[What is the critical path?]
-    end
-    Locator Map --> Topographical Map
-    Topographical Map --> Treasure Map
-    style L1 fill:#e8f4f8
-    style L2 fill:#e8f4f8
-    style L3 fill:#e8f4f8
-    style T1 fill:#fff3cd
-    style T2 fill:#fff3cd
-    style T3 fill:#fff3cd
-    style TR1 fill:#d4edda
-    style TR2 fill:#d4edda
-    style TR3 fill:#d4edda
+graph LR
+    A[Locator Map] --> B[Topographical Map]
+    B --> C[Treasure Map]
+    A --- A1[Why does this matter?]
+    A --- A2[Business goals?]
+    B --- B1[Who decides?]
+    B --- B2[Friction points?]
+    C --- C1[Milestones?]
+    C --- C2[What is success?]
+    style A fill:#e8f4f8
+    style B fill:#fff3cd
+    style C fill:#d4edda
 ```
 
 ### 1. The Locator Map: Where Does This Fit?
@@ -50,6 +35,20 @@ For the LLM Gateway, your locator map might look like this:
 - **Priority level:** VP called it an H1 priority. The CFO asked about it in the last leadership meeting.
 - **Competitive context:** Competitors are shipping AI features faster because they have centralized infrastructure. We are falling behind.
 - **Related initiatives:** The ML Platform team has a roadmap for model serving. The Security team is rolling out a new data classification framework. Both overlap with our work.
+
+```mermaid
+graph TD
+    A[Company Strategy: AI-First Products] --> B[Problem: No LLM Cost Visibility]
+    A --> C[Problem: Compliance Risk]
+    A --> D[Problem: Duplicated Effort]
+    B --> E[LLM Gateway Project]
+    C --> E
+    D --> E
+    E --> F[H1 Priority - VP Sponsored]
+    style A fill:#e8f4f8
+    style E fill:#d4edda
+    style F fill:#d4edda
+```
 
 ### 2. The Topographical Map: How Does the Org Work?
 
@@ -70,16 +69,16 @@ For the LLM Gateway:
 
 ```mermaid
 graph TD
-    A[VP of Engineering: Jordan] --> B[Director Chen: ML Platform]
-    A --> C[Director Park: Infrastructure]
-    A --> D[Director Lee: Product]
-    B --> E[Ravi: ML Platform Tech Lead]
-    C --> F[Infrastructure Team]
-    D --> G[Marcus: Search Product]
-    D --> H[Lin: Support Product]
-    I[Security: Priya] -.->|Review authority| A
-    E -.->|Built prototype 6mo ago| J[Potential friction]
-    B <-.->|Territory overlap| C
+    A[VP Jordan] --> B[Dir. Chen - ML Platform]
+    A --> C[Dir. Park - Infrastructure]
+    A --> D[Dir. Lee - Product]
+    B --> E[Ravi - Tech Lead]
+    C --> F[Infra Team]
+    D --> G[Marcus - Search]
+    D --> H[Lin - Support]
+    I[Priya - Security] -.-> A
+    E -.-> J[Built prototype 6mo ago]
+    B -.->|Territory overlap| C
     style J fill:#f8d7da
     style I fill:#fff3cd
 ```
@@ -96,6 +95,21 @@ For the LLM Gateway, an early treasure map might look like:
 - **Milestone 2 (Month 3-4):** Centralized routing for one pilot team. The Search team routes their LLM calls through the gateway. Rate limiting and basic auth in place.
 - **Milestone 3 (Month 5-6):** Security controls. Prompt logging, data classification checks, audit trail. Security team signs off.
 - **Milestone 4 (Month 7+):** General availability. All teams migrate to the gateway. Self-serve onboarding, multi-model support, cost allocation.
+
+```mermaid
+graph LR
+    M1[M1: Cost Dashboard] --> M2[M2: Pilot Routing]
+    M2 --> M3[M3: Security Controls]
+    M3 --> M4[M4: General Availability]
+    M1 --- D1[Month 1-2]
+    M2 --- D2[Month 3-4]
+    M3 --- D3[Month 5-6]
+    M4 --- D4[Month 7+]
+    style M1 fill:#d4edda
+    style M2 fill:#d4edda
+    style M3 fill:#d4edda
+    style M4 fill:#d4edda
+```
 
 Each milestone is usable or demonstrable in some way. Each one delivers value and gives stakeholders an opportunity to provide feedback and course-correct.
 
