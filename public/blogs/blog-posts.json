@@ -5,7 +5,8 @@
     "date": "2026-04-12",
     "excerpt": "How to develop shared understanding with your manager, know when to accept direction vs push back, master disagree-and-commit, and become the person they rely on.",
     "filename": "aligning-with-your-manager.md",
-    "categories": ["Software Engineering", "Leadership"]
+    "categories": ["Software Engineering", "Leadership"],
+    "hidden": true
   },
   {
     "id": "staff-engineers-path-lead-through-people",

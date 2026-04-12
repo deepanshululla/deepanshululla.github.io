@@ -113,7 +113,13 @@ class BlogPost extends Component {
         fetch(`${process.env.PUBLIC_URL || ''}/blogs/blog-posts.json`)
             .then(response => response.json())
             .then(posts => {
-                const sorted = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+                const showHidden = this.props.location
+                    && this.props.location.query
+                    && this.props.location.query.hidden === 'true';
+                const filtered = showHidden
+                    ? posts
+                    : posts.filter(p => !p.hidden || p.id === currentId);
+                const sorted = filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
                 const currentIndex = sorted.findIndex(p => p.id === currentId);
                 this.setState({
                     allPosts: sorted,

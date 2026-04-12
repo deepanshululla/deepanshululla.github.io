@@ -27,7 +27,13 @@ class Blogs extends Component {
                 const sortedPosts = blogPosts.sort((a, b) => {
                     return new Date(b.date) - new Date(a.date);
                 });
-                this.setState({ blogPosts: sortedPosts });
+                const showHidden = this.props.location
+                    && this.props.location.query
+                    && this.props.location.query.hidden === 'true';
+                const visiblePosts = showHidden
+                    ? sortedPosts
+                    : sortedPosts.filter(post => !post.hidden);
+                this.setState({ blogPosts: visiblePosts });
             })
             .catch(error => {
                 console.error('Error loading blog posts:', error);

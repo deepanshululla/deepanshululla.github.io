@@ -106,10 +106,10 @@ export class App extends Component {
             );
         };
 
-        const BlogPage = () => (
+        const BlogPage = (props) => (
             <div>
                 <Header data={this.state.resumeData.main} showHero={false} isHome={false} />
-                <Blogs />
+                <Blogs location={props.location} />
                 <Footer />
             </div>
         );
@@ -117,7 +117,7 @@ export class App extends Component {
         const BlogPostPage = (props) => (
             <div>
                 <Header data={this.state.resumeData.main} showHero={false} isHome={false} />
-                <BlogPost params={props.params} />
+                <BlogPost params={props.params} location={props.location} />
                 <Footer />
             </div>
         );
