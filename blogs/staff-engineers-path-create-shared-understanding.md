@@ -109,6 +109,22 @@ A tip that was a game-changer for writing clearly: instead of saying "this" or "
 
 It is a better use of your time to be wrong than to be vague. If you are wrong, people will tell you and you can change direction. If you are vague, no one can give you useful feedback, and you lose the opportunity to learn. Having disagreements about your design does not mean you need to change course, but it gives you information you would not have had otherwise.
 
+## Phase Checklist
+
+### Inputs
+
+- [ ] Aligned problem statement and elevator pitch (from Phase 8)
+- [ ] Recommended approach with trade-offs (from Phase 8)
+- [ ] Stakeholder map (from Phase 5)
+
+### Outputs
+
+- [ ] RFC or design document written and shared for review
+- [ ] Glossary of key terms agreed upon across teams
+- [ ] Architecture diagrams (before/after if applicable)
+- [ ] Feedback collected and incorporated from reviewers
+- [ ] Final design approved by key stakeholders
+
 ## Conclusion
 
 Shared understanding is not a luxury. It is a prerequisite for effective collaboration on large projects. Build mental models that connect to what people already know. Name things carefully and consistently. Use diagrams to make the abstract concrete. Write your plans down so people can actually engage with them. The time you spend making things clear for others is not overhead. It is the core work of leading a project that spans multiple teams.

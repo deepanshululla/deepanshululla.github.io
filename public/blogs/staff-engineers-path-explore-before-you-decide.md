@@ -88,6 +88,22 @@ Exploration has diminishing returns. At some point, you have enough information 
 
 If you have gone into the project with an architecture or a solution in mind, it can be jarring to realize that it might not actually solve the real problem. This is such a difficult mental adjustment that some project leads cling tightly to their original ideas, resisting all information that contradicts their worldview. That does not make for a good solution. Keep an open mind about how you are solving the problem until you have agreed on what you need to solve.
 
+## Phase Checklist
+
+### Inputs
+
+- [ ] Fundamentals document with goals and customer needs (from Phase 5)
+- [ ] Constraints and risks (from Phase 5)
+- [ ] Historical context on what was tried before (from Phase 5)
+
+### Outputs
+
+- [ ] Aligned problem statement that all teams agree on
+- [ ] Elevator pitch: one-paragraph description of what you are doing and not doing
+- [ ] At least two viable approaches identified with trade-offs documented
+- [ ] Existing solutions evaluated (build vs. buy vs. reuse)
+- [ ] Recommendation for which approach to take and why
+
 ## Conclusion
 
 Exploration is not procrastination. It is the work of making sure you build the right thing before you build it well. Resist the urge to start coding on day one. Talk to people. Understand the problem from multiple perspectives. Look at what already exists. Only then should you commit to an approach. The time you spend exploring will save you far more time than it costs.

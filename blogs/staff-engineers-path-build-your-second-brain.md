@@ -128,6 +128,39 @@ graph LR
     style E fill:#d4edda
 ```
 
+## Phase Checklist
+
+### Inputs
+
+- [ ] Notes from initial conversations
+- [ ] Email threads, Slack messages, and forwarded documents
+- [ ] Names and roles of people you have met so far
+- [ ] Any existing project documentation or prior art
+
+### Outputs
+
+- [ ] A single living document (your second brain) created and populated
+- [ ] Open questions section with at least 5 unresolved questions
+- [ ] Assumptions section with explicit, unverified beliefs
+- [ ] Key people and roles section with names, teams, and what they care about
+- [ ] First round of to-dos and follow-ups captured
+- [ ] A habit established: updating this document after every conversation or meeting
+
+## Phase Checklist
+
+### Inputs
+
+- [ ] Initial list of people to talk to (from Phase 1)
+- [ ] Any existing docs and email threads (from Phase 1)
+- [ ] Notes from your first conversations
+
+### Outputs
+
+- [ ] A single living document created with sections for: open questions, assumptions, decisions, key people, to-dos, signals
+- [ ] At least 5 open questions written down
+- [ ] At least 3 unverified assumptions made explicit
+- [ ] Key people and roles listed with names, teams, and concerns
+
 ## Conclusion
 
 Your second brain is the simplest tool in this series, but it is also one of the most important. It converts the swirling chaos of a new project into something tangible that you can look at, organize, and act on. You do not need a fancy tool or a specific methodology. You need the discipline to write things down in one place and the habit of returning to that place when you are not sure what to do next. Start the document before you try to solve anything. You will thank yourself every week for the rest of the project.

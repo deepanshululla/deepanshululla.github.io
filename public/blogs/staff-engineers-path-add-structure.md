@@ -103,6 +103,22 @@ There are many small decisions that help set a project up to run smoothly:
 
 The last thing you might do is have a kickoff meeting. Even if all the important information is written down, there is something about seeing each other's faces that starts a project with momentum. Cover who everyone is, what the goals are, what has happened so far, what structures you have set up, what happens next, and how people can find out more.
 
+## Phase Checklist
+
+### Inputs
+
+- [ ] Fundamentals document (from Phase 5)
+- [ ] Stakeholder map and team list (from Phase 5)
+- [ ] Draft milestones (from Phase 4)
+
+### Outputs
+
+- [ ] Roles and responsibilities table (or RACI matrix) agreed upon by all leaders
+- [ ] Scope document: what is in and what is out for each milestone
+- [ ] Milestone plan with dates, deliverables, and owners
+- [ ] Logistics decided: meeting cadence, communication channels, documentation home, dev practices
+- [ ] Kickoff meeting held (or scheduled)
+
 ## Conclusion
 
 Structure is not bureaucracy. It is the scaffolding that lets a group of people work together without constantly stepping on each other. Define roles so people know what is expected of them. Agree on scope so everyone is pointed at the same milestones. Set up logistics so people know how to communicate. And do all of this early, before the project gains momentum and bad habits become entrenched.

@@ -129,6 +129,24 @@ Depending on the size of the project, you might have a few key people or a massi
 
 It is vital to build good working relationships with all of the other leaders and help each other out. Do not waste your time in power struggles. You will be more likely to achieve your shared goals if you work well together.
 
+## Phase Checklist
+
+### Inputs
+
+- [ ] Three maps (from Phase 4)
+- [ ] Sponsor's success definition (from Phase 3)
+- [ ] Key people and their concerns (from Phase 2)
+
+### Outputs
+
+- [ ] Written goals statement (why are we doing this?)
+- [ ] Customer needs documented with evidence from conversations
+- [ ] Success metrics defined with measurable before/after targets
+- [ ] Stakeholder map: who cares, who decides, who blocks
+- [ ] Constraints listed: time, people, budget, dependencies
+- [ ] Top risks ranked by likelihood and impact
+- [ ] Historical context documented (what was tried before, what happened)
+
 ## Conclusion
 
 These fundamentals are not busywork. They are the foundation that keeps the project from drifting. Write them down. Share them. Refer back to them when decisions get hard. A project without clear fundamentals is a project that will keep rediscovering what it is trying to do, and every rediscovery costs time, energy, and trust.

@@ -133,6 +133,21 @@ Sometimes your three maps will tell you contradictory things. The locator map sa
 
 This is useful information. It means you know where the risk is. You can address it directly: talk to both directors, propose a clear ownership split, or escalate to your sponsor if needed. The maps do not solve problems. They show you where the problems are so you can solve them before they derail the project.
 
+## Phase Checklist
+
+### Inputs
+
+- [ ] Validated "why" and sponsor priorities (from Phase 3)
+- [ ] Key people list (from Phase 2)
+- [ ] Your second brain with open questions
+
+### Outputs
+
+- [ ] Locator map: written description of business context, priority level, and related initiatives
+- [ ] Topographical map: org chart of decision-makers, friction points, and political dynamics documented
+- [ ] Treasure map: draft milestones with rough timeline
+- [ ] List of risks and dependencies identified from the mapping exercise
+
 ## Conclusion
 
 Building context is not a phase you complete and move past. It is something you continue doing throughout the project as the organizational landscape shifts around you. But the initial investment in understanding where the project fits, how the organization works, and where you are going gives you a foundation that makes every subsequent decision easier. Take the time to build all three maps. The locator map keeps you grounded in business reality. The topographical map keeps you from stepping on landmines. The treasure map keeps everyone pointed in the same direction.

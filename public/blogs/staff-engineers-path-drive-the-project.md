@@ -97,6 +97,22 @@ As the person at the wheel, you are accountable for what happens. You do not get
 
 When you are having difficulties, remember that you are not the only person who wants your project to succeed. Your manager's job is to make you successful. If you are not telling them you need help, it is going to be harder for them to do their job. Do not struggle alone.
 
+## Phase Checklist
+
+### Inputs
+
+- [ ] Milestone plan with dates and owners (from Phase 6)
+- [ ] Roles and responsibilities table (from Phase 6)
+- [ ] Communication channels and meeting cadence (from Phase 6)
+
+### Outputs
+
+- [ ] Regular status updates being sent to stakeholders
+- [ ] Decision log: decisions made, by whom, and why
+- [ ] Blockers identified and tracked with owners and resolution dates
+- [ ] Updated milestone plan reflecting reality (dates adjusted as you learn)
+- [ ] Code patterns established that the team can follow
+
 ## Conclusion
 
 Driving a project is not a passive activity. It is the ongoing work of making decisions, removing blockers, adjusting course, and keeping everyone pointed in the same direction. The best drivers are not the fastest. They are the most aware, the most responsive, and the most honest about the road ahead.

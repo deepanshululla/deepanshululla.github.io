@@ -113,6 +113,22 @@ I have written previously about [large-scale feature development](/#/blog/large-
 
 The best project leads are not the ones with the best ideas. They are the ones who can take a messy, unclear, multi-team problem and guide everyone toward a shared outcome. That is what staff engineering really is.
 
+## Phase Checklist
+
+### Inputs
+
+- [ ] Approved design document (from Phase 9)
+- [ ] Roles and responsibilities (from Phase 6)
+- [ ] Stakeholder map with each person's concerns (from Phase 5)
+
+### Outputs
+
+- [ ] Key stakeholders converted from observers to advocates
+- [ ] Pre-alignment completed on all major decisions before group meetings
+- [ ] Feedback loop established: people see their input reflected in decisions
+- [ ] Team morale and trust healthy (no one feels bypassed or dismissed)
+- [ ] Project on track with aligned, motivated people pulling in the same direction
+
 ## Conclusion
 
 Leading through people is not a soft skill that supplements your technical work. It is the core skill that makes everything else possible. Without it, the best architecture in the world will die in a room full of people who do not trust the person proposing it. With it, even imperfect plans become successful projects because the people executing them are aligned, motivated, and pulling in the same direction.

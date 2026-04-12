@@ -84,6 +84,21 @@ You are going to want to pour a lot of information into your brain as efficientl
 
 The feelings of overwhelm might be a signal that you are low on time, energy, or skills. Check in with yourself. Is there anything you can do to get more time or energy? Are there people who could help? Are there skills you need to build?
 
+## Phase Checklist
+
+### Inputs
+
+- [ ] Project assignment or mandate (even if vague)
+- [ ] Any existing docs, email threads, or prior art forwarded to you
+- [ ] Names of people mentioned as involved
+
+### Outputs
+
+- [ ] Honest self-assessment of your resource levels (time, energy, skills)
+- [ ] At least one sounding board identified (manager, peer, mentor)
+- [ ] Initial list of people to talk to
+- [ ] One small win completed (a conversation, a question asked, a doc read)
+
 ## Conclusion
 
 The beginning of a large project is supposed to feel chaotic. You are not failing. You are encountering the nature of staff-level work. The difference between a project that succeeds and one that does not is rarely the technical approach. It is whether the lead had the perseverance to push through the initial chaos and start making sense of it. Your first job is not execution. Your first job is making sense of the chaos.

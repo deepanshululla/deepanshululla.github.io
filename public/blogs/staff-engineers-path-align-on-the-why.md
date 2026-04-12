@@ -93,6 +93,22 @@ Sometimes the sponsor does not have a clear answer to "What does success look li
 
 If the impetus for the work has come from you rather than from a sponsor, then you are on the hook to continually justify the project and make sure it stays funded. It will be easier to sell the value of the work if you can find other people who want it too.
 
+## Phase Checklist
+
+### Inputs
+
+- [ ] Your second brain document (from Phase 2)
+- [ ] Your written hypothesis of what the project is trying to achieve
+- [ ] Name of your project sponsor
+
+### Outputs
+
+- [ ] Written summary of the project's "why," validated by sponsor
+- [ ] Sponsor's priorities ranked (must-have vs. nice-to-have)
+- [ ] Definition of what success looks like from sponsor's perspective
+- [ ] Clarity on your role, reporting cadence, and decision authority
+- [ ] Updated second brain with corrected assumptions
+
 ## Conclusion
 
 Your first job on a new project is not execution. It is alignment. Sit down with your sponsor, write down what you think they want, and verify it. This conversation might take thirty minutes, but the misalignment it prevents could save months. Treat it as the most important meeting of the entire project, because it very well might be.
