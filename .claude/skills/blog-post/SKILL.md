@@ -8,6 +8,11 @@ user_invocable: true
 
 Create a new blog post for the personal website at deepanshululla.com.
 
+> **Before writing, read [`learnings.md`](learnings.md)** in this skill folder — a running log of
+> gotchas (e.g. `~` rendering as strikethrough in `marked`) and stated preferences (e.g. keep the
+> tone humble). After finishing a post, **append any new lesson** to `learnings.md` so the next run
+> benefits from it.
+
 ## Input
 
 The user will provide either:
@@ -28,8 +33,9 @@ Ask the user (if not provided):
 
 Categories are displayed as filter buttons on the blog listing page, derived dynamically from `blog-posts.json`. Assign the most appropriate category (or multiple if the post spans topics). Use an existing category whenever possible; only create a new one if none fit.
 
-**Existing categories (as of March 2026):**
+**Existing categories (as of June 2026):**
 - **AI/ML** — Machine learning, deep learning, LLMs, NLP, model training/inference, MLOps, AI infrastructure
+- **Performance** — Profiling, benchmarking, optimization, latency/throughput, low-level/systems performance. Often paired with a topic category (e.g., `["AI/ML", "Performance"]`)
 - **Software Engineering** — System design, distributed systems, backend architecture, DevOps, testing, code quality
 - **Books** — Book summaries, chapter notes, reading lists. Use alongside a topic category for technical books (e.g., `["AI/ML", "Books"]` for an ML book summary)
 - **Leadership** — Management, communication, team dynamics, career growth
@@ -111,7 +117,7 @@ Format rules:
 
 ### Diagrams and Visual Design
 
-Every post should include at least 2-3 mermaid diagrams to break up text and visualize key concepts. The site supports mermaid v10 with a custom pink/blue theme.
+Every post should include 2-3 visuals to break up text and make a point concretely. The default is mermaid (the site supports mermaid v10 with a custom pink/blue theme). **For benchmark, profiling, or data-driven posts, prefer real measured charts over mermaid** — inline the actual `chart.png`/SVG produced by the code, copied into `public/blogs/images/` with a slug-prefixed name and an italic `*caption*` line beneath. A measured bar chart says more than a hand-drawn diagram when the post's whole point is a number. Such posts should also **link each result to its source** (the exercise folder / script on GitHub) so readers can reproduce it.
 
 **When to use diagrams:**
 - Architecture or system design overviews (use `graph TD` or `graph LR`)
@@ -196,8 +202,10 @@ Then copy `blogs/blog-posts.json` to `public/blogs/blog-posts.json` to keep them
 ### 6. Verify
 
 After creating the post:
-- Confirm the file exists in both `blogs/` and `public/blogs/`
+- Confirm the file exists in both `blogs/` and `public/blogs/` (and `diff -q` them — they must be byte-identical)
 - Confirm `blog-posts.json` is updated in both directories
+- Check for renderer gotchas: no stray single `~` (renders as strikethrough), no mojibake (`grep -l "â" public/blogs/*.md` should be empty)
+- If this post surfaced a new gotcha or the user stated a preference, **append it to [`learnings.md`](learnings.md)**
 - Remind the user to run `./deploy.sh` to publish to deepanshululla.com
 
 ## Series Posts

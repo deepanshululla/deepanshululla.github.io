@@ -1,11 +1,80 @@
 [
   {
+    "id": "hpp-remeasured-apple-silicon",
+    "title": "High Performance Python, Re-Measured on Apple Silicon: 6 Results That Came Out Differently for Me",
+    "date": "2026-06-13",
+    "excerpt": "Reworking every chapter of High Performance Python as runnable benchmarks on CPython 3.14 and Apple Silicon turned up six results that came out different, and two that came out backwards.",
+    "filename": "hpp-remeasured-apple-silicon.md",
+    "categories": [
+      "AI/ML",
+      "Performance"
+    ]
+  },
+  {
+    "id": "hpp-strength-reduction-trap",
+    "title": "Strength Reduction Can Be a Trap in the Interpreter",
+    "date": "2026-06-13",
+    "excerpt": "Dropping a square root from a hot loop is a win once compiled, but in pure CPython the algebraically cheaper form runs 1.9x slower. Here is why bytecode dispatch beats arithmetic.",
+    "filename": "hpp-strength-reduction-trap.md",
+    "categories": [
+      "AI/ML",
+      "Performance"
+    ]
+  },
+  {
+    "id": "hpp-when-the-gpu-loses",
+    "title": "When the GPU Loses: 2,600x Slower on a Branchy Walk",
+    "date": "2026-06-13",
+    "excerpt": "The same M1 Max that ran a diffusion simulation 10x faster on the GPU ran a sequential dependent walk 2,600x slower. The GPU is a wide machine, not a fast one.",
+    "filename": "hpp-when-the-gpu-loses.md",
+    "categories": [
+      "AI/ML",
+      "Performance"
+    ]
+  },
+  {
+    "id": "hpp-seven-profilers-one-workload",
+    "title": "One Workload, Seven Profilers: cProfile, line_profiler, py-spy, scalene, memray, viztracer",
+    "date": "2026-06-13",
+    "excerpt": "A field guide to Python profilers, built by pointing seven of them at one CPU-bound workload and lining up what each tells you that the others do not.",
+    "filename": "hpp-seven-profilers-one-workload.md",
+    "categories": [
+      "AI/ML",
+      "Performance"
+    ]
+  },
+  {
+    "id": "hpp-pandas-vehicle-costs-more",
+    "title": "The Vehicle Costs More Than the Math: pandas Row Iteration and the concat Quadratic Trap",
+    "date": "2026-06-13",
+    "excerpt": "In dataframe code the way you iterate rows and accumulate results dominates the arithmetic. Measuring the row-iteration ladder and the pd.concat O(N^2) trap.",
+    "filename": "hpp-pandas-vehicle-costs-more.md",
+    "categories": [
+      "AI/ML",
+      "Performance"
+    ]
+  },
+  {
+    "id": "hpp-sklearn-15x-slower",
+    "title": "scikit-learn's LinearRegression Is 15x Slower Than lstsq, and 85% Is Input Validation",
+    "date": "2026-06-13",
+    "excerpt": "Both end in the same numpy solve, but scikit-learn wraps it in input validation that runs on every call, the difference between 2 hours and 34 across 730 million tiny fits.",
+    "filename": "hpp-sklearn-15x-slower.md",
+    "categories": [
+      "AI/ML",
+      "Performance"
+    ]
+  },
+  {
     "id": "aligning-with-your-manager",
     "title": "Aligning with Leadership",
     "date": "2026-04-12",
     "excerpt": "How to develop shared understanding with your manager, know when to accept direction vs push back, master disagree-and-commit, and become the person they rely on.",
     "filename": "aligning-with-your-manager.md",
-    "categories": ["Software Engineering", "Leadership"],
+    "categories": [
+      "Software Engineering",
+      "Leadership"
+    ],
     "hidden": true
   },
   {
@@ -14,7 +83,11 @@
     "date": "2026-04-12",
     "excerpt": "The capstone skill of staff-level project leadership: creating alignment through influence, trust, and making people feel heard, when you have no direct authority over the teams doing the work.",
     "filename": "staff-engineers-path-lead-through-people.md",
-    "categories": ["Software Engineering", "Leadership", "Books"]
+    "categories": [
+      "Software Engineering",
+      "Leadership",
+      "Books"
+    ]
   },
   {
     "id": "staff-engineers-path-create-shared-understanding",
@@ -22,7 +95,11 @@
     "date": "2026-04-12",
     "excerpt": "How to reduce complexity across teams using mental models, precise naming, diagrams, and written design documents so that everyone sees the same picture.",
     "filename": "staff-engineers-path-create-shared-understanding.md",
-    "categories": ["Software Engineering", "Leadership", "Books"]
+    "categories": [
+      "Software Engineering",
+      "Leadership",
+      "Books"
+    ]
   },
   {
     "id": "staff-engineers-path-explore-before-you-decide",
@@ -30,7 +107,11 @@
     "date": "2026-04-12",
     "excerpt": "Why jumping to solutions too early is one of the most common mistakes in large projects, and how to align mental models across teams before committing to an approach.",
     "filename": "staff-engineers-path-explore-before-you-decide.md",
-    "categories": ["Software Engineering", "Leadership", "Books"]
+    "categories": [
+      "Software Engineering",
+      "Leadership",
+      "Books"
+    ]
   },
   {
     "id": "staff-engineers-path-drive-the-project",
@@ -38,7 +119,11 @@
     "date": "2026-04-12",
     "excerpt": "Driving a project is not about moving fast. It is about making decisions, adjusting direction, reacting to risks, and keeping everyone pointed at the destination.",
     "filename": "staff-engineers-path-drive-the-project.md",
-    "categories": ["Software Engineering", "Leadership", "Books"]
+    "categories": [
+      "Software Engineering",
+      "Leadership",
+      "Books"
+    ]
   },
   {
     "id": "staff-engineers-path-add-structure",
@@ -46,7 +131,11 @@
     "date": "2026-04-12",
     "excerpt": "How to convert ambiguity into clarity by defining roles, agreeing on scope and milestones, setting up logistics, and giving the project a skeleton it can grow into.",
     "filename": "staff-engineers-path-add-structure.md",
-    "categories": ["Software Engineering", "Leadership", "Books"]
+    "categories": [
+      "Software Engineering",
+      "Leadership",
+      "Books"
+    ]
   },
   {
     "id": "staff-engineers-path-clarify-the-fundamentals",
@@ -54,7 +143,11 @@
     "date": "2026-04-12",
     "excerpt": "Before execution begins, make the goals, customers, success metrics, stakeholders, constraints, risks, and history explicit. Skipping this step is how you solve the wrong problem with perfect execution.",
     "filename": "staff-engineers-path-clarify-the-fundamentals.md",
-    "categories": ["Software Engineering", "Leadership", "Books"]
+    "categories": [
+      "Software Engineering",
+      "Leadership",
+      "Books"
+    ]
   },
   {
     "id": "staff-engineers-path-build-context",
@@ -62,7 +155,11 @@
     "date": "2026-04-12",
     "excerpt": "Staff engineers navigate organizations, not just systems. Build three maps to understand where the project fits, how the org works, and where you are going.",
     "filename": "staff-engineers-path-build-context.md",
-    "categories": ["Software Engineering", "Leadership", "Books"]
+    "categories": [
+      "Software Engineering",
+      "Leadership",
+      "Books"
+    ]
   },
   {
     "id": "staff-engineers-path-align-on-the-why",
@@ -70,7 +167,11 @@
     "date": "2026-04-12",
     "excerpt": "One of the most common failure modes in large projects is building the wrong thing really well. Align with your project sponsor on what success looks like before doing anything else.",
     "filename": "staff-engineers-path-align-on-the-why.md",
-    "categories": ["Software Engineering", "Leadership", "Books"]
+    "categories": [
+      "Software Engineering",
+      "Leadership",
+      "Books"
+    ]
   },
   {
     "id": "staff-engineers-path-build-your-second-brain",
@@ -78,7 +179,11 @@
     "date": "2026-04-12",
     "excerpt": "Before you try to solve a large project, externalize it. Create a single document that acts as an extension of your brain for the duration of the project.",
     "filename": "staff-engineers-path-build-your-second-brain.md",
-    "categories": ["Software Engineering", "Leadership", "Books"]
+    "categories": [
+      "Software Engineering",
+      "Leadership",
+      "Books"
+    ]
   },
   {
     "id": "staff-engineers-path-embrace-the-chaos",
@@ -86,7 +191,11 @@
     "date": "2026-04-12",
     "excerpt": "The beginning of a large project is supposed to feel chaotic. Feeling overwhelmed is not a signal you are failing. It is a signal you are doing staff-level work.",
     "filename": "staff-engineers-path-embrace-the-chaos.md",
-    "categories": ["Software Engineering", "Leadership", "Books"]
+    "categories": [
+      "Software Engineering",
+      "Leadership",
+      "Books"
+    ]
   },
   {
     "id": "staff-engineers-path-leading-large-projects",
@@ -94,7 +203,11 @@
     "date": "2026-04-12",
     "excerpt": "A 10-phase guide to leading large, ambiguous, cross-team projects as a staff engineer, drawn from The Staff Engineer's Path with a running LLM Gateway example.",
     "filename": "staff-engineers-path-leading-large-projects.md",
-    "categories": ["Software Engineering", "Leadership", "Books"]
+    "categories": [
+      "Software Engineering",
+      "Leadership",
+      "Books"
+    ]
   },
   {
     "id": "natural-language-to-sql-with-tiny-llama",
@@ -102,7 +215,9 @@
     "date": "2026-03-23",
     "excerpt": "Building a natural language to SQL system using a 1.1B parameter model, comparing template matching, direct schema-to-SQL, slim prompting, and agentic ReAct approaches with rigorous evaluations.",
     "filename": "natural-language-to-sql-with-tiny-llama.md",
-    "categories": ["AI/ML"]
+    "categories": [
+      "AI/ML"
+    ]
   },
   {
     "id": "crucial-conversations-putting-it-all-together",
@@ -110,7 +225,11 @@
     "date": "2026-03-23",
     "excerpt": "The capstone of the Crucial Conversations series, integrating all nine dialogue principles into a complete framework with diagnostic questions to identify where you are stuck and which skill to apply.",
     "filename": "crucial-conversations-putting-it-all-together.md",
-    "categories": ["Software Engineering", "Leadership", "Books"]
+    "categories": [
+      "Software Engineering",
+      "Leadership",
+      "Books"
+    ]
   },
   {
     "id": "crucial-conversations-tough-cases",
@@ -118,7 +237,11 @@
     "date": "2026-03-23",
     "excerpt": "How to apply crucial conversation skills to the hardest scenarios engineers face, including broken trust, sensitive feedback, people who refuse to talk, and speaking truth to power.",
     "filename": "crucial-conversations-tough-cases.md",
-    "categories": ["Software Engineering", "Leadership", "Books"]
+    "categories": [
+      "Software Engineering",
+      "Leadership",
+      "Books"
+    ]
   },
   {
     "id": "crucial-conversations-move-to-action",
@@ -126,7 +249,11 @@
     "date": "2026-03-23",
     "excerpt": "Why good conversations still fail to produce results, and how to use the four decision-making methods and the WWWF framework to turn shared understanding into clear commitments.",
     "filename": "crucial-conversations-move-to-action.md",
-    "categories": ["Software Engineering", "Leadership", "Books"]
+    "categories": [
+      "Software Engineering",
+      "Leadership",
+      "Books"
+    ]
   },
   {
     "id": "crucial-conversations-retake-your-pen",
@@ -134,7 +261,11 @@
     "date": "2026-03-23",
     "excerpt": "How to build resilience when receiving tough feedback by understanding the pen metaphor, separating what was said from what you made it mean, and reclaiming control of your self-worth.",
     "filename": "crucial-conversations-retake-your-pen.md",
-    "categories": ["Software Engineering", "Leadership", "Books"]
+    "categories": [
+      "Software Engineering",
+      "Leadership",
+      "Books"
+    ]
   },
   {
     "id": "crucial-conversations-explore-others-paths",
@@ -142,7 +273,11 @@
     "date": "2026-03-23",
     "excerpt": "How to listen effectively when others go silent or blow up, using the AMPP toolkit to restore safety and help people share what they really think.",
     "filename": "crucial-conversations-explore-others-paths.md",
-    "categories": ["Software Engineering", "Leadership", "Books"]
+    "categories": [
+      "Software Engineering",
+      "Leadership",
+      "Books"
+    ]
   },
   {
     "id": "crucial-conversations-state-my-path",
@@ -150,7 +285,11 @@
     "date": "2026-03-23",
     "excerpt": "How to speak up honestly without triggering defensiveness using the STATE framework: Share facts, Tell your story, Ask for others' paths, Talk tentatively, and Encourage testing.",
     "filename": "crucial-conversations-state-my-path.md",
-    "categories": ["Software Engineering", "Leadership", "Books"]
+    "categories": [
+      "Software Engineering",
+      "Leadership",
+      "Books"
+    ]
   },
   {
     "id": "crucial-conversations-make-it-safe",
@@ -158,7 +297,11 @@
     "date": "2026-03-23",
     "excerpt": "When safety breaks in a conversation, stop discussing content and rebuild safety first using Mutual Purpose, Mutual Respect, Contrasting, and the CRIB framework.",
     "filename": "crucial-conversations-make-it-safe.md",
-    "categories": ["Software Engineering", "Leadership", "Books"]
+    "categories": [
+      "Software Engineering",
+      "Leadership",
+      "Books"
+    ]
   },
   {
     "id": "crucial-conversations-learn-to-look",
@@ -166,7 +309,11 @@
     "date": "2026-03-23",
     "excerpt": "How to spot the moment a conversation turns crucial and detect safety problems early by watching for Silence and Violence patterns in yourself and others.",
     "filename": "crucial-conversations-learn-to-look.md",
-    "categories": ["Software Engineering", "Leadership", "Books"]
+    "categories": [
+      "Software Engineering",
+      "Leadership",
+      "Books"
+    ]
   },
   {
     "id": "crucial-conversations-master-my-stories",
@@ -174,7 +321,11 @@
     "date": "2026-03-23",
     "excerpt": "How to take control of your emotions by examining the stories you tell yourself, using the Path to Action model to separate facts from interpretation and avoid Victim, Villain, and Helpless narratives.",
     "filename": "crucial-conversations-master-my-stories.md",
-    "categories": ["Software Engineering", "Leadership", "Books"]
+    "categories": [
+      "Software Engineering",
+      "Leadership",
+      "Books"
+    ]
   },
   {
     "id": "crucial-conversations-start-with-heart",
@@ -182,7 +333,11 @@
     "date": "2026-03-23",
     "excerpt": "The foundational skill of crucial conversations: managing your own motives before opening your mouth, using four transformative questions to stay focused on what you really want.",
     "filename": "crucial-conversations-start-with-heart.md",
-    "categories": ["Software Engineering", "Leadership", "Books"]
+    "categories": [
+      "Software Engineering",
+      "Leadership",
+      "Books"
+    ]
   },
   {
     "id": "crucial-conversations-choose-your-topic",
@@ -190,7 +345,11 @@
     "date": "2026-03-23",
     "excerpt": "You cannot solve the right problem if you are discussing the wrong one. Learn the CPR framework to unbundle Content, Pattern, and Relationship issues and focus on what actually matters.",
     "filename": "crucial-conversations-choose-your-topic.md",
-    "categories": ["Software Engineering", "Leadership", "Books"]
+    "categories": [
+      "Software Engineering",
+      "Leadership",
+      "Books"
+    ]
   },
   {
     "id": "crucial-conversations-the-power-of-dialogue",
@@ -198,7 +357,11 @@
     "date": "2026-03-23",
     "excerpt": "How the free flow of meaning between people drives better engineering decisions, and why the most influential engineers reject the false choice between honesty and respect.",
     "filename": "crucial-conversations-the-power-of-dialogue.md",
-    "categories": ["Software Engineering", "Leadership", "Books"]
+    "categories": [
+      "Software Engineering",
+      "Leadership",
+      "Books"
+    ]
   },
   {
     "id": "crucial-conversations-what-makes-them-crucial",
@@ -206,7 +369,11 @@
     "date": "2026-03-23",
     "excerpt": "An introduction to crucial conversations -- the high-stakes, emotionally charged discussions that shape your career, your team, and your engineering outcomes more than any technical skill.",
     "filename": "crucial-conversations-what-makes-them-crucial.md",
-    "categories": ["Software Engineering", "Leadership", "Books"]
+    "categories": [
+      "Software Engineering",
+      "Leadership",
+      "Books"
+    ]
   },
   {
     "id": "mixed-precision-training",
