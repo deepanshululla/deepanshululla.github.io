@@ -1,0 +1,208 @@
+# Maths 101: Part 8: Hypothesis testing
+
+**Published:** 2019-06-29
+
+![Hypothesis testing in statistics](https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800&h=400&fit=crop&q=80)
+
+##
+## Hypothesis Testing
+
+Hypothesis tests, also called significance tests, are ubiquitous in the traditional statistical analysis of published research. Their purpose is to help you learn whether random chance might be responsible for an observed effect.
+
+### **KEY TERMS**
+#### **Null hypothesis**
+The hypothesis that chance is to blame.
+
+#### **Alternative hypothesis**
+The counterpoint to the null hypothesis (what you hope to prove).
+
+#### **One-way test**
+Hypothesis test that counts chance results only in one direction.
+
+#### **Two-way test**
+Hypothesis test that counts chance results in two directions.
+
+```mermaid
+graph TD
+    A["Start: Define Test Statistic"] --> B["Define Null Hypothesis H0"]
+    B --> C["Calculate p-value"]
+    C --> D{"Is p-value < 0.05?"}
+    D -->|Yes| E["Reject H0\nResult is statistically significant"]
+    D -->|No| F["Fail to reject H0\nCannot rule out chance"]
+```
+
+#### **Example of how we do hypothesis testing**
+Suppose we need to compare two classes of students whose heights are given. The problem we are trying to solve is to find out which class has a higher height. To do that what we do is
+
+Step1: Define a parameter for measurement.
+For eg, in this case, we took mean which is our test statistic. Let's say the mean of the two classes are µ2 and µ.
+
+We can say if µ2 > µ1 the heights of class2 students are more. By calculating the means of those samples we find that µ2 - µ1 = 10cm. Now, this is the ground truth.
+
+Step 2: We define a null hypothesis
+We call it H0. We define the hypothesis that "there is no difference in the class heights".
+
+Step 3: Find out the p-value which is the probability that µ2 - µ1 >=10cm given H0.
+If p>0.9 we can say that our null hypothesis is acceptable if it is lower something like 0.05(lower than 5%) we can reject the hypothesis.
+
+Here is how to perform a two-sample t-test in Python to compare the means of two groups:
+
+```python
+import numpy as np
+from scipy import stats
+
+np.random.seed(42)
+class1_heights = np.random.normal(loc=165, scale=8, size=50)
+class2_heights = np.random.normal(loc=175, scale=8, size=50)
+
+observed_diff = np.mean(class2_heights) - np.mean(class1_heights)
+
+# Two-sample independent t-test
+t_stat, p_value = stats.ttest_ind(class2_heights, class1_heights)
+
+print(f"Observed difference in means: {observed_diff:.2f} cm")
+print(f"T-statistic: {t_stat:.4f}")
+print(f"P-value: {p_value:.6f}")
+
+if p_value < 0.05:
+    print("Reject H0: the difference is statistically significant.")
+else:
+    print("Fail to reject H0: cannot rule out chance.")
+```
+
+#### How to calculate the p-value for hypothesis testing
+
+```mermaid
+graph TD
+    A["Step 1: Combine samples\n50 + 50 = 100 total"] --> B["Step 2: Randomly split\ninto two groups of 50"]
+    B --> C["Compute delta =\nmean2 - mean1"]
+    C --> D{"Repeated k times?"}
+    D -->|No| B
+    D -->|Yes| E["Sort all k deltas"]
+    E --> F["Find where observed\ndifference falls"]
+    F --> G["p-value = count of deltas\ngreater than observed / k"]
+```
+
+Step 1: Combine the 50 samples from class 1 and class 2 into one bigger sample of 100 samples.
+
+Step 2: Now from these 100 samples, we randomly distribute the entire data into two subsets each with 50 elements.
+
+**Since we have chosen both of the subsets randomly there should not be any difference in the class sizes of the two subsets.**
+
+Lets µ1,µ2 be the means of those random subsets we just found.
+
+Let µ2 - µ1=δ1
+
+Step 3: We repeat the process several times(let's say k=10000 times). Now we find out deltas for each of the times.
+
+We repeat this experiment k times. This gives us a set of k δ's
+
+{δ1,δ2,δ3,...δk}
+
+Then we sort those deltas.
+
+{δ'1,δ'2,δ'3,...δ'k}
+
+such that δ'1<δ'2<δ'3<...δ'k
+
+Step 4: We find out where our difference of 10cm lie in those deltas
+
+Let's say k=10000, In this example, let's say 10cm lies at 8001 points after sorting. Hence we can say there are 2000 deltas>10cm.
+
+So the probability of µ2-µ1>=10cm given that there is no difference in class heights is 2000/10000=0.2 which is 20% which indicates our hypothesis is acceptable.
+
+Here is a Python implementation of the permutation test described above:
+
+```python
+import numpy as np
+
+np.random.seed(42)
+class1 = np.random.normal(loc=165, scale=8, size=50)
+class2 = np.random.normal(loc=175, scale=8, size=50)
+
+observed_diff = np.mean(class2) - np.mean(class1)
+combined = np.concatenate([class1, class2])
+
+k = 10000
+deltas = np.zeros(k)
+for i in range(k):
+    np.random.shuffle(combined)
+    group1 = combined[:50]
+    group2 = combined[50:]
+    deltas[i] = np.mean(group2) - np.mean(group1)
+
+p_value = np.mean(deltas >= observed_diff)
+
+print(f"Observed difference: {observed_diff:.2f} cm")
+print(f"Permutation p-value: {p_value:.4f}")
+print(f"Number of permutation deltas >= observed: {np.sum(deltas >= observed_diff)}/{k}")
+```
+
+### **How do we choose our hypothesis**
+We choose hypothesis in such a way that it is easier to simulate
+
+#### Hypothesis Testing: Coin Toss Example
+
+```mermaid
+graph TD
+    A["Flip coin 5 times"] --> B["Observation: 5 heads"]
+    B --> C["H0: Coin is fair"]
+    C --> D["P of 5 heads given fair coin\n= 1/32 = 3%"]
+    D --> E{"p-value 3% < 5%?"}
+    E -->|Yes| F["Reject H0:\nCoin is likely biased"]
+```
+
+Suppose we are testing a hypothesis for coin toss example. Our task is to find out if the coin is biased towards heads or not.
+
+Step 1:
+
+Design our experiment: To test it we flip the coin 5 times and we count the number of heads.
+
+This count of heads we are defining is called the test statistic. Our observation lets say here is 5 Heads in 5 coin tosses.
+
+Step 2:
+
+We define our null hypothesis as the coin is not biased towards the head. Here are observations are X=5 and the assumption here is coin is not biased towards heads
+
+P(observation/null-hypothesis) = P((X=5)/(coin is not biased towards heads))
+
+Step 3:
+
+So we find the probability of 5 heads in a row is 3%. This probability is also called the p-value.
+
+P(X=5/H0) = 1/(2^5) = 1/32 =0.03 = 3%
+
+P(X=1)= P(heads) = 0.5
+
+This means there is a 3% chance of getting 5 heads in 5 throws if the coin is not biased towards heads.
+
+P((observation by experiment)/assumption) =0.03 (or 3%)
+
+Since it is so small we can say our assumption that the coin is biased is not true and we can comfortably reject the hypothesis.
+
+Since the p-value is so low (less than 5%) we can reject the hypothesis
+
+Here is how to compute the p-value for the coin toss example using both the exact binomial test and a simulation approach:
+
+```python
+from scipy import stats
+
+# Exact binomial test: probability of getting 5 heads in 5 flips
+# given a fair coin (p=0.5)
+result = stats.binomtest(k=5, n=5, p=0.5, alternative='greater')
+print(f"Exact p-value (binomial test): {result.pvalue:.4f}")
+
+# Manual calculation
+p_value_manual = 0.5 ** 5
+print(f"Manual calculation: 1/2^5 = {p_value_manual:.4f}")
+
+# Simulation approach
+import numpy as np
+np.random.seed(42)
+n_simulations = 100000
+flips = np.random.binomial(n=5, p=0.5, size=n_simulations)
+p_value_sim = np.mean(flips >= 5)
+print(f"Simulated p-value ({n_simulations} trials): {p_value_sim:.4f}")
+```
+
+All images are subject to copyright to their respective authors.

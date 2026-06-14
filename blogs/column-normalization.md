@@ -1,0 +1,133 @@
+# Data Preprocessing and Cleaning: Part 1: Column Normalization
+
+**Published:** 2019-04-20
+
+![Data preprocessing and normalization](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop&q=80)
+
+Before applying any dimensionality reduction technique sometimes it is important to preprocess the data.
+
+There are several ways which we can use for preprocessing data.
+
+In this post, we will explore one of the common ways to do data preprocessing which is column normalization (or feature scaling).
+
+### **Feature scaling**
+
+```mermaid
+graph LR
+    A["Raw Feature Values\nVarying ranges"] --> B["Find min and max"]
+    B --> C["Apply formula:\nai_new = ai - amin / amax - amin"]
+    C --> D["Normalized Values\nRange: 0 to 1"]
+```
+
+Feature scaling is a method used to standardize the range of independent variables or features of data.
+
+In data processing, it is also known as data normalization(or column normalization) and is generally performed during the data preprocessing step.
+
+Column normalization is defined as the process of scaling all the features of a column within values of 0 and 1.
+
+Calculations
+Let's say there is a feature with values [a1,a2....an] for n items. This could be all the height of students in a class.
+
+**The way to normalize is we find the min(amin) and max(amax) of all the features and then normalize it by substracting each element with amin and then dividing it by (amax-amin)**
+
+Let
+
+**a1,a2.... an --> be n-values of a feature vector fj.**
+
+We then find amax  and amin
+
+max(ai) = amax >= ai (i: 1->n)
+
+min(ai) = amin <= ai (i: 1->n)
+
+**In this way we can define a new feature which is a normalized version fj' **
+
+a1',a2'.... an' will be the normalized values of this new feature
+
+**Here ai' = (ai- amin)/ (amax- amin)**
+
+As a result,** ai' lies in the range [0,1]**
+
+Needless to say as amin' =0 and amax' =1
+
+In this way, we created a new normalized vector from our original vector and the values of that normalized vector lie between 0 and 1.
+
+```python
+import numpy as np
+from sklearn.preprocessing import MinMaxScaler
+
+# Sample feature values (e.g., student heights in cm)
+heights = np.array([[150], [160], [170], [180], [190]])
+
+# Manual min-max normalization
+a_min = heights.min()
+a_max = heights.max()
+normalized = (heights - a_min) / (a_max - a_min)
+print(f"Original:   {heights.ravel()}")       # [150 160 170 180 190]
+print(f"Normalized: {normalized.ravel()}")     # [0.   0.25 0.5  0.75 1.  ]
+print(f"Min: {normalized.min()}, Max: {normalized.max()}")  # 0.0, 1.0
+
+# Using sklearn MinMaxScaler (equivalent)
+scaler = MinMaxScaler()
+normalized_sklearn = scaler.fit_transform(heights)
+print(f"Sklearn result matches: {np.allclose(normalized, normalized_sklearn)}")
+```
+
+#### Why do we need to do feature/column normalization?
+
+```mermaid
+graph TD
+    A["Why Normalize?"] --> B["Different units\ne.g. cm vs meters"]
+    A --> C["Faster convergence\nin regression"]
+    A --> D["Fair comparison\nacross features"]
+    B --> E["Normalization:\nAll features in 0 to 1"]
+    C --> E
+    D --> E
+    E --> F["Key property:\nRelationships between\nfeatures are preserved"]
+```
+
+We may have multiple sources of data of which we want to combine all of it, however not all of it is in the same unit system. For eg two datasets one with length in cm and one with length in meters.
+
+So to put everything on the same scale. The second advantage is when it comes to regression as it converges faster to a minimum.
+
+The normalized values would lie between 0 to 1 inclusive.
+
+Geometrically after normalization, if we plot the features before(on the left) and after normalization(on the right) we will see all the points just shift to a small square between 0 to 1.
+
+The one thing to however notice here is it doesn't change the relationship between the different features.
+
+For eg for two features if we plot it and they lie on y=mx+c, even after normalization they will still lie on the same line.
+
+As one can see, The relationship between X and Y is not affected because of feature scaling.
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import MinMaxScaler
+
+# Two features with very different scales
+np.random.seed(42)
+income = np.random.normal(50000, 15000, 100).reshape(-1, 1)  # dollars
+age = np.random.normal(35, 10, 100).reshape(-1, 1)           # years
+
+data = np.hstack([income, age])
+
+# Normalize both columns to [0, 1]
+scaler = MinMaxScaler()
+data_normalized = scaler.fit_transform(data)
+
+fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+axes[0].scatter(data[:, 0], data[:, 1])
+axes[0].set_xlabel('Income ($)')
+axes[0].set_ylabel('Age (years)')
+axes[0].set_title('Before Normalization')
+
+axes[1].scatter(data_normalized[:, 0], data_normalized[:, 1])
+axes[1].set_xlabel('Income (normalized)')
+axes[1].set_ylabel('Age (normalized)')
+axes[1].set_title('After Normalization')
+plt.tight_layout()
+plt.show()
+```
+
+This is it for this part. We learned about column normalization. Hope you liked it. Comment what you would like to read about and keep sharing.
