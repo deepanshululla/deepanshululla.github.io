@@ -1,5 +1,16 @@
 [
   {
+    "id": "hpp-async-hides-io-not-cpu",
+    "title": "Async Hides I/O, Not CPU: Composing asyncio and multiprocessing in a Real OCR Pipeline",
+    "date": "2026-06-13",
+    "excerpt": "Measured on a real render-OCR-analyze pipeline: async caps at 2x once a heavy CPU stage is present, a process pool reaches 3x, and the async+pool hybrid beats per-page multiprocessing at matched parallelism.",
+    "filename": "hpp-async-hides-io-not-cpu.md",
+    "categories": [
+      "AI/ML",
+      "Performance"
+    ]
+  },
+  {
     "id": "hpp-remeasured-apple-silicon",
     "title": "High Performance Python, Re-Measured on Apple Silicon: 6 Results That Came Out Differently for Me",
     "date": "2026-06-13",
